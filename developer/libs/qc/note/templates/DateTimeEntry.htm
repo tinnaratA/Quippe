@@ -1,0 +1,20 @@
+﻿<div class="qcDateTimeEntry">
+    <div class="table">
+        <div class="row">
+            <div class="cell dateCell" data-dojo-attach-point="dateCell">
+				<div class="dateBox" data-dojo-type="dijit/Calendar" data-dojo-attach-point="dateBox"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell timeCell">
+                Time: <div class="timeBox" data-dojo-type="dijit/form/TimeTextBox" data-dojo-attach-point="timeBox" data-dojo-props="maxHeight:250"></div>            
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell buttonCell">
+				<div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onExecute">OK</div>
+				<div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>
+            </div>
+        </div>
+    </div>
+</div>

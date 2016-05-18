@@ -1,0 +1,209 @@
+﻿.qcTaskBar2
+{
+    position: relative;
+    background-color: #f6f6f6;
+    border: 1px rgb(181, 188, 199) solid;
+}
+
+.qcTaskBar2 .qcTaskPane
+{
+	margin: 8px;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+}
+
+.qcTaskBar2.singlePane .contentPane
+{
+    border-bottom: 1px rgb(181, 188, 199) solid;
+}
+
+.qcTaskBar2 .qcTaskPane.hidden
+{
+    display: none;
+}
+
+.qcTaskBar2 .qcTaskPane.fill
+{
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;  
+    margin: 0px 0px 0px 0px;
+    overflow: auto;
+}
+
+.qcTaskBar2 .qcTaskPane.fill .dijitTitlePaneContentOuter 
+{
+    position: absolute;
+    left: 0px;
+    top:33px;
+    right:0px;
+    bottom:0px;
+    border: 0px;
+}
+
+.qcTaskBar2 .qcTaskPane.fill .dijitTitlePaneContentInner
+{
+    background-color: #ffffff;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    border: 0px;
+}
+
+.qcTaskBar2 .qcTaskPane.noTitle.fill .dijitTitlePaneContentOuter 
+{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    border: 0px;
+}
+
+.qcTaskBar2 .qcTaskPane.fill .dijitTitlePaneTitle
+{
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0px;
+    padding-top: 3px;
+    -xx-background-image: none;
+}
+
+.qcTaskBar2 .qcTaskPane.fill .dijitTitlePaneTitle
+{
+    background-color: transparent;
+}
+
+.claro .qcTaskBar2 .qcTaskPane.noTitle .dijitTitlePaneTitle
+{
+    display: none;
+}
+
+.claro .qcTaskBar2 .qcTaskPane.noTitle .dijitTitlePaneContentOuter
+{
+    border: 1px rgb(181, 188, 199) solid;
+    border-radius: 0px;
+}
+
+.claro .qcTaskBar2 .qcTaskPane.fill.noTitle .dijitTitlePaneContentOuter
+{
+    border: 0px;
+}
+
+.qcTaskBar2 .contentPane
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: auto;
+    height:auto;
+    bottom: 66px;
+    background-color: transparent;
+    overflow: auto;
+}
+
+.qcTaskBar2 .trashPane
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 28px;
+    height: 32px;
+}
+
+.qcTaskBar2 .trashPane .trashCan
+{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+	background-image: url('data:image/png;base64,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');
+}
+
+.qcTaskBar2 .trashPane.showTrashCan .trashCan
+{
+    display: block;
+}
+
+
+/* ======== Navigator Pane ======== */
+.qcTaskBar2 .navPane
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 28px;
+    background-color:transparent;
+}
+
+.qcTaskBar2 .navPane table
+{
+    font-size: 90%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.qcTaskBar2 .navPane td
+{
+    text-align: center;
+    padding-left: 2px;
+}
+
+.qcTaskBar2 .navPane table.singleGroup td
+{
+    text-align: left;
+    padding-left: 12px;
+}
+
+.qcTaskBar2 .navPane .groupLink
+{
+    display: inline-block;
+    height: 16px;
+    cursor: pointer;
+    border-top: 3px transparent solid;
+    -xx-outline: 1px #ffffff solid;
+}
+
+.qcTaskBar2 .navPane .active .groupLink
+{
+    border-top: 3px #3040A0 solid;
+}
+
+.qcTaskBar2 .navPane .editButton
+{
+   margin: 2px;
+   width: 16px;
+   height: 16px;
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABM0lEQVQ4jY3Svy5EQRQG8F92RUS2EFGpVKIQhYJIRKHYarOPsIUoFUK3r4BCJQoRhUrpAcQTiCjYqASNP1khkSjWKu5cxnUvTjI5M5NvvvN950xZcYxgFr24+wVXGAfo4gR9RaBStJ/CUgROcz96Qt7ELgazRMO4DxV3sICrcG6jiT10wt1ylmAoevDXusRYnp3JSEXR6mAi24MSKpJuV8L9O9YxjVU8R/g6aqimfWqihduo0pHvDd4oUFPtwQxGM3Zugoo0rnMsv6eYBg5x7KvLbYwH4LDkL6SVt4KF+WD7MwZwFgHfcIqXjPRGjhpCxf+M8jEo+BFp9Y5k1nHlFraDqm6w+yPWwuO9YGcxIqhLvvMKzjGXR1CS/LB0fLWIIFcylKN9Fw8hw6tkAhfYx1MewQctvG4ZmY9aigAAAABJRU5ErkJggg==');
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+
+.qcTaskBar2 .qcDesignPane .dijitContentPane,
+.qcTaskBar2 .qcDesignPane .toolPanel
+{
+    border: 0px;
+}
+
+.qcTaskBar2 .qcDesignPane .qxDesignerToolbox
+{
+    background-color: #ffffff;
+}
+
+.qcTaskBar2 .qcDesignPane .trashPanel
+{
+    display: none;
+}

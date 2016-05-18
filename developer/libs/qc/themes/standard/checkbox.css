@@ -1,0 +1,65 @@
+.checkboxIcon {
+    background-image: url(images/checkboxes.png);
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    margin-right: 4px;
+    display: inline-block;
+    min-width: 14px;
+    min-height: 14px;
+    -webkit-print-color-adjust: exact;    
+}
+
+.checkboxIcon.squareBlank {
+    background-position: -2px -2px;
+}
+
+.checkboxIcon.squareChecked {
+    background-position: -17px -2px;
+}
+
+.checkboxIcon.squareX {
+    background-position: -32px -2px;
+}
+
+.checkboxIcon.squareRed {
+    background-position: -47px -2px;
+}
+
+.checkboxIcon.squareBlue {
+    background-position: -62px -2px;
+}
+
+.checkboxIcon.squareYOff {
+    background-position: -77px -2px;
+}
+
+.checkboxIcon.squareYOn {
+    background-position: -92px -2px;
+}
+
+.checkboxIcon.squareNOff {
+    background-position: -107px -2px;
+}
+
+.checkboxIcon.squareNOn {
+    background-position: -122px -2px;
+}
+
+.checkboxIcon.roundBlank {
+    background-position: -137px -2px;
+}
+
+.checkboxIcon.roundRed {
+    background-position: -152px -2px;
+}
+
+.checkboxIcon.roundBlue {
+    background-position: -167px -2px;
+}
+
+.checkboxIcon.squareYNBlank {
+    background-position: -182px -2px;
+}
+

@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" Inherits="SDKSite.admin.Admin" Codebehind="Admin.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+	<link rel="Stylesheet" type="text/css" href="admin.css" />
+
+	<asp:ContentPlaceHolder id="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div class="titleBar">
+		<div class="pageTitle">Quippe Admin Console</div>
+		<div class="mainMenu">
+			<a href="../Default.htm">Quippe</a> |
+			<a href="default.aspx">Admin Console</a>
+		</div>
+	</div>
+
+	<div class="content">
+		<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+		</asp:ContentPlaceHolder>
+	</div>
+
+	</form>
+</body>
+</html>

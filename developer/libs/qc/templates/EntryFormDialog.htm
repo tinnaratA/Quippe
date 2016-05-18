@@ -1,0 +1,19 @@
+﻿<div class="dijitDialog qcEntryFormDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title" style="background-color:#ffffff">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span>
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea" data-dojo-attach-point="contentArea" data-dojo-type="dijit/layout/ContentPane" style="padding:0px">
+            <div data-dojo-attach-point="viewPort" style="width:500px;height:300px;overflow:auto;" class="expanded">
+
+            </div>
+        </div>
+        <div class="buttonArea" style="height:30px;text-align:right;padding:4px">
+            <div data-dojo-attach-point="cmdOK" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div>
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

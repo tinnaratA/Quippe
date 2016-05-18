@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "qc/_core", "samples/ReferenceLink", "samples/Application"],
+                function (dom, when, core, ReferenceLink, Application) {
+                    var application = new Application();
+
+                    application.startup();
+                    application.placeAt(dom.byId("applicationContainer"));
+                    application.init();
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            .toolBarPane {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Creating Custom Note Elements</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Creating Custom Note Elements</h1>
+
+            <p>
+                In addition to the standard note elements available in Quippe, you have the ability to implement your own, custom
+                note elements. To do so, create a new class and inherit from the <code>qc/note/_Element</code> and
+                <code>qc/note/_SelectableMixin</code> classes:
+            </p>
+
+            <pre><code class="js">
+    define([
+        "qc/note/_Element",
+        "qc/note/_SelectableMixin",
+        ...
+    ], function(_Element, _SelectableMixin, ...) {
+        return declare("samples.ReferenceLink", [_Element, _SelectableMixin], {
+            ...
+        });
+    });
+            </code></pre>
+
+            <p>
+                While only the <code>_Element</code> class is strictly necessary, the <code>_SelectableMixin</code> class will
+                ensure that you can select the note element in the editor and so is applicable for most situations. In the
+                example below, we are implementing a reference link that can be added to a document. Like most note elements, it
+                will be implemented as a widget with a custom <code>templateString</code>. Whether you use
+                <code>templateString</code> or construct your element manually, make sure that it has the
+                <code>noteElement</code> CSS class attached to its DOM node: when serializing a note to XML, we use this class
+                to determine if a DOM element is in fact a note element that needs to be serialized:
+            </p>
+
+            <pre><code class="js">
+    templateString: '&lt;div class="samplesReferenceLink qcContextMenuContainer qcddSource noteElement" '
+        + ' data-dojo-attach-event="onclick: onClick"&gt;'
+        + '  &lt;div style="font-weight:bold" data-dojo-attach-point="titleNode"&gt;&lt;/div&gt;'
+        + '  &lt;div data-dojo-attach-point="authorNode"&gt;&lt;/div&gt;'
+        + '  &lt;a style="display:block;" data-dojo-attach-point="urlNode" href="" target="QuippeCitation"&gt;&lt;/a&gt;'
+        + '&lt;/div&gt;'
+            </code></pre>
+
+            <p>
+                The <code>elementName</code> property is another property that should be overridden. It's easiest to keep the
+                value of this property consistent with the name of your class, in this case <code>ReferenceLink</code>:
+            </p>
+
+            <pre><code class="js">
+    elementName: 'ReferenceLink'
+            </code></pre>
+
+            <p>
+                Dojo getters and setters should also be implemented for each data point that you intend to serialize into XML.
+                This will allow the serialization engine to automatically set your element properties when a note is loaded
+                from XML:
+            </p>
+
+            <pre><code class="js">
+    _getTitleAttr: function () {
+        return this.titleNode.innerHTML;
+    },
+
+    _setTitleAttr: function (value) {
+        this.titleNode.innerHTML = value;
+    },
+            
+    ...
+            </code></pre>
+
+            <p>
+                The <code>writeNoteAttributes()</code> function should also be overridden: this is responsible for serializing
+                your element's data to XML:
+            </p>
+
+            <pre><code class="js">
+    writeNoteAttributes: function(writer, mode) {
+        writer.attribute('title', this.get('title'));
+        writer.attribute('author', this.get('author'));
+        writer.attribute('url', this.get('url'));
+    }
+            </code></pre>
+
+            <p>
+                If you are simply serializing a series of properties, there is no need to override
+                <code>parseXmlAttributes()</code>: the deserialization logic will simply take each attribute in the XML and call
+                the corresponding setter for it in your class. You'll also want to override the <code>_pgGetProperties()</code>
+                function, which returns the list of properties that should be displayed for the element when you are in design
+                view:
+            </p>
+
+            <pre><code class="js">
+    _pgGetProperties: function () {
+        return [
+            { name: 'title' },
+            { name: 'author', caption: 'Authors' },
+            { name: 'url', caption: 'URL' }
+        ];
+    }
+            </code></pre>
+        
+            <p>
+                If, in design view, you want to display a combo box for a property that displays the list of allowed values, you
+                can add an <code>options</code> item to the hash for that property in the form <code>[first item value=first item
+                text;second item value=second item text;...]</code>. For example: <code>[none=Text Box;single=Drop Down List;
+                multiple=Multiple Choice Drop Down]</code>. Finally, outside of the <code>declare()</code> function, you need to
+                register your class as being an available note element:
+            </p>
+
+            <pre><code class="js">
+    core.settings.noteElementClasses["qc/note/ReferenceLink"] = referenceLink;
+            </code></pre>
+        
+            <p>
+                The string index to <code>noteElementClasses</code> must always start with <code>qc/note/</code> and be followed
+                up with the value that you chose for your <code>elementName</code> property.
+            </p>
+
+            <p>
+                In the example below, you can start a new encounter and a new item, "Add reference...", will appear in the Tools
+                menu. Clicking it will add a references section to the document and prompt you to enter your first reference.
+                Clicking the menu item again will add further references to that section and opening the XML editor will show
+                you the serialized data for those references. You can make manual changes to the XML and click "Apply Changes"
+                to see the references updated in the note.
+            </p>
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 600px"></div>
+        </div>
+    </body>
+</html>

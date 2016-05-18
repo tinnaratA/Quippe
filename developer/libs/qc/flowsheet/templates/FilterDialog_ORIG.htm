@@ -1,0 +1,77 @@
+<div class="qcFlowsheetFilterDialog">
+    <div class="sectionHeading">Current Encounter:</div>
+    <div class="sectionContent">
+
+        <div style="float:left;width:160px;">
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelAll" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="all" />
+                <label for="${id}_optCurrentLevelAll">All</label>
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelFocused" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="visible" />
+                <label for="${id}_optCurrentLevelFocused">Visible</label>            
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelHighlighted" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="highlight" />
+                <label for="${id}_optCurrentLevelHighlighted">Highlighted</label>            
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelSelected" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="selected" />
+                <label for="${id}_optCurrentLevelSelected">Selected</label>            
+            </div>
+        </div>
+        <div style="margin-left:160px;">
+            <div>Exclude:</div>
+            <div class="checkLine">
+                <input name="excludeNonEntered" id="${id}_chkExcludeNonEntered" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-event="onClick:onDataChanged" type="checkbox" />
+                <label for="${id}_chkExcludeNonEntered">non-entered findings</label>
+            </div>
+            <div class="checkLine">
+                <input name="excludeNoHistory" id="${id}_chkExcludeNoHistory" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-event="onClick:onDataChanged" type="checkbox" />
+                <label for="${id}_chkExcludeNoHistory">findings with no history</label>
+            </div>  
+
+        </div>
+
+    </div>
+
+    <div class="sectionHeading" style="clear:both;">Past Encounters:</div>
+    <div class="sectionContent">
+        <div style="float:left;width:160px;">
+            <div class="inputLine">
+                <input id="${id}_optHistoryLevelAll" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="all" />
+                <label for="${id}_optHistoryLevelAll">All</label>   
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optHistoryLevelRelated" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="related" />
+                <label for="${id}_optHistoryLevelRelated">Related</label>   
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optHistoryLevelMatching" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="matching" />
+                <label for="${id}_optHistoryLevelMatching">Matching</label>   
+            </div>
+        </div>
+        <div style="margin-left:160px;">
+            <div>
+                <div>Exclude:</div>
+                <div class="checkLine">
+                    <input name="excludeNoAbnormalHistory" id="${id}_chkExcludeNoAbnormalHistory" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-event="onClick:onDataChanged" type="checkbox" />
+                    <label for="${id}_chkExcludeNoAbnormalHistory">findings with no abnormal history</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;margin-top:12px;margin-left:0px;">
+        <table style="width:100%">
+            <tr>
+                <td style="text-align:left;padding:0px;margin:0px;">
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="saveDefaultButton" data-dojo-attach-event="onClick:onSaveDefault">Save as Default</div>
+                </td>
+                <td style="text-align:right;">
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onApply">Apply</div>
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

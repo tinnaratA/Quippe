@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Medcin UDF EDitor</title>
+    <link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" />    
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" />
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/MedcinTreeDialog.css" />
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/OpenUserContentDialog.css" />
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/MedcinUDFEditor.css" />
+
+    <style type="text/css">
+        html
+        {
+        	height: 100%;
+        }
+        
+        body
+        {
+        	height: 100%;
+        	font-family:Arial, Sans-Serif;
+        	font-size: .80em;
+        	margin: 0px;
+        	padding: 0px;
+        }
+    </style>
+
+    <script type="text/javascript" src="libs/dojo/dojo.js" data-dojo-config="async: true"></script>
+
+	<script type="text/javascript">
+		var app = null;
+		var prevMedcinId = 0;
+
+		require(["qc/MedcinUDFEditor", "dojo/ready", "dojo/when", "dojo/on", "dojo/io-query", "dojo/_base/lang", "dojo/topic"],
+            function (MedcinUDFEditor, ready, when, on, ioQuery, lang, topic) {
+
+			ready(function() {
+				app = new MedcinUDFEditor();
+				app.placeAt(document.body);
+				app.startup();
+			});
+		});
+	</script>
+</head>
+
+<body class="claro">
+</body>
+</html>

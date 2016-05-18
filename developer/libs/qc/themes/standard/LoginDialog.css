@@ -1,0 +1,33 @@
+﻿.qcLoginDialog .dijitTextBox
+{
+	width: 150px;
+}
+
+.qcLoginDialog td
+{
+	padding: 3px 6px 3px 6px;
+}
+
+.qcLoginDialog .errorMessage
+{
+	color: #990000;
+	font-weight: bold;
+	height: 2em;
+	visibility: hidden;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 4px;
+}
+        
+.qcLoginDialog .buttonArea
+{
+    text-align: right;
+    height: auto;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}

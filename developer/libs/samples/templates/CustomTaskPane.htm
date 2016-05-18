@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "qc/_core", "samples/CustomTaskPaneApp"],
+                function(dom, when, core, Application) {
+                    var application = new Application();
+
+                    application.startup();
+                    application.placeAt(dom.byId("applicationContainer"));
+
+                    application.init();
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            .toolBarPane {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Creating a Custom Task Pane</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Creating a Custom Task Pane</h1>
+
+            <p>
+                Custom task panes can easily be created and added to the right-hand task bar. To create a custom task pane
+                widget, you'll be inheriting from <code>qc/TaskPane</code>:
+            </p>
+
+            <pre><code class="js">
+    define([
+        "qc/TaskPane",
+        ...
+    ], function (TaskPane) {
+        var typeDef = declare("samples.FindingDetailsTaskPane", [TaskPane], {
+            ...
+        });
+
+        return typeDef;
+    });
+            </code></pre>
+
+            <p>
+                Then override the various lifecycle functions for the <code>TaskPane</code> widget:
+            </p>
+
+            <ul>
+                <li>
+                    <code>startup()</code> - This is the standard widget lifecycle function that is responsible for creating the
+                    various sub-widgets and DOM content that is to be housed within the task pane.
+                </li>
+                <li>
+                    <code>_onEnabled()</code> - This function is called when the task pane is enabled: this occurs when the view
+                    mode is switched to one that the widget supports (by default, just entry mode; to override this, override
+                    the <code>modes</code> property and add items to the array). Traditionally this is where you wire up topic
+                    and DOM event subscriptions to react to activity within the note and update the task pane's content
+                    accordingly.
+                </li>
+                <li>
+                    <code>_onDisabled()</code> - Conversely, this function is called when the view mode is switched to one that
+                    the widget does not support. Here you should clear out any topic or DOM event subscriptions that were
+                    created in <code>_onEnabled()</code>.
+                </li>
+            </ul>
+
+            <p>
+                In our example, we're going to be creating a task pane that displays the properties for the selected finding and
+                allows you to edit them. So, in <code>startup()</code>, we're going to create a <code>PropertyGrid</code>:
+            </p>
+
+            <pre><code class="js">
+    startup: function () {
+        if (!this._started) {
+            this.propertyGrid = new PropertyGrid({ sortProperties: false }, this.containerNode);
+            this.propertyGrid.propertyManager = this;
+            this.propertyGrid.startup();
+            
+            this.set('open', false);
+            this.inherited(arguments);
+        }
+    }
+            </code></pre>
+
+            <p>
+                While it isn't applicable for this particular example, if you want to register your task pane as a drag-and-drop
+                target, you can do so by adding the <code>qcddTarget</code> CSS class to your task pane's domNode property:
+                <code>domClass.add(this.domNode, "qcddTarget")</code>. You can also have your task pane display a context menu
+                when the user right-clicks in it by adding the <code>qcContextMenuContainer</code> CSS class. Then, when the user
+                right-clicks, the <code>getContextActions()</code> function is invoked, which you can override:
+            </p>
+
+            <pre><code class="js">
+    getContextActions: function (item, widget, targetNode) {
+        var actions = [];
+        actions.push({
+            label: core.getI18n('tbRename'),
+            icon: 'pencil',
+            beginGroup: true,
+            onClick: lang.hitch(this, function () {
+                this.listView.setSelectedItem(widget);
+                this.listView.startLabelEdit();
+            })
+        });
+        actions.push({
+            label: core.getI18n('deleteItem'),
+            icon: 'delete',
+            beginGroup: true,
+            onClick: lang.hitch(this, function () {
+                this.removeFavorite(item);
+            })
+        });
+        return actions;
+    }
+            </code></pre>
+
+            <p>
+                In the overridden <code>_onEnabled()</code> function, we're going to be subscribing to the
+                <code>/noteEditor/SelectionChanged</code> and <code>/qc/FindingDetailsUpdated</code> topics so that we can react
+                to events in the note editor:
+            </p>
+
+            <pre><code class="js">
+    _onEnabled: function () {
+        if (!this.subscriptions) {
+            this.subscriptions = [
+                topic.subscribe("/noteEditor/SelectionChanged", lang.hitch(this, this.onFindingSelected)),
+                topic.subscribe("/qc/FindingDetailsUpdated", lang.hitch(this, this.refreshGrid))
+            ];
+        };
+    }
+            </code></pre>
+
+            <p>
+                In the overridden <code>_onDisabled()</code> function, we'll remove our subscriptions to those topics:
+            </p>
+
+            <pre><code class="js">
+    _onDisabled: function () {
+        if (this.subscriptions) {
+            array.forEach(this.subscriptions, core.unsubscribe);
+            this.subscriptions = null;
+        }
+    }
+            </code></pre>
+
+            <p>
+                The rest of the code in the task pane is specific to the property grid and you can check it out by clicking on
+                the "View Source" button above.
+            </p>
+
+
+            <p>
+                Now that we have our task pane implemented, we'll subscribe to the /qc/TaskBarLoaded topic to register our task pane
+                with the taskbar.  We'll do this outside of the declare statement before returning the declared type definition, so 
+                we will register the task pane once the task bar is loaded, then remove the subscription.
+            </p>
+            <pre><code class="js">
+    var hSubscribe = topic.subscribe('/qc/TaskBarLoaded', function (taskBar) {
+        hSubscribe.remove();
+        var detailsPane = new typeDef();
+        taskBar.registerTaskPane(detailsPane)
+    });                
+                </code></pre>
+
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 800px"></div>
+        </div>
+    </body>
+</html>

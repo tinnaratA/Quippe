@@ -1,0 +1,31 @@
+﻿.qcUploadFamilyHistoryDialog .qcCheckListItem.disabled {
+    background-color: #E9E9E9;
+}
+
+.qcUploadFamilyHistoryDialog .qcCheckListItem .dijitCheckBox {
+    margin-right: 5px;
+}
+
+.qcUploadFamilyHistoryDialog .contentArea {
+    width: 600px;
+    height: 400px;
+}
+
+.qcUploadFamilyHistoryDialog .buttonArea {
+    height: 30px; 
+    text-align: right;
+    padding: 4px;
+}
+
+.qcUploadFamilyHistoryDialog .selectFindingsPanel {
+    height: 400px;
+    width: 600px;
+}
+
+.qcUploadFamilyHistoryDialog .dijitDialogPaneContent {
+    padding: 0px !important;
+}
+
+.qcUploadFamilyHistoryDialog .buttonArea, .qcUploadFamilyHistoryDialog .uploadFilePanel {
+    padding: 10px 8px;
+}

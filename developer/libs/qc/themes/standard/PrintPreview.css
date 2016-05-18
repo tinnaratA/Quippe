@@ -1,0 +1,80 @@
+﻿@media screen 
+{
+	.qcPrintPreview
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: #eeeeee;
+		z-index: 999999;
+		display: none;
+		overflow: auto;
+	}
+
+	.qcPrintPreview .buttonBar
+	{
+		background-color: #eeeeee;
+		text-align: left;
+		padding-top: 12px;
+		padding-left: 32px;
+	}
+	
+	.qcPrintPreview .background
+	{
+		background-color: #eeeeee;
+		padding: 12px;
+		text-align: center;
+		overflow: auto;
+	}
+	
+	.qcPrintPreview .page
+	{
+		width: 8.5in;
+		min-height: 11.0in;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding: 0.5in;
+		background-color: #ffffff;
+		border: 1px #000000 solid;
+		text-align: left;
+	}
+}
+
+@media print 
+{
+	@page
+	{
+		margin: 0.5in;
+	}
+	
+	.qcPrintPreview
+	{
+		margin:0px;
+		padding:0px;
+		overflow: visible;
+		z-index: 9999;
+	}
+
+	.qcPrintPreview .buttonBar
+	{
+		display:none;
+	}
+	
+	.qcPrintPreview .background
+	{
+		background-color: #ffffff;
+		margin:0px;		
+		padding: 0px;
+		text-align: left;
+	}
+	
+	.qcPrintPreview .page
+	{
+		margin: 0px;
+		padding: 0px;
+		background-color: #ffffff;
+		border: 0px;
+	}	
+}

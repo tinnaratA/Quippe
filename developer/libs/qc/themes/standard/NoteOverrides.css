@@ -1,0 +1,90 @@
+﻿
+/*
+.noteElement.selected
+{
+	background-image: none !important;
+	background-color: transparent !important;
+	border-color:  transparent !important;
+	outline-color: #ffa64c;
+	outline-style: solid;
+	outline-width: 1px;	
+}
+*/
+.noteElement.selected
+{
+    outline: 1px #ffa64c solid;
+}
+
+
+.design .freeText
+{
+	background-color: #ffffff;
+	cursor: pointer;
+	outline-color: #999999;
+	outline-style: dashed;
+	outline-width: 1px;	
+}
+.design .freeText.selected
+{
+	outline-color: #ffa64c;
+	outline-style: solid;
+}
+
+.freeText.showOutline
+{
+	outline-color: #999999;
+	outline-style: dashed;
+	outline-width: 1px;		
+}
+
+/*
+.design .noteElement.selected
+{
+	outline-color: rgba(255,128,0,.5);
+	outline-style: dashed;
+	outline-width: 1px;
+}
+*/
+
+/*.noteElement.highlight
+{
+	background-image: none !important;
+	border-color:  transparent !important;
+	background-color: #FFF799 !important;
+}*/
+
+       
+.qcNoteEditor .chapter .chapterHeader .innerLabel,
+.qcNoteEditor .section .sectionHeader .innerLabel,
+.qcNoteEditor .group .groupHeader .innerLabel
+{
+    background-color:transparent;
+    border:solid 1px transparent;
+	background-image: none;
+	vertical-align: middle;
+}
+
+.qcNoteEditor .chapter.selected .chapterHeader .innerLabel,
+.qcNoteEditor .section.selected .sectionHeader .innerLabel,
+.qcNoteEditor .group.selected .groupHeader .innerLabel
+{
+    background-color:transparent;
+    border:solid 1px transparent;
+	background-image: none;  
+}
+
+.qcNoteEditor .chapter.selected .chapterContent,
+.qcNoteEditor .section.selected .sectionContent,
+.qcNoteEditor .group.selected .groupContent
+{
+	background-color: transparent;
+}
+
+.qcNoteEditor .note .noteLabel
+{
+	font-weight:normal;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	margin: 2px 3px 2px 3px;	
+}

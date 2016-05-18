@@ -1,0 +1,158 @@
+﻿.qcListView
+{
+    overflow: auto;
+}
+
+.qcListView .containerNode
+{
+    padding: 0px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 2px;
+    font-size: 100%;
+}
+
+.qcListViewItem
+{
+    cursor: pointer;    
+}
+
+.qcListViewItem
+{
+    background-color: transparent;
+}
+
+.qcListViewItem.hidden
+{
+	display: none;
+}
+
+.qcListViewItem:hover
+{
+	background-color:#d8edff;
+}
+        
+.qcListViewItem.selected
+{
+    background-color: #abd6ff;
+} 
+
+.qcListViewItem td
+{
+    border: 1px solid transparent;
+}
+
+.qcListViewItem:hover td
+{
+    border-color:#c3e2fd;
+}
+
+.qcListViewItem.selected td
+{
+    border-color: #769dc0;  
+}
+
+
+.qcListViewItem .iconCell
+{
+    width: 16px;
+    vertical-align: top;
+    text-align: left;
+    padding: 3px 4px 0px 0px;
+    border-right: 0px;
+}
+
+.qcListViewItem .textCell
+{
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+    padding: 3px 2px 0px 0px;
+    border-left: 0px;
+}
+
+.qcListViewItem .textContent
+{
+    position: relative;
+}
+
+.qcListViewItem .icon
+{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.qcListViewItem .icon.loading
+{
+	background-image: url('images/spinner.gif');
+	background-repeat: no-repeat;
+}
+    
+.qcListViewItem .caption
+{
+}
+    
+.qcListViewItem .description
+{
+    display: none;
+}
+
+.qcListViewItem .subItem
+{
+    display: none;
+}
+
+
+.qcListViewItem .actionButton
+{
+	display:none;
+	position: absolute;
+	right: 3px;
+	top: 1px;
+}
+
+.qcListViewItem:hover .actionButton
+{
+	display: block;
+}
+
+.qcListViewGroup .textCell
+{
+    font-weight: bold;
+}
+
+/* === viewMode simple ===*/
+.simple .qcListViewItem .iconCell
+{
+    width: 3px;
+}
+
+.simple .qcListViewItem .icon
+{
+    display: none;
+}
+
+.simple .qcListViewItem .textCell
+{
+    padding: 1px 2px 0px 2px;
+}
+
+/* === viewMode tile ===*/
+.tile .qcListViewItem .caption
+{
+    font-weight: bold;
+}
+    
+.tile .qcListViewItem .description
+{
+    display: block;
+}
+
+/* === viewMode detail ===*/
+.detail .qcListViewItem .subItem
+{
+    display: table-cell;
+}

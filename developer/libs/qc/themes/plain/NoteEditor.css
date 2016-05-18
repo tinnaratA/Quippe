@@ -1,0 +1,87 @@
+﻿.noteEditor
+{
+	font-family: Calibri, Arial, Sans-Serif;
+	font-size: 1.2em;
+}
+
+.noteEditor .section .heading
+{
+	color: #000000;
+	font-weight: normal;
+	font-size: 150%;
+}
+
+.noteEditor .codeGroup
+{
+	margin-left: 24px;
+}
+
+.noteEditor .codeGroup .heading
+{
+	color: #000000;
+	font-weight: normal;
+	font-size: 125%;
+}
+
+.noteEditor .titleGroup .heading
+{
+	color: #000000;
+	font-weight: normal;
+	font-size: 110%;
+}
+
+.noteEditor .finding.noResult
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #999999;
+}
+
+.noteEditor .finding.pos
+{
+	font-weight: bold;
+	font-style: normal;
+	color: #000000;
+}
+
+.noteEditor .finding.neg
+{
+	font-weight: normal;
+	font-style: normal;
+	color: #000000;
+}
+
+.noteEditor .finding.hasHistory
+{
+	text-decoration: underline;
+}
+
+.noteEditor .freeText 
+{
+	margin-top: 4px;
+	border: 1px #ffffff solid;
+	background-color: #ffffff;
+	min-height: 2em;
+}
+
+.noteEditor .freeText:hover
+{
+	margin-top: 4px;
+	border: 1px #999999 solid;
+	background-color: #ffffff;
+}
+
+.noteEditor .taggedFinding
+{
+	text-decoration: underline;
+}
+
+.noteEditor .taggedFinding.pos
+{
+	color: #000000;
+}
+
+.noteEditor .taggedFinding.neg
+{
+	color: #000000;
+}

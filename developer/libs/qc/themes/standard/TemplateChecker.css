@@ -1,0 +1,130 @@
+﻿.qcTemplateChecker
+{
+    font-size: 90%;
+    overflow: auto;
+}
+
+.qcTemplateChecker .noIssues
+{
+    margin: 20px;
+}
+
+.qcTemplateChecker table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.qcTemplateChecker .header td,
+.qcTemplateChecker .header.odd td
+{
+    background-color: #eeeeee;
+    font-weight: bold;
+    border-top: 0px;
+    cursor: pointer;
+}
+
+.qcTemplateChecker .header td.sort .innerLabel:after
+{
+    content: "\25be";
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.qcTemplateChecker .header td.sort.desc .innerLabel:after
+{
+    content: "\25b4";
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.qcTemplateChecker tr
+{
+    background-color: #ffffff;
+}  
+        
+.qcTemplateChecker tr.odd
+{
+    background-color: #f8f8e0;
+}  
+
+.qcTemplateChecker tr.selected,    
+.qcTemplateChecker tr.odd.selected
+{
+    background-color: #abffd6;
+}
+   
+.qcTemplateChecker td
+{
+    border: 1px #999999 solid;
+    padding: 4px;
+}
+
+.qcTemplateChecker td.level
+{
+    border-left: 0px;
+    width: 18px;
+    border-right: 0px;
+}
+
+.qcTemplateChecker td.level .icon
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.qcTemplateChecker td.type
+{
+    border-left: 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.qcTemplateChecker td.description
+{
+    width: 99%;
+}
+
+.qcTemplateChecker td.elementName
+{
+    border-right: 0px;
+    white-space: nowrap;
+    max-width: 200px;
+    text-overflow: ellipsis;
+}
+
+.qcTemplateChecker .noteLink
+{
+    color: #0000ff;
+    cursor: pointer;
+}
+
+.qcTemplateChecker .noteLink:hover
+{
+    color: #ff0000;
+}
+
+
+.qcTemplateChecker .stats
+{
+    margin: 12px;
+}
+
+.qcTemplateChecker .stats .header
+{
+    font-weight: bold;
+}
+
+.qcTemplateChecker .stats table
+{
+    width: auto;
+}
+
+.qcTemplateChecker .stats td
+{
+    padding: 4px;
+}
+
+

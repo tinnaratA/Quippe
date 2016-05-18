@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" href="libs/dijit/themes/claro/claro.css">
+    <style>
+    
+    @media print {
+      * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+      a, a:visited { text-decoration: underline; }
+      a[href]:after { content: " (" attr(href) ")"; }
+      abbr[title]:after { content: " (" attr(title) ")"; }
+      .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+      pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+      thead { display: table-header-group; } /* h5bp.com/t */
+      tr, img { page-break-inside: avoid; }
+      img { max-width: 100% !important; }
+      @page { margin: 0.5cm; }
+      p, h2, h3 { orphans: 3; widows: 3; }
+      h2, h3 { page-break-after: avoid; }
+      .bcHideableDemo
+      {
+        display:none;    
+      }
+      
+      #wristbandFloat
+      {
+        border-width:0px;
+        border-style:none;
+        border-color:transparent;
+      }
+    }
+    
+    </style>
+
+    <script type="text/javascript" src="libs/dojo/dojo.js" data-dojo-config="parseOnLoad: true, async: true"></script>
+
+	<script type="text/javascript">
+		require(["dojo/parser", "Quippe/Application", "dojo/request/iframe", "qc/_core", "dojo/_base/json", "dojo/dom", "dojo/on", "Quippe/Barcode", "dijit/form/TextBox", "dijit/form/Select", "dojo/query", "dojo/domReady!"],
+			function(parser, Application, iframe, _core, json, dom, on, Barcode, TextBox, Select, query) {
+				var qbc = new Barcode();
+
+				new TextBox({
+					name: "actionLabel",
+					class: "bcHideableDemo",
+					readOnly: true,
+					value: "Choose barcode demo action:",
+					style: "color:black;border-style:none"
+				}).placeAt(dom.byId("actionChooser"), "first");
+
+				var sel = new Select({
+					name: "select2",
+					class: "bcHideableDemo",
+					options: [
+						{ label: "Barcode Reader", value: "0", selected: true },
+						{ label: "Barcode Generator", value: "1" },
+						{ label: "Barcode Wristband Maker", value: "2" }
+					]
+				});
+
+				on(sel, 'change', function() { qbc.ChangeMode(query("input[name=select2]")[0].value); });
+				sel.placeAt(dom.byId("actionChooser"), "last");
+				qbc.ChangeMode(0);
+			});
+	</script>
+	
+    <title>Quippe Barcode Demo Page</title>
+</head>
+
+<body id="body">
+	<div id="actionChooser" class="bcHideableDemo"></div>
+</body>
+
+</html>

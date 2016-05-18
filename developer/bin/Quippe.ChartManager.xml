@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.ChartManager
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.ChartManager.SetCacheExpirationHandler.ExpirationType">
+	<summary>
+ Method by which cache entries expire 
+ </summary>
+</member><member name="P:Quippe.ChartManager.SetCacheExpirationHandler.Expiration">
+	<summary>
+ Cache entry expiration length in minutes
+ </summary>
+</member><member name="P:Quippe.ChartManager.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.ChartManager.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.ChartManager.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Quippe.ChartManager.ChartCache.inner.ExpirationType">
+	<summary>
+ Type of expiration to apply to items added to the cache, either absolute or sliding.
+ </summary>
+	<remarks>Changes to expiration type apply only to future items added to the cache and not to
+ items already in the cache.</remarks>
+</member><member name="P:Quippe.ChartManager.ChartCache.inner.Expiration">
+	<summary>
+ Expiration length in minutes of items added to the cache.
+ </summary>
+	<remarks>Changes to expiration length apply only to future items added to the cache and not to
+ items already in the cache.</remarks>
+</member><member name="M:Quippe.ChartManager.ChartCache.inner.LoadChart(System.String,System.Object,System.String)">
+	<summary>
+ Loads the specified chart in the cache indexed by the specified key, provided the key is not already used.
+ </summary>
+	<param name="Key">The key by which to retrieve the cached chart.</param>
+	<param name="Chart">The chart to cache.</param>
+	<param name="DependencyName">Name associated with a change dependency monitor, which can be signaled to
+ remove the cached item, e.g., a category name or domain/region name, such as "Patient/admin".</param>
+	<remarks>If the key is already used in the cache, the existing indexed item in the cache is not replaced,
+ and the chart specified in the parameters is not added to the cache. The specified chart is only added
+ if the key is not already used. To replace an existing chart and reuse a keu, remove the existing chart first.</remarks>
+</member><member name="M:Quippe.ChartManager.ChartCache.LoadChart(System.String,Quippe.ChartManager.CachedChart,System.String)">
+	<summary>
+ Loads the specified chart in the cache, indexed by the specified key, and using the specified dependency name for monitoring.
+ </summary>
+	<param name="Key">Unique key by which to retrieve the cached chart.</param>
+	<param name="Chart">The chart to cache.</param>
+	<param name="DependencyName">A name used for dependency monitoring.</param>
+	<remarks>
+		<para>Throws an ArgumentNullException if the Key or Chart is Nothing.</para>
+		<para>A dependency monitor with the specified dependency name will be added to the cache with the chart. The monitor 
+ can be signaled (using the dependency name) to automatically removed the chart.</para>
+	</remarks>
+</member><member name="P:Quippe.ChartManager.ChartManagerService.Region">
+	<summary>
+ An optional category used to group patient data when caching patient charts.
+ </summary>
+	<remarks>
+		<para>If specified, the Region is prepended to the patient ID to form the cache key for storing or retrieving
+ patient charts from the cache. This allows multiple clients using different service instances with patient data dependent
+ on username (as in the demo services) to maintain control over how patient data is cached. For instance, Region could be used to 
+ distinguish patient data by user name (e.g., "[domain]/[username]/[patientId]") in service implementations that store patient
+ data by user name, as is the case in the Quippe demo services. If Region is empty the cache key is of the form
+ "[domain]/[patientId]"</para>
+	</remarks>
+</member>
+</members>
+</doc>

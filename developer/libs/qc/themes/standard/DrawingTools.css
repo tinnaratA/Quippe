@@ -1,0 +1,139 @@
+.drawingTool .blank {
+    background-image: url(images/DrawingTools.png);
+    background-position: -2px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .pointer {
+    background-image: url(images/DrawingTools.png);
+    background-position: -20px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .text {
+    background-image: url(images/DrawingTools.png);
+    background-position: -38px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .palette {
+    background-image: url(images/DrawingTools.png);
+    background-position: -56px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .pen {
+    background-image: url(images/DrawingTools.png);
+    background-position: -74px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .linewidth {
+    background-image: url(images/DrawingTools.png);
+    background-position: -92px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .delete {
+    background-image: url(images/DrawingTools.png);
+    background-position: -110px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .line0 {
+    background-image: url(images/DrawingTools.png);
+    background-position: -128px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .line1 {
+    background-image: url(images/DrawingTools.png);
+    background-position: -146px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .line2 {
+    background-image: url(images/DrawingTools.png);
+    background-position: -164px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .flipHorizontal {
+    background-image: url(images/DrawingTools.png);
+    background-position: -182px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .flipVertical {
+    background-image: url(images/DrawingTools.png);
+    background-position: -200px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .rotateLeft {
+    background-image: url(images/DrawingTools.png);
+    background-position: -218px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .rotateRight {
+    background-image: url(images/DrawingTools.png);
+    background-position: -236px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .crop {
+    background-image: url(images/DrawingTools.png);
+    background-position: -254px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .resize {
+    background-image: url(images/DrawingTools.png);
+    background-position: -272px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .undo {
+    background-image: url(images/DrawingTools.png);
+    background-position: -290px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .selectAll {
+    background-image: url(images/DrawingTools.png);
+    background-position: -308px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .deleteSelection {
+    background-image: url(images/DrawingTools.png);
+    background-position: -344px -2px;
+    width: 16px;
+    height: 16px;
+}
+
+.drawingTool .deleteImage {
+    background-image: url(images/DrawingTools.png);
+    background-position: -326px -2px;
+    width: 16px;
+    height: 16px;
+}

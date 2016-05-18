@@ -1,0 +1,56 @@
+﻿.qcNewEncounterDialog
+{
+	width: 326px;
+	height: 300px;
+}
+
+.qcNewEncounterDialog .txtPatientSearch
+{
+	width: 300px;
+}    
+
+.qcNewEncounterDialog .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;
+}
+        
+.qcNewEncounterDialog .contentArea
+{
+    height: 220px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    margin: 0px;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.qcNewEncounterDialog .section
+{
+	margin-bottom: 16px;
+}
+
+.qcNewEncounterDialog .section .header
+{
+	font-weight: bold;
+}
+
+.errorMessage
+{
+	color: #ff0000;
+	height: 2em;
+	visibility: hidden;
+}
+        
+.qcNewEncounterDialog .buttonArea
+{
+    text-align: right;
+    height: 60px;
+    width: 100%;
+    padding-bottom: 6px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}

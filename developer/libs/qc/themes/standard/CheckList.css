@@ -1,0 +1,15 @@
+﻿.qcCheckList
+{
+	background-color: #ffffff;
+    overflow: auto;
+}
+
+.qcCheckListItem
+{
+	margin: 4px;
+}
+
+.qcCheckListItem .subItem
+{
+	margin-left: 16px;
+}

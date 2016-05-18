@@ -1,0 +1,145 @@
+﻿.qcLibraryManagerDialog
+{
+    width: 760px;
+    height: 600px;
+}
+
+.qcLibraryManagerDialog .dijitDialogPaneContent
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.qcLibraryManagerDialog .qcDataSheet .data td
+{
+	font-family: Consolas, Courier New, Monospace;
+	font-size: 10pt;
+}
+
+.qcLibraryManagerDialog .qcDataSheet .propertyNameCell
+{
+	width: 140px;
+}
+
+.qcLibraryManagerDialog .qcDataSheet .valueCell
+{
+}
+
+.qcLibraryManagerDialog .mainPanel
+{
+    width: 760px;
+    height: 559px;
+    margin: 0px;
+    padding: 0px;
+}
+    
+.qcLibraryManagerDialog .topPane
+{
+    padding: 0px;
+    margin: 0px;
+}
+    
+.qcLibraryManagerDialog .navPane 
+{
+    padding: 0px;
+    background-color: #ffffff;
+    border-right: 1px #999999 solid;
+}
+    
+.qcLibraryManagerDialog .navTree
+{
+    width: 100%;
+    height: 100%;
+}
+    
+.qcLibraryManagerDialog .folderHeading
+{
+    font-size: 120%;
+    font-weight: bold;
+}
+       
+        
+.qcLibraryManagerDialog .buttonArea
+{
+    text-align: right;
+    height: 43px;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px #999999 solid;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.qcLibraryManagerDialog .buttonArea .dijitButton
+{
+    margin-top: 12px;
+	padding-right: 16px;
+}
+
+.qcLibraryManagerDialog .buttonArea .dijitButtonNode
+{
+	width: 120px;
+}       
+
+.qcLibraryManagerDialog .heading {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.qcLibraryManagerDialog .properties
+{
+	display: table;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 100%
+}
+
+.qcLibraryManagerDialog .item
+{
+	display: table-row;
+	padding: 4px;
+}
+
+.qcLibraryManagerDialog .qcDataSheet tr.data.error td, .qcLibraryManagerDialog .qcDataSheet tr.data.error td input {
+    background-color: #FFD6D8;
+}
+
+.qcLibraryManagerDialog .qcDataSheet tr.data.error td.rowSelector {
+    background-color: #d46464 !important;
+}
+
+.qcLibraryManagerDialog .itemLabel
+{
+	display: table-cell;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+}
+
+.qcLibraryManagerDialog .itemValue
+{
+	display: table-cell;
+	padding: 4px;
+}
+
+.qcLibraryManagerDialog .qcSearchBox
+{
+    width: 250px;
+    height: 19px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    border: 1px solid gray;
+}
+
+.qcLibraryManagerDialog .qcSearchBox .notFoundIndicator {
+    top: 3px;
+    right: 3px;
+}
+
+.qcLibraryManagerDialog .qcSearchBox .dijitPlaceHolder {
+    padding-top: 2px !important;
+}
+
+.libraryManagerSearchResultList {
+    width: 400px !important;   
+}

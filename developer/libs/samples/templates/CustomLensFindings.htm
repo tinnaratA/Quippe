@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/Quippe/themes/Application.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/ClinicalLens/themes/Application.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "samples/CustomLensFindingsApp"],
+                function(dom, when, Application) {
+                    var application = new Application();
+
+                    when(application.init(), function () {
+                        application.placeAt(dom.byId("applicationContainer"));
+                        application.startup();
+                    });
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            body {
+                overflow-y: scroll !important;
+            }
+
+            .pos {
+                color: red;
+            }
+
+            .neg {
+                color: blue;
+            }
+        </style>
+
+        <title>Customizing the Appearance of Findings</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Customizing the Appearance of Findings</h1>
+
+            <p>
+                When finding entries from the patient's chart are being added to the various category panes, you have the ability
+                to customize the appearance of the resulting DOM nodes. As an example, we will be color-coding the entries in the
+                "ROS & Exam" section to make it easier to tell apart positive/abnormal findings from those that are negative/
+                normal and we will be adding sub-groups to the "History" category. To do so, you will first need to override the
+                <code>addEntryToContainer()</code> method:
+            </p>
+
+            <pre><code class="js">
+    addEntryToContainer: function (entry, findingElement, container, sortType) {
+        var entryNode = this.inherited(arguments);
+
+        // For items in the "ROS & Exam" category, we are going to color-code positive vs. negative findings to make them
+        // easier to tell apart
+        if (entry.category == 'ROS & Exam') {
+            domClass.add(entryNode, entry.resultCode == 'A' ? 'pos' : 'neg');
+        }
+
+        return entryNode;
+    }
+            </code></pre>
+
+            <p>
+                For simple customizations like the example above, the easiest approach is to call the base version of the method
+                via <code>this.inherited(arguments)</code> to let the application build the DOM node structure for you and then
+                apply your customizations to the returned node before passing it on to the calling function. The returned DOM
+                node will have a structure like:
+            </p>
+
+            <pre><code class="xml">
+    &lt;div class="codedFinding medcinId[MEDCIN ID of the finding] specialty[specialty code for the finding]"
+        data-node-key="[MEDCIN hierarchy node key of the finding]"
+        data-encounter-time="[time of the encounter for this entry]"&gt;
+        &lt;span class="entryText"&gt;[transcribed text for the entry]&lt;/span&gt;
+        &lt;span class="entryDate"&gt;[formatted encounter date for the entry]&lt;/span&gt;
+    &lt;/div&gt;
+            </code></pre>
+
+            <p>
+                You can add CSS classes, modify HTML attributes, override text, etc. directly on the returned DOM nodes if that
+                covers the extent of your customizations. However, if you need more control over the placement of the entry within
+                the container itself, you may need to override other methods for that additional functionality. For example, the
+                <code>getSubContainerForEntry()</code> method is responsible for creating the sub-groups under the "Lab &amp;
+                Imaging" and "ROS &amp; Exam" categories. If you wanted to add sub-groups to the "History" category for personal
+                history and family history, you could do the following:
+            </p>
+
+            <pre><code class="js">
+    getSubContainerForEntry: function(entry, container) {
+        if (entry.category == 'History') {
+            var subGroupClass = (entry.prefix || '').substring(0, 1) == 'F' ? 
+                'familyHistoryContainer' : 
+                'personalHistoryContainer';
+            var subGroupTitle = (entry.prefix || '').substring(0, 1) == 'F' ? 'Family History' : 'Personal History';
+            var subGroupPlacement = (entry.prefix || '').substring(0, 1) == 'F' ? 'last' : 'first';
+            var actualContainer = query('.' + subGroupClass, container);
+
+            if (actualContainer.length > 0) {
+                actualContainer = actualContainer[0];
+            }
+
+            else {
+                actualContainer = domConstruct.create('div', {
+                    innerHTML: '&lt;div class="groupHeader"&gt;' + subGroupTitle + '&lt;/div&gt;',
+                    className: subGroupClass + ' groupContainer'
+                });
+
+                if (container.firstChild && domClass.contains(container.firstChild, 'dateHeader') &&
+                    subGroupPlacement == 'first') {
+                    domConstruct.place(actualContainer, container.firstChild, 'after');
+                }
+
+                else {
+                    domConstruct.place(actualContainer, container, subGroupPlacement);
+                }
+            }
+
+            return actualContainer;
+        }
+
+        return this.inherited(arguments);
+    }
+            </code></pre>
+
+            <p>
+                Another point of extension is the <code>placeEntryInContainer()</code> method, which is responsible for sorting
+                entries within the group or category. By default, the entries are sorted by descending date on the summary
+                tab and by MEDCIN hierarchy node key on the entire chart tab. If you wanted to, for instance, rank the active
+                problems by severity using some proprietary logic, you would need to override this method to do so.
+            </p>
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 800px"></div>
+        </div>
+    </body>
+</html>

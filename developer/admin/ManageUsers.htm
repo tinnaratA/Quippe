@@ -1,0 +1,150 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Manage Users</title>
+    <link rel="Stylesheet" type="text/css" href="admin.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/dijit/themes/claro/claro.css" />
+    <link rel="icon" type="image/png" href="../images/QuippeIconGloss.png" />
+
+    <script type="text/javascript" src="../libs/Quippe/DojoBootstrap.js"></script>
+
+    <script type="text/javascript">
+            var loadFailure = function (message) {
+                document.getElementById("lblMessage").innerHTML = message || "An unknown error has occurred";
+            };
+
+            var loadApplication = function () {
+                require(["dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/request", "qc/_core", "dojo/domReady!"], function (lang, dom, domAttr, domClass, domConstruct, domStyle, on, request, core) {
+                    core.settings.baseServiceURL = "../" + core.settings.baseServiceURL;
+
+                    var loadUsersGrid = function () {
+                        return request(core.serviceURL('Quippe/Security/GetUsers?DataFormat=JSON&Search=' + encodeURIComponent(dom.byId("txtQuery").value)), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "GET"
+                        }).then(function (data) {
+                            var usersGrid = dom.byId("usersGrid");
+
+                            while (usersGrid.rows.length > 1) {
+                                usersGrid.deleteRow(1);
+                            }
+
+                            if (data.users) {
+                                for (var i = 0; i < data.users.length; i++) {
+                                    var row = usersGrid.insertRow(i + 1);
+
+                                    var cell = row.insertCell(0);
+                                    domConstruct.create("a", {
+                                        href: "AddEditUser.htm?UserName=" + data.users[i].userName,
+                                        innerHTML: data.users[i].userName
+                                    }, cell);
+
+                                    cell = row.insertCell(1);
+                                    cell.innerHTML = data.users[i].email;
+
+                                    cell = row.insertCell(2);
+                                    cell.innerHTML = data.users[i].firstName + ' ' + data.users[i].lastName;
+
+                                    cell = row.insertCell(3);
+                                    cell.innerHTML = data.users[i].organization;
+
+                                    cell = row.insertCell(4);
+                                    cell.innerHTML = new Date(parseInt(data.users[i].registeredDate.substr(6))).toLocaleDateString();
+
+                                    cell = row.insertCell(5);
+                                    cell.innerHTML = data.users[i].approved;
+
+                                    cell = row.insertCell(6);
+                                    cell.innerHTML = data.users[i].comment;
+
+                                    domClass.add(row, i % 2 == 0 ? "even" : "odd");
+                                }
+                            }
+
+                            domStyle.set(dom.byId("usersGridContainer"), "display", "block");
+                        }, function (message) {
+                            loadFailure("Error getting users - " + (message || "An unknown error has occurred"));
+                        });
+                    }
+
+                    on(dom.byId("cmdSearch"), "click", function () {
+                        loadUsersGrid();
+                    });
+
+                    on(dom.byId("cmdAddUser"), "click", function() {
+                        window.location.href = "AddEditUser.htm";
+                    });
+
+                    domStyle.set(dom.byId("container"), "display", "block");
+                });
+            };
+
+            loadDojo(loadApplication, loadFailure);
+    </script>
+
+    <style type="text/css">
+        #lblMessage {
+            color: firebrick;
+            font-weight: bold;
+        }
+
+        tr.header {
+            color: White;
+            background-color: #6B696B;
+            font-weight: bold;
+        }
+
+        tr.even {
+            background-color: white;
+        }
+
+        tr.odd {
+            background-color: #F7F7DE;
+        }
+
+        #usersGrid {
+            color: Black;
+            background-color: White;
+            border-color: #DEDFDE;
+            border-width: 1px;
+            border-style: None;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body class="claro">
+    <div id="container" style="display: none">
+        <div class="titleBar">
+            <div class="pageTitle">Quippe Admin Console</div>
+            <div class="mainMenu">
+                <a href="../Default.htm">Quippe</a> |
+                <a href="Default.htm">Admin Console</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Manage Users</h1>
+            <div id="lblMessage"></div>
+
+            Search: <input type="text" id="txtQuery" /><input type="button" id="cmdSearch" value="Search" class="commandButton" /><input type="button" id="cmdAddUser" value="Add User" class="commandButton" />
+            
+            <br/><br/>
+
+            <div id="usersGridContainer" style="display: none">
+                <table id="usersGrid" cellspacing="0" cellpadding="4" border="1">
+                    <tr class="header">
+                        <td>User ID</td>
+                        <td>Email Address</td>
+                        <td>Name</td>
+                        <td>Company</td>
+                        <td>Registered</td>
+                        <td>Approved</td>
+                        <td>Comment</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

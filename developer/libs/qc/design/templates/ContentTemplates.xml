@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+
+<DesignTemplates>
+  
+  <DesignTemplate Name="Document Template" Description="A template used to define a note document" Icon="document" TypeName="template">
+    <Document>
+    </Document>
+  </DesignTemplate>
+
+  <DesignTemplate Name="List" Description="A list of findings that can be merged into a note" Icon="document_preferences" TypeName="list">
+    <Document>
+    </Document>
+  </DesignTemplate>
+
+  <DesignTemplate Name="Note Content" Description="A blank workspace for creating content that can be merged into a note" Icon="document_into" TypeName="element">
+    <Document DocumentType="NoteContent">
+    </Document>
+  </DesignTemplate>
+  
+  <DesignTemplate Name="Popup Form" Description="A popup data entry form" Icon="form_blue" TypeName="form">
+    <Form Title="New Form" Width="500" Height="300" Action="addEntries">
+    </Form>
+  </DesignTemplate>
+
+  <DesignTemplate Name="Wizard" Description="A step-by-step data entry form" Icon="form_blue" TypeName="form">
+    <Wizard Title="New Wizard" Width="500" Height="300" Action="addEntries">
+      <Page Name="Page1" Text="Page 1"></Page>
+      <Page Name="Page2" Text="Page 2"></Page>
+      <Page Name="Page3" Text="Page 3"></Page>
+    </Wizard>
+  </DesignTemplate>
+
+  <DesignTemplate Name="Tabbed Dialog" Description="A multi-page data entry form" Icon="form_blue" TypeName="form">
+    <Form Type="qc.note.TabbedDialog" Title="New Dialog" Width="500" Height="300" Action="addEntries">
+      <Page Name="Page1" Text="Page 1"></Page>
+      <Page Name="Page2" Text="Page 2"></Page>
+      <Page Name="Page3" Text="Page 3"></Page>
+    </Form>
+  </DesignTemplate>
+
+</DesignTemplates>

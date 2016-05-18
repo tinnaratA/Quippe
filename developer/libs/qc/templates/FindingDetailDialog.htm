@@ -1,0 +1,24 @@
+<div class="dijitDialog qcFindingDetailDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        
+
+        <div class="contentArea" data-dojo-attach-point="contentArea">
+
+            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabContainer" style="width: 700px; height: 300px;" data-dojo-props="tabStrip: true">
+            </div>
+
+        </div> 
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdOK">OK</div> 
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdCancel">Cancel</div>
+        </div>
+    </div>
+</div>

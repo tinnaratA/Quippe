@@ -1,0 +1,44 @@
+﻿.qcPatientEditorDialog
+{
+}
+
+.qcPatientEditorDialog .contentArea
+{
+	margin: 0px;
+	border: 0px;
+}
+
+.qcPatientEditorDialog .dataForm
+{
+}
+
+.qcPatientEditorDialog .formTable
+{
+	border-collapse: collapse;
+}
+
+.qcPatientEditorDialog .formTable td
+{
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.qcPatientEditorDialog .formTable .header td
+{
+	text-align: left;
+	vertical-align: bottom;
+	padding-top: 8px;
+}
+
+.qcPatientEditorDialog .formTable .data td
+{
+}
+
+.qcPatientEditorDialog .dijitTextBox
+{
+	width: 150px;
+}
+
+.qcPatientEditorDialog .qcListView {
+	padding: 0px !important;
+}

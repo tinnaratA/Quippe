@@ -1,0 +1,8 @@
+﻿.qcNewContentDialogDialog .listView
+{
+    border: 1px #999999 solid;
+    overflow: auto;
+    width: 400px;
+    height: 300px;
+    margin: 8px;
+}

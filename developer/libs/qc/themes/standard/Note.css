@@ -1,0 +1,781 @@
+﻿.note
+{
+	display: block;
+	font-family: Segoe UI, Helvetica, Arial, sans-serif;
+	font-size: 100%;
+    color: #000000;
+    background-color: transparent;
+    min-height: 100px;
+    cursor: pointer;
+	clear: both;
+    page-break-before: avoid;
+}
+    
+.note .chapter.expandable .chapterContent,
+.note .section.expandable .sectionContent,
+.note .group.expandable .groupContent
+{
+    padding-left: 20px;
+}
+
+.note .chapter
+{
+	clear: both;
+    padding-bottom: 6px;
+}
+
+.note .chapterHeader
+{
+    display: block;
+	font-size: 120%;
+    font-weight: bold;
+	color: #000000;
+}
+
+.note .chapter .chapterHeader .innerLabel,
+.note .section .sectionHeader .innerLabel
+{
+    vertical-align: middle;
+}
+
+.note .chapter.hiddenHeader .chapterHeader
+{
+    display: none;
+}
+
+.note.design .chapter.hiddenHeader .chapterHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.note .chapterContent
+{
+	padding-top: 4px;
+}
+    
+.note .section
+{
+	clear: both;
+    padding-bottom: 6px;
+}
+    
+.note .sectionHeader
+{
+    display: block;
+	font-size: 140%;
+	color: #000000;
+}
+
+.note .section.hiddenHeader .sectionHeader
+{
+    display: none;
+}
+
+.note.design .section.hiddenHeader .sectionHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.note .sectionContent
+{
+	padding-top: 1px;
+}
+    
+.note .group
+{
+    padding-bottom: 6px;
+    page-break-inside: avoid;
+    vertical-align: top;
+}
+
+.note .groupHeader
+{
+	display: inline;
+	padding: 0px 0px 2px 0px;
+	color: #000000;
+    font-weight: 600;
+}
+
+.note .group .groupHeader .innerLabel
+{
+    vertical-align: text-bottom;
+}
+
+.note .group.hiddenHeader .groupHeader
+{
+    display: none;
+}
+
+.note.design .group.hiddenHeader .groupHeader
+{
+    display: inline;
+    color: #cccccc;
+}
+
+.note .groupContent
+{
+	display: inline;
+}    
+    
+.note .freeText
+{
+    min-height: 1.2em;
+    background-color: #ffffff;
+    cursor: text;
+}
+
+.note .freeText p
+{
+	margin: 0px;
+}
+
+.note .freeText .displayText
+{
+    white-space: pre-wrap;
+}
+
+.note .taggedFinding.pos
+{
+    color: #cc0000;
+} 
+      
+.note .taggedFinding.neg
+{
+    color: #0000cc;
+}    
+
+.note .noteLabel
+{
+	display: inline-block;
+}
+
+
+.note .twoColLeft
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:left;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note .twoColRight
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:right;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note:not(.design) .hidden:not(.visible)
+{
+	display: none !important;
+}
+
+.design.note .hidden
+{
+	position: relative;
+}
+
+.design.note .hidden::before
+{
+	content:"HIDDEN";
+	display:inline;
+	font-size:6pt;
+	padding: 0px 2px 0px 2px;
+	border:1px #999999 solid;
+	background-color: #fefeee;
+	position:absolute;
+	border-radius:4px;
+}
+
+.note .viewHide
+{
+	display:none !important;
+}
+
+.note .listHide
+{
+	display:none !important;
+}
+
+.note .listShow
+{
+}
+
+.note .break
+{
+	display: block !important;
+}
+
+.printable .note *
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	cursor: default !important;
+}
+
+.printable .note .findingLabel:hover
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	background-color: #ffffff !important;
+	border-color: #ffffff !important;
+}
+
+.printable .note .freeText
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	background-color: #ffffff !important;
+	border-color: #ffffff !important;
+}
+
+.printable .note .patientBanner
+{
+	display: block;
+}
+
+.printable .note .groupHeader
+{
+	font-size: 100%;
+	font-weight: bold;
+	display: inline;
+}
+
+.printable .note .groupContent
+{
+	display: inline;
+}
+
+
+.qcNoteLayoutTable
+{
+	display: table;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 100%;
+}
+
+.qcNoteLayoutTable .row
+{
+	display: table-row;
+}
+
+.qcNoteLayoutTable .cell
+{
+	display: table-cell;
+	height: .8em;
+	min-width: 12px;
+}
+
+
+/* begin: Grid Layouts */
+.note .grid,
+.note .chapterContent.grid,
+.note .sectionContent.grid,
+.note .groupContent.grid
+{
+	display: table;
+	border-collapse: collapse;
+}
+
+.note .grid .row
+{
+	display: table-row;
+}
+
+.note .grid .row .cell
+{
+	display: table-cell;
+	vertical-align: top;
+	text-align: left;
+}
+
+.note .grid .postSep
+{
+	display: none;
+}
+/* end: Grid Layouts */
+
+/* begin: Expandable Groups */
+.note .expander
+{
+	display: none;
+	width: 16px;
+	height: 16px;
+    background-image: url('images/treeExpandImages.png');
+    background-position: -35px -1px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.note .chapter.expandable .chapterHeader .expander,
+.note .section.expandable .sectionHeader .expander,
+.note .group.expandable .groupHeader .expander
+{
+	display: inline-block;
+}
+
+.note .chapter.expandable.collapsed .chapterHeader .expander,
+.note .section.expandable.collapsed .sectionHeader .expander,
+.note .group.expandable.collapsed .groupHeader .expander
+{
+	background-position: 1px -1px;
+}
+
+.note .chapter.expandable.collapsed .chapterContent,
+.note .section.expandable.collapsed .sectionContent,
+.note .group.expandable.collapsed .groupContent
+{
+	display: none;
+}
+/* end: Expandable Groups */
+
+/* begin: outline view */
+
+.note.outline .chapter .chapterHeader .expander,
+.note.outline .section .sectionHeader .expander,
+.note.outline .group .groupHeader .expander
+{
+	display: inline-block;
+}
+
+.note.outline .chapter.collapsed .chapterHeader .expander,
+.note.outline .section.collapsed .sectionHeader .expander,
+.note.outline .group.collapsed .groupHeader .expander
+{
+	background-position: 1px -1px;
+}
+
+.note.outline .chapter .chapterContent,
+.note.outline .section .sectionContent,
+.note.outline .group .groupContent
+{
+	display: block;
+	margin-left: 20px;
+}
+
+.note.outline .chapter.collapsed .chapterContent,
+.note.outline .section.collapsed .sectionContent,
+.note.outline .group.collapsed .groupContent
+{
+	display: none;
+}
+
+.note.outline .findingLabel
+{
+	display: block;
+}
+
+.note.outline .preSep,
+.note.outline .postSep
+{
+	display: none;
+}
+/* end: outline view */
+
+
+/* rollup */
+.note.concise .rollupConcise .chapter .chapterHeader,
+.note.concise .rollupConcise .section .sectionHeader,
+.note.concise .rollupConcise .group .groupHeader
+{
+	display: none;
+}
+
+.note.concise .rollupConcise .chapter,
+.note.concise .rollupConcise .section,
+.note.concise .rollupConcise .group,
+.note.concise .rollupConcise .chapter .chapterContent,
+.note.concise .rollupConcise .section .sectionContent,
+.note.concise .rollupConcise .group .groupContent
+{
+	display: inline;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/* auto rollup */
+.note .part.autoRollup .chapter .chapterHeader,
+.note .part.autoRollup .section .sectionHeader,
+.note .part.autoRollup .group .groupHeader
+{
+	display: none;
+}
+
+.note .part.autoRollup .chapter,
+.note .part.autoRollup .section,
+.note .part.autoRollup .group,
+.note .part.autoRollup .chapter .chapterContent,
+.note .part.autoRollup .section .sectionContent,
+.note .part.autoRollup .group .groupContent
+{
+	display: inline;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/* finding groups */
+/*
+.note .findingGroup
+{
+	display: inline-block;
+	color: #999999;
+	margin-left: 0px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-right: 6px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+    cursor: pointer;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;	
+}
+
+.note .findingGroup .findingList
+{
+	display: none;
+}
+*/
+
+/* Macro Fields */
+.freeText .data
+{
+	display: none;
+}
+
+.freeText .editArea
+{
+	display: block;
+}
+
+.freeText .macroField
+{
+	display: inline;
+	cursor: pointer;
+	background-color: #fff799;
+	margin: 0px 2px 0px 2px;
+	padding: 0px;
+}
+
+.freeText .macroField.selected
+{
+	background-color: #ffff00;
+}
+
+.freeText .macroField.fieldType_label
+{
+    background-color: transparent;
+}
+
+.freeText .macroField .data
+{
+	display: none;
+}
+
+.freeText .macroField .label
+{
+	display: inline;
+	padding: 0px 2px 0px 2px;
+	cursor: pointer;
+}
+
+.printable .freeText .macroField,
+.disabled .freeText .macroField
+{
+	background-color: transparent;
+}
+
+/* Macro Field Dialog */
+.qcFieldDialog
+{
+}
+    
+.qcFieldDialog table
+{
+	border-collapse: collapse;
+}
+    
+.qcFieldDialog td
+{
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}
+    
+.qcFieldDialog .editControl
+{
+    width: 150px;
+}
+    
+.qcFieldDialog .dialogButton .dijitButtonNode
+{
+    min-width: 52px;
+}
+    
+.qcFieldDialog .qcCheckList
+{
+	border: 1px solid #b5bcc7;
+	max-height: 150px;
+	min-height: 1.5em;
+	overflow: auto;
+}
+
+.qcFieldDialog .qcCheckListItem
+{
+	margin: 3px;
+}
+
+.freeText ul,
+.freeText ol
+{
+	margin-top: 0px;
+}
+
+.note .displayInline
+{
+	display: inline;
+}
+
+
+.note .displayBlock
+{
+	display: block;
+}
+
+/* Design Mode Styles */
+
+.design .qcNoteLayoutTable .cell
+{
+	border: 1px #999999 solid;
+}
+
+/*
+.design .noteElement.selected
+{
+	outline: #666666 dashed 1px;
+}
+*/
+
+.design .freeText
+{
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+
+.bold
+{
+	font-weight: bold !important;
+}
+
+.italic
+{
+	font-style: italic !important;
+}
+
+.large
+{
+	font-size: large !important;
+}
+
+.larger
+{
+	font-size: larger !important;
+}
+
+.small
+{
+	font-size: small !important;
+}
+
+.smaller
+{
+	font-size: smaller !important;
+}
+
+.note .pageBreak
+{
+    page-break-before: always !important;
+}
+
+.note .avoidPageBreak
+{
+    page-break-inside: avoid;
+}
+
+.note .qcHyperlink
+{
+    display: inline;
+    color: #333333;
+    font-style: italic;
+    cursor: pointer;
+    margin: 2px 6px 2px 0px;
+}
+
+.note .qcHyperlink.disabled,
+.note .disabled .qcHyperlink
+{
+    color: #999999;
+}
+
+.note .qcHyperlink.button
+{
+    font-style: normal;
+    font-weight:normal;
+    display: inline-block;
+    margin: 2px 6px 0px 2px;
+    border: 1px #999999 solid;
+    background-color: #eeeeee;
+    color: #000000;
+    border-radius: 3px;
+    padding: 2px 7px 3px 7px;
+    text-align: center;
+}
+
+.note .qcHyperlink.button:hover,
+.note .qcHyperlink.button.blue:hover
+{
+    background-color: #ffa64c;
+    color: #000000;
+}
+
+.note .qcHyperlink.button.blue
+{
+    background-color: #297fd5;
+    color: #ffffff;
+}
+
+.note .qcHyperlink.button.selected
+{
+    outline: 0px;
+    border-color: #ffa64c;
+}
+
+.note .qcHyperlink.button.disabled,
+.note .qcHyperlink.button.disabled:hover,
+.note .qcHyperlink.button.disabled.blue,
+.note .qcHyperlink.button.disabled.blue:hover,
+.note .disabled .qcHyperlink.button,
+.note .disabled .qcHyperlink.button:hover,
+.note .disabled .qcHyperlink.button.blue,
+.note .disabled .qcHyperlink.button.blue:hover
+{
+    background-color: #eeeeee;
+}
+
+
+.printable .noPrint,
+.note.concise .noPrint
+{
+    display: none;
+}
+
+.printable .forcePrint,
+.note.concise .forcePrint
+{
+    display: block !important;
+}
+
+.printable .forcePrint.inline,
+.note.concise .forcePrint.inline
+{
+    display: inline !important;
+}
+
+.note .noteLabel.paragraph
+{
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+
+.fill
+{
+    width: 100%;
+    height: 100%;
+}
+
+.section.citation > .sectionHeader
+{
+    font-size: 100%;
+    font-weight: 500;
+    color: #333333;
+    border-bottom: 1px #333333 solid;
+    margin-top: 12px;
+}
+
+.section.citation > .sectionHeader .innerLabel 
+{
+    display: inline-table;
+    width: 100%;
+}
+
+.section.citation > .sectionHeader .innerLabel .left
+{
+    display: table-cell;
+    text-align: left;
+    width:200px;
+}
+
+.section.citation > .sectionHeader .innerLabel .center
+{
+    display: table-cell;
+    text-align: center;
+}
+
+.section.citation > .sectionHeader .innerLabel .right
+{
+    display: table-cell;
+    text-align: right;
+    width:200px;
+}
+
+.citation *
+{
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.note .citation .chapter.expandable .chapterHeader .expander, 
+.note .citation .section.expandable .sectionHeader .expander, 
+.note .citation .group.expandable .groupHeader .expander,
+.citation .expander
+{
+    display: none;
+}
+
+.qcDrawing,
+.qcDrawing.externalEntry
+{
+    display: block;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.design .qcDrawing.selected
+{
+    outline: 1px #ffa64c solid;
+    outline-offset: 3px;
+}
+
+.note .hasAdditionalContent 
+{
+    font-style: italic;
+}
+
+.printable .note .hasAdditionalContent 
+{
+    font-style: italic;
+}

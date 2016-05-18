@@ -1,0 +1,98 @@
+<div class="qcEMAnalysis">
+    <div data-dojo-attach-point="tabContainer" class="tabContainer" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="tabPosition: 'top'">
+        <div data-dojo-attach-point="inputTab" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Parameters'">
+            <table class="visitTable">
+                <tr>
+                    <td class="labelCell">Clinical Setting:</td>
+                    <td class="labelCell">Detailed Service Type:</td>
+                    <td class="labelCell">Exam Type:</td>
+                    <td class="labelCell" />
+                </tr>
+               <tr>
+                    <td class="inputCell">
+                        <div data-dojo-attach-point="cmbSetting" style="width:200px;" data-dojo-type="qc/FilteringSelect"></div>
+                    </td>
+
+                    <td class="inputCell">
+                        <div data-dojo-attach-point="cmbServiceType" style="width:200px;" data-dojo-type="qc/FilteringSelect"></div>
+                    </td>
+        
+                    <td class="inputCell">
+                        <div data-dojo-attach-point="cmbExamType" style="width:200px;" data-dojo-type="qc/FilteringSelect"></div>
+                    </td>
+
+                    <td class="inputCell" style="padding-left: 32px;">
+                        <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:calculate" data-dojo-props="label: 'Calculate'"></div>
+                    </td>
+               </tr>
+
+               <tr>
+                    <td class="labelCell">Patient Status:</td>
+                    <td class="labelCell">Total face-to-face time:</td>
+                    <td class="labelCell" />
+                    <td class="labelCell" />
+               </tr>
+
+               <tr>
+                    <td class="inputCell">
+                        <input data-dojo-attach-point="optNewPatient" id="${id}_optPatientStatus1" name="optNewPatient" data-dojo-type="dijit/form/RadioButton" type="radio" value="1" /><label for="${id}_optPatientStatus1">New</label>
+                        <input data-dojo-attach-point="optExistingPatient" id="${id}_optPatientStatus2" checked="checked" name="optNewPatient" data-dojo-type="dijit/form/RadioButton" type="radio" value="0" /><label for="${id}_optPatientStatus2">Existing</label>
+                    </td>
+
+                    <td class="inputCell">
+                        <input style="width:70px;" data-dojo-attach-point="txtFloorTime" data-dojo-type="dijit/form/NumberSpinner" type="text" value="0" data-dojo-props="smallDelta: 5, largeDelta: 30, constraints: {min:0, places:0}" /><span style="margin-left:4px;">minutes</span>
+                    </td>
+
+                    <td class="inputCell" colspan="2">
+                        <input id="${id}_chkOverHalf" data-dojo-attach-point="chkOverHalf" data-dojo-type="dijit/form/CheckBox" type="checkbox" />
+                        <label for="${id}_chkOverHalf">&gt;50% time spent in counseling</label>
+                    </td>
+
+               </tr>
+           </table>     
+
+            <table class="problemTable" data-dojo-attach-point="problemTable">
+                <tr>
+                    <th>Problem</th>
+                    <th>Active</th>
+                    <th>Chronic</th>
+                    <th>New Problem</th>
+                    <th>Additional Workup Planned</th>
+                    <th>Status</th>
+                </tr>
+            </table>                  
+        </div>
+
+        <div data-dojo-attach-point="analysisTab" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Analysis'">
+            
+        </div>
+
+        <div data-dojo-attach-point="resultTab" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Calculated Codes'">
+            <div data-dojo-attach-point="resultMessage" class="resultMessage"></div>
+            <table class="resultTable" data-dojo-attach-point="resultTable">
+                <tr>
+                    <th>Source</th>
+                    <th>MedcinId</th>
+                    <th class="cptCol">CPT</th>
+                    <th>Description</th>
+                    <th />
+                </tr>
+                <tr>
+                    <td>System</td>
+                    <td />
+                    <td class="cptCol" />
+                    <td />
+                    <td><div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:postSystemCode" data-dojo-props="label: 'Add to Note'"></div></td>
+                </tr>
+                <tr>
+                    <td>Override</td>
+                    <td />
+                    <td class="cptCol" />
+                    <td />
+                    <td><div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:postUserCode" data-dojo-props="label: 'Add to Note'"></div></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,91 @@
+<div class="dijitDialog qcMultiFindingDetailDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea" data-dojo-attach-point="contentArea">
+            <table>
+                <tbody>
+                    <tr class="labelRow">
+                        <td>
+                            <div data-dojo-attach-point="lblResult"></div>
+                        </td>
+                        <td>
+                            <div data-dojo-attach-point="lblPrefix"></div>
+                        </td>
+                    </tr>
+                    <tr class="dataRow">
+                        <td>
+                            <select data-dojo-attach-point="cmbResult" data-dojo-type="qc/FilteringSelect" data-dojo-props="value: '', searchAttr: 'text', intermediateChanges: true"></select>
+                        </td>
+                        <td>
+                            <select data-dojo-attach-point="cmbPrefix" data-dojo-type="qc/FilteringSelect" data-dojo-props="value: '-empty-', searchAttr: 'description', intermediateChanges: true"></select>
+                        </td>
+                    </tr>
+                    <tr class="labelRow">
+                        <td>
+                            <div data-dojo-attach-point="lblModifier"></div>
+                        </td>
+                        <td>
+                            <div data-dojo-attach-point="lblStatus"></div>
+                        </td>
+                    </tr>
+                    <tr class="dataRow">
+                        <td>
+                            <select data-dojo-attach-point="cmbModifier" data-dojo-type="qc/FilteringSelect" data-dojo-props="value: '-empty-', searchAttr: 'description', intermediateChanges: true"></select>
+                        </td>
+                        <td>
+                            <select data-dojo-attach-point="cmbStatus" data-dojo-type="qc/FilteringSelect" data-dojo-props="value: '-empty-', searchAttr: 'description', intermediateChanges: true"></select>
+                        </td>
+                    </tr>
+                    <tr class="labelRow">
+                        <td>
+                            <div data-dojo-attach-point="lblOnset"></div>
+                        </td>
+                        <td>
+                            <div data-dojo-attach-point="lblDuration"></div>
+                        </td>
+                    </tr>
+                    <tr class="dataRow">
+                        <td>
+                            <input data-dojo-attach-point="txtOnset" data-dojo-type="dijit/form/TextBox" data-dojo-props="value: '', intermediateChanges: true" />
+                        </td>
+                        <td>
+                            <input data-dojo-attach-point="txtDuration" data-dojo-type="dijit/form/TextBox" data-dojo-props="value: '', intermediateChanges: true" />
+                        </td>
+                    </tr>
+                    <tr class="labelRow">
+                        <td colspan="2">
+                            <div data-dojo-attach-point="lblEpisodes"></div>
+                        </td>
+                    </tr>
+                    <tr class="dataRow">
+                        <td colspan="2">
+                            <input data-dojo-attach-point="txtEpisode" data-dojo-type="dijit/form/TextBox" style="width:100%" data-dojo-props="value: '', intermediateChanges: true" />
+                        </td>
+                    </tr>
+
+                    <tr data-dojo-attach-point="overrideCheckRow" class="dataRow">
+                        <td colspan="2" style="padding-top:18px">
+                            <input id="${id}_chkOverride" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="chkOverrideTranscription" /> 
+                            <label for="${id}_chkOverride">Override Transcription</label>
+                        </td>
+                    </tr>
+
+                    <tr data-dojo-attach-point="overrideTextRow" class="dataRow">
+                        <td colspan="2">
+                            <input data-dojo-type="dijit/form/TextBox" style="width:100%" data-dojo-attach-point="txtTranscription" data-dojo-props="placeHolder: '', disabled: true" /> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div> 
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+
+                var onShowWizardClicked = null;
+                var onLoadContentClicked = null;
+
+                require(["dojo/dom", "samples/ShortcutKeys", "qc/NoteEditor"],
+                    function(dom, ShortcutKeys, NoteEditor) {
+                        var noteEditor = new NoteEditor({});
+
+                        noteEditor.startup();
+                        noteEditor.placeAt(dom.byId("noteEditor"));
+                        noteEditor.loadXml(
+                            '<Document Theme="none" SepStyle="semicolon">' +
+                            '	<EntryComponents>' +
+                            '		<PostSep Sequence="11" />' +
+                            '	</EntryComponents>' +
+                            '	<Section Name="CCSection" Text="Chief Complaint" GroupKeys="S1" ShowEmpty="true" Anchor="CC" ' +
+                            '            FreeTextMedcinId="1718" ShortcutKey="U+0043">' +
+                            '		<FreeText MedcinId="1718">' +
+                            '			<Text>' +
+                            '			</Text>' +
+                            '		</FreeText>' +
+                            '	</Section>' +
+                            '	<Section Name="HPISection" Text="History of Present Illness" GroupKeys="S2" ShowEmpty="true" ' +
+                            '            Anchor="HPI" FreeTextMedcinId="112342" ShortcutKey="U+0048">' +
+                            '		<FreeText MedcinId="112342">' +
+                            '			<Text>' +
+                            '			</Text>' +
+                            '		</FreeText>' +
+                            '	</Section>' +
+                            '</Document>'
+                        );
+                    }
+                );
+        </script>
+
+        <title>Adding Custom Properties to Note Elements</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Adding Custom Properties to Note Elements</h1>
+
+            <p>
+                This example serves to demonstrate how to add custom properties to Quippe note elements in the form of enabling
+                shortcut keys for navigating between different note groups. You'll create a new Dojo module and include the 
+                target class' module path in your list of dependencies:
+            </p>
+
+            <pre><code class="js">
+    define([
+        "dojo/_base/declare",
+        "dojo/_base/array",
+        "dojo/_base/lang",
+        "dojo/on",
+        "dojo/topic",
+        // We are overriding the _Group class
+        "qc/note/_Group",
+        "qc/_core"
+    ], function (declare, array, lang, on, topic, _Group, core) {
+        ...
+    });
+            </code></pre>
+
+            <p>
+                Once you have the target class, you can use the <code>lang.extend()</code> method to override the class' methods and
+                properties. It looks very similar to a call to <code>declare()</code>: you pass in a hash that represents methods and
+                properties for the class, only now instead of creating a new class definition, it modifies the prototype of the 
+                existing class that you pass in.
+            </p>
+
+            <pre><code class="js">
+    lang.extend(_Group, {
+        // This is a new attribute that we are defining for the class
+        _getShortcutKeyAttr: function() {
+            return this.shortcutKey || '';
+        },
+        
+        // This is a previously existing method that we are overriding
+        writeNoteAttributes: function(writer) {
+            this.inherited('writeNoteAttributes', arguments);
+            writer.attribute('ShortcutKey', this.get('shortcutKey'), '');
+        }
+    });
+            </code></pre>
+            
+            <p>
+                Once you have your override module established, simply include it in the dependency module list for your
+                application. It's often useful to place the override modules first in the list to ensure that they are loaded
+                prior to any potential usage of the class being overridden. The example note editor below allows you to see the
+                shortcut keys in action: press "c" and the chief complaint section will be highlighted, while pressing "h" will
+                highlight the history of present illness section.
+            </p>
+
+            <h2>Example:</h2>
+
+            <div id="noteEditor" style="border: 1px solid lightgray"></div>
+        </div>
+    </body>
+</html>
+

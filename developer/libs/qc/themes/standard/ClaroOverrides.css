@@ -1,0 +1,142 @@
+﻿/*
+.claro .dijitTitlePaneTitle {
+	background-color: #e6e6e7;
+	background-image: url("images/titlebar.png");
+	background-repeat:repeat-x;
+	border:1px solid #b5bcc7;
+	padding: 0px 7px 3px 7px;
+	min-height:17px;
+	color:#131313;
+}
+
+.claro .dijitToolbar {
+	border-bottom: 1px solid #b5bcc7;
+	background-color: #f1f1f1;
+	background-image: url("images/commonHighlight.png");
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	padding: 2px 0px 2px 4px;
+	zoom: 1;
+}
+*/
+
+.claro .dijitToolbar
+{
+	border-bottom: 1px solid #999999;
+	background-image: -moz-linear-gradient(top,#ffffff,#e5e5e5);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#e5e5e5));	
+}
+
+.claro .dijitToolbar *
+{
+	-webkit-transition-property: none !important;
+	-webkit-transition-duration: 0 !important;
+}
+
+.claro .dijitTitlePaneTitle
+{
+	background-color: #efefef;
+	background-image: -moz-linear-gradient(top,#ffffff,#e5e5e5);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#e5e5e5));
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+.claro .dijitTitlePaneTitleActive
+{
+	background-color: #efefef;	
+}
+
+.claro .dijitTitlePaneTitleHover
+{
+	background-color: #efefef;	
+}
+
+.claro .dijitTitlePaneTitle.dijitClosed
+{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;	
+}
+
+.claro .dijitTitlePaneContentOuter
+{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+
+.claro .autohide .dijitTitlePaneTitle
+{
+	background-image: -moz-linear-gradient(top,#ffffff,#e5e5e5);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#e5e5e5));
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+}
+
+.claro .autohide .dijitTitlePaneTitle.dijitClosed
+{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-moz-border-radius-bottomright: 0px;	
+}
+
+.claro .autohide .dijitTitlePaneContentOuter
+{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-moz-border-radius-bottomright: 0px;
+}
+
+
+.claro .dijitTabContainerBottom-tabs .dijitTabContent
+{
+	background-image: -moz-linear-gradient(top,#fcfcfc 70%, #e6e6e7 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f7),color-stop(75%, #f5f5f7),to(#c1c4ce));
+	background-position: 0px, 0px;
+	background-color: transparent;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;	
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+}
+
+.claro .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent 
+{
+	background-image: -moz-linear-gradient(top,#ffffff 70%, #b2d4f3 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),color-stop(75%, #ffffff),to(#b2d4f3));
+	background-position: 0px, 0px;
+	background-color: transparent;	
+}
+
+.claro .dijitTabContainerBottom-tabs .dijitTabInnerDiv 
+{
+	background-color: transparent;
+	background-image: none;
+}
+
+.claro .dijitTabContainerBottom-tabs .tabChecked .dijitTabInnerDiv 
+{
+	background-color: transparent;
+	background-image: none;
+}
+
+
+/* To elminate claro theme's use of editorIconsEnabled.png for a simple line */
+.claro .dijitToolbarSeparator {
+    display: inline-block;
+	height: 18px;
+	width: 1px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 3px 0px 3px;
+    background-image:none;
+    background-color: #999999;
+}

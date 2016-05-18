@@ -1,0 +1,95 @@
+﻿.qcPhraseEditorDialog
+{
+}
+
+.qcPhraseEditorDialog .dijitDialogPaneContent
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.qcPhraseEditorDialog .mainPanel
+{
+    width: 720px;
+    height: 340px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px #999999 solid;
+}
+    
+.qcPhraseEditorDialog .topPane
+{
+    padding: 0px;
+    margin: 0px;
+}
+    
+.qcPhraseEditorDialog .navPane 
+{
+    padding: 0px;
+    background-color: #ffffff;
+    border-right: 1px #999999 solid;
+    width: 33%;
+    overflow: hidden;
+}
+    
+.qcPhraseEditorDialog .phraseList
+{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+    
+.qcPhraseEditorDialog .buttonArea
+{
+    text-align: right;
+    height:auto;
+    max-height: 30px;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    padding-right: 6px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+
+.detailPane table
+{
+	width: 100%;
+}
+
+
+.qcPhraseEditorDialog .buttonArea .dijitButton
+{
+	padding-right: 16px;
+}
+
+.qcPhraseEditorDialog .buttonArea .dijitButtonNode
+{
+	width: 120px;
+}       
+
+.detailPane h1
+{
+	font-size: 100%;
+	margin-bottom: 2px;
+}
+
+.detailPane h2
+{
+	font-size: 95%;
+	font-weight: normal;
+	margin: 4px 0px 2px 8px;
+}
+
+.detailPane .editBox
+{
+	margin-left: 8px;
+}
+
+.detailPane .dijitTextBox
+{
+	width: 100%;
+}

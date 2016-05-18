@@ -1,0 +1,88 @@
+<div class="dijitDialog qcDialog qcPatientEditorDialog qcContextMenuContainer" tabindex="-1" role="dialog" aria-labelledby="${id}_title" style="background-color:#ffffff">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent" style="padding:0px;border:0px;">
+        <div class="contentArea">
+            <div>
+                <div data-dojo-type="dijit/layout/BorderContainer" class="dataForm" style="width:550px;height:350px" data-dojo-props="design: 'sidebar', gutters: true">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:170px;margin:0px;padding:0px;" data-dojo-props="region: 'left', splitter: true">
+                        <div data-dojo-type="qc/ListView" data-dojo-attach-point="lvPatients" style="height:100%;overflow:auto;" data-dojo-attach-event="onSelectionChanged:onPatientSelectionChanged" data-dojo-props="viewMode: 'simple'"></div>
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" style="margin:0px;padding:6px;" data-dojo-props="region: 'center'">
+                        
+                        <table class="formTable" data-dojo-attach-point="formTable">
+                            <tr class="header">
+                                <td colspan="2" style="padding-bottom:12px;">
+                                    <div style="display:inline;margin-right:4px;">Patient Id:</div>
+                                    <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="cPatientId" style="width:100px;"></div>
+                                    <div style="font-size: 80%; margin-left: 68px; visibility: hidden;" data-dojo-attach-point="leaveBlankMessage">(leave blank to generate a new id)</div>
+                                </td>
+                            </tr>
+                            <tr class="data">
+                                <td />
+                                <td />
+                            </tr>
+                            <tr class="header">
+                                <td>Last Name:</td>
+                                <td>First Name:</td>
+                            </tr>
+                            <tr class="data">
+                                <td><div data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="cLastName" data-dojo-props="required: true"></div></td>
+                                <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="cFirstName"></div></td>
+                            </tr>
+                            <tr class="header">
+                                <td>Birth Date:</td>
+                                <td>Sex:</td>
+                            </tr>
+                            <tr class="data">
+                                <td><div data-dojo-type="dijit/form/DateTextBox" data-dojo-attach-point="cBirthDate" data-dojo-props="required: true, constraints:{formatLength:'user'}"></div></td>
+                                <td><div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cSex" data-dojo-props="required: true"></div></td>
+                            </tr>
+                            <!--
+                            <tr class="header">
+                                <td>Race:</td>
+                                <td>Religion:</td>
+                            </tr>
+                            <tr class="data">
+                                <td><div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cRace"></div></td>
+                                <td><div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cReligion"></div></td>
+                            </tr>
+                            <tr class="header">
+                                <td>Ethnicity:</td>
+                                <td>Marital Status:</td>
+                            </tr>
+                            <tr class="data">
+                                <td><div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cEthnicity"></div></td>
+                                <td><div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cMaritalStatus"></div></td>
+                            </tr>
+                            -->
+                            <tr class="header">
+                                <td colspan="2">
+                                    Default Template:
+                                </td>
+                            </tr>
+                            <tr class="data">
+                                <td colspan="2">
+                                    <div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="cDefaultTemplate" data-dojo-props="required: false, searchAttr: 'text'" style="width: 100%"></div>
+                                </td>
+                            </tr>
+                            <tr class="header">
+                                <td colspan="2" style="text-align:right;padding-top:16px;">
+                                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="cmdDelete" data-dojo-attach-event="onClick:onDeleteClicked">Delete Patient</div>
+                                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="cmdSave" data-dojo-attach-event="onClick:onSaveClicked">Apply Changes</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonArea" style="height:30px;text-align:right;padding:4px">
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Close</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿.qcUserSettingsDialog
+{
+	width: 600px;
+	height: auto;
+    background-color: #ffffff;	
+}
+ 
+
+.qcUserSettingsDialog .dijitDialogPaneContent
+{
+}
+        
+.qcUserSettingsDialog .contentArea
+{
+	height: auto;
+}
+
+.qcUserSettingsDialog .tabControl
+{
+	width: 100%;
+	height: 340px;
+	margin-bottom: 8px;
+}
+        
+.qcUserSettingsDialog .buttonArea
+{
+    text-align: right;
+    height:auto;
+    max-height: 30px;
+    width: 100%;
+    padding-bottom: 6px;
+    padding-right: 6px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+
+.qcUserSettingsDialog .buttonArea .dijitButton
+{
+	padding-left: 16px;
+}
+
+.qcUserSettingsDialog .buttonArea .dijitButtonNode
+{
+	width: 120px;
+}
+
+.qcUserSettingsDialog .sectionContent
+{
+	margin-top: 6px;
+}
+
+.qcUserSettingsDialog .groupHeading
+{
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+.qcUserSettingsDialog .groupContent
+{
+	display: table;
+}
+
+.qcUserSettingsDialog .item
+{
+	display: table-row;
+	padding: 4px;
+}
+
+.qcUserSettingsDialog .itemLabel
+{
+	display: table-cell;
+	padding: 4px;
+}
+
+.qcUserSettingsDialog .itemValueBox
+{
+	display: table-cell;
+	padding: 4px;
+}
+
+

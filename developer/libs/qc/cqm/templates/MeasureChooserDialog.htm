@@ -1,0 +1,24 @@
+<div class="qcCqmMeasureChooserDialog">
+    <div data-dojo-attach-point="filterNode" class="filterNode">
+        <span class="searchLabel">Search:</span>
+        <div class="searchBox" data-dojo-attach-point="txtSearch" data-dojo-type="qc/SearchBox" data-dojo-properties="placeHolder:''" style="width:200px;"></div>
+        <span class="systemLabel" style="margin-left:8px;">System:</span>
+        <div class="systemList" data-dojo-attach-point="lstSystems" data-dojo-type="qc/FilteringSelect" style="width:200px;"></div>
+    </div>
+
+    <div data-dojo-attach-point="tableNode" class="tableNode">
+    </div>
+
+    <table style="width:100%;">
+        <tr>
+            <td style="text-align:left;vertical-align:top;padding:8px;">
+                <div data-dojo-attach-point="saveDefaultButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSaveDefault">Save as Default</div>
+            </td>
+            <td style="text-align:right;vertical-align:top;padding:8px;">
+                <div data-dojo-attach-point="applyButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onApply">OK</div>
+                <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>
+            </td>
+        </tr>
+    </table>
+
+</div>

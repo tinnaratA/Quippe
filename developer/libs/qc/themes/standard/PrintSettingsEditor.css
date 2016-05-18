@@ -1,0 +1,9 @@
+﻿.qcPrintSettingsEditor
+{
+
+}
+
+.qcPrintSettingsEditor .dijitComboBoxMenuPopup
+{
+    max-height:250px;
+} 

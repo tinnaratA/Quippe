@@ -1,0 +1,62 @@
+<div class="dijitDialog qcLibraryManagerDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span>
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+
+        <div data-dojo-attach-point="mainPanel" class="mainPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true">
+
+            <div class="topPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'top'" data-dojo-attach-point="menuBar">
+                <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                    <div data-dojo-attach-point="tbNewFolder" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doNewFolder" data-dojo-props="label: 'New Folder', iconClass: 'folder'"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="tbUpload" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doUpload" data-dojo-props="label: 'Upload', iconClass: 'arrow_up_green', disabled: true"></div>
+                    <div data-dojo-attach-point="tbDownload" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doDownload" data-dojo-props="label: 'Download', iconClass: 'arrow_down_green', disabled: true"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator" data-dojo-attach-point="renameSeparator"></div>
+                    <div data-dojo-attach-point="tbRename" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doRename" data-dojo-props="label: 'Rename', iconClass: 'pencil', disabled: true"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="savePropertiesButton" data-dojo-type="dijit/form/Button" data-dojo-props="label: 'Save', iconClass: 'floppy_disk', disabled: true" data-dojo-attach-event="onClick:saveProperties"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="tbDelete" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doDelete" data-dojo-props="label: 'Delete', iconClass: 'delete', disabled: true"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator" data-dojo-attach-point="searchSeparator"></div>
+                    <div data-dojo-attach-point="filterBox" data-dojo-type="qc/SearchBox" data-dojo-props="placeHolder: 'Search', _searchControl: this.searchResultList"></div>
+                </div>
+            </div>
+
+            <div class="bottomPane" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, region: 'center'">
+                <div class="navPane" data-dojo-type="dijit/layout/ContentPane" style="width: 300px; overflow: hidden;" data-dojo-props="splitter: true, region: 'leading'">
+                    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true">
+                        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'center'" style="padding: 0px">
+                            <div class="navTree" data-dojo-type="qc/TreeView" data-dojo-attach-point="navTree" data-dojo-props="allowLabelEdit: true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: true, region: 'center'">
+                    <div data-dojo-attach-point="lvDetails" class="lvDetails" data-dojo-type="qc/ListView" data-dojo-props="viewMode: 'list', allowLabelEdit: true">
+                    </div>
+                    <div data-dojo-attach-point="propertiesPane" data-dojo-type="dijit/layout/ContentPane" style="display: none">
+                        <div class="item">
+                            <div class="itemLabel">Type:</div>
+                            <div class="itemValue" data-dojo-attach-point="typeContainer"></div>
+                        </div>
+                        <div class="item">
+                            <div class="itemLabel">ID:</div>
+                            <div class="itemValue" data-dojo-attach-point="idContainer" data-dojo-attach-event="onClick:selectNodeText"></div>
+                        </div>
+                        <div class="heading">Item Properties</div>
+                        <div data-dojo-attach-point="propertyFields" class="properties"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonArea" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'bottom'">
+                <div data-dojo-attach-point="tbClose" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:hide"></div>
+            </div>
+        </div>
+    </div>
+</div>

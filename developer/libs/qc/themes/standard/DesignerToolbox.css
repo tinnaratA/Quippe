@@ -1,0 +1,70 @@
+﻿.qxDesignerToolbox
+{
+	overflow: auto;
+}
+
+.qxDesignerToolbox .group
+{
+	margin: 2px 2px 6px 2px;
+}
+
+.qxDesignerToolbox .group .heading
+{
+	display: inline;
+	vertical-align: middle;
+}
+
+.qxDesignerToolbox .group .heading .expander
+{
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    background-image: url("images/commonFormArrows.png");
+	background-position: -39px 4px;
+    background-repeat: no-repeat;    
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.qxDesignerToolbox .group.collapsed .expander
+{
+	background-position: -253px 4px;
+}
+
+.qxDesignerToolbox .group .heading .caption
+{
+	display: inline;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.qxDesignerToolbox .group .content
+{
+	display: block;
+	padding-left: 12px;
+}
+
+.qxDesignerToolbox .group.collapsed .content
+{
+	display: none;
+}
+
+.qxDesignerToolbox .item
+{
+	display: inline-block;
+	cursor: pointer;
+	padding: 2px;
+	margin: 2px 6px 2px 0px;
+	border:1px solid transparent;	
+}
+
+.qxDesignerToolbox .item:hover
+{
+	background-color: #d8edff;
+	border:1px solid #c3e2fd;
+}
+
+.qcDesignPane .dijitContentPane.top {
+	overflow: hidden;
+}

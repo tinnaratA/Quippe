@@ -1,0 +1,232 @@
+﻿@import url("Highlighting.css");
+@import url("Icons.css");
+
+body {
+    font-family: Arial, Sans-Serif;
+}
+
+.samplesBrowser
+{
+	height: 100%;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: .85em;	
+}
+        
+.samplesBrowser .titleBar
+{
+	height: 24px;
+	width: 100%;
+    border-bottom: 1px solid #999999;
+    background-image: -moz-linear-gradient(top,#ffffff,#e5e5e5);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#e5e5e5));
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: #efefef;
+    background-repeat: repeat-x;
+	padding: 6px;
+}
+
+.samplesBrowser .titleBar .titleText
+{
+	display: inline-block;
+	color: #000000;
+	font-size: 140%;
+	font-weight:bold;		
+    margin-top: 2px;
+}
+
+.samplesBrowser .titleBar .titleTools
+{
+	display:  inline-block;
+	float: right;
+	font-size: 90%;
+}
+
+.samplesBrowser .titleBar .titleTools a
+{
+	color: #0000ff;
+	margin: 8px;
+}
+
+.samplesBrowser .titleBar .titleTools a:visited
+{
+	color: #0000ff;
+}
+
+.samplesBrowser .mainContent
+{
+}
+
+.samplesBrowser .navPane
+{
+	width: 25%;
+    height: 100%;
+    background-color: #f9f9f9;
+    overflow: auto;
+    border-right: 1px solid #dddddd;
+}
+
+#docPane
+{
+}
+
+.samplesBrowser .docHeader
+{
+	height: 24px;
+	padding-top: 6px;
+}
+
+        
+.samplesBrowser .docBody
+{
+	overflow: hidden;
+}
+        
+.samplesBrowser .docFooter
+{
+	height: 18px;
+	padding: 4px;
+}      
+
+.samplesBrowser .topicIFrame
+{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	overflow: hidden;
+}  
+        
+.samplesBrowser .copyright
+{
+    color: #999999;
+    font-size: 80%;
+    text-align: center;
+    vertical-align: middle;
+}
+        
+.samplesBrowser .docLink
+{
+    color: #0000ff;
+    cursor: pointer;
+}
+        
+.samplesBrowser .docLink:hover
+{
+    color: #0000ff;
+    cursor: pointer;
+    text-decoration: underline;
+}        
+        
+       
+.samplesBrowser .breadCrumbs
+{
+    font-size: 80%;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+        
+.samplesBrowser .breadCrumbs .docLink
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+.samplesBrowser .breadCrumbs .separator
+{
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.searchResultList
+{
+    padding: 0px;
+    overflow: auto;
+    width: 400px;
+    font-family: "Segoe UI", Arial, Helvetica, Sans-Serif;
+    font-size: 11pt;
+}
+        
+.searchResultList .content
+{
+    max-height: 500px;
+    min-height: 100px;
+    overflow: auto;
+    background-color: #ffffff;
+    border: 1px #999999 solid;
+}
+
+.searchResultList a, .searchResultList a:link {
+    display: block;
+    text-decoration: none;
+    color: #1364c4;
+}
+
+.searchResultList a:hover {
+    text-decoration: none;
+    color: #3390b1;
+}
+
+.searchResultList a:visited, .searchResultList a:active {
+    text-decoration: none;
+    color: #03697a;
+}
+
+.searchingPlaceholder, .noResultsPlaceholder {
+    text-align: center;
+    padding-top: 38px;
+}
+
+.searchingPlaceholder img {
+    vertical-align: bottom;
+}
+
+.searchResult {
+    border-top: 1px solid gray;
+    padding: 6px;
+}
+
+.searchBox {
+    vertical-align: top;
+    margin-top: 1px;
+    height: 21px;
+}
+
+.searchBox input {
+    width: 200px;
+    padding-top: 3px !important;
+    padding-left: 2px !important;
+}
+
+.searchPopup {
+    margin-top: 2px;
+}
+
+.searchBox .notFoundIndicator
+{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	display: none;
+	float: right;
+	width: 16px;
+	height: 16px;
+    background-image: url(images/icons_16.png);
+    background-position: -126px -18px;
+    background-repeat: no-repeat;	
+    cursor: pointer;
+}
+
+.searchBox.hasText .notFoundIndicator
+{
+	display: block;
+	background-position: -862px -18px;
+}
+
+.searchBox.noResults .notFoundIndicator,
+.searchBox.hasText.noResults .notFoundIndicator
+{
+	display: block;
+	background-position: -648px 0px;
+}

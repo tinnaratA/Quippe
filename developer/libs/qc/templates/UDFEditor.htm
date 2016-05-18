@@ -1,0 +1,134 @@
+﻿<div class="qcMedcinUDFEditor" tabindex="-1" aria-labelledby="${id}_title">
+       <div data-dojo-attach-point="containerNode" class="qcMedcinUDFEditor">
+
+            <div data-dojo-attach-point="mainPanel" class="mainPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: false">
+
+                <div class="topPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'top'">
+                    <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                        <div data-dojo-attach-point="tbAttach" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doAttach" data-dojo-props="showLabel: true, label: 'Attach To'"></div>
+                        <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                        <div data-dojo-attach-point="tbSelect" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doSelect" data-dojo-props="showLabel: true, label: 'Select UDF'"></div>
+                        <div data-dojo-attach-point="tbNew" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doNew" data-dojo-props="showLabel: true, label: 'New UDF'"></div>
+                        <div data-dojo-attach-point="tbSave" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doSave" data-dojo-props="showLabel: true, label: 'Save Changes', disabled: true"></div>
+                        <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                        <div data-dojo-attach-point="tbSaveAtServer" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doSaveAtServer" data-dojo-props="showLabel: true, label: 'Save medcin.udf'"></div>
+                        <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                        <div data-dojo-attach-point="tbRegisterAll" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doRegisterAll" data-dojo-props="showLabel: true, label: 'Register All Udfs'"></div>
+                    </div>
+                </div>
+
+                <div class="bottomPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="gutters: false, region: 'center'">
+                    <table class="AttachTable">
+                        <tr class="header">
+                            <th class="labelCell">UDF:&nbsp;<div data-dojo-attach-point="txtUDF" style="width:84px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="readOnly: true"></div></th>
+                            <td class="headNameCell">Name:&nbsp;
+                                <div class="textInput" data-dojo-attach-point="txtName" data-dojo-type="dijit/form/TextBox"></div>
+                            </td>
+                            <td class="headKeyWordCell">KeyWords:&nbsp;
+                                <div class="textInput" data-dojo-attach-point="txtKeyWords" data-dojo-type="dijit/form/TextBox" style="width:82%;"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="labelCell" style="text-align:left">Attach to Finding</th>
+                            <td class="inputCell">
+                                <input data-dojo-attach-point="rbPar" id="rbAttach1" data-dojo-type="dijit/form/RadioButton" type="radio" value="P" name="rbAttach" data-dojo-attach-event="onClick:doAttachLink" /> <label>Par</label>
+                                <input data-dojo-attach-point="rbSub" id="rbAttach2" data-dojo-type="dijit/form/RadioButton" type="radio" checked="checked" value="S" name="rbAttach" data-dojo-attach-event="onClick:doAttachLink" /><label>Sub</label>
+                                <input data-dojo-attach-point="rbRep" id="rbAttach3" data-dojo-type="dijit/form/RadioButton" type="radio" value="R" name="rbAttach" data-dojo-attach-event="onClick:doAttachLink" /><label>Rep</label>
+                            </td>
+                            <td class="attachInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtAttach" style="width:98%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="readOnly: true"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="TextTable">
+                        <tr class="header">
+                            <th class="labelCell" colspan="2">Text Strings</th>
+                            <th class="labelCell"></th>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Search</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtSearch" style="width:100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Nomenclature</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtNomenclature" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Sentence Pos</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtSPos" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Sentence Neg</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtSNeg" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Phrase Pos</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtPPos" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Phrase Neg</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtPNeg" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="captionCell">Add'l Search</td>
+                            <td class="textInputCell">
+                                <div class="textInput" data-dojo-attach-point="txtESearch" style="width: 100%;" data-dojo-type="dijit/form/TextBox" data-dojo-props="maxLength:255"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="UnitTable">
+                        <tr class="header">
+                            <th style="vertical-align: top;">Unit of Measure</th>
+                            <th colspan="2">Female Range</th>
+                            <th colspan="2">Male Range</th>
+                        </tr>
+                        <tr>
+                            <td><div class="textInput" data-dojo-attach-point="txtUnit" data-dojo-type="dijit/form/TextBox"></div></td>
+                            <td>Low:&nbsp;<div class="textInput" data-dojo-attach-point="txtFemLow" style="width: 70%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                            <td>Low:&nbsp;<div class="textInput" data-dojo-attach-point="txtFemHigh" style="width: 70%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                            <td>High:&nbsp;<div class="textInput" data-dojo-attach-point="txtMaleLow" style="width: 70%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                            <td>High:&nbsp;<div class="textInput" data-dojo-attach-point="txtMaleHigh" style="width: 70%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                        </tr>
+                    </table>
+
+                    <table class="MiscTable">
+                        <tr class="header">
+                            <th class="labelCell" colspan="2">Miscellaneous</th>
+                            <th class="labelCell"></th>
+                        </tr>
+                        <tr class="header">
+                            <th class="labelCell">Optional Tag</th>
+                            <th class="labelCell">Properties Modifications</th>
+                        </tr>
+                        <tr>
+                            <td><div class="textInput" data-dojo-attach-point="txtTag" style="width:100%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                            <td><div class="textInput" data-dojo-attach-point="txtProperties" style="width:100%;" data-dojo-type="dijit/form/TextBox"></div></td>
+                        </tr>
+                    </table>
+
+                    <table class="CodesTable">
+                        <tr class="header">
+                            <th style="vertical-align: top;">Code Mappings</th>
+                        </tr>
+                        <tr>
+                            <td><div data-dojo-attach-point="codetable" data-dojo-type="qc/DataSheet" style="width:100%;" data-dojo-props="required:false, fullRowSelect:true"></div></td>
+                       </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

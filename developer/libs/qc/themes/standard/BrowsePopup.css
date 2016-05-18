@@ -1,0 +1,34 @@
+﻿
+.browsePopup
+{
+    padding: 0px;
+    overflow: auto;
+    /*
+	min-width: 380px;
+    max-width: 600px;
+    */
+    width: 400px;
+    background-color: #dddddd;
+}
+
+.browsePopup .dijitToolbar
+{
+	margin: 0px;
+	padding: 0px;
+	border: 1px #999999 solid;
+}
+
+.browsePopup .content
+{
+	margin-top: 2px;
+    padding: 6px;
+    max-height: 500px;
+    overflow: auto;
+    background-color: #ffffff;
+    border: 1px #999999 solid;
+}
+
+.browsePopup .qcTreeView .viewPort
+{
+    overflow: initial;
+}

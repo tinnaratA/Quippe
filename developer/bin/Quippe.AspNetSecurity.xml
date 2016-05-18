@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.AspNetSecurity
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.AspNetSecurity.SecurityProvider.AllowAutoLogin">
+	<summary>
+ When true will look for UserId and Password on the request QueryString, Form and Headers when checking authorization
+ </summary>
+</member><member name="P:Quippe.AspNetSecurity.SecurityProvider.AutoLoginUserId">
+	<summary>
+ UserId to use when auto login enabled and no userid passed
+ </summary>
+</member><member name="P:Quippe.AspNetSecurity.SecurityProvider.AutoLoginPassword">
+	<summary>
+ Password to use when auto login enabled and no password passed
+ </summary>
+</member><member name="P:Quippe.AspNetSecurity.SecurityProvider.AutoCreateUser">
+	<summary>
+ For demo implementations.  Will automatically create user account if missing.
+ </summary>
+</member><member name="P:Quippe.AspNetSecurity.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.AspNetSecurity.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.AspNetSecurity.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

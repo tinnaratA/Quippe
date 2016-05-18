@@ -1,0 +1,33 @@
+﻿.qcOptionList
+{
+}
+
+.qcOptionList .option
+{
+	display: block;
+	margin: 4px;
+	cursor: pointer;	
+}
+
+.qcOptionList .option .icon
+{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 2px;
+	vertical-align: middle;
+	background-image: url(images/checkmarkNoBorder.png);
+	background-position: -111px 1px;
+	background-repeat: no-repeat;	
+}
+
+.qcOptionList .option .label
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.qcOptionList .option.selected .icon
+{
+	background-position: -95px 1px;
+}

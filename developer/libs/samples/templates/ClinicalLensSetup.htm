@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/Quippe/themes/Application.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/ClinicalLens/themes/Application.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "samples/CustomLensCategoriesApp"],
+                function(dom, when, Application) {
+                    var application = new Application();
+
+                    when(application.init(), function () {
+                        application.placeAt(dom.byId("applicationContainer"));
+                        application.startup();
+                    });
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            body {
+                overflow-y: scroll !important;
+            }
+        </style>
+
+        <title>Setting Up Your Application</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Setting Up Your Application</h1>
+
+            <p>
+                If you have not already setup an application directory to contain the customizations for your application, please
+                <a href="ApplicationSetup.htm">visit this topic</a> to learn how to do so. Once your application directory is
+                setup, you'll want to create a new Clinical Lens application class that inherits from the 
+                <code>ClinicalLens/Application</code> module:
+            </p>
+
+            <pre><code class="js">
+    define([
+        "ClinicalLens/Application",
+        ...
+    ], function(Application, ...) {
+        return declare("yourProduct.ClinicalLensApplication", [Application], {
+            ...
+        });
+    });
+            </code></pre>
+
+            <p>
+                In the same way that you do for Quippe Clinical Documentation, you can then begin to override methods and
+                properties of the Application class to customize it. You can get a full list of the members of the base Clinical
+                Lens Application class from our
+                <a href="http://help.medicomp.com/#topic%3DJavaScript_Dojo_T_ClinicalLens_Application" target="_new">help
+                site</a>. When you want to see your changes in action, you can either create your own view or .htm file to host
+                your application or you can update ClinicalLens.htm and replace the dependency on 
+                <code>ClinicalLens/Application</code> with the module path to your application class.
+            </p>
+
+            <p>
+                In the example below, we add a new category to the summary and entire chart tabs that separate out vital signs
+                that were previously aggregated under the "ROS &amp; Exam" category. We also walk through how to make
+                modifications to other parts of Clinical Lens, such as customizing the appearance of findings within the 
+                categories, in other samples in this collection.
+            </p>
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 800px"></div>
+        </div>
+    </body>
+</html>

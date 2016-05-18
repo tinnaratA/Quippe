@@ -1,0 +1,232 @@
+﻿.qcEMAnalysis
+{
+	font-size: 80%;
+	width: 100%;
+	height: 100%;
+}
+
+.qcEMAnalysis .tabContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.qcEMAnalysis .tabContainer .dijitTabPaneWrapper
+{
+	border: 0px;
+}
+
+.qcEMAnalysis table
+{
+	border-collapse: collapse;
+	font-size: 100%;
+}
+
+
+.qcEMAnalysis .visitTable .labelCell
+{
+	text-align: left;
+	vertical-align: bottom;
+	padding: 4px 0px 0px 4px;
+}
+
+.qcEMAnalysis .visitTable .inputCell
+{
+	text-align: left;
+	vertical-align: middle;
+	padding: 0px 0px 4px 4px;
+}
+
+.qcEMAnalysis .problemTable
+{
+	border-collapse: collapse;
+	font-size: 100%;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.qcEMAnalysis .problemTable th
+{
+	text-align: center;
+	background-color: #eeeeee;
+	border: 1px solid #999999;
+}
+
+.qcEMAnalysis .problemTable td
+{
+	text-align: left;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #999999;
+	padding: 4px;
+}
+
+.qcEMAnalysis .problemTable td.checkCell
+{
+	text-align: center;
+	width: 100px;
+}
+
+.qcEMAnalysis .resultMessage
+{
+	margin: 12px;
+	display: none;
+}
+
+.qcEMAnalysis .resultTable
+{
+	display: none;
+}
+
+.qcEMAnalysis .resultTable th
+{
+	padding: 4px;
+	font-weight: bold;
+	background-color: #eeeeee;
+	border: 1px solid #999999;
+}
+
+.qcEMAnalysis .resultTable td
+{
+	padding: 6px;
+	border: 1px solid #999999;
+}
+
+.qcEMAnalysis .analysisTable
+{
+	width: 100%;
+	font-size: 100%;
+	border-collapse: collapse;
+	cursor: pointer;
+}
+
+.qcEMAnalysis .analysisTable td
+{
+	border: 1px solid #999999;
+	background-color: transparent;
+	font-weight: normal;
+	padding: 4px;
+}
+
+.qcEMAnalysis .analysisTable .highlight td
+{
+	background-color: #abd6ff !important;
+	border:solid 1px #769dc0 !important;
+} 
+
+.qcEMAnalysis .analysisTable td.labelCell
+{
+	overflow:hidden;
+}
+
+.qcEMAnalysis .analysisTable td.detailLevel
+{
+	width: 100px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.qcEMAnalysis .analysisTable td.detailLevel.notApplicable
+{
+	background-color: #eeeeee;
+}
+
+.qcEMAnalysis .analysisTable td.detailLevel.summary
+{
+	background-color: #eeeeee;
+}
+
+.qcEMAnalysis .analysisTable td.detailLevel.systemValue
+{
+	background-color: #fecdba;
+	color:#000000;
+	font-weight: bold;	
+}
+
+
+.qcEMAnalysis .analysisTable .overridden td.detailLevel.systemValue
+{
+	font-weight: normal;
+}
+
+.qcEMAnalysis .analysisTable td.detailLevel.userValue
+{
+	background-color: #abefcd;
+	color:#000000;
+	font-weight: bold;
+}
+
+.qcEMAnalysis .analysisLabel .expander
+{
+    display: inline-block;
+    background-image: url('images/treeExpandImages.png');
+    width: 16px;
+    height: 16px;
+    background-position: 1px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+        
+        
+.qcEMAnalysis .analysisLabel .expander.expanded 
+{
+    background-position: -35px 0px;
+}
+        
+.qcEMAnalysis .analysisLabel .expander.collapsed
+{
+    background-position: 1px 0px;
+}
+        
+.qcEMAnalysis .analysisLabel .expander.leaf
+{
+    background-image: none;
+}
+
+.qcEMAnalysis .analysisLabel .label
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.qcEMAnalysis .analysisLabel .iconNode
+{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.qcEMAnalysis .analysisTableLegend
+{
+	margin: 20px;
+}
+
+.qcEMAnalysis .analysisTableLegend .block
+{
+	display: inline-block;
+	border: 1px solid #999999;
+	margin: 6px;
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+}
+
+.qcEMAnalysis .analysisTableLegend .block.systemValue
+{
+	background-color: #fecdba;
+}
+
+.qcEMAnalysis .analysisTableLegend .block.userValue
+{
+	background-color: #abefcd;
+}
+
+.qcEMAnalysis .analysisTableLegend .label
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 12px;
+}

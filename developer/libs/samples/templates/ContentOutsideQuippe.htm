@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css"/>
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css"/>
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            var onShowWizardClicked = null;
+            var onLoadContentClicked = null;
+
+            require([
+                    "qc/Note", "dojo/dom", "dojo/dom-construct", "dojo/request", "qc/_core", "dojo/aspect", "dojo/_base/lang",
+                    "dojo/query", "dojo/dom-class", "dijit/registry"
+                ],
+                function(Note, dom, domConstruct, request, core, aspect, lang, query, domClass, registry) {
+                    var okClicked = function() {
+                        var selectedFindings = "";
+
+                        // Filter through all of the finding nodes
+                        query('.finding', this.domNode)
+                            .filter(function(y) {
+                                return !domClass.contains(y, 'suppressEntry');
+                            })
+                            .map(registry.byNode)
+                            // Return only those findings that have a Medcin ID and have a positive result
+                            .filter(function(x) {
+                                return x.name && x.get('medcinId') && x.get('result') ? true : false;
+                            })
+                            .forEach(function(x) {
+                                selectedFindings += x.get('medcinId') + ': ' + x.get('text') + '<br/>';
+                            });
+
+                        dom.byId("selectedWizardItems").innerHTML = selectedFindings ? selectedFindings : "[None]";
+                    };
+
+                    onShowWizardClicked = function() {
+                        dom.byId("selectedWizardItems").innerHTML = "[None]";
+
+                        request.get(core.serviceURL('Quippe/ContentLibrary/Data?id=shared%3A333845E6DKMJF40B584BF68EBCF0A6E0F'), {
+                            handleAs: "xml",
+                            preventCache: true
+                        }).then(function(data) {
+                            var wizard = Note.parseXml(data);
+
+                            wizard.action = null;
+                            wizard.placeAt(document.body);
+                            wizard.startup();
+
+                            // Since this is a popup wizard instead of simple note content, we have to call its show() method
+                            // before it will appear on the screen
+                            wizard.show();
+
+                            aspect.after(wizard, "onExecute", lang.hitch(wizard, okClicked));
+                        }, function(message) {
+                            alert('Unable to load form: ' + message);
+                        });
+                    };
+
+                    onLoadContentClicked = function() {
+                        dom.byId("loadContentButton").disabled = "disabled";
+
+                        request.get(core.serviceURL('Quippe/ContentLibrary/Data?id=shared%3AVitalsTable'), {
+                            handleAs: "xml",
+                            preventCache: true
+                        }).then(function (data) {
+                            // We get the note content back from the server wrapped in a <Content> node, so we'll read through
+                            // each of its children, parse the XML, and add it to the DOM
+                            for (var i = 0; i < data.childNodes[0].childNodes.length; i++) {
+                                var content = Note.parseXml(data.childNodes[0].childNodes[0]);
+
+                                content.placeAt(dom.byId("contentContainer"));
+                                content.startup();
+                            }
+                        }, function(message) {
+                            alert('Unable to load content: ' + message);
+                        });
+                    };
+                }
+            );
+        </script>
+
+        <title>Loading Content Outside of Quippe</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Loading Content Outside of Quippe</h1>
+
+            <p>
+                If you have wizards, popups, or other content that you have developed in the Quippe designer but you want to make
+                use of outside of the context of a Quippe workspace, you can do so relatively easily. You will need to have a script
+                tag that loads <code>libs/dojo/dojo.js</code> as well as link tags to load the Quippe CSS:
+            </p>
+
+            <pre><code class="html">
+    &lt;link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" /&gt;
+    &lt;script type="text/javascript" data-dojo-config="async: true" src="libs/dojo/dojo.js"&gt;&lt;/script&gt;
+            </code></pre>
+
+            <p>
+                You can then load the content from the content library by invoking the <code>Quippe/ContentLibrary/Data</code> 
+                web service endpoint:
+            </p>
+
+            <pre><code class="js">
+    request.get(core.serviceURL('Quippe/ContentLibrary/Data?id=IDOfTheContentToLoad'), {
+        handleAs: "xml",
+        preventCache: true
+    });
+            </code></pre>
+
+            <p>
+                Using the return data from the web service call, you can call <code>Note.parseXml(data)</code> (from the
+                <code>qc/Note</code> module) to construct the content widget and then call the widget's <code>placeAt()</code>
+                method to add it to the DOM document. In the example below, we have two buttons: one to load and display a wizard
+                in the form of a popup and another to load some note content and add it to the DOM inline. In both cases, you
+                have the ability to get findings selected and values entered by the user in largely the same manner as you would 
+                do in Quippe.
+            </p>
+
+            <pre><code class="js">
+    query('.finding', this.domNode)
+        .filter(function (y) {
+            return !domClass.contains(y, 'suppressEntry');
+        })
+        .map(registry.byNode)
+        .filter(function (x) {
+            return x.name && x.get('medcinId') && x.get('result') ? true : false;
+        })
+        .forEach(function (x) {
+            selectedFindings += x.get('medcinId') + ': ' + x.get('text') + '&lt;br /&gt;';
+        });
+            </code></pre>
+
+            <h2>Example:</h2>
+
+            <p>
+                <input type="button" onclick="onShowWizardClicked()" value="Show Wizard" />
+
+                <br /><br />
+
+                Findings selected in the wizard:
+                <div id="selectedWizardItems">[None]</div>
+
+                <br /><br />
+
+                <input type="button" onclick="onLoadContentClicked()" value="Load Content" id="loadContentButton" />
+
+                <br /><br />
+
+                <div id="contentContainer"></div>
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Medcin Viewer</title>
+    <link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" />    
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" />
+    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/MedcinViewer.css" />
+
+    <style type="text/css">
+        html
+        {
+        	height: 100%;
+        }
+        
+        body
+        {
+        	height: 100%;
+        	font-family:Arial, Sans-Serif;
+        	font-size: .80em;
+        	margin: 0px;
+        	padding: 0px;
+        }
+    </style>
+
+    <script type="text/javascript" src="libs/dojo/dojo.js" data-dojo-config="async: true"></script>
+
+	<script type="text/javascript">
+		var app = null;
+		var prevMedcinId = 0;
+
+		require(["qc/MedcinViewer", "dojo/ready", "dojo/when", "dojo/on", "dojo/io-query"], function(MedcinViewer, ready, when, on, ioQuery) {
+			function onHashChange() {
+				if (!(app && app.tree)) {
+					return;
+				};
+
+				var medcinId = 0;
+				if (location.hash) {
+					medcinId = parseInt(location.hash.substr(1), 10) || 0;
+				} else if (location.search) {
+					medcinId = parseInt(ioQuery.queryToObject(location.search.substr(1)).medcinId) || 0;
+				};
+
+				if (medcinId != prevMedcinId) {
+					if (medcinId == 0) {
+						app.browse();
+					} else {
+						app.tree.expandToMedcinId(medcinId);
+					}
+					prevMedcinId = medcinId;
+				};
+			};
+
+			ready(function() {
+				app = new MedcinViewer();
+				app.placeAt(document.body);
+				app.startup();
+
+				when(app.browse(), function() {
+					if ('onhashchange' in window) {
+						prevMedcinId = 0;
+						on(window, 'hashchange', onHashChange);
+						onHashChange();
+					};
+				});
+
+			});
+		});
+	</script>
+</head>
+
+<body class="claro">
+</body>
+</html>

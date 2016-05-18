@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" />
+        <link rel="stylesheet" type="text/css" href="libs/samples/themes/standard/Browser.css" />
+        <link rel="icon" type="image/png" href="images/QuippeIconGloss.png" />
+        <link rel="apple-touch-icon" href="images/QuippeIconGloss.png" />
+
+        <script type="text/javascript" src="libs/samples/highlight.pack.js"></script>
+        <script type="text/javascript" src="libs/dojo/dojo.js" data-dojo-config="parseOnLoad: true, locale: 'en-us', async: true"></script>
+
+        <script type="text/javascript">
+            require(['samples/Browser', 'dojo/ready'], function (Browser, ready) {
+                ready(function () {
+                    var app = new Browser(null, 'samplesBrowser');
+
+                    app.hljs = hljs;
+                    app.startup();
+                });
+            });
+        </script>
+
+        <style type="text/css">
+            html {
+                height: 100%;
+            }
+
+            body {
+                height: 100%;
+                margin: 0px;
+            }
+        </style>
+
+        <title>Quippe Samples Browser</title>
+    </head>
+    <body class="claro">
+        <div id="samplesBrowser"></div>
+    </body>
+</html>

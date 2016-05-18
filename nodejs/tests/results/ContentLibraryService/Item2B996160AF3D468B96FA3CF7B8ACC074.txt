@@ -1,0 +1,17 @@
+﻿<FreeText MedcinId="1718" Result="A" SectionId="S1">
+  <OptionLists>
+    <OptionList Name="TextList1" ListType="text">
+      <Option id="1" Text="test" />
+      <Option id="2" Text="example" />
+      <Option id="3" Text="sample" />
+      <Option id="4" Text="demonstration" />
+    </OptionList>
+  </OptionLists>
+  <Text>
+ This is a 
+    <MacroField Name="Field1" FieldType="text" ValueType="string" ChoiceType="single" ListName="TextList1">
+test
+    </MacroField>
+ of the macro editor.
+  </Text>
+</FreeText>

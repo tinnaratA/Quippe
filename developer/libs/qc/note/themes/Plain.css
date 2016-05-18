@@ -1,0 +1,42 @@
+﻿.note.plain
+{
+	font-family: Georgia;
+	font-size: .9em;
+}
+
+.note.plain .sectionHeader
+{
+	color: #333333;
+	font-variant:small-caps;
+}
+
+.note.plain .group
+{
+	margin-left: 12px;
+}
+
+.note.plain .groupHeader
+{
+	color: #333333;
+}
+
+.note.plain .findingLabel
+{
+	color: #999999;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.note.plain .findingLabel.pos
+{
+	color: #000000;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.note.plain .findingLabel.neg
+{
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+}

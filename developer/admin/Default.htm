@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Quippe Admin Console</title>
+        <link rel="Stylesheet" type="text/css" href="admin.css" />
+        
+        <script type="text/javascript" src="../libs/Quippe/DojoBootstrap.js"></script>
+
+        <script type="text/javascript">
+			var loadFailure = function (message) {
+				alert(message || "An unknown error has occurred");
+			};
+
+			var loadApplication = function() {
+			    document.getElementById("container").style["display"] = "block";
+			};
+
+			loadDojo(loadApplication, loadFailure, true);
+        </script>
+    </head>
+    <body>
+        <div id="container" style="display: none">
+            <div class="titleBar">
+                <div class="pageTitle">Quippe Admin Console</div>
+                <div class="mainMenu">
+                    <a href="../Default.htm">Quippe</a> |
+                    <a href="Default.htm">Admin Console</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Admin Tools</h1>
+            
+                <ul>
+                    <li><a href="ManageRoles.htm">Manage Roles</a></li>
+                    <li><a href="ManageUsers.htm">Manage Users</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<div class="dijitDialog qcPhraseEditorDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+
+        <div data-dojo-attach-point="mainPanel" class="mainPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true">
+        
+            <div class="topPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'top'">
+                <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                    <div data-dojo-attach-point="tbNewPhrase" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doNewPhrase" data-dojo-props="label: 'New Phrase', iconClass: 'add'"></div>
+                    <div data-dojo-attach-point="tbDeletePhrase" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doDeletePhrase" data-dojo-props="label: 'Delete Phrase', iconClass: 'delete'"></div>
+                    <div data-dojo-attach-point="tbMoveUp" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doMoveUp" data-dojo-props="label: 'Move Up', iconClass: 'arrow_up_green'"></div>
+                    <div data-dojo-attach-point="tbMoveDown" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doMoveDown" data-dojo-props="label: 'Move Down', iconClass: 'arrow_down_green'"></div>
+                    <div data-dojo-attach-point="tbRevert" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:doReset" data-dojo-props="label: 'Revert to Original', iconClass: 'refresh'"></div>
+                </div>
+            </div>
+
+            <div class="bottomPane" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, region: 'center'">
+                <div class="navPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: true, region: 'leading'">
+                    <div class="phraseList" data-dojo-type="qc/ListView" data-dojo-attach-point="lvPhrases"></div>
+                </div>
+
+                <div class="detailPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: true, region: 'center'">
+                    <h1>Independent</h1>
+                    <h2>Positive:</h2>
+                    <div class="editBox">
+                        <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtIndPos" data-dojo-attach-event="onBlur:saveChanges"></div>
+                    </div>
+                    <h2>Negative:</h2>
+                    <div class="editBox">
+                        <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtIndNeg" data-dojo-attach-event="onBlur:saveChanges"></div>
+                    </div>
+                    <h1>Dependent</h1>
+                    <h2>Positive:</h2>
+                    <div class="editBox">
+                        <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtDepPos" data-dojo-attach-event="onBlur:saveChanges"></div>
+                    </div>
+                    <h2>Negative:</h2>
+                    <div class="editBox">
+                        <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtDepNeg" data-dojo-attach-event="onBlur:saveChanges"></div>
+                    </div>
+                </div>              
+            </div>
+
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div>
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+
+    </div>
+</div>

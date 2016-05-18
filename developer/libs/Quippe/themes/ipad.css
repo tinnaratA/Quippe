@@ -1,0 +1,289 @@
+﻿html
+{
+    overflow: hidden;
+}
+
+body 
+{
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: .9em !important;	
+    overflow: hidden;
+    background-color: #ffffff;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);	
+    -webkit-text-size-adjust: none !important;
+    -webkit-overflow-scrolling: auto !important;
+    position: fixed;
+}
+
+@media (orientation:landscape) and (width: 1024px)
+{
+	html
+	{
+		height: 672px;
+	}
+
+	body
+	{
+		height: 672px;
+	}
+}
+
+.qcWorkspace
+{
+	width: 100%;
+	height: auto;
+}
+
+.qcNoteEditorTab
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: none !important;
+}
+
+.qcNoteEditor
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	margin:0px;
+	background-color: #ffffff;
+}
+
+.qcNoteEditor.printable
+{
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+.note
+{
+	font-family: Helvetica, Arial, Sans-Serif;
+	padding-left: 8px;
+	padding-top: 8px;
+}
+
+/*
+removed for reviewPane scrolling
+.dijitTabPane
+{
+	overflow: hidden;
+}
+*/
+
+input
+{
+	border-radius: 0;
+	-webkit-appearance:none;
+}
+
+.note .findingLabel
+{
+	padding-top: 3px;
+	padding-bottom: 3px;
+}	
+
+.dijitInputInner
+{
+	border-radius: 0;	
+	-webkit-appearance:none;
+}
+
+.TextBox
+{
+	-webkit-appearance:none !important;		
+	-webkit-box-sizing: border-box;
+	border-radius: 0;	
+}
+
+select
+{
+	font-size: 100%;
+	-webkit-appearance:none !important;
+	border-radius: 0;
+}
+
+
+.qcListViewItem .actionButton
+{
+	visibility: hidden;
+}
+
+.qcListViewItem:hover
+{
+	background-color: transparent;
+}
+        
+.qcListViewItem.selected
+{
+    background-color:#d8edff;
+} 
+
+.qcListViewItem td
+{
+    border: 1px solid transparent;
+}
+
+.qcListViewItem:hover td
+{
+    border-color: transparent;  
+}
+
+/* Grey Toolbars */
+.claro .dijitToolbar
+{
+	border-bottom: 1px solid #999999;
+	background-image: -moz-linear-gradient(top,#f5f5f7,#c1c4ce);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f7),to(#c1c4ce));	
+}
+
+.claro .dijitTitlePaneTitle
+{
+	background-image: -moz-linear-gradient(top,#f1f1f1,#c1c4ce);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f7),to(#c1c4ce));
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+.claro .dijitTitlePaneTitle.dijitClosed
+{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;	
+}
+
+.claro .dijitTitlePaneContentOuter
+{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+
+/* Tab Buttons */
+
+.claro .dijitTabContainerBottom-tabs .dijitTabContent
+{
+	background-image: -moz-linear-gradient(top,#fcfcfc 70%, #e6e6e7 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f7),color-stop(75%, #f5f5f7),to(#c1c4ce));
+	background-position: 0px, 0px;
+	background-color: transparent;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;	
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+}
+
+.claro .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent 
+{
+	background-image: -moz-linear-gradient(top,#ffffff 70%, #b2d4f3 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),color-stop(75%, #ffffff),to(#b2d4f3));
+	background-position: 0px, 0px;
+	background-color: transparent;	
+}
+
+.claro .dijitTabContainerBottom-tabs .dijitTabInnerDiv 
+{
+	background-color: transparent;
+	background-image: none;
+}
+
+.claro .dijitTabContainerBottom-tabs .tabChecked .dijitTabInnerDiv 
+{
+	background-color: transparent;
+	background-image: none;
+}
+
+.claro .dijitComboBoxMenuPopup {
+	background-color: white;
+}
+
+.qcNavBar
+{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	min-height: 22px;
+	width: 100%;
+}
+
+.qcTaskPane
+{
+	border-top: 0px;
+}
+
+.qcSearchBox
+{
+}
+
+.searchResultList
+{
+	max-width: 420px;
+    overflow: hidden !important;
+}
+
+.searchResultList .content
+{
+    margin-top: 2px;
+    padding: 6px;
+    height: auto;
+    max-height: 400px;
+    overflow: auto;
+    background-color: #ffffff;
+    border: 1px #999999 solid;
+	overflow-y: scroll !important;
+}
+
+.qcTreeNode .nodeHeader:hover
+{
+	border:  solid 1px #ffffff;            
+    background-color: #ffffff;   
+}
+
+.qcTreeNode .nodeHeader.selected
+{
+    background-color:#d8edff;
+    border:solid 1px #c3e2fd;
+} 
+
+
+.browsePopup
+{
+    max-width: 420px;
+    max-width: 420px;
+}
+
+.browsePopup .content
+{
+    max-height: 400px;
+}
+
+.qcNoteEditor .note {
+	-webkit-user-select: auto !important;
+}
+
+.qcPrintPreview .freeText .editArea {
+	-webkit-user-modify: read-only !important;
+}
+
+.qcNewEncounterDialog2 tr:hover {
+	background-color: #ffffff !important;
+}
+
+.qcNewEncounterDialog2 tr.selected {
+	background-color: #d8edff !important;
+}
+
+body.qcHistoryNoteViewerBody {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.qcHistoryNoteViewerBody .qcNoteEditor {
+    position: relative !important;
+}

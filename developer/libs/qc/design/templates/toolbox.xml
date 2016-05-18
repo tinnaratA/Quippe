@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+
+<Toolbox>
+  <Group Name="Containers">
+    <Item Name="Chapter">
+      <Chapter Text="New Chapter" />
+    </Item>
+    <Item Name="Section">
+      <Section Text="New Section" />
+    </Item>
+    <Item Name="Group">
+      <Group Text="New Group" />
+    </Item>
+  </Group>
+
+  <Group Name="Finding Widgets">
+    <Item Name="Standard Finding">
+      <Finding Text="finding" PostSep=";" />
+    </Item>
+        
+    <Item Name="Label Only">
+      <Finding Text="finding" PostSep=";" >
+        <EntryComponents>
+          <Label Visible="0" />
+          <Result Visible="0" />
+          <Text Visible="-1" />
+          <Value Visible="0" />
+          <Unit Visible="0" />
+          <Onset Visible="0" />
+          <Duration Visible="0" />
+          <Episode Visible="0" />
+          <Timing Visible="0" />
+          <Notation Visible="0" />
+          <PostSep Visible="-1" />
+        </EntryComponents>
+      </Finding>
+    </Item>
+    
+    <Item Name="Checkboxes">
+      <Finding Text="finding">
+        <EntryComponents>
+          <Label Visible="0" />
+          <Result Visible="-1" />
+          <Text Visible="-1" />
+          <Value Visible="0" />
+          <Unit Visible="0" />
+          <Onset Visible="0" />
+          <Duration Visible="0" />
+          <Episode Visible="0" />
+          <Timing Visible="0" />
+          <Notation Visible="0" />
+          <PostSep Visible="0" />
+        </EntryComponents>
+      </Finding>
+    </Item>
+    
+    <Item Name="Value Line">
+      <Finding Text="finding">
+        <EntryComponents>
+          <Label Visible="0" />
+          <Result Visible="0" />          
+          <Text Visible="-1" />
+          <Value Visible="-1" StyleClass="entryLine" />
+          <Unit Visible="0" StyleClass="entryLine" />
+          <Onset Visible="0" StyleClass="entryLine" />
+          <Duration Visible="0" StyleClass="entryLine" />
+          <Episode Visible="0" StyleClass="entryLine" />
+          <Timing Visible="0" StyleClass="entryLine" />
+          <Notation Visible="0" StyleClass="entryLine" />          
+          <PostSep Visible="0" />
+        </EntryComponents>
+      </Finding>
+    </Item>
+  </Group>
+
+  <Group Name="Misc" Collapsed="false">
+    <Item Name="Free Text Block">
+      <FreeText />
+    </Item>
+
+    <Item Name="Text Label">
+      <Label Text="text label" />
+    </Item>
+
+    <Item Name="State Button">
+      <StateButton Text="Button" />
+    </Item>
+
+    <Item Name="Hyperlink">
+      <Hyperlink Text="Hyperlink..."  />
+    </Item>
+
+    <Item Name="Link Button">
+      <Hyperlink Text="Button" StyleClass="button"  />
+    </Item>
+  </Group>
+  
+   <Group Name="Tables">
+
+    <Item Name="Finding Table">
+      <Element Type="qc/note/FindingTable" Rows="4" Cols="4" StyleClass="borders">
+        <TableSettings ColStyle="width:100px;" />
+      </Element>
+    </Item>
+         
+  </Group>
+
+</Toolbox>

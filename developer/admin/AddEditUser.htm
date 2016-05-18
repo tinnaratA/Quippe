@@ -1,0 +1,332 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add/Edit User</title>
+    <link rel="Stylesheet" type="text/css" href="admin.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/dijit/themes/claro/claro.css" />
+    <link rel="icon" type="image/png" href="../images/QuippeIconGloss.png" />
+
+    <script type="text/javascript" src="../libs/Quippe/DojoBootstrap.js"></script>
+
+    <script type="text/javascript">
+            var loadFailure = function (message) {
+                document.getElementById("lblMessage").innerHTML = (message || "An unknown error has occurred") + "<br/><br/>";
+            };
+
+            var match;
+            var queryStringRegex = /([^&=]+)=?([^&]*)/g;
+            var query = window.location.search.substring(1);
+            var urlParams = {};
+
+            while (match = queryStringRegex.exec(query)) {
+                urlParams[decodeURIComponent(match[1].replace(/\+/g, " "))] = decodeURIComponent(match[2].replace(/\+/g, " "));
+            }
+
+            var loadApplication = function () {
+                require(["dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/query", "dojo/request", "qc/_core", "dojo/domReady!"], function (lang, dom, domAttr, domClass, domConstruct, domStyle, on, query, request, core) {
+                    core.settings.baseServiceURL = "../" + core.settings.baseServiceURL;
+
+                    on(dom.byId("cmdShowList"), "click", function () {
+                        window.location.href = "ManageUsers.htm";
+                    });
+
+                    on(dom.byId("cmdDeleteUser"), "click", function() {
+                        if (confirm("Are you sure that you want to delete this user?")) {
+                            request(core.serviceURL('Quippe/Security/DeleteUser?DataFormat=JSON'), {
+                                handleAs: "json",
+                                preventCache: true,
+                                method: "POST",
+                                data: {
+                                    Username: urlParams["UserName"]
+                                }
+                            }).then(function(data) {
+                                if (data.result.status != "OK") {
+                                    loadFailure("Error deleting user - " + (data.result.message || "An unknown error has occurred"));
+                                }
+
+                                else {
+                                    window.location.href = "ManageUsers.htm";
+                                }
+                            }, function(message) {
+                                loadFailure("Error deleting user - " + (message || "An unknown error has occurred"));
+                            });
+                        }
+                    });
+
+                    on(dom.byId("cmdUnlock"), "click", function () {
+                        request(core.serviceURL('Quippe/Security/UnlockUser?DataFormat=JSON'), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "POST",
+                            data: {
+                                Username: urlParams["UserName"]
+                            }
+                        }).then(function (data) {
+                            if (data.result.status != "OK") {
+                                loadFailure("Error unlocking user - " + (data.result.message || "An unknown error has occurred"));
+                            }
+                        }, function (message) {
+                            loadFailure("Error unlocking user - " + (message || "An unknown error has occurred"));
+                        });
+                    });
+
+                    on(dom.byId("cmdSave"), "click", function () {
+                        if (!dom.byId("txtUserId").value) {
+                            loadFailure("Missing user ID");
+                            return;
+                        }
+
+                        if (!dom.byId("txtEmailAddress").value) {
+                            loadFailure("Missing email address");
+                            return;
+                        }
+
+                        if (!dom.byId("txtPassword").value && !urlParams["UserName"]) {
+                            loadFailure("Missing password");
+                            return;
+                        }
+
+                        var profile = {
+                            Username: dom.byId("txtUserId").value,
+                            Email: dom.byId("txtEmailAddress").value,
+                            Approved: dom.byId("chkApproved").checked,
+                            FirstName: dom.byId("txtFirstName").value,
+                            LastName: dom.byId("txtLastName").value,
+                            Organization: dom.byId("txtCompany").value,
+                            Comment: dom.byId("txtComment").value,
+                            Password: dom.byId("txtPassword").value,
+                            Create: urlParams["UserName"] ? false : true
+                        };
+
+                        request(core.serviceURL('Quippe/Security/SaveProfile?DataFormat=JSON'), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "POST",
+                            data: profile
+                        }).then(function (data) {
+                            if (!data.result.profileSaved) {
+                                loadFailure("Error saving user - " + (data.result.message || "An unknown error has occurred"));
+                            }
+                        }, function (message) {
+                            loadFailure("Error saving user - " + (message || "An unknown error has occurred"));
+                        }).then(function () {
+                            var roles = "";
+
+                            query("input[type=checkbox]", dom.byId("rolesCell")).forEach(function(node) {
+                                if (node.checked) {
+                                    if (roles != "") {
+                                        roles += ",";
+                                    }
+
+                                    roles += node.id.substring(8);
+                                }
+                            });
+
+                            return request(core.serviceURL('Quippe/Security/SaveRolesForUser?DataFormat=JSON'), {
+                                handleAs: "json",
+                                preventCache: true,
+                                method: "POST",
+                                data: {
+                                    Username: profile.Username,
+                                    Roles: roles
+                                }
+                            }).then(function(data) {
+                                if (data.result.status != "OK") {
+                                    loadFailure("Error saving user - " + (data.result.message || "An unknown error has occurred"));
+                                }
+
+                                else {
+                                    window.location.href = "ManageUsers.htm";
+                                }
+                            }, function(message) {
+                                loadFailure("Error saving user - " + (message || "An unknown error has occurred"));
+                            });
+                        });
+                    });
+
+                    var loadRoles = function() {
+                        return request(core.serviceURL('Quippe/Security/GetRoles?DataFormat=JSON'), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "GET"
+                        }).then(function(data) {
+                            var rolesHtml = "";
+
+                            for (var i = 0; i < data.roles.length; i++) {
+                                rolesHtml += "<input type=\"checkbox\" id=\"chkRole_" + data.roles[i].name + "\" name=\"chkRole_" + data.roles[i].name + "\"/> " + data.roles[i].name + "<br/>";
+                            }
+
+                            dom.byId("rolesCell").innerHTML = rolesHtml;
+                        }, function(message) {
+                            loadFailure("Error getting roles - " + (message || "An unknown error has occurred"));
+                        }).then(function() {
+                            return urlParams["UserName"] ? request(core.serviceURL('Quippe/Security/GetRolesForUser?DataFormat=JSON&Username=' + urlParams["UserName"]), {
+                                handleAs: "json",
+                                preventCache: true,
+                                method: "GET"
+                            }).then(function (roleData) {
+                                if (roleData.roles) {
+                                    for (var j = 0; j < roleData.roles.length; j++) {
+                                        dom.byId("chkRole_" + roleData.roles[j].name).checked = true;
+                                    }
+                                }
+                            }, function (message) {
+                                loadFailure("Error getting roles - " + (message || "An unknown error has occurred"));
+                            }) : null;
+                        });
+                    }
+
+                    if (urlParams["UserName"]) {
+                        request(core.serviceURL('Quippe/Security/GetProfile?DataFormat=JSON&Username=' + urlParams["UserName"]), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "GET"
+                        }).then(function (userData) {
+                            dom.byId("txtUserId").value = userData.profile.userName;
+                            domAttr.set(dom.byId("txtUserId"), "disabled", "disabled");
+                            domAttr.set(dom.byId("cmdUnlock"), "disabled", userData.profile.lockedOut ? "" : "disabled");
+
+                            dom.byId("chkApproved").checked = userData.profile.approved;
+                            dom.byId("txtEmailAddress").value = userData.profile.email;
+                            dom.byId("txtFirstName").value = userData.profile.firstName;
+                            dom.byId("txtLastName").value = userData.profile.lastName;
+                            dom.byId("txtCompany").value = userData.profile.organization;
+                            dom.byId("txtComment").value = userData.profile.comment;
+                            dom.byId("lblCurrentPassword").innerHTML = userData.profile.password;
+                        }, function (message) {
+                            loadFailure("Error deleting role - " + (message || "An unknown error has occurred"));
+                        }).then(loadRoles).then(function() {
+                            domStyle.set(dom.byId("container"), "display", "block");
+                        });
+                    }
+
+                    else {
+                        loadRoles().then(function () {
+                            domAttr.set(dom.byId("cmdDeleteUser"), "disabled", "disabled");
+                            domStyle.set(dom.byId("currentPasswordRow"), "display", "none");
+                            domStyle.set(dom.byId("container"), "display", "block");
+                        });
+                    }
+                });
+            };
+
+            loadDojo(loadApplication, loadFailure);
+
+            function randomPassword() {
+                var e = document.getElementById('txtPassword');
+                if (e) {
+                    var c = 'abcdehjklmnopqrstvwxyzABCDEHJKLMNOPQRSTVWXYZ0123456789!@#$%*+';
+                    var p = '';
+                    while (p.length < 8) {
+                        p += c.charAt(Math.floor(Math.random() * (c.length - 1)));
+                    }
+                    e.value = p;
+                }
+                return;
+            }
+    </script>
+
+    <style type="text/css">
+        #lblMessage {
+            color: firebrick;
+            font-weight: bold;
+        }
+
+        input[type=text] {
+            width: 300px;
+        }
+
+        #lblCurrentPassword {
+            width: 300px;
+            font-weight: bold;
+        }
+
+        .editTable td
+		{
+			vertical-align: top;
+			padding: 4px;
+		}
+    </style>
+</head>
+<body class="claro">
+    <div id="container" style="display: none">
+        <div class="titleBar">
+            <div class="pageTitle">Quippe Admin Console</div>
+            <div class="mainMenu">
+                <a href="../Default.htm">Quippe</a> |
+                <a href="Default.htm">Admin Console</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>User Manager</h1>
+            <div id="lblMessage"></div>
+
+            <input type="button" id="cmdShowList" class="commandButton" value="User List" />
+            <input type="button" id="cmdDeleteUser" class="commandButton" value="Delete User" />
+            <input type="button" id="cmdUnlock" class="commandButton" value="Unlock User" disabled="disabled" />
+
+            <br /><br />
+
+            <table class="editTable">
+                <tr>
+                    <td>User ID:</td>
+                    <td><input type="text" id="txtUserId" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Approved:</td>
+                    <td><input type="checkbox" id="chkApproved" /></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" id="txtEmailAddress" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" id="txtFirstName" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" id="txtLastName" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Company:</td>
+                    <td><input type="text" id="txtCompany" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Comment:</td>
+                    <td><input type="text" id="txtComment" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="text" id="txtPassword" /></td>
+                    <td>
+                        <a href="#" onclick="randomPassword()">Generate</a>
+                    </td>
+                </tr>
+                <tr id="currentPasswordRow">
+                    <td>Current Password:</td>
+                    <td><span id="lblCurrentPassword"></span></td>
+                </tr>
+                <tr>
+                    <td>Roles:</td>
+                    <td id="rolesCell"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" id="cmdSave" value="Save Changes" class="commandButton" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

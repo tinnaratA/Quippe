@@ -1,0 +1,72 @@
+﻿.qcNavBar
+{
+	margin: 0px;
+	padding: 0px;	
+	display: block;
+	min-height: 28px;
+	height: auto;
+	width: 100%;
+	border: 0px !important;
+}
+
+.claro .qcNavBar.dijitContentPane
+{
+	padding: 0px;
+}
+
+.qcNavBar.hidden
+{
+	height: 0px;
+	min-height: 0px;
+	display: none;
+}
+
+.qcNavBar table
+{
+	width: 100%;
+	font-size: 90%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.qcNavBar td
+{
+	cursor: pointer;
+	padding: 4px;
+}
+
+.qcNavBar td.disabled
+{
+	color: #cccccc;
+}
+
+.qcNavBar td .anchorText
+{
+    display: inline;
+    border-top: 3px #ffffff solid;
+}
+
+.qcNavBar td.active .anchorText
+{
+    border-top: 3px #3040A0 solid;
+}
+
+.qcNavBar .leftNav
+{
+	text-align: left;
+	vertical-align: bottom;
+	width: 18px;
+}
+
+.qcNavBar .center
+{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.qcNavBar .rightNav
+{
+	text-align: right;
+	vertical-align: top;
+	width: 18px;
+}

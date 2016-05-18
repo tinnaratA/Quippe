@@ -1,0 +1,32 @@
+﻿.qcMacroEditorDialog .mainPanel
+{
+    width: 800px;
+    height: 600px;	
+    margin: 0px;
+    padding: 0px;
+}
+        
+.qcMacroEditorDialog .qcTreeView
+{
+    font-size: 85%;
+}
+
+.qcMacroEditorDialog .qcPropertyGrid
+{
+}
+
+.qcMacroEditorDialog .noteElement.selected
+{
+	outline: none;
+}
+
+.qcMacroEditorDialog .freeText .macroField.selected,
+.qcMacroEditorDialog .freeText .macroField.fieldType_label.selected
+{
+	background-color: #79ff99;
+}
+
+.qcMacroEditorDialog .freeText .macroField.fieldType_label
+{
+	background-color: #eeeeee;
+}

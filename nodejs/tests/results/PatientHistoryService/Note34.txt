@@ -1,0 +1,130 @@
+﻿<!DOCTYPE><HTML>
+<STYLE>
+P {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0.25in;font-weight:normal}
+P.freetext {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0in;font-weight:normal}
+P.outline {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0.25in;text-indent:-0.25in;font-weight:normal}
+P.outline1 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0.5in;text-indent:-0.25in;font-weight:normal}
+P.outline2 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0.75in;text-indent:-0.25in;font-weight:normal}
+P.outline3 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:1in;text-indent:-0.25in;font-weight:normal}
+H1 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0in;font-weight:normal}
+H2 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0in;font-weight:normal}
+H3 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0in;font-weight:normal}
+H4 {margin-bottom:0in;margin-right:0in;margin-top:0in;margin-left:0in;text-indent:0in;font-weight:normal}
+UL {margin-top:0in;margin-bottom:0in;font-weight:normal}
+OL {margin-top:0in;margin-bottom:0in;font-weight:normal}
+</STYLE>
+<HEAD><meta http-equiv="Content-Type" Content="text/html;charset=utf-8" ><TITLE>Chen, Elsie</TITLE></HEAD>
+<BODY TOPMARGIN="0" BGCOLOR=#FFFFFF>
+
+<A NAME="G6P1"></A><H1 ID="G6P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Subjective
+</FONT>
+</H1>
+<P CLASS=freetext ID="G6P2"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+<FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Has burning epigastric pain, occ. wakes pt. from sleep. Not associated with meals. Usually lasts lessthan an hour. Worse with spicey foods. Better with water. No medications tried yet</FONT>.</FONT>
+</P>
+<A NAME="G8P1"></A><H1 ID="G8P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Physical findings
+</FONT>
+</H1>
+<P ID="G8P2"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+ENT: normal.</FONT>
+</P>
+<P ID="G8P3"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+Ears: normal.</FONT>
+</P>
+<P ID="G8P4"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+Lungs: normal.</FONT>
+</P>
+<P ID="G8P5"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+Heart sounds normal and no murmurs were heard.</FONT>
+</P>
+<P ID="G8P6"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+The bowel sounds were normal and abdominal non-tender.  The liver was normal to palpation and the spleen was normal to palpation.</FONT>
+</P>
+<P ID="G8P7"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+The external genitalia showed no abnormalities.</FONT>
+</P>
+<A NAME="G10P1"></A><H1 ID="G10P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Tests
+</FONT>
+</H1>
+<H3 ID="G10P2"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"><B>
+Urinalysis Was Performed:</B></FONT>
+</H3>
+<TABLE COLS="2" WIDTH="100%" BORDER="0" RULES=NONE><COL WIDTH="45%"><COL WIDTH="15%"><COL WIDTH="20%"><COL WIDTH="20%">
+<TR ID="G10P3">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="3">Urinalysis Results: </FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="3">Value</FONT></TD></TR>
+<TR ID="G10P4">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urine pH normal</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 5</FONT></TD></TR>
+<TR ID="G10P5">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Normal urine specific gravity</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 1.028</FONT></TD></TR>
+<TR ID="G10P6">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urine protein</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 2 +</FONT></TD></TR>
+<TR ID="G10P7">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">No urine glucose</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 0 +</FONT></TD></TR>
+<TR ID="G10P8">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">No urine bilirubin</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 0 +</FONT></TD></TR>
+<TR ID="G10P9">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urine RBC</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 15 per HPF</FONT></TD></TR>
+</TABLE>
+<P ID="G10P10"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+ Small abnormal urine hemoglobin.  </FONT>
+</P>
+<P ID="G10P11"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+Urine urobilinogen normal and negative for nitrate.  </FONT>
+</P>
+<P ID="G10P12"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+Abnormal urine leukocyte esterase.  </FONT>
+</P>
+<P ID="G10P13"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+No urine casts found.</FONT>
+</P>
+<H3 ID="G10P14"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"><B>
+Genetic Analysis:</B></FONT>
+</H3>
+<TABLE COLS="2" WIDTH="100%" BORDER="0" RULES=NONE><COL WIDTH="45%"><COL WIDTH="15%"><COL WIDTH="20%"><COL WIDTH="20%">
+<TR ID="G10P15">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="3"></FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="3">Value</FONT></TD></TR>
+<TR ID="G10P16">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">No urine ketones</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> 0 +</FONT></TD></TR>
+</TABLE>
+<A NAME="G11P1"></A><H1 ID="G11P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Assessment
+</FONT></H1><OL>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Gastritis</FONT>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urinary tract infection</FONT>
+</OL>
+<A NAME="G12P1"></A><H1 ID="G12P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Therapy
+</FONT>
+</H1>
+<P ID="G12P2"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+</FONT></P><OL>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> Follow-up with pre-visit lab work.</FONT>
+</OL>
+<A NAME="G13P1"></A><H1 ID="G13P1"><FONT FACE="Times New Roman" COLOR="#0000FF" SIZE="3">
+Plan
+
+<TR ID="G13P2">
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"></FONT></H1><OL>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urine WBC</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2"> tntc per HPF</FONT></TD>
+<TD ALIGN=LEFT><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">10/15/2003</FONT></TD></TR>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Trimethoprim + sulfamethoxazole</FONT>
+<LI><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Ranitidine</FONT>
+</OL>
+<P CLASS=freetext ID="G13P3"><FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">
+<FONT FACE="Times New Roman" COLOR="#000000" SIZE="2">Urine cx pending. Recheck at end of tx. Discussed gastritis sx, will start Zantac and recheck with repeat U/A. Call sooner if sx worsen</FONT>.</FONT>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,25 @@
+﻿@import url("/libs/Quippe/themes/Application.css");
+@import url("Highlighting.css");
+
+.topicContent {
+    margin: 12px;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+table.borders {
+    border-collapse: collapse;
+}
+
+table.borders th {
+    border: 1px #999999 solid;
+    background-color: #eeeeee;
+    padding: 4px;
+}
+
+table.borders td {
+    border: 1px #999999 solid;
+    padding: 4px;
+}

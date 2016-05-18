@@ -1,0 +1,70 @@
+﻿.xmlFormat
+{
+    font-family: Consolas, Courier New, monospace;
+    font-size: 12px;
+    line-height: 1.2em;
+    color: #000000;
+}
+
+.xmlFormat .elem .name
+{
+    color: #000066;
+}
+
+.xmlFormat .elem .header
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.xmlFormat .elem .footer
+{
+}
+
+.xmlFormat .elem .content
+{
+    margin-left: 18px;
+}
+
+.xmlFormat .elem.collapsed .content,
+.xmlFormat .elem.collapsed .footer
+{
+    display: none;
+}
+
+.xmlFormat .attr
+{
+    margin-left: 8px;
+}
+
+.xmlFormat .attr .name
+{
+    color: #000066;
+}
+
+.xmlFormat .attr .value
+{
+    color: #660000;
+}
+
+.xmlFormat .pi
+{
+    color: #999999;
+    display: none;
+}
+
+.xmlFormat .comment
+{
+    color: #009900;
+}
+
+.xmlFormat .expander
+{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: -1em;
+    color: #000000;
+    cursor: pointer;
+    font-size: 120%;
+}

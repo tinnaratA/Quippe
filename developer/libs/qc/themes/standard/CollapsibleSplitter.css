@@ -1,0 +1,223 @@
+﻿.qcSplitButton
+{
+	display: block;
+	position: absolute;
+	z-index: 1000;
+	background: #f6f6f6;
+	border: 1px solid #B5BCC7;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.qcSplitButton.horizontal
+{
+	width: 40px;
+	height: 12px;
+}
+
+.qcSplitButton.vertical
+{
+	width: 12px;
+	height: 40px;
+}
+
+.qcSplitButton.vertical.leading
+{
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.qcSplitButton.vertical.trailing
+{
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+
+.qcSplitButton.horizontal.leading
+{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.qcSplitButton.horizontal.trailing
+{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.qcSplitButton .buttonImage
+{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-image: url(images/commonFormArrows.png);
+	background-repeat: no-repeat;
+}
+
+.qcSplitButton.horizontal.leading .buttonImage
+{
+	left: 16px;
+	top: 2px;
+	background-position: -144px 0px;
+}
+
+
+.qcSplitButton.horizontal.leading.collapsed .buttonImage
+{
+	left: 16px;
+	top: 2px;
+	background-position: -40px 0px;
+}
+
+.qcSplitButton.horizontal.trailing .buttonImage
+{
+	left: 16px;
+	top: 2px;
+	background-position: -40px 0px;
+}
+
+
+.qcSplitButton.horizontal.trailing.collapsed .buttonImage
+{
+	left: 16px;
+	top: 2px;
+	background-position: -144px 0px;
+}
+
+.qcSplitButton.vertical.leading .buttonImage
+{
+	left: 2px;
+	top: 16px;
+	background-position: -358px 0px;
+}
+
+.qcSplitButton.vertical.leading.collapsed .buttonImage
+{
+	background-position: -251px 0px;
+}
+
+.qcSplitButton.vertical.trailing .buttonImage
+{
+	left: 2px;
+	top: 16px;
+	background-position: -251px 0px;
+}
+
+.qcSplitButton.vertical.trailing.collapsed .buttonImage
+{
+	background-position: -358px 0px;
+}
+
+/* --- tablet -- */
+
+.tablet .qcSplitButton.horizontal
+{
+	width: 40px;
+	height: 24px;
+}
+
+.tablet .qcSplitButton.vertical
+{
+	width: 24px;
+	height: 40px;
+}
+
+.tablet .qcSplitButton .buttonImage
+{
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/icons_16.png);
+	background-repeat: no-repeat;
+}
+
+.tablet .qcSplitButton.horizontal.leading .buttonImage
+{
+	left: 12px;
+	top: 4px;
+	background-position: -468px 0px;
+}
+
+
+.tablet .qcSplitButton.horizontal.leading.collapsed .buttonImage
+{
+	left: 12px;
+	top: 4px;
+	background-position: -396px 0px;
+}
+
+.tablet .qcSplitButton.horizontal.trailing .buttonImage
+{
+	left: 12px;
+	top: 4px;
+	background-position: -396px 0px;
+}
+
+
+.tablet .qcSplitButton.horizontal.trailing.collapsed .buttonImage
+{
+	left: 12px;
+	top: 4px;
+	background-position: -468px 0px;
+}
+
+.tablet .qcSplitButton.vertical.leading .buttonImage
+{
+	left: 4px;
+	top: 12px;
+	background-position: -414px 0px;
+}
+
+.tablet .qcSplitButton.vertical.leading.collapsed .buttonImage
+{
+	background-position: -450px 0px;
+}
+
+.tablet .qcSplitButton.vertical.trailing .buttonImage
+{
+	left: 4px;
+	top: 12px;
+	background-position: -450px 0px;
+}
+
+.tablet .qcSplitButton.vertical.trailing.collapsed .buttonImage
+{
+	background-position: -414px 0px;
+}
+
+/* blend */
+.qcSplitButton.blend.vertical.leading
+{
+    border-left:0px;
+}
+.qcSplitButton.blend.vertical.trailing
+{
+    border-right:0px;
+}
+.qcSplitButton.blend.horizontal.leading
+{
+    border-top:0px;
+}
+.qcSplitButton.blend.horizontal.trailing
+{
+    border-bottom:0px;
+}
+
+.qcSplitButton.blend.vertical.leading.collapsed
+{
+    border-left:1px;
+}
+.qcSplitButton.blend.vertical.trailing.collapsed
+{
+    border-right:1px;
+}
+.qcSplitButton.blend.horizontal.leading.collapsed
+{
+    border-top:1px;
+}
+.qcSplitButton.blend.horizontal.trailing.collapsed
+{
+    border-bottom:1px;
+}

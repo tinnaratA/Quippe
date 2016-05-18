@@ -1,0 +1,45 @@
+<div class="dijitDialog qcContentUploadDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea" data-dojo-attach-point="contentArea">
+            <form name="contentUploadForm" method="post" data-dojo-attach-point="uploadForm" enctype="multipart/form-data">
+                <input name="ParentId" data-dojo-attach-point="parentIdField" type="hidden" />
+                <input name="ReplaceExisting" data-dojo-attach-point="replaceExistingField" type="hidden" value="false"/>
+                <table>
+                    <tr>
+                        <td><span data-dojo-attach-point="name"></span>:</td>
+                        <td><input name="Name" data-dojo-attach-point="itemName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><span data-dojo-attach-point="filename"></span>:</td>
+                        <td><input name="Data" data-dojo-attach-point="fileName" type="file" /></td>
+                    </tr>
+                    <tr>
+                        <td><span data-dojo-attach-point="keywords"></span>:</td>
+                        <td><input name="KeyWords" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Type:</td>
+                        <td>
+                            <input name="TypeName" type="text" data-dojo-attach-point="cmbItemTypes" data-dojo-type="qc/FilteringSelect" />
+                            <!--
+                            <br />
+                            <div style="font-size:80%">(leave blank to automatically detect)</div>
+                            -->
+                        </td>   
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdUpload" data-dojo-props="disabled: true">Upload File</div> 
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdCancel">Cancel</div>
+        </div>
+    </div>
+</div>

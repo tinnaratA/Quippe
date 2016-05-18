@@ -1,0 +1,43 @@
+<div class="qcUploadFamilyHistoryDialog dijitDialog qcDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title" style="background-color:#ffffff">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div data-dojo-attach-point="page1" class="uploadFilePanel">
+                Select the .xml file containing the family history data that you wish to upload. If you have not already done so, you can generate a family
+                history file by visiting the <a href="https://familyhistory.hhs.gov/FHH/html/index.html" target="_new">HHS Family Health Portrait site</a>.
+
+                <br/><br/>
+
+                <form name="uploadForm" method="post" data-dojo-attach-point="uploadForm" enctype="multipart/form-data">
+                    <input name="Data" data-dojo-attach-point="fileName" type="file" data-dojo-attach-event="onchange: onFileNameChange"/>
+                </form>
+            </div>
+            <div data-dojo-attach-point="page2" class="selectFindingsPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true" style="height: 300px; display: none">
+                <div class="toolbarPane" data-dojo-type="dijit/layout/ContentPane" style="margin:0px; padding:0px" data-dojo-props="splitter: false, region: 'top'">
+                    <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                        <div data-dojo-attach-point="selectAllButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSelectAllClick" data-dojo-props="iconClass: 'check'">Select All</div>
+                        <div data-dojo-attach-point="selectNoneButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSelectNoneClick" data-dojo-props="iconClass: 'delete'">Select None</div>
+                    </div>
+                </div>
+
+                <div class="selectFindingsContentPane" data-dojo-type="dijit/layout/ContentPane" style="margin: 0px;" data-dojo-props="splitter: false, region: 'center'">
+                    Select the family history findings that you would like to be merged into the note:
+
+                    <br /><br />
+
+                    <div data-dojo-type="qc/CheckList" data-dojo-attach-point="findingsCheckList"></div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonArea">
+            <div data-dojo-attach-point="cmdPrevious" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onPreviousClick" data-dojo-props="disabled: true">Previous</div>
+            <div data-dojo-attach-point="cmdNext" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onNextClick" data-dojo-props="disabled: true">Next</div>
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick" style="margin-left: 18px">Cancel</div>
+        </div>
+    </div>
+</div>

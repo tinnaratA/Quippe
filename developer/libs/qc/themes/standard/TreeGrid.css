@@ -1,0 +1,97 @@
+﻿.qcTreeGrid
+{
+}
+        
+.qcTreeGrid table
+{
+	font: inherit;
+    font-size: 100%;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+       
+                
+.qcTreeGrid .expanded tr
+{
+    display: table-row;
+}
+                
+.qcTreeGrid .collapsed tr
+{
+    display: none;
+}
+        
+.qcTreeGrid td
+{
+	padding: 4px; 
+	border: 1px solid transparent;
+	background-color: #ffffff;    	
+}
+
+.qcTreeGrid tr.selected
+{
+	border:	1px solid #769dc0; 
+}
+        
+.qcTreeGrid.gridLines td
+{
+    border: 1px solid #999999;
+}
+    
+.qcTreeGrid .selected td
+{
+    background-color: #abd6ff;  
+} 
+
+.qcTreeGrid td.selected
+{
+    background-color: #abd6ff;
+}         
+
+.qcTreeGrid .nodeLine
+{
+    display: inline-block;
+    overflow: hidden;
+}
+
+.qcTreeGrid .nodeLine .expander
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+        
+.qcTreeGrid .expanded .nodeLine .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: -35px 0px;
+}
+        
+.qcTreeGrid .collapsed .nodeLine .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: 1px 0px;
+}
+        
+.qcTreeGrid .nodeLine .label
+{
+    display: inline-block;
+}
+        
+.qcTreeGrid thead td
+{
+    background-color: #eeeeee;
+    border: 1px solid #999999;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.qcTreeGrid tfoot td
+{
+    background-color: #eeeeee;
+    border: 1px solid #999999;
+    text-align: center;
+    vertical-align: middle;
+}

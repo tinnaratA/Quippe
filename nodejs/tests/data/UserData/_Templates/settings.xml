@@ -1,0 +1,144 @@
+﻿<Settings xmlns="http://schemas.medicomp.com/V3/UserSettings.xsd">
+
+	<Section Name="General">
+		<Group Name="General">
+			<Item id="Culture" Type="string" Value="en-US" EnumSource="Quippe/TextService/AvailableCultures" RequiresRestart="true" />
+			<Item id="Role" Type="string" Value="1" EnumSource="[1=Doctor;2=Nurse]" />
+			<Item id="DefaultNoteTemplate" Caption="Default Note Template" Value="shared:QUIPPESTANDARD" Description="The default template to use for new encounter documents" EnumSource="Quippe/ContentLibrary/Search?TypeName=template"/>
+			<Item id="DefaultListSize" Caption="Default List Size" Type="integer" Value="2" EnumSource="[1=Small;2=Medium;3=Large]" />
+		</Group>
+	</Section>
+
+	<Section Name="History">
+		<Group Name="Lookback" Caption="Lookback">
+			<Item id="HistoryTabLabels" Caption="Tab Labels" Type="string" Value="absolute" EnumSource="[relative=Relative;absolute=Absolute]"/>
+			<Item id="enableCopyForward" Caption="Enable 'Copy Forward'" Type="boolean" Value="true"/>
+		</Group>
+		<Group Name="Flowsheet" Caption="Flowsheet">
+			<Item id="flowsheetDefaultDateHeadings" Caption="Default Date Headings" Type="string" Value="absolute" EnumSource="[absolute=Encounter Date;enctime=Encounter Time;encdatetime=Encounter Date &amp; Time;relative=Relative to Current Encounter;age=Patient Age]"/>
+			<Item id="flowsheetShowColorBars" Caption="Alternating Row Colors" Type="boolean" Value="true" />
+		</Group>
+		<Group Name="FlowsheetFilter" Hidden="true">
+			<Item id="FlowsheetFilterCurrentLevel" Caption="Current Item Filter" Value="visible" EnumSource="[all=All;visible=Visible;highlight=Highlighted;selected=Selected]"/>
+			<Item id="FlowsheetFilterHistoryLevel" Caption="Past Item Filter" Value="related" EnumSource="[all=All;related=Related;matching=Matching]"/>
+			<Item id="FlowsheetFilterExcludeNonEntered" Value="false" Type="boolean" Caption="Exclude non-entered findings" />
+			<Item id="FlowsheetFilterExcludeNoHistory" Value="true" Type="boolean" Caption="Exclude findings with no history" />
+			<Item id="FlowsheetFilterExcludeNoAbnormalHistory" Value="false" Type="boolean" Caption="Exclude items with no abnormal history" />
+		</Group>
+	</Section>
+
+
+	<Section Name="Task Bar">
+		<Group Name="General">
+			<Item id="TaskBarDisplayMode" Value="constrained" Description="In scrolling mode, the task bar will scroll, in autohide mode, panels will hide themselves" EnumSource="[constrained=No Scrolling;scrolling=Scrolling;autohide=Auto hide]"/>
+			<Item id="TrashCan" Value="none" Description="You can have a trashcan to drag things to." EnumSource="[none=None;trashcan=Trash Can]"/>
+			<Item id="TaskBarCollapsible" Caption="Collapsible" Value="true" Type="boolean" RequiresRestart="true" />
+		</Group>
+		<Group Name="TaskPanes" Caption="Task Panes">
+			<Item id="TaskPanes_PatientInfo" Caption="Patient Info" Value="true" Type="boolean" Description="Shows information about the current patient" />
+			<Item id="TaskPanes_Sources" Caption="Sources" Value="true" Type="boolean" Description="Shows the data sources for the note" />
+			<Item id="TaskPanes_Orders" Caption="Orders" Value="false" Type="boolean" Description="Shows currently entered orderable items" />
+			<Item id="TaskPanes_Favorites" Caption="Favorites" Value="true" Type="boolean" Description="Shows your favorite resources" />
+			<Item id="TaskPanes_Debug" Caption="Debug" Hidden="true" Value="false" Type="boolean" Description="Used for application debugging" />
+		</Group>
+	</Section>
+
+	<Section Name="Coding">
+		<Group Name="EM" Caption="E&amp;M Calculator">
+			<Item id="emDefaultSetting" Caption="Default Setting" Value="O" EnumSource="Medcin/Enums/SETTINGS" />
+			<Item id="emDefaultServiceType" Caption="Default Service Type" Value="OO" EnumSource="Medcin/Enums/SERVICES" />
+			<Item id="emDefaultExamType" Caption="Default Exam Type" Value="A" EnumSource="Medcin/Enums/EXAMTYPE" />
+			<Item id="emShowCPT" Caption="Show CPT Code" Type="boolean" Value="false"/>
+		</Group>
+		<Group Name="CodeEntry" Caption="Code Entry">
+			<Item id="codingServiceEnabled" Caption="Enable Coding Service Features" Value="true" Type="boolean" RequiresRestart="true"  />
+			<Item id="codingShowHints" Caption="Show Code Hints" Type="boolean" Value="false" />
+			<Item id="codingShowSpecifiers" Caption="Show Specifier Options" Type="boolean" Value="true" />
+			<Item id="codingShowSubs" Caption="Show Substitutions" Type="boolean" Value="false" />
+			<Item id="codingShowCodeQualifiers" Caption="Show Code Qualifiers" Type="boolean" Value="true" />
+		</Group>
+		<Group Name="ICD10" Caption="ICD-10-CM">
+			<Item id="TaskPanes_CodeEntryICD10" Caption="Show ICD-10 Code Entry task pane" Value="false" Type="boolean" />
+			<Item id="icd10AppendSpecifierText" Caption="Append specifier text to findings" Type="boolean" Value="false" />
+			<Item id="icd10OverrideText" Hidden="true" Caption="Override finding text with ICD-10 description" Type="boolean" Value="false" />
+		</Group>
+	</Section>
+
+	<Section Name="Printing">
+		<Group Name="General">
+			<Item id="printingUsePDF" Type="boolean" Value="true" Caption="Generate PDF documents for printing" RequiresRestart="true" />
+			<Item id="printingUsePrintView" Type="boolean" Value="true" Caption="Show simple print view" RequiresRestart="true" />
+			<Item id="printingDebug" Caption="Debug Print Operations" Type="boolean" Value="false" Hidden="true" />
+		</Group>
+		<Group Name="DefaultPrintSettings" Caption="Default Print Settings">
+			<Item id="printingPageSize" Caption="Page Size" Value="Letter" EnumSource="Quippe/Enum/PaperSizes" />
+			<Item id="printingOrientation" Caption="Orientation" Value="Portrait" EnumSource="[Portrait;Landscape]" />
+			<Item id="printingMargins" Caption="Margins" Value="1in" />
+			<Item id="printingPageWidth" Caption="Custom Page Width" Value="" />
+			<Item id="printingPageHeight" Caption="Custom Page Height" Value="" />
+			<Item id="printingPageHeaderId" Caption="Page Header" Value="shared:standard_page_header" EnumSource="Quippe/ContentLibrary/Search?TypeName=pageHeader" />
+			<Item id="printingPageFooterId" Caption="Page Footer" Value="shared:standard_page_footer" EnumSource="Quippe/ContentLibrary/Search?TypeName=pageFooter" />
+		</Group>
+	</Section>
+
+	<Section Name="Advanced" Hidden="false">
+		<Group Name="General" Caption="General">
+			<Item id="ShowDeveloperTools" Type="boolean" Value="true" RequiresRestart="true" />
+			<Item id="EnableDesignView" Type="boolean" Value="true" RequiresRestart="true" />
+			<Item id="EnableQuippeDesigner" Type="boolean" Value="true" RequiresRestart="true" Hidden="false" />
+			<Item id="ShowMedcinIdInDetailsDialog" Caption="Show MedcinId in Details Dialog" Type="boolean" Value="true"/>
+			<Item id="SaveNoteSources" Caption="Save Sources with Note" Value="no" EnumSource="[no=No;yes=Yes;draft=Draft Only]"  />
+		</Group>
+		<Group Name="NoteEditor" Caption="Note Editor">
+			<Item id="EnableMultiSelect" Type="boolean" Value="true" />
+			<Item id="EnableInlineTextEditing" Type="boolean" Value="true" />
+			<Item id="EnableTextMacros" Type="boolean" Value="true" RequiresRestart="true" />
+			<Item id="EnableProblemGrouping" Type="boolean" Value="true" />
+			<Item id="EnableSaveElement" Caption="Enable Save As Content" Type="boolean" Value="true" />
+			<Item id="ComponentSettingPresets" Hidden="true" Value="" />
+		</Group>
+		<Group Name="TextService" Caption="Text Service">
+			<Item id="TranscribeSearchResults" Type="boolean" Value="true" />
+			<Item id="PhrasingAllowOverride" Caption="Allow Phrase Overrides" Value="true" Type="boolean" />
+			<Item id="PhrasingAllowEdit" Caption="Allow Custom Phrase Editing" Value="true" Type="boolean" />
+		</Group>
+		<Group Name="NursingBeta" Caption="Nursing Beta">
+			<Item id="nursingFeaturesEnabled" Caption="Enable Nursing Features" Type="boolean" Value="true" RequiresRestart="true" />
+			<Item id="nurseAutoPrompt" Caption="Auto-Prompt Level" Type="string" Value="1" EnumSource="[0=None;1=Actions;2=Interventions;3=Diagnoses]"  />
+		</Group>
+		<Group Name="GestureManager" Caption="Gesture Manager">
+			<Item id="gmShowInk" Caption="Enable Handwriting" Type="boolean" Value="true" />
+			<Item id="gmDragThresholdX" Caption="Drag Threshold X" Type="integer" Value="200" Description="Minimum horizontal distance for the gesture manager to recognize a drag operation"/>
+			<Item id="gmDragThresholdY" Caption="Drag Threshold Y" Type="integer" Value="60" Description="Minimum vertical distance for the gesture manager to recognize a drag operation"/>
+			<Item id="gmClickToleranceX" Caption="Click Tolerance X" Type="integer" Value="3" Description="Horizontal tolerance for recognizing click/hold gestures"/>
+			<Item id="gmClickToleranceY" Caption="Click Tolerance Y" Type="integer" Value="3" Description="Vertical tolerance for recognizing click/hold gestures"/>
+			<Item id="gmClickHoldTime" Caption="Click Hold Time" Type="integer" Value="1000" Description="Wait time to recognize click+hold gesture"/>
+			<Item id="gmStrokeWaitTime" Caption="Stroke Wait Time" Type="integer" Value="500" Description="Time to wait for more ink input before processing"/>
+			<Item id="gmShowScrollMargin" Caption="Show Scroll Margin" Type="boolean" Value="false" Description="True to show the scroll margin"/>
+			<Item id="gmScrollMarginColor" Caption="Scroll Margin Color" Type="string" Value="#eeeeee" Description="Background color for the visible scroll margin"/>
+			<Item id="gmScrollMarginWidth" Caption="Scroll Margin Width" Type="integer" Value="36" Description="Width of the scroll margin"/>
+		</Group>
+		<Group Name="Experimental" Caption="Experimental">
+			<Item id="AddOnPrompt" Type="boolean" Value="true" Description="When true, adds a selected finding to the note before prompting"/>
+			<Item id="SimulateTouchPad" Type="boolean" Value="false" RequiresRestart="true" Hidden="true" />
+			<Item id="EnableFollowUpPrompt" Type="boolean" Value="false" RequiresRestart="true" Hidden="false" />
+			<Item id="UseDesignTemplates" Type="boolean" Value="false" />
+			<Item id="Extensions" Type="string" RequiresRestart="true" Value="" />
+			<Item id="SystemExtensions" Type="string" RequiresRestart="true" Hidden="true" />
+		</Group>
+	</Section>
+
+	<Section Name="CodeReview" Hidden="true">
+		<Group Name="Vocabularies" Caption="Vocabularies">
+			<Item id="CodeReviewSelectedVocabs" Caption="Selected Vocabs" Value="cpt,dsm,icd,icd10,loinc,rxnorm" />
+			<Item id="CodeReviewVocabSequence" Caption="Vocab Sequence" Value=""/>
+		</Group>
+		<Group Name="Filter" Caption="Filter">
+			<Item id="CodeReviewFilterCurrentLevel" Caption="Level" Value="visible" EnumSource="[all=All;visible=Visible;highlight=Highlighted;selected=Selected]" />
+			<Item id="CodeReviewFilterExcludeNonEntered" Caption="Exclude Non-Entered" Type="boolean" Value="true"/>
+			<Item id="CodeReviewFilterExcludeNegatives" Caption="Exclude Negatives" Type="boolean" Value="true"/>
+			<Item id="CodeReviewFilterHideEmptyRows" Caption="Hide Empty Rows" Type="boolean" Value="true"/>
+			<Item id="CodeReviewFilterHideEmptyCols" Caption="Hide Empty Columns" Type="boolean" Value="true"/>
+		</Group>
+	</Section>
+</Settings>

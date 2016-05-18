@@ -1,0 +1,20 @@
+<div class="dijitDialog qcUserSettingsDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabControl" class="tabControl">
+                
+            </div>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-attach-point="cmdOK" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div> 
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1590 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.Coding.Cqm
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.Coding.Cqm.GetPromptListHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetPromptListHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which codes are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetPromptListHandler.Resolve">
+	<summary>
+ Indicates whether to resolve the prompt items to include note-related data and patient history
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetPromptListHandler.PatientId">
+	<summary>
+ The patient's ID used to resolve the history of prompt list items
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasuresHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which concepts are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureDocumentHandler.SystemId">
+	<summary>The optional unique identifer of the CQM system containing the measure.</summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureDocumentHandler.Measure">
+	<summary>Unique code or ID of the measure. If system ID is specified, use ID, otherwise use measure code.</summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureConceptsHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureConceptsHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which concepts are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureCodesHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMeasureCodesHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which codes are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMappedMedcinIdsHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMappedMedcinIdsHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which codes are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMappedMeasuresHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which mapped measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetMappedMeasuresHandler.MedcinId">
+	<summary>
+ The unique identifer of the MEDCIN ID for which mapped measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetEvaluationListHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetEvaluationListHandler.MeasureId">
+	<summary>
+ The unique identifer of the CQM measure for which codes are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetEvaluationListHandler.Resolve">
+	<summary>
+ Indicates whether to resolve the list items to include note-related data and patient history
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetEvaluationListHandler.PatientId">
+	<summary>
+ The patient's ID used to resolve the history of list items
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetConceptHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetConceptHandler.ConceptId">
+	<summary>
+ The unique identifer of the desired CQM concept.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetConceptCodesHandler.SystemId">
+	<summary>
+ The unique identifer of the CQM system for which measures are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GetConceptCodesHandler.ConceptId">
+	<summary>
+ The unique identifer of the CQM concept for which codes are desired.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.Measures">
+	<summary>Comma-separated string of unique codes or IDs of the measures targeted by the prompt. If system ID is specified, use IDs, otherwise use codes.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.Chart">
+	<summary>The patient's chart XML document, which must define the patient if a PatientId parameter is not specified.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.PatientId">
+	<summary>Optional ID of a patient, which if specified, must be available in the patient data service.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.SystemId">
+	<summary>The optional unique identifer of the CQM system in which the prompt is performed.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.MeasurementPeriodStart">
+	<summary>Start date of measurement period (time ignored, standard provider defaults to first day of current year).</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.MeasurementPeriodEnd">
+	<summary>End date of the measurement period (time ignored, standard provider defaults to the last day of the current year).</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.Verbose">
+	<summary>Indicates whether additional detailed information should be returned for each match.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.LookupHistory">
+	<summary> Indicates whether the service should query the history pool service for relevant previous encounters.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.LookupSummary">
+	<summary> Indicates whether the service should query the patient summary service for the summary.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.IgnoreEncounterType">
+	<summary>Indicates whether encounter type should be ignored or checked for timing relationships.</summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.PromptResponseOption">
+	<summary>Indicates whether and how prompt findings are returned with the criteria in the response. </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmEvaluationHandler.MinimumLookbackDuration">
+	<summary>The minimum duration, in months, to look back from measurement period start to obtain findings from the patient history (defaults to no limit).</summary>
+</member><member name="M:Quippe.Coding.Cqm.TimeUtils.QdmUnitToMedcinUnit(System.String)">
+	<summary>
+ Converts the QDM string representation of time units into the equivalent MEDCIN time unit code.
+ </summary>
+	<param name="QdmUnit">The QDM time unit string (e.g., "days")</param>
+	<returns>Returns the equivalent MEDCIN time unit code (e.g., "D") when the input string is a valid QDM time unit. If the 
+ input unit is empty or null the default MEDCIN time unit representing minutes is returned (by default, when the time unit
+ is not specified, the default is minutes according to QDM V4.1). Otherwise, if there is no equivalent MEDCIN time unit code 
+ because the input unit is an invalid non-empty string, the function returns the empty string, "".</returns>
+</member><member name="M:Quippe.Coding.Cqm.TimeUtils.MedcinUnitToQdmUnit(System.String)">
+	<summary>
+ Converts the MEDCIN string representation of time units into the equivalent QDM time unit string.
+ </summary>
+	<param name="MedcinUnit">The MEDCIN time unit string (e.g., "D")</param>
+	<returns>Returns the equivalent QDM time unit code (e.g., "days") when the input string is a valid MEDCIN time unit. If the 
+ input unit is empty or null the default QDM time unit representing minutes is returned (the default time unit in MEDCIN is
+ minutes, "N"). Otherwise, if there is no equivalent QDM time unit code because the input unit is an invalid non-empty string,
+ the function returns the empty string, "".</returns>
+</member><member name="M:Quippe.Coding.Cqm.TimeUtils.ComputeQdmTimeDuration(System.DateTime,System.DateTime,System.String)">
+	<summary>
+ Computes the duration in time from Date1 to Date2 in the specified MEDCIN time units using the QDM V4.1 time
+ interval calculation conventions for CQMs.
+ </summary>
+	<param name="Date1">The oldest date or starting date of the duration.</param>
+	<param name="Date2">The most recent date or ending date of the duration.</param>
+	<param name="TimeUnits">The units of time in MEDCIN units for which the calculation is desired.</param>
+	<returns>Returns the duration of time in the specified units between the starting date, Date1, and the
+ ending date, Date2, provided the specified MEDCIN units are valid for the calculation. Otherwise,
+ throws an exception.</returns>
+	<remarks>
+		<para>Valid MEDCIN units for this calcuation are the string codes for years ("Y"), months ("M"), weeks ("W"), days ("D"),
+ hours ("H") and minutes ("N"). An exception will be thrown if any other value for units is specified, including seconds.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmProviderException.#ctor(System.String,System.Type,System.Int32,System.String)">
+	<summary>
+ Creates a new exception based on an exception message, translator Type and optional parameters.
+ </summary>
+	<param name="Message">The exception message.</param>
+	<param name="ProviderType">The Type of the provider in which the exception occurred.</param>
+	<param name="ErrorCode">Unique integer code indicating the error.</param>
+	<param name="Value">An optional value, usually associated with the ExceptionType, that further clarifies the exception.</param>
+</member><member name="M:Quippe.Coding.Cqm.CqmProviderException.#ctor(System.String,System.Exception,System.Type,System.Int32,System.String)">
+	<summary>
+ Creates a new exception based on an existing exception.
+ </summary>
+	<param name="Message">The exception message.</param>
+	<param name="InnerException">An associated exception, usually the original exception that caused this exception to be raised.</param>
+	<param name="ProviderType">The Type of the provider in which the exception occurred.</param>
+	<param name="ErrorCode">Unique integer code indicating the error.</param>
+	<param name="Value">An optional value, usually associated with the ExceptionType, that further clarifies the exception.</param>
+</member><member name="P:Quippe.Coding.Cqm.CqmProviderException.TranslatorName">
+	<summary>
+ Gets the type name of the provider implementing <see cref="T:Quippe.Coding.Cqm.ICqmProvider"/> in which the exception was thrown or the problem was found.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmProviderException.TranslatorType">
+	<summary>
+ Gets the Type of the provider implementing <see cref="T:Quippe.Coding.Cqm.ICqmProvider"/> in which the exception was thrown or the problem was found.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.CqmProviderException">
+	<summary>
+ Class representing a generic exception occurring in a provider implementing the <see cref="T:Quippe.Coding.Cqm.ICqmProvider"/> interface.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CqmException.#ctor(System.String,System.Int32,System.String)">
+	<summary>
+ Creates a new exception..
+ </summary>
+	<param name="Message">The exception message.</param>
+	<param name="ErrorCode">Unique integer code indicating the error.</param>
+	<param name="Value">An optional value, usually associated with the ExceptionType, that further clarifies the exception.</param>
+</member><member name="M:Quippe.Coding.Cqm.CqmException.#ctor(System.String,System.Exception,System.Int32,System.String)">
+	<summary>
+ Creates a new exception based on an existing exception.
+ </summary>
+	<param name="Message">The exception message.</param>
+	<param name="InnerException">An associated exception, usually the original exception that caused this exception to be raised.</param>
+	<param name="ErrorCode">Unique integer code indicating the error.</param>
+	<param name="Value">An optional value, usually associated with the ExceptionType, that further clarifies the exception.</param>
+</member><member name="P:Quippe.Coding.Cqm.CqmException.Value">
+	<summary>
+ Gets the optional String value assocated with this exception.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmException.ErrorCode">
+	<summary>
+ Gets the optional error code assocated with this exception.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.CqmException">
+	<summary>
+ Class representing a generic exception.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.Coding.Cqm.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.Coding.Cqm.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Quippe.Coding.Cqm.IMeasureConcept">
+	<summary>
+ Interface for a class representing a clinical concept as defined within a clinical quality measurement (CQM).
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.IMeasureCode">
+	<summary>
+ Interface for a class representing the code of a clinical concept in an external coding system as it is referenced within 
+ a clinical quality measure.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.IMeasure">
+	<summary>
+ Defines the interface for a class representing a clinical quality measure within a clinical quality measurement system.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.ICqmSystem">
+	<summary>
+ Defines the interface for a class representing a clinical quality measurement (CQM) system.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.ICqmService">
+	<summary>
+ Defines the standard interface for a service that provides clinical quality measurement (CQM) data and services using
+ providers that implement the <see cref="T:Quippe.Coding.Cqm.ICqmProvider"/> interface.
+ </summary>
+</member><member name="T:Quippe.Coding.Cqm.ICqmProvider">
+	<summary>
+ Defines the standard interface for a class that provides clinical quality measurement (CQM) data and related services.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.ICqmPromptRequest.MeasureCodes">
+	<summary>
+ Gets or sets the unique codes of each measure in the prompt request.
+ </summary>
+	<remarks>
+		<para>A measure code is unique across all CQM systems. A measure ID need be unique only within the CQM system. A unique measure code must be 
+ formed by concatenating the CQM system ID with the measure ID, with a dash separator between them. For example, measure "2" in the system 
+ "mu2" is represented as "mu2-0002".</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.StandardCqmProvider.Culture">
+	<summary>
+ Gets the name of the culture associated with this CQM provider.
+ </summary>
+	<returns>Returns the culture name associated with this CQM provider.</returns>
+	<remarks><para>The culture name is one of the cultere names accepted and used in the System.Globalization namespace. The culture names 
+ follow the RFC 1766 standard in the format "languagecode2[-country/regioncode]", where "languagecode2" 
+ is a lowercase two-letter code derived from ISO 639-1 and "country/regioncode" is an uppercase two-letter code derived from ISO 3166 or a
+ three-letter code derived from ISO 639-2. In some cases a suffix may specify the script.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.StandardCqmProvider.SupportsCulture(System.String)">
+	<summary>
+ Indicates whether this provider supports the culture indicated by the specified culture name.
+ </summary>
+	<param name="CultureCode">The name of the culture for which provider support is desired or the two-digit
+ language code of the culture.</param>
+	<returns>Returns True if the specified culture is supported by the provider and False otherwise.</returns>
+	<remarks>
+		<para>The specified culture is supported if the two letter language code of the specified culture name or code equals
+ the language code of the provider. See the <see cref="P:Quippe.Coding.Cqm.StandardCqmProvider.Culture"/> property for more information.</para>
+	</remarks>
+</member><member name="F:Quippe.Coding.Cqm.ResolveHistoryEntryOptionEnum.None">
+	<summary>Never resolve entries prefixed with personal history</summary>
+</member><member name="F:Quippe.Coding.Cqm.ResolveHistoryEntryOptionEnum.Always">
+	<summary>Always resolve entries prefixed with personal history, even if no onset was specified</summary>
+</member><member name="F:Quippe.Coding.Cqm.ResolveHistoryEntryOptionEnum.WhenOnsetSpecified">
+	<summary>Only resolve entries prefixed with personal history if a valid onset was specified</summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.SystemId">
+	<summary>
+ Gets or sets the unique string identifier of the clinical quality measurement (CQM) system defining the concept.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.Id">
+	<summary>
+ Gets or sets the unique string identifier of the clinical concept within the CQM system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.Name">
+	<summary>
+ Gets or sets the name of the concept.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.Category">
+	<summary>
+ Gets or sets the name of an optional category to which the concept is assigned by the CQM system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.Sequence">
+	<summary>
+ Gets or sets an optional sequence number associated with the concept.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureConcept.IsGroup">
+	<summary>
+ Gets or sets a Boolean flag indicating whether the concept is a group concept.
+ </summary>
+	<remarks>Group concepts contain one or more non-group member concepts.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.MeasureConcept.#ctor">
+	<summary>
+ Default constructor that creates the measure concept instance.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.MeasureConcept.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Boolean,System.Collections.Generic.List{System.String})">
+	<summary>
+ Constructor that creates the measure concept instance from the specified parameters.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system defining the concept.</param>
+	<param name="ConceptId">The unique string identifier of the clinical concept defined by the CQM system.</param>
+	<param name="Name">The name of the concept.</param>
+	<param name="Category">The name of an optional category to which the concept is assigned by the CQM system.</param>
+	<param name="Sequence">An optional sequence number associated with the concept, possibly the order the concept appears in an associated measure.</param>
+	<param name="IsGroup">A Boolean flag indicating whether the concept is a group concept, containing additional non-group concepts as members.</param>
+	<param name="MemberIds">A collection of non-group concept members if the concept is a group concept.</param>
+</member><member name="T:Quippe.Coding.Cqm.MeasureConcept">
+	<summary>
+ Class representing a clinical concept as defined within a clinical quality measurement (CQM).
+ </summary>
+	<remarks>
+		<para>Some CQM systems may define the clinical concepts that are associated with the clinical quality measures and
+ then map external codes to these concepts (MU measures do this). Other CQM systems may not define their own concepts
+ and instead may simply list the external codes that are referenced in each measure.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.SystemId">
+	<summary>
+ The unique string identifier of the clinical quality measurement system containing the measure in which the code is referenced.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.CodeSetName">
+	<summary>
+ The name of the external code set to which the code belongs, as represented within the CQM system.
+ </summary>
+	<remarks>This property is the name used by the CQM system to refer to the code set, which may differ
+ from the name used elsewhere (e.g., the coding service provider) to refer to the same code set.</remarks>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.CodeSetVersion">
+	<summary>
+ The version of the external code set from which the code was drawn, as represented within the CQM system.
+ </summary>
+	<remarks>This property is the version name used by the CQM system to refer to the code set version, 
+ which may differ from the version name used elsewhere (e.g., a coding service provider).</remarks>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.VocabCode">
+	<summary>
+ The unique string identifier of the standard coding system vocabulary.
+ </summary>
+	<remarks>In Medicomp modules, the string identifier of the standard coding system vocabulary is
+ assigned to this property.</remarks>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.Code">
+	<summary>
+ The code representing the clinical concept in the external code set.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.MeasureCode.Description">
+	<summary>
+ The optional description of the clinical concept associated with the code as provided by the CQM system.
+ </summary>
+	<remarks>This description may differ from the code description provided by Medicomp coding-related services.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.MeasureCode.#ctor">
+	<summary>
+ Default constructor that creates the measure code instance.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.MeasureCode.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Constructor that creates a measure code instance from the specified parameters.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system in which the 
+ code is referenced.</param>
+	<param name="CodeSetName">The name of the external code set to which the code belongs, as represented within the
+ CQM system.</param>
+	<param name="CodeSetVersion">The version of the external code set, as represented within the CQM system.</param>
+	<param name="VocabCode">The unique string identifier of the standard coding system vocabulary as defined by the coding
+ service in Medcin.Coding (e.g., in Medcin.Coding.VocabulariesGenerated).</param>
+	<param name="Code">The code representing the clinical concept in the external code set.</param>
+	<param name="Description">The optional description of the clinical concept as provided by the CQM system.</param>
+	<remarks>The name and version of the code set are the values that are defined within the CQM system and may differ
+ from the vocabulary name and version as defined by the coding service. However, the VocabCode is the unique identifier
+ of the code set used by the coding service.</remarks>
+</member><member name="T:Quippe.Coding.Cqm.MeasureCode">
+	<summary>
+ Class representing the code of a clinical concept in an external coding system as it is referenced within 
+ a clinical quality measure.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.Measure.SystemId">
+	<summary>
+ The unique string identifier of the clinical quality measurement system to which the measure belongs.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.Measure.Id">
+	<summary>
+ The unique string identifier of the clinical quality measure.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.Measure.Name">
+	<summary>
+ The name of the clinical quality measure.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.Measure.Description">
+	<summary>
+ The description of the clinical quality measure.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.Measure.LookbackDuration">
+	<summary>
+ Gets or sets the duration, in months, prior to the measurement period start, that defines the earliest
+ date for which encounters are relevant to the measure.
+ </summary>
+	<returns>Returns an integer temporal duration, in months, defining the limit of lookback within the history pool
+ for encounters that are relevant to the measure.
+ </returns>
+	<remarks><para>When combined with the start date of the measurement period, the lookback duration, D, defines 
+ earliest date that encounters are considered relevant to the measure. Thus the period of time for which
+ encounters are considered relevant is from D months prior to the measurement period start to the measurement
+ period end.</para></remarks>
+</member><member name="P:Quippe.Coding.Cqm.Measure.ActionType">
+	<summary>
+ Gets or sets the type of action that is permissible for this measure as defined by the enum, 
+ <see cref="T:Quippe.Coding.Cqm.MeasureActionTypeEnum">MeasureActionTypeEnum</see>.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.Measure.#ctor">
+	<summary>
+ Default constructor that creates the measure instance.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.Measure.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Constructor that creates the measure instance from the specified parameters.
+ </summary>
+	<param name="SystemId">Unique string identifier of the CQM system to which the measure belongs.</param>
+	<param name="MeasureId">Unique string identifier of the clinical quality measure.</param>
+	<param name="Name">Name of the clinical quality measure.</param>
+	<param name="Description">Description of the clinical quality measure.</param>
+</member><member name="T:Quippe.Coding.Cqm.Measure">
+	<summary>
+ Class representing a clinical quality measure within a clinical quality measurement system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.GenericCqmProvider.DataFile">
+	<summary>
+ Gets or sets the path to the SQLite database file containing the MU data.
+ </summary>
+	<remarks>
+		<para>This property may be specified in the configuration file as a setting for this provider.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.GenericCqmProvider.SupportedSystems">
+	<summary>
+ Gets an array containing the clinical quality measurement (CQM) systems supported by this provider.
+ </summary>
+	<returns>Returns an array of <see cref="T:Quippe.Coding.Cqm.ICqmSystem"/> objects representing the CQM systems supported by this provider.</returns>
+	<remarks><para>A system is supported if the system is defined within the provider and the provider can supply the
+ quality measures and other data for the system via the provider interface.</para></remarks>
+</member><member name="P:Quippe.Coding.Cqm.GenericCqmProvider.HasSupportedSystem(System.String)">
+	<summary>
+ Indicates whether the specified CQM system is supported by this provider.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<returns>Returns True if the specified system supported and False otherwise.</returns>
+	<remarks><para>A system is supported if the system is defined within the provider and the provider can supply the
+ quality measures and other data for the system via the provider interface.</para></remarks>
+</member><member name="P:Quippe.Coding.Cqm.GenericCqmProvider.Culture">
+	<summary>
+ Gets the name of the culture associated with this CQM provider.
+ </summary>
+	<returns>Returns the culture name associated with this CQM provider.</returns>
+	<remarks><para>The culture name is one of the cultere names accepted and used in the System.Globalization namespace. The culture names 
+ follow the RFC 1766 standard in the format "languagecode2[-country/regioncode]", where "languagecode2" 
+ is a lowercase two-letter code derived from ISO 639-1 and "country/regioncode" is an uppercase two-letter code derived from ISO 3166 or a
+ three-letter code derived from ISO 639-2. In some cases a suffix may specify the script.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.SupportsCulture(System.String)">
+	<summary>
+ Indicates whether this provider supports the culture indicated by the specified culture name.
+ </summary>
+	<param name="InputCultureCode">The name of the culture for which provider support is desired or the two-digit
+ language code of the culture.</param>
+	<returns>Returns True if the specified culture is supported by the provider and False otherwise.</returns>
+	<remarks>
+		<para>The specified culture is supported if the two letter language code of the specified culture name or code equals
+ the language code of the provider. See the <see cref="P:Quippe.Coding.Cqm.GenericCqmProvider.Culture"/> property for more information.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetSupportedSystem(System.String)">
+	<summary>
+ Gets the specified supported CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the desired clinical quality measurement (CQM) system.</param>
+	<returns>Returns the specified system if it is supported by the provider, otherwise returns Nothing.</returns>
+	<remarks><para>A system is supported if the system is defined within the provider and the provider can supply the
+ quality measures and other data for the system via the provider interface.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMeasures(System.String)">
+	<summary>
+ Gets an array containing the clinical quality measures in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system from which the 
+ measures are to be obtained.</param>
+	<returns>Returns an array containing all the measures contained in the specified CQM system, if the system is supported by the
+ provider. Returns an empty collection if the CQM system is not supported by the provider or if there are no measures defined in the
+ requested system. Returns Nothing if the system ID is undefined.</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMeasure(System.String,System.String)">
+	<summary>
+ Gets the specified clinical quality measure from the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string identifier of the desired measure.</param>
+	<returns>Returns the measure with the specified measure ID in the specified CQM system, or Nothing if the
+ measure is not defined in the system, if the system is not supported by this provider, or if either 
+ the measure ID or the system ID is undefined.</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMeasureConcepts(System.String,System.String)">
+	<summary>
+ Gets an array containing the concepts associated with the specified measure in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system containing the specified measure.</param>
+	<param name="MeasureId">The unique string identifier of the measure from which the concepts are to be retrieved.</param>
+	<returns>Returns an array containing the measure concepts contained in the specified measure in the specified CQM system. Returns an empty
+ collection if the system is not supported by this provider or if the measure is not defined in the system. Returns Nothing if either ID is
+ undefined.</returns>
+	<remarks><para>This method will get all ungrouped concepts and grouped concepts in the measure. If the concept is grouped, the IDs of the
+ member concepts in the group are added to the group concept's member ID collection. The member concepts may also be specified as
+ separate ungrouped concepts in the measure (this is typical in MU stage 1 measures).</para>
+		<para>Not all CQM systems necessarily define concepts and associate them with the measures (but MU does).</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMeasureConcept(System.String,System.String)">
+	<summary>
+ Gets the specified concept in the specified clinical quality measurement (CQM) system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system containing the specified concept.</param>
+	<param name="ConceptId">The unqiue string identifier of the desired concept.</param>
+	<returns>Returns the specified measure concept if it exists in the specified CQM system. Returns Nothing
+ if the system is not supported by this provider, if the concept is not defined in the system, or if either ID is
+ undefined.</returns>
+	<remarks>
+		<para>This method will get ungrouped concepts and grouped concepts. If the concept is grouped, the IDs of the
+ member concepts in the group are added to the group concept's member ID collection.</para>
+		<para>Not all CQM systems necessarily define concepts and associate them with the measures (but MU does).</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMeasureCodes(System.String,System.String)">
+	<summary>
+ Gets an array containing the external codes referenced in the specified measure in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unqiue string identifier of the measure from which the referenced codes are to be retrieved.</param>
+	<returns>
+		<para>Returns an array containing the external codes referenced in the specified measure of the specified CQM system. Returns
+ an empty collection if the CQM system is not supported by this provider or if the measure is not defined in the system.
+ Returns Nothing if the system or measure ID is undefined.</para>
+	</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetConceptCodes(System.String,System.String)">
+	<summary>
+ Gets an array containing the codes referenced in the specified concept of the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="ConceptId">The unqiue string identifier of the measure concept from which the referenced codes are to be retrieved.</param>
+	<returns>
+		<para>Returns an array containing the external codes referenced in the specified concept of the specified CQM system. Returns
+ an empty collection if the CQM system is not supported by this provider or if the concept is not defined in the system.
+ Returns Nothing if the system or concept ID is undefined.</para>
+	</returns>
+	<remarks><para>Not all CQM systems necessarily define concepts separately from the measure (but MU does).</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMappedMeasureIds(System.String,System.Int32)">
+	<summary>
+ Getsan array containing the unique IDs of the quality measures in a specified CQM system to which the specified Medcin concept
+ is mapped.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>
+		<para>Returns an array containing the clinical quality measure IDs that are mapped to the specified Medcin ID. The collection has no
+ duplicates. Returns an empty collection if the system is not supported by this provider or if the Medcin ID is not mapped or is an 
+ invalid ID. Returns Nothing if the system ID or MedcinID is undefined.</para>
+	</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMappedMeasures(System.String,System.Int32)">
+	<summary>
+ Gets an array containing the quality measures in a specified CQM system to which the specified Medcin concept is mapped.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>
+		<para>Returns an array containing the clinical quality measures that are mapped to the specified Medcin ID. Returns an
+ empty collection if the system is not supported by this provider or if the Medcin ID is not mapped or is an invalid ID. 
+ Returns Nothing if the system ID or MedcinID is undefined.</para>
+	</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.GetMappedMedcinIds(System.String,System.String)">
+	<summary>
+ Gets an array containing the Medcin IDs that are mapped to the specified measure in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an array containing the Medcin IDs that are mapped to the specified measure. Returns an empty collection
+ if the system is not supported by this provider or if the measure is not defined in the system. Returns Nothing
+ if either ID is undefined.</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.IsMapped(System.String,System.Int32)">
+	<summary>
+ Indicates whether the specified Medcin concept is mapped to any quality measure in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>
+		<para>Returns True if the specified Medcin concept is mapped to at least one quality measure in the specified CQM system. 
+ Returns False if the provider does not support the system, if the Medcin ID is not mapped to a measure in the system,
+ or if the system ID or measure ID is undefined.</para>
+	</returns>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.Prompt(Quippe.Coding.Cqm.ICqmPromptRequest,Quippe.Coding.IParameterCollection)">
+	<summary>
+ Performs the specified quality measures prompt.
+ </summary>
+	<param name="Request">The input data defining the prompt request, including the target measures, the patient and
+ encounter information.</param>
+	<param name="Parameters">An optional collection of parameters this provider may use if the parameters are supported.</param>
+	<returns>Returns an XML document containing the prompt results.</returns>
+	<remarks><para></para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.EvaluationList(System.String,System.String)">
+	<summary>
+ Gets the list of IDs of MEDCIN concepts mapped to the specified measure for evaluation in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an XML document containing the list of MEDCIN items.</returns>
+	<remarks><para>The highest priority provider that supports the CQM system is called to perform the request. 
+ If the system is supported, but the results are empty, then lower priority providers are not called.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.GenericCqmProvider.PromptList(System.String,System.String)">
+	<summary>
+ Gets the list of IDs of MEDCIN concepts mapped to the specified measure for prompting in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an XML document containing the list of MEDCIN items.</returns>
+	<remarks><para>The highest priority provider that supports the CQM system is called to perform the request. 
+ If the system is supported, but the results are empty, then lower priority providers are not called.</para></remarks>
+</member><member name="T:Quippe.Coding.Cqm.GenericCqmProvider">
+	<summary>
+ Implements a generic provider of clinical quality measure (CQM) data and related services.
+ </summary>
+	<remarks>
+		<para>The generic provider supplies basic information on the measures, mapped external codes, and related Medcin concepts
+ for the CQM systems supported by Medicomp. Use the <see cref="P:Quippe.Coding.Cqm.GenericCqmProvider.SupportedSystems"/> property to determine which systems 
+ are supported by this provider.</para>
+	</remarks>
+</member><member name="F:Quippe.Coding.Cqm.ResolveEncounterDiagnosisEnum.None">
+	<summary>Only problems in problem list have duration, as specified.</summary>
+</member><member name="F:Quippe.Coding.Cqm.ResolveEncounterDiagnosisEnum.ResolvedOnly">
+	<summary>Only problems in problem list or problem resolved by appropriate MEDCIN qualifier in later encounter.</summary>
+</member><member name="F:Quippe.Coding.Cqm.ResolveEncounterDiagnosisEnum.ResolvedOrActive">
+	<summary>All diagnoses are assumed active unless problem list indicates diagnosis resolved, or diagnosis resolved by appropriate MEDCIN qualifier in later encounter.</summary>
+</member><member name="F:Quippe.Coding.Cqm.ResolveEncounterDiagnosisEnum.ResolvedRisk1OrActive">
+	<summary>All diagnoses are assumed active unless either the risk level=1, the problem list indicates problem resolved, or resolved by appropriate MEDCIN qualifier in later encounter.</summary>
+</member><member name="T:Quippe.Coding.Cqm.PromptMapResponseEnum">
+	<summary> Indicates whether and how prompt maps/findings are returned with the criteria in the evaluation response.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MedicationDaysOptionEnum.TotalDays">
+	<summary>Count all days in each prescription, not accounting for overlaps</summary>
+</member><member name="F:Quippe.Coding.Cqm.MedicationDaysOptionEnum.AccountForOverlap">
+	<summary>Account for overlapping days in prescriptions, counting such days once</summary>
+</member><member name="F:Quippe.Coding.Cqm.MedicationDaysOptionEnum.AdjustOverlap">
+	<summary>Account for overlapping days in prescriptions, counting such days once, but adjust final total to add back the minimum of overlapping days and unmedicated days</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorOnly">
+	<summary>If the denominator is met, the documentation is finished, otherwise this is determined by the result of numerator evaluation.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorFailOrMet">
+	<summary>If the denominator fails, the documentation is finished, otherwise this is determined by the result of numerator evaluation.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorResultValue">
+	<summary>Ignore the Value of "result" attributes of QDM elements in the denominator. Any result value is okay, even no result.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorOrder">
+	<summary>Allow the Order prefix on findings that match QDM elements in the denominator having the "performed" or equivalent data type.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.NumeratorResultValue">
+	<summary>Ignore the value of "result" attributes of QDM elements in the numerator. Any result value is okay, even no result.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.NumeratorOrder">
+	<summary>Allow the Order prefix on findings that match QDM elements in the numerator having the "performed" or equivalent data type.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.NumeratorCurrentMedQualifier">
+	<summary>Allow any valid medication qualifier (e.g., prefix) indicating current medication on findings that match QDM Medication elements (e.g., med can be dispensed, active, administered, etc. but not ordered)</summary>
+</member><member name="T:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum">
+	<summary>
+ Enumerates rules that may alter how a measure is determined to be finished with respect to documentation.
+ </summary>
+	<remarks>
+		<para>In addition to evaluation of the measure to determine whether the measure is met, the CQM service
+ will indicate when the measure is most likely finished with respect to documentation at the point of 
+ care (POC). Rules for determining finished documentation have been created to deal with this aspect
+ of the CQM service evaluation process.</para>
+		<para>When no rules are specified, a measure is finished with respect to documentation when the numerator
+ is met or exceptions/exclusions are True. In this case, whether documentation is finished corresponds to measure
+ evaluation results. However, it may be the case that a measure is finished with respect to documentation 
+ at the point of care, even though the measure numerator evaluates false and technically the measure is not
+ met. This situation can arise because there may not be anything more a user can do at the POC in the current
+ encounter to meet the measure. For example, if a certain procedure must be performed to meet the measure and
+ it hasn't yet been performed and it cannot be performed during the encounter, the user may wish to order the
+ procedure, in which case the measure is documented as much as possible from the user's perspective even though it does
+ not evaluate to the Met result.</para>
+		<para>The order of items in the enumeration may matter. The items have been ordered in the order in which they
+ will be applied. Rules indicate which criteria they apply to, e.g., the denominator or numerator. Population
+ criteria are evaluated in order from largest population to smallest, IPP first, then the subset Denominator, 
+ and finally the Numerator (which is a subset of the Denominator). At present, exceptions and exclusions are
+ not the target of rules.</para>
+		<para>See the enum, <see cref="T:Quippe.Coding.Cqm.CqmEvaluationResultEnum">CqmEvaluationResultEnum</see> for the evaulation
+ result values that represent the result of evaluating the measure against the patient's chart. The minimum 
+ level for determining documentation is finished will usually be either the value, <see cref="F:Quippe.Coding.Cqm.CqmEvaluationResultEnum.Included"/>,
+ which represents the "Denominator" being met in a CQM measure or the value, 
+ <see cref="F:Quippe.Coding.Cqm.CqmEvaluationResultEnum.Excluded"/>, which represents at least the Exclusions being met in a CQM measure. 
+ Treating this value as a threshold, any value greater than or equal to the threshold value for a measure represents
+ finished documentation. Thus, if the threshold value is <see cref="F:Quippe.Coding.Cqm.CqmEvaluationResultEnum.Excluded"/>, then the
+ documentation is considered finished for measure purposes if either the Exclusions, Exceptions or the Numerator is
+ met, and in the case of the Numerator, it can be met partially or completely for finished documentation (this is
+ the default threshold value built into the documentation evaluation process in the service.</para>
+		<para>The determination of whether documentation is finished is done on a measure-by-measure basis, but
+ usually the threshold just defaults to the Numerator and Exclusions/Exceptions indicating documentation is finished. 
+ Occasionaly simply meeting the Denominator is good enough to consider documentation finished even though the measure is 
+ not "Met" in that instance. This case is represented by the rule <see cref="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorOnly"/>.</para>
+		<para>A separate mechanism to determine whether documentation for a measure is finished (as opposed to the mechanism for determining
+ whether a measure is met) is needed to assist the physician at the point of care. The minimum documentation level is the
+ simplest means of implementing this separate mechanism and applies to some measures. For example, MU2 measure CMS 75, is
+ Met if the patient has an active diagnosis of Dental Caries. However, documentation is considered finished in the IPP/Denominator
+ because some patients may not have such an active diagnosis. For a patient without Dental Caries, documentation is clearly 
+ finished when the initial patient population (IPP) is met (there is no denominator in this measure). For a patient WITH
+ Dental Caries, if the physician has not documented this diagnosis, then the measure will still be marked as finished with
+ respect to documentation (since MinDocumentationLevel is a minimum threshold) and Unmet; however in this situation the expectation
+ is the physician will or should document a disorder in the patient and the best we can do is report our estimation of when
+ documentation is finished. We cannot set the min level for measure 75 to the Numerator because documentation may be finished
+ earlier for patients without Dental Caries.</para>
+		<para>More complex methods of determining whether documentation is finished are required when a threshold level approach is
+ not sufficient. These more complex methods need to look at the individual QDM elements and alter how the findings in the
+ chart are matched against the elements. Rules are provided to deal with relaxing the qualifier constraints on findings imposed
+ by QDM element definitions or relaxing the attribute requirements. The <see cref="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.DenominatorOrder"/>
+ and <see cref="F:Quippe.Coding.Cqm.MeasureDocumentationRuleEnum.NumeratorOrder"/> rules are examples of rules that relax the requirement of qualifiers
+ to allow the physician to order therapies or procedures where the QDM element datatype indicates such therapies be performed
+ or active. Rules that relax the attribute requirements of QDM elements include the rules that permit any test or procedure
+ result value when the QDM element requires a specific value or range.</para>
+	</remarks>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationFinishedEnum.NotFinished">
+	<summary>Indicates the clinical documentation for the associated measure is not finished.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationFinishedEnum.Pending">
+	<summary>Indicates the clinical documentation for the associated measure is not finished, but pending the resolution of some future action, e.g., an order being filled.</summary>
+</member><member name="F:Quippe.Coding.Cqm.MeasureDocumentationFinishedEnum.Finished">
+	<summary>Indicate the clinical documentation for the associated measure is finished.</summary>
+</member><member name="T:Quippe.Coding.Cqm.MeasureDocumentationFinishedEnum">
+	<summary>
+ Enumerates the values that indicate whether clinical documentation for a measure is finished.
+ </summary>
+	<remarks>
+		<para>Evaluation of a measure will determine the evaluation result, that is, whether the measure is
+ met or unmet and the level of the result, as well an indication whether the clinical documentation 
+ of a measure at the point of care (POC) is finished. Documentation may be finished if the care giver
+ cannot provide any additional information even though the measure is unmet from a reporting standpoint.
+ A value from this enum will indicate the level of completeness of the documentation.
+ </para>
+		<para>
+ If the evaluation result indicates the numerator is met or the exceptions or exclusions are satisfied,
+ then the documentation is considered finished. However, if the exceptions/exclusions are not satisfied
+ and the IPP is met (measure is applicable) and the denominator or numerator is not met, then it is not
+ necessarily clear whether documentation is finished. Documentation rules associated with a measure
+ are used to specify the criteria for determining whether documentation is finished in this case. Not 
+ all measures will have documentation rules, but those that do may require a re-evaluation to determine
+ whether documentation is complete.
+ </para>
+		<para>For example, MU2 measure CMS 90, "Functional Status Assessment for Complex Chronic Conditions",
+ depends in part on a functional status assessment being performed with a result in the numerator in order 
+ for the measure to be considered met. However, when evaluating the measure at the POC, the physician may 
+ not have yet performed the assessment and may wish to order the assessment (rather than perform it immediately).
+ In that case, the measure is not met because the numerator fails to match the "Functional Status, Result"
+ QDM element category and datatype criteria requirement, but from the physician's standpoint, the documentation
+ of the measure is finished (or more accurately "pending" the resolution of the order).
+ </para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.QdmElementInstance.IsEvaluatedByRelationalExp">
+	<summary>
+ Indicates whether the instance has been evaluated as part of the 1st operand of a relational expression at some
+ point in a possible nested tree of relational expressions.
+ </summary>
+	<remarks><para>Instances evaluated only by the 2nd operand are for reference only and are not intersected with
+ instance results returned from the relational expression.</para></remarks>
+</member><member name="P:Quippe.Coding.Cqm.QdmElementExpression.Findings">
+	<summary>
+ The set of findings that could possibly satisfy a specific instance of an element when the logic
+ indicates the element is an "Occurrence".
+ </summary>
+	<remarks><para>Some QDM elements (labeled "Occurrence A of" or "Occurrence B of" etc.) represent specific 
+ occurrences or instances of a finding, whereas others are generic elements. When an instance element
+ is being processed, the instance must resolve to the same finding at all points in the 
+ logic where the specific occurrence label (e.g., "A", "B") is referenced. This property is a list of
+ findings for an instance. The list is used in two ways when evaluating instances, either as a set of
+ possible findings for an instance or as the set of resolved findings that result from evaluating some
+ section of the logic.</para>
+		<para></para>
+		<para>The possible set of findings is used only during evaluation of instance elements and represents 
+ the possible findings an element COULD evaluate to in the current criteria (IPP, denominator, numerator) 
+ being evaluated. The possible findings are just the result of a straight match of the element against the
+ findings in the patient's chart, before performing any of the enclosing logic (e.g., relational operations,
+ OR, AND, NOT etc.). The set of resolved findings is a subset of the possible findings that are the actual results 
+ of the evaluation, that is, the findings that match all logic so far evaluated for the occurrence.</para>
+		<para>The set of possible findings facilitates the evaluation of the NOT functional expression on the list of
+ resolved findings. Considering "possible findings" and "resolved findings" as sets, the NOT operation is simply the 
+ relative complement of "resolved findings" with respect to set of the "possible findings". That is, the result of NOT 
+ is simply the set of elements in the possible findings list that are not in the resolved findings list. Treating
+ NOT as the relative complement when evaluating instances greatly simplfies the task.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.QdmElementExpression.CategoryDatatypeName">
+	<summary>
+ Provides category and datatype together in a format seen in MAT output (simple XML) and referred to as "datatype".
+ </summary>
+	<remarks>This property returns the category and datatype of the QDM element conjoined in a single string. This
+ is the format used in the Simple XML contained in the attribute "datatype".</remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementExpression.GetMatchingFindings(Quippe.Coding.Cqm.CqmPromptRequest,System.Collections.Generic.ICollection{Quippe.Coding.Cqm.CqmEntry},System.String,System.Collections.Generic.Dictionary{System.String,Quippe.Coding.Cqm.CriteriaMapManager},Quippe.Coding.Cqm.EvaluationParameters,System.Collections.Generic.Stack{Quippe.Coding.Cqm.RelationalExpression},System.Collections.Generic.List{System.String},System.String,System.Boolean)">
+	<summary>
+ Return the input findings that match the specific value set and meet all other constraints, including those of element attributes, relational operations, and instance requirements.
+ </summary>
+	<param name="Request">The prompt request instance.</param>
+	<param name="InputFindings">Collection of findings to check against the maps for the specified value set to find matches meeting all constraints, including element attributes, relational operations, and instance constraints.</param>
+	<param name="InputValueSetId">The specific value set ID for which matching findings are desired.</param>
+	<param name="ValueSetMapsDict">Dictionary of value set maps to MEDCIN, indexed by value set OID.</param>
+	<param name="Parameters">Parameters that may affect evaluation, specifically matching findings.</param>
+	<param name="RelationalOps">Relational operations, involving timing constraints, that potential matching findings must satisfy.</param>
+	<param name="RequiredPrefixes">The MEDCIN prefixes that add to the list of required qualifiers, prefixes and status, one of which is required to be present on the matching findings (from negation rationale attribute, if any)</param>
+	<param name="RequiredStatus">The MEDCIN status values that add to the list of required qualifiers, prefixes and status, one of which must be present for a match.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementExpression.MatchCategoryAndDatatype(Quippe.Coding.Cqm.CqmEntry,Quippe.Coding.Cqm.EvaluationParameters,System.Boolean@)">
+	<summary>
+ Match the category and datatype of the element to the finding via properties such as term type or qualifiers
+ </summary>
+	<param name="Finding"></param>
+	<param name="Parameters"></param>
+	<param name="LoosePrefixMatch">Method will set this ByRef parameter True if a prefix must be ignored when matching against maps.</param>
+	<returns>Returns True if the catagory and datatype of this element matchs the finding.</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementExpression.FilterByAttributeValueSet(Quippe.Coding.Cqm.CqmPromptRequest,System.Collections.Generic.ICollection{Quippe.Coding.Cqm.CqmEntry},System.Collections.Generic.ICollection{Quippe.Coding.Cqm.CqmEntry},System.Collections.Generic.Dictionary{System.String,Quippe.Coding.Cqm.CriteriaMapManager},Quippe.Coding.Cqm.EvaluationParameters,System.Collections.Generic.Stack{Quippe.Coding.Cqm.RelationalExpression})">
+	<summary>
+ Obtains findings that match the specified attribute value set ID, filters and returns the InputFindings and updates 
+ attribute result findings (Attribute.ResultFindings) appropriately so both collections correspond.
+ </summary>
+	<param name="Request">The prompt request instance.</param>
+	<param name="InputFindings">Collection of findings to check against the maps for the specified attribute value set to find matches meeting relevant constraints, including relational operations.</param>
+	<param name="MatchingElementFindings">Collection of the asociated findings that matched the QDM element.</param>
+	<param name="ValueSetMapsDict">Dictionary of value set maps to MEDCIN, indexed by value set OID.</param>
+	<param name="RelationalOps">Relational operations, involving timing constraints, that potential matching findings must satisfy.</param>
+	<remarks>
+		<para>This method first determines which of the input findings in InputFindings match the specified attribute value set. Then the
+ collection of filtered input findings (the results) and attribute result findings are updated with these constraints: (1) findings added to results
+ (from the collection of findings in MatchingElementFindings) must belong to an encounter that also has a matching attribute finding (by
+ comparing encounter IDs of the findings in both collections); (2) attribute findings added to the Attribute.ResultFindings collection
+ must belong to the same encounter as a matching element finding. 
+ </para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementExpression.FilterByAttributeResultPresent(Quippe.Coding.Cqm.CqmPromptRequest,System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},Quippe.Coding.Cqm.EvaluationParameters)">
+	<summary>
+ Optionally, filter the matching findings to those that meet the criteria of an attribute named "result" with the "Check if Present" mode,
+ meaning those findings that should have a result value actually have a result value.
+ </summary>
+	<param name="Request">Prompt request object defining properties of the request, including options controlling this filter.</param>
+	<param name="MatchingElementFindings">The input set of findings to filter.</param>
+	<param name="Parameters">Evaluation parameters.</param>
+	<returns>List of input findings filtered to those meeting the "result" attribute with the "Check if Present" mode.</returns>
+	<remarks>
+		<para>This filter is applied only if the property <see cref="P:Quippe.Coding.Cqm.CqmPromptRequest.RequireValueIfStandardUnits"/> is True.</para>
+		<para>The purpose of this method is to filter matching findings to those that have a non-empty units string and a specified
+ value when the element attribute says to "Check if Present". Not all elements with this attribute need to have a value, and
+ thus those findings that don't have a standard units string will automatically pass the filter. That is, we are using the
+ presence or absence of the standard units string to determine whether a finding should have a value in the Value qualifier field.
+ We are not concerned here with whether the Result qualifier is positive/abnormal or negative/normal.</para>
+		<para>The current implementation of the filter requiring a value on this attribute is limited to elements with category 
+ "Laboratory Test" for datatypes
+ "Performed" and "Result". Its also been implemented for category/datatype, "Physical Exam, Finding" to properly evaluate
+ CMS 65 SBP element. This filter only applies to findings that have non-empty standard units string from MEDCIN function "Unit".
+ There is no point implementing this for "Diagnostic Study" or "Risk Category Assessment because no findings that match the
+ elements in the measures that have this attribute have standard units (read below for more info).</para>
+		<para>The stage II measures that have the "Check if Present" mode value on the "result" attribute are only EPs and are
+ the following: 65, 77, 122, 124, 125, 130, 134, 142, 143, 146, 148, 149, 153, 157, 160, 182.</para>
+		<para>
+ This attribute is difficult to implement across the board in MEDCIN because results can be
+ expressed in two ways: First, whether the finding is normal/abnormal is represented by the result qualifier, which means 
+ that presence in the note is enough to indicate a value, and therefore all findings have values in that sense. Second,
+ the Value property is used to indicate a numerical value for a test or measurement.</para>
+		<para>Further complicating the issue is the fact that MEDCIN currently does not explicitly identify which findings should 
+ have a value: First, MEDCIN does not always distinguish a test or procedure order from the result as they are often embodied
+ in the same finding. An example might be "cervical PAP smear" (MEDCIN 13051) which has a positive result if the finding is
+ selected "red" (result qualifier = "A") in the note and a negative result if the finding is selected "blue" (result
+ qualifier = "N") in the note. Second, no flag exists to indicate which findings are results (as opposed to orders or findings
+ indicate the test was performed) or require a value. In fact some findings are both results and orders in the sense they 
+ represent the test being performed and the result of positive or negative at the same time when present in the note. However,
+ there are clues to which findings might require a value, but they do not cover all findings that require values. Clues that 
+ indicate a finding should have a value are the presence of standard units for the MEDCIN concept and textual clues in the search 
+ description (e.g., three underscores "___").</para>
+		<para>Therefore, this implementation is limited to Laboratory Test category elements and only enforced if the finding has
+ a non-empty standard units string. This should cover most tests, however it is possible some unitless tests could be missed.
+ However, the current set of measures has been reviewed and for MU stage II measures at least, and all Laboratory Test elements
+ with this attribute appear to be mapped to MEDCIN concepts that have units.</para>
+		<para>Extending this implementation to elements of category "Risk Assessment" (and "Diagnostic Study") is problematic because 
+ most of the MEDCIN findings have no clues whatsoever whether a value is required; that is, they are unitless because the value  
+ is typically a score, and the search description does not include underscores in all cases. At present the only method for fully
+ implementing this attribute would be to manually modify the logic by creating a new attribute mode (e.g., "Must have Value" mode)
+ for the "result" attribute in measures where we know a value is required. For now, this attribute is not implemented for those
+ categories.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementAttribute.AddResultFinding(System.String,Quippe.Coding.Cqm.CqmEntry)">
+	<summary>
+ Add the specified result attribute finding to the result finding collection using the ID of the associated QDM element finding as key.
+ </summary>
+	<param name="ElementFindingId">The unique identifier of the QDM element finding that is associated with this attribute and specified attribute finding.</param>
+	<param name="ResultFinding">A finding to add to the result finding collection of this attribute, presumably 
+ associated with the QDM element for which the finding ID was specified, and presumably also satisfying the result attribute's Value Set.</param>
+	<remarks><para>This method just adds a finding to the result collection and indexes that finding by the specified ID of a finding (CqmEntry) that matched
+ the relevant QDM element, which is referred to here as a "QDM element finding". The intent is that the ID is the unique ID of the QDM element finding 
+ associated with this attribute, that the specified ResultFinding satisified this attribute, and
+ that this attribute has a Value Set mode and is a "result" type attribute; however none of this is checked here as it is presumed to be handled
+ in the QDM element. That is, this method is just a utility to add a finding to the collection.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementAttribute.GetResultFindings(System.String)">
+	<summary>
+ Returns the findings from the ResultFindings collection that are indexed by the specified QDM element finding ID.
+ </summary>
+	<param name="ElementFindingId">Unique ID of the QDM element finding to which the desired result findings are associated.</param>
+	<returns>Returns a list of findings if found, or Nothing if not found.</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementAttribute.WritePromptResponse(System.Xml.XmlElement)">
+	<summary>
+ Writes the information defining the QDM attribute to the specified XmlElement.
+ </summary>
+	<param name="xExpression">The XmlElement to which the attribute information is written.</param>
+	<remarks><para>Attribute result findings are written separately from the information defining the attribute; 
+ these findings are written in the WriteResultFindings method.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementAttribute.WriteResultFindings(System.Xml.XmlElement,System.String)">
+	<summary>
+ Writes any result findings matching the specified QDM element finding ID to the specified XmlElement.
+ </summary>
+	<param name="xFinding">The element to write the attribute result findings to, if any are found.</param>
+	<param name="ElementFindingId">The unique ID of the QDM element finding for which associated result findings, if any, are to be written to the specified XmlElement.</param>
+	<remarks><para>Currently, the result findings are written as sub-findings of the associated QDM element eval finding rather than with
+ the defining attribute information, separately output in WritePromptResponse.</para></remarks>
+</member><member name="P:Quippe.Coding.Cqm.EvaluationParameters.IsNotOperation">
+	<summary>
+ Indicates whether the criteria expression is immediately contained within a NOT functional operation.
+ </summary>
+	<remarks>
+		<para>To communicate to a QDM element that it is immediately contained within a NOT functional operation
+ in order control how finding instances/occurrences operate. A QDM element in NOT operation that is an 
+ instance/occurrence should remove all matching findings from the instance finding list rather than add 
+ them (normally they are added if NOT operation not in force).</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.EvaluationParameters.InRelationalOp">
+	<summary>
+ Indicates whether the criteria expression is contained within a relational operation at a higher level
+ in the evaluation hierarchy.
+ </summary>
+	<remarks>
+		<para>To communicate to a QDM element that it is contained within at least one relational operation. 
+ This is needed to properly ignore encounters within Exclusions: encounters should only really be ignored 
+ in exclusions if the encounter is contained in the 2nd operand of a relational operation (e.g., logic 
+ wants to evaluate whether something occurred within an encounter), but not if it occurs in the 1st operand
+ (e.g., logic wants to evaluate whether an encounter occurred within the time span of some other event like
+ the measurement period).</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.EvaluationParameters.CriteriaType">
+	<summary>
+ Indicates the type of the criteria (e.g., ipp, denominator) in which the criteria expression is
+ contained.
+ </summary>
+	<remarks>
+		<para>Some calculations depend on what type of criteria is being evaluated. For example,
+ the option to ignore encounters is handled differently at the QDM element level when the element
+ is contained within an exclusion or exception.</para>
+	</remarks>
+</member><member name="T:Quippe.Coding.Cqm.EvaluationParameters">
+	<summary>
+ Class containing parameters and data needed to control and perform criteria evaluation
+ and communicate information down the evaluation hierarchy from the criteria group at 
+ the top-level to the QDM elements at the leaf nodes.
+ </summary>
+	<remarks>Includes flags and data to enable simpler implementation of features the span the hierarchy
+ during evaluation, such as finding instances (occurrences) and ignoring encounters. Not meant for 
+ passing evaluation options, which are instead contained in the prompt request.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.QdmElementInstanceMgr.Reset(Quippe.Coding.Cqm.QdmElementInstanceMgr)">
+	<summary>
+ Updates all instances of this manager to match the input instances by adding missing instances or replacing the
+ findings with those of the input instances they have in common.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CriteriaResults.EvaluatedCount">
+	<summary>Count of the QDM elements that were evaluated, including those not satisfied.</summary>
+	<remarks>
+		<para>This property must be manually incremented/decremented by a consumer of this instance as
+ the QdmElements property may only contain the satisfied elements.</para>
+		<para>This property is used to determine how many elements were evaluated for a functional operation,
+ which may differ from how many were satisfied. The COUNT operation differs when applied to a single 
+ element or to multiple elements. This count facilitates the determination of the number of elements 
+ that were evaluated so COUNT can be applied appropriately because QdmElements might only contain the
+ satisfied elements for OR operations.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.CriteriaResults.QdmElements">
+	<summary>
+ Collection of the QDM elements added to the results.
+ </summary>
+	<remarks>This collection at a minimum should include all QDM elements that were satisfied during
+ evaluation.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.AddElement(Quippe.Coding.Cqm.QdmElementExpression)">
+	<summary>Adds the specified QDM element to the results.</summary>
+	<param name="Element">A QDM element expression representing the QDM element to add.</param>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.AddRange(Quippe.Coding.Cqm.CriteriaResults)">
+	<summary>Adds the specified results to the results in this instance.</summary>
+	<param name="OtherResults">A set of results to add to the results in this instance.</param>
+</member><member name="P:Quippe.Coding.Cqm.CriteriaResults.SatisfiedCount">
+	<summary>
+ Count of the QDM elements in the results that were satisfied (evaluated True).
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.IncrementEvaluatedCount">
+	<summary>Increments the count of evaluated QDM elements.</summary>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.GetUniqueSatisfiedFindings(System.Boolean)">
+	<summary>Return all unique findings of satisfied QDM elements, without including duplicates.</summary>
+	<param name="Sort">If true, sort the returned findings by finding time in default order (ascending).</param>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.GetAllSatisfiedFindings(System.Boolean)">
+	<summary>Return all findings of satisfied QDM elements, allowing duplicates.</summary>
+	<param name="Sort">If true, sort the returned findings by finding time in default order (ascending).</param>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaResults.Filter(Quippe.Coding.Cqm.CqmEntry)">
+	<summary>Filters results to include only QDM elements that contain the given finding, and excludes all other findings in those elements.</summary>
+	<param name="Finding"></param>
+</member><member name="M:Quippe.Coding.Cqm.CriteriaGroup.Evaluate(Quippe.Coding.Cqm.CqmPromptRequest,Quippe.Coding.Cqm.IMeasure,Quippe.Coding.Cqm.CqmChart,System.Collections.Generic.ICollection{Quippe.Coding.Cqm.CqmEntry},System.Collections.Generic.Dictionary{System.String,Quippe.Coding.Cqm.CriteriaMapManager},Quippe.Coding.Cqm.EvaluationParameters)">
+	<summary>
+ Evaluates the expression logic for each criteria in a group, determining the Boolean result, the finding results, as well as determining
+ the set of possible findings for each QDM element instance/occurrence.
+ </summary>
+	<param name="Request">An object defining the various input data and parameters needed to execute the evaluation request.</param>
+	<param name="Chart">An object representing the patient's chart formatted for CQM evaluation.</param>
+	<param name="Findings">The collection of patient findings (from the encounters) relevant to the evaluation.</param>
+	<param name="ValueSetMapsDict">A dictionary of Medicomp mappings relevant for each value set in the criteria, which
+ are used to perform matching of findings to value sets when QDM elements are evaluated.</param>
+	<remarks>
+		<para>Special explanation of the evaluation of QDM element instances or Occurrences is required</para>. 
+ <para>
+ Reference QDM element instances contain only possible findings for the instance of an element (indicated by an expression such as 
+ "Occurrence A of Medication, Dispensed". Each instance, when its associated occurrence is first encountered in the logic and created, 
+ will have its possible reference findings assigned. Reference findings constrain valid evaluated findings for each instance encountered. 
+ For each criteria (IPP, denom, etc.), the reference findings are reset to the results of the criteria evaluated to that point, thus 
+ reducing the reference findings as the various criteria in the logic are evaluated, starting with the IPP, then denominator, then 
+ exclusions, numeration etc.
+ </para>
+		<para>
+ Within a particular criteria (IPP), the possible set or reference set of findings(remains) constant. As the logic within the 
+ criteria expression tree is evaluated in a depth first fashion, the evaluated findings satisfying each instance are determined as results 
+ are collected at each node from sub-tree evaluation. The set of evaluated findings for each instance are treated as sets (ala set theory) 
+ where membership in the set is constrained to values in the current reference set of findings. For each expression in the tree, each 
+ sub-tree branch is evaluated individually with respect to instance findings and the results are grouped according to set operations. 
+ Thus, Logical expressions, OR and AND, perform Union and Intersection of the instance finding sets of each sub-tree. The Functional 
+ expression NOT, performs a complement of the evaluated findings from its single sub-tree with respect to the reference set of possible 
+ instance findings. Relational operations merely intersect the results of the sub-trees for the 1st and 2nd operands.</para>
+		<para>Resulting evaluation findings for each instance are percolated up the expression tree to the top-level node for the current
+ criteria under evaluation. These evaluation results are a sub-set of the reference set of findings originally passed into the root
+ node at the start of evaluation. These results then become the reference set of possible instance findings for the next criteria and the
+ evaluation instance findings are cleared.
+ </para>
+		<para>
+ Initially, when the first criteria begins evaluation (first criteria is always the IPP as I have observed), the possible set of 
+ instance findings is completely empty, and no reference instances have been created. As the IPP is evaluated, the leaf nodes, which 
+ are the QDM elements, will eventually evaluate as the expression tree is traversed depth-first, and if they are instances (i.e., have 
+ the form "Occurrence A of ..." or "Occurrence B of ..."), the reference instances will be created (QdmElementInstance objects), if they
+ don't already exist, and their reference set of possible findings will be created by the initial matching of available findings in the 
+ patient's chart to findings associated with the element's referenced value set via Medicomp's code mappings. This reference set of 
+ findings is created once within each criteria group, by bare matching of the value set referenced by the element with the available 
+ findings in the patient's chart, meaning that no constraints are applied to reduce the matching findings when creating the reference
+ findings for the instance. At the same time, the element will create another, separate element instance (QdmElementInstance object) to
+ hold the evaluation findings of that instance for the current criteria (e.g., IPP). The findings of this instance are created by 
+ doing a complete match against the patient's chart, but differs from the reference instance matching in that element attributes and
+ pending relational operations are also executed to limit the evaluation findings to possibly a sub-set of the reference findings. These
+ evaluation findings are percolated up the tree as mentioned earlier and possibly reduced by the result of the aforementioned set intersection
+ operations. A given instance/occurrence may be referenced more than once in a criteria (e.g., within the IPP). Each subsequent evaluation
+ of the same instance at the QDM element level will not create a new set of reference findings, but might create a different set of evaluation
+ findings for the same instance, due to different attribute or relational (timing) operation constraints.
+ </para>
+		<para>
+ The reference set of findings for each instance are passed into the evaluation in the instance manager contained in the ReferenceInstances
+ parameter of the Evaluate methods of the Criteria and CriteriaExpression classes. The evaluation set of findings for each instance are collected 
+ on return from the instance manager contained in the ResolvedInstances parameter. This separation of reference instances and evaluation instances
+ was used for simplification of code.
+ </para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmTiming.IsTimingElement(System.String)">
+	<summary>
+ Indicates whether the specified value set OID for a QDM element is one of the measurement period timing elements.
+ </summary>
+	<param name="QdmElementOid">The value set OID to check.</param>
+	<returns>True if the specified value set corresponds to one of the measure period timing elements or False otherwise.</returns>
+</member><member name="P:Quippe.Coding.Cqm.CqmSystem.Id">
+	<summary>
+ Gets or sets the unique string identifier of the CQM system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmSystem.Name">
+	<summary>
+ Gets or sets the name of the CQM system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmSystem.Description">
+	<summary>
+ Gets or sets the description of the CQM system.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CqmSystem.#ctor">
+	<summary>
+ Default constructor that creates the CQM system instance.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CqmSystem.#ctor(System.String,System.String,System.String)">
+	<summary>
+ Constructor that creates the CQM system instance from data specified in the parameters.
+ </summary>
+	<param name="SystemId">Unique string identifier of the CQM system.</param>
+	<param name="Name">Name of the CQM system.</param>
+	<param name="Description">Description of the CQM system</param>
+	<remarks></remarks>
+</member><member name="T:Quippe.Coding.Cqm.CqmSystem">
+	<summary>
+ Class representing a clinical quality measurement (CQM) system.
+ </summary>
+</member><member name="P:Quippe.Coding.Cqm.CqmService.SupportedSystems">
+	<summary>
+ Gets the CQM systems supported by the available providers.
+ </summary>
+	<returns>Returns an array containing the CQM systems supported by the available providers in sorted order,
+ by system identifier.</returns>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasures(System.String)">
+	<summary>
+ Gets an array containing the clinical quality measures in the specified CQM system from the highest priority provider that 
+ supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system from which the 
+ measures are to be obtained.</param>
+	<returns>Returns an array of the measures in the specified CQM system supplied by the highest priority provider that 
+ supports the system. Returns Nothing if there is no provider that supports the system or the system identifier is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for measures. If the system is
+ supported, but no measures are returned, then no measures are defined by the provider for that system. Lower priority 
+ providers that support the system are not queried.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasure(System.String,System.String)">
+	<summary>
+ Gets the specified clinical quality measure in the specified CQM system from the highest priority provider that supports
+ the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string identifier of the desired measure.</param>
+	<returns>Returns the measure with the specified measure ID in the specified CQM system from the highest priority provider
+ that supports the system. Returns Nothing if the measure is not defined in the system by the provider, if no provider 
+ supports the system, or if either the measure ID or the system ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for the requested measure. If the 
+ system is supported, but no measure is returned, then either the measure is not defined by the system or the measure is not
+ supplied by the provider. Lower priority providers that support the system are not queried.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasureConcepts(System.String,System.String)">
+	<summary>
+ Gets an array containing the concepts associated with the specified measure in the specified CQM system from the highest priority provider
+ that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system containing the specified measure.</param>
+	<param name="MeasureId">The unqiue string identifier of the measure from which the concepts are to be retrieved.</param>
+	<returns>Returns an array containing the measure concepts contained in the specified measure in the specified CQM system from the highest priority
+ provider that supports the system. Returns Nothing if no provider supports the system or if either the system ID or the measure 
+ ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for the requested concepts. If the system is supported,
+ but the returned collection is empty, then either the measure is not supplied by the provider, there are no concepts defined by or supplied
+ for the measure, or the provider does not supply measure concepts for the system. Lower priority providers that support the system are not
+ queried.</para>
+		<para>Not all CQM systems necessarily define concepts and associate them with the measures (but MU stage 1 does).</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasureConcept(System.String,System.String)">
+	<summary>
+ Gets the specified concept in the specified clinical quality measurement (CQM)  system from the highest priority provider that supports
+ the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system containing the specified concept.</param>
+	<param name="ConceptId">The unqiue string identifier of the desired concept.</param>
+	<returns>Returns the specified measure concept if it exists in the specified CQM system from the highest priority provider that
+ supports the system. Returns Nothing if the concept is not defined in the system by the provider, if no provider supports the system,
+ or if either the system ID or concept ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for the requested concept. If the system is 
+ supported, but the concept is not returned, then either the concept is not defined by the system or the concept is not supplied by 
+ the provider. Lower priority providers that support the system are not queried.</para>
+		<para>Not all CQM systems necessarily define concepts and associate them with the measures (but MU stage 1 does).</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasureCodes(System.String,System.String)">
+	<summary>
+ Gets an array containing the external codes referenced in the specified measure in the specified CQM system from the highest priority
+ provider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unqiue string identifier of the measure from which the referenced codes are to be retrieved.</param>
+	<returns>Returns an array containing the external codes referenced in the specified measure of the specified CQM system from the
+ highest priority provider that supports the system. Returns Nothing if no provider supports the system or if the system ID or
+ measure ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for codes. If the system is supported,
+ but the returned collection is empty, then either the measure is not supplied by the provider or there are no codes defined by
+ or supplied for the measure. Lower priority providers that support the system are not queried.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetConceptCodes(System.String,System.String)">
+	<summary>
+ Gets an array containing the codes referenced in the specified concept of the specified CQM system from the highest priority
+ provider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="ConceptId">The unqiue string identifier of the measure concept from which the referenced codes are to be retrieved.</param>
+	<returns>Returns an array containing the external codes referenced in the specified concept of the specified CQM system. Returns
+ Nothing if no provider supports the system or if either the system ID or concept ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for codes. If the system is supported,
+ but the returned collection is empty, then either the concept is not defined by the system, the concept is not supplied by 
+ the provider, or the concept has no associated codes. Lower priority providers that support the system are not queried.</para>
+		<para>Not all CQM systems necessarily define concepts separately from the measure (but MU stage 1 does).</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMappedMeasureIds(System.String,System.Int32)">
+	<summary>
+ Gets an array containing the unique IDs of the quality measures in a specified CQM system to which the specified Medcin concept
+ is mapped, using the highest priority provider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>Returns an array containing the clinical quality measure IDs that are mapped to the specified Medcin ID. Returns Nothing 
+ if no provider supports the specified system or if the system ID or MedcinID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for mapped measures. If the system is 
+ supported, but the returned collection is empty, then the Medcin ID is not mapped to any measures in the system in the
+ provider. Lower priority providers that support the system are not queried.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMappedMeasures(System.String,System.Int32)">
+	<summary>
+ Gets an array containing the quality measures in a specified CQM system to which the specified Medcin concept is mapped, using
+ the highest priority preovider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>Returns an array containing the clinical quality measures that are mapped to the specified Medcin ID and obtains them from
+ the highest priority provider that supports the specified system. Returns Nothing if no provider exists that supports the 
+ specified system or if the system ID or Medcin ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for mapped measures. If the system is 
+ supported, but the returned collection is empty, then the Medcin ID is not mapped to any measures in the system in the
+ provider. Lower priority providers that support the system are not queried.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMappedMedcinIds(System.String,System.String)">
+	<summary>
+ Gets an array containing the Medcin IDs that are mapped to the specified measure in the specified CQM system, using the
+ highest priority provider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an array containing the Medcin IDs that are mapped to the specified measure and obtains them from the
+ highest priority provider that supports the system. Returns Nothing if no provider supports the specified system
+ or if the system ID or measure ID is undefined.</returns>
+	<remarks><para>Only the highest priority provider that supports the system is queried for mapped Medcin IDs. If the
+ system is supported, but the returned collection is empty, then either the measure is not supplied by the provider
+ or no Medcin concepts are mapped to the measure. Lower priority providers that support the system are not queried.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.IsMapped(System.String,System.Int32)">
+	<summary>
+ Indicates whether the specified Medcin concept is mapped to any quality measure in the specified CQM system in 
+ the highest priority provider that supports the system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MedcinId">The Medcin ID of the concept.</param>
+	<returns>Returns True if the specified Medcin concept is mapped to at least one quality measure in the specified CQM system 
+ in the highest priority provider that supports the system. Returns False if the Medcin concept is not mapped in the provider,
+ if no provider supports the specified system, or if the system ID or Medcin ID are undefined.</returns>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.Prompt(Quippe.Coding.Cqm.ICqmPromptRequest,Quippe.Coding.IParameterCollection)">
+	<summary>
+ Performs the requested quality measures prompt.
+ </summary>
+	<param name="Request">The input data defining the prompt request, including the target measures, the patient and
+ encounter information.</param>
+	<param name="Parameters">An optional collection of parameters passed to the CQM providers.</param>
+	<returns>Returns an XML document containing the prompt results.</returns>
+	<remarks><para>The highest priority providers that support the CQM systems of specified measures is called to perform the prompt. 
+ If a system is supported, but the results are empty, then lower priority providers are not called.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.EvaluationList(System.String,System.String)">
+	<summary>
+ Gets the list of IDs of MEDCIN concepts mapped to the specified measure for evaluation in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an XML document containing the list of MEDCIN items.</returns>
+	<remarks><para>The highest priority provider that supports the CQM system is called to perform the request. 
+ If the system is supported, but the results are empty, then lower priority providers are not called.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.PromptList(System.String,System.String)">
+	<summary>
+ Gets the list of IDs of MEDCIN concepts mapped to the specified measure for prompting in the specified CQM system.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<returns>Returns an XML document containing the list of MEDCIN items.</returns>
+	<remarks><para>The highest priority provider that supports the CQM system is called to perform the request. 
+ If the system is supported, but the results are empty, then lower priority providers are not called.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetMeasureDocument(System.String,System.String)">
+	<summary>
+ Gets an object instance of type <see cref="T:Quippe.Coding.Cqm.IMeasureDocument"/> representing the document containing the measure specification or detailed description.
+ </summary>
+	<param name="SystemId">The unique string identifier of the clinical quality measurement (CQM) system.</param>
+	<param name="MeasureId">The unique string ID of the measure in the specified CQM system.</param>
+	<remarks></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmService.GetCqmProviders(System.Globalization.CultureInfo)">
+	<summary>
+ Gets List of available providers for the specified culture, loading providers if necessary.
+ </summary>
+	<param name="Culture">Indicates the culture for which a provider is desired.</param>
+	<returns>Returns the list of providers supporting the specified culture.</returns>
+	<remarks>
+		<para>The providers are ordered such that providers configured in the app settings appear first, followed
+ by generic providers created from culture-specific data files, and finally with the standard provider appearing
+ last in the list. The standard provider is always returned as a fall-back in case no culture-specific providers
+ are available that support the specified culture.</para>
+	</remarks>
+</member><member name="T:Quippe.Coding.Cqm.CqmService">
+	<summary>
+ Implements a service that supplies meaningful use (MU) data and related services from available providers implementing the
+ <see cref="T:Quippe.Coding.Cqm.ICqmProvider"/> interface.
+ </summary>
+	<remarks>
+		<para>The service uses available CQM providers to supply basic information on the measures, mapped external codes, and related Medcin concepts
+ for the supported CQM systems, as well as related services. The supported CQM systems are those supported by the available providers. 
+ Use the <see cref="P:Quippe.Coding.Cqm.GenericCqmProvider.SupportedSystems"/> property to determine which systems are supported by the available providers.</para>
+		<para>The service assumes that each available provider supplies a complete set of data for the CQM systems it supports. Thus, when
+ data is requested for a particular system, the service searches for the first provider that supports that system, and returns the
+ requested data from only that provider. Other providers of lower priority that also support that system will not be used. The order
+ of priority of the providers is determined by the order in which the providers are configured.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmPromptRequest.SetMeasureCodes(System.String,System.String[])">
+	<summary>
+ Sets the measure codes for the request based on specified measure IDs for a single CQM system.
+ </summary>
+	<param name="SystemId">The unique ID of the CQM system.</param>
+	<param name="MeasureIds">Array of IDs of measures within the specified CQM system.</param>
+	<remarks><para>Replaces the current set of measure codes with measure codes based on the specified system ID and
+ measure IDs. Measure codes are created by concatenating the system ID with the measure ID, with a dash separator 
+ between. Special processing is performed for the MU2 system (ID="mu2"): specifically, the numeric measure ID is
+ padded with leading zeroes, if necessary, up to a maximum ID length of 4. For example, if the system ID is "mu2" and 
+ the measure ID is "2" or "0002" the resulting measure code is "mu2-0002".</para></remarks>
+</member><member name="T:Quippe.Coding.Cqm.CqmPatientSummaryCategoryEnum">
+	<summary>
+ An enumeration of the patient summary categories defined in terms of the appropriate MEDCIN narrative groups.
+ </summary>
+	<remarks>CQM evaluation at present is concerned only with Problems and Medications in the patient summary.
+ Rather than use Medicomp.MedcinGroups enumeration, the limited enumeration is defined here.</remarks>
+</member><member name="P:Quippe.Coding.Cqm.CqmEntry.SummaryItem">
+	<summary>
+ Indicates whether the entry was created from a summary item and provides a reference to the original summary item, from which the
+ category ID (indicating the item is a problem or medication) and the timing data can be obtained to help during evaluation.
+ </summary>
+	<remarks>
+		<para>Items from the patient summary used during evaluation are either problems or medications. These items may be active or
+ completed. They may be related to specific entries in the encounters in the patient's chart, by having the same MEDCIN ID and
+ the same or overlapping time of occurrence.</para>
+		<para>When entries are created for evaluation, the encounter entries are matched up against the entries created from the problems 
+ and medications lists, and relationships are created between them. If a CqmEntry has a non-null SummaryItem property, then that
+ entry was created from the summary item referenced in that property.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.CqmEntry.SubsumingEntry">
+	<summary>
+ Another CqmEntry with the same basic finding properties (MEDCIN ID and qualifiers) that encompasses this entry in time, usually an
+ entry created from the problem or medication list, that could span one or more encounter entries noting the same finding.
+ </summary>
+	<remarks>
+		<para>If a CqmEntry has a non-null ReferenceEntry property, then
+ that ReferenceEntry is an entry (i.e., created from a SummaryItem) that encompasses that entry in time. For example, if an active problem
+ of Asthma exists over a certain time period, an entry will be created for that item. That entry will be set as the ReferenceEntry
+ for any encounter entry that is the same MEDCIN finding (same MEDCIN ID and qualifiers, e.g., prefix, result etc.) within the same
+ period of time. Thus each individual entry is kept, with a reference to the single problem, should it exist, that represents those entries during 
+ CQM evaluation.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.CqmEntry.IsQualifiedResolved">
+	<summary>
+ Indicates whether the entry contains a qualifier that means the finding is resolved, i.e., potentially resolves itself.
+ </summary>
+	<returns>Returns True if the entry has a qualifier that indicates the underlying finding is resolved, and False otherwise.</returns>
+	<remarks>
+		<para>"Resolved" qualifiers indicate a resolution of the underlying condition. A finding with such a qualifier both asserts the resolution of
+ the condition and asserts that the condition existed in the past. This is different than "resolving" prefixes which might only deny the condition.</para>
+		<para>
+ For example, "In Remission" implies the patient once had the condition and that it is now resolved. Hence it is both a "resolved" prefix and a 
+ "resolving" prefix, because it may either resolve itself (if no condition exists in the past) but may also resolve a condition present in the chart.
+ A strictly "resolving" qualifier such as "Rule Out" simply asserts the patient does not have the condition (denies the condition), and does NOT 
+ also mean the patient had the condition in the past. Hence "Ruled Out" is only resolving, meaning it will only resolve the condition if it is present 
+ in the chart in the past.</para>
+		<para>Note, a Normal entry (result code = "N") with ignorable qualifiers is not considered resolved because it only denies the condition.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Cqm.CqmEntry.IsQualifiedResolving">
+	<summary>
+ Indicates whether the entry contains a qualifier that means the finding is "resolving", i.e., potentially resolves, or is capable of resolving, a prior matching finding.
+ </summary>
+	<returns>Returns True if the entry has a qualifier that indicates the underlying finding is resolving, and False otherwise.</returns>
+	<remarks>
+		<para>"Resolving" qualifiers indicate at a minimum a denial of the underlying condition. A finding with such a qualifier may resolve the underlying
+ condition if it exists in the past, because it denies its existence. This is different from "resolved" prefixes which in addition to denying the condition
+ may also imply the condition once existed.</para>
+		<para>
+ For example, "In Remission" implies the patient once had the condition and that it is now resolved. Hence it is both a "resolved" prefix and a 
+ "resolving" prefix, because it may either resolve itself (if no condition exists in the past) but may also resolve a condition present in the chart.
+ A strictly "resolving" qualifier such as "Rule Out" simply asserts the patient does not have the condition (denies the condition), and does NOT 
+ also mean the patient had the condition in the past. Hence "Ruled Out" is only "resolving", meaning it will only resolve the condition if it is present 
+ in the chart in the past.</para>
+		<para>Note, a Normal entry (result code = "N") with ignorable qualifiers IS considered "resolving" because it denies the condition, but it is not
+ a "resolved" qualifier because it does not imply past existence of the condition.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmEntry.IsExactMatch(System.Int32)">
+	<summary>
+ Indicates whether this entry matches the specified MEDCIN ID, is an abnormal entry, and either has no qualifiers or qualifiers do not change meaning of concept.
+ </summary>
+	<param name="InputMedcinId">Specified MEDCIN ID of concept to check for a match against this entry.</param>
+</member><member name="M:Quippe.Coding.Cqm.CqmEntry.Overlaps(Quippe.Coding.Cqm.CqmEntry)">
+	<summary>
+ Indicates whether the specified entry overlaps this entry in time.
+ </summary>
+	<param name="Other">The specified entry for which to determine overlap with this entry.</param>
+	<returns>Returns True if the specified entry overlaps this entry in time, determined by comparing the StartTime
+ and EndTime of the entries.</returns>
+</member><member name="M:Quippe.Coding.Cqm.CqmEntry.OverlapsStartOf(Quippe.Coding.Cqm.CqmEntry)">
+	<summary>
+ Indicates whether the this entry overlaps the start of the specified entry.
+ </summary>
+	<param name="Other">The specified entry for which to determine overlap with this entry.</param>
+	<returns>Returns True if the start time of specified entry is contained within this entry's time span.</returns>
+</member><member name="T:Quippe.Coding.Cqm.EntryDatatypeEnum">
+	<summary>
+ Enumerates the data types relevant for evaluation of problems and medications.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.Evaluate(Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ After chart is fully loaded, the Evaluate method is called to preprocess the chart to produce entries and encounters from summary
+ items and infer start and end dates.
+ </summary>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetEntriesHistory(System.Int32,System.DateTime,System.DateTime)">
+	<summary>
+ After the chart is evaluated, this method will return the entries that fall within or intersect the specified time period.
+ </summary>
+	<param name="MonthsPrior">Value used to alter the start date of the specified time period, by the specified number of months prior.</param>
+	<param name="StartDate">The start date of the time period (e.g., measurement period) over which to search for intersecting chart entries.</param>
+	<param name="EndDate">The end date of the time period (e.g., measurement period) over which to search for intersecting chart entries.</param>
+	<remarks>The purpose of this method is to return the chart entries that have a duration contained within or intersecting the
+ specified time period. The time period is defined as a base start date and end date, perhaps a measurement period, and a value
+ indicating the number of months to extend the start period further into the past. For example, evaluation of a measure might need to be
+ within a specified measurement period, but some history prior to the measurement start period might also be required; the
+ months prior value will specify the extent of that desired history.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.UpdateEncounterTiming(Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Update the start and end time of each encounter to encompass the start time values of each entry and account
+ for any minimum allowable encounter duration.
+ </summary>
+	<remarks>
+		<para>If the encounter start time is undefined, it is set to the time of the earliest entry in the encounter.</para>
+		<para>The start times of all encounter entries are adjusted to ensure they start after the encounter start time.
+ Because the default unit is minutes in eCQM timing conventions, the entries are set to start at least one minute after
+ the encounter start. This adjustment is for evaluation only.</para>
+		<para>The end times of the encounter entries are not adjusted in this method because an undefined end time is used to
+ indicate whether the entry is resolved in the future (e.g., a diagnosis becoming inactive). The end times are assumed
+ to be handled elsewhere in the chart evaluation.</para>
+		<para>The end time of the encounter is set to the maximum of the encounter entry start times plus the minimum encounter
+ duration, which is at least one minute due to eCQM timing conventions.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetEncounterEntries(System.Boolean,System.String)">
+	<summary>
+ Return a list of references to all the entries in the chart (from all encounters) soprted according to the specified option.
+ </summary>
+	<param name="SortDescending">If True, returned entries are sorted by descending start time, otherwise by ascending start time.</param>
+	<param name="ResultCode">A result code that entries must match to be included in the list. All entries are included if the ResultCode is empty.</param>
+	<returns>Returns a list of references to all entries in the chart sorted either by descending or ascending start times.</returns>
+	<remarks>By default, references to all entries are returned. The ResultCode parameter can be used to limit that list to all Abnormal
+ or Normal entries by specifying a ResultCode value of "A" or "N", respectively.</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.UpdateResolvedEntries(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Update the end times of input entries that can be resolved by future entries, as is the case for diagnoses that become inactive.
+ </summary>
+	<param name="InputEntries">The entries to potentially update as resolved.</param>
+	<param name="Request">The prompt request object containing parameters that control how resolved entries are handled.</param>
+	<remarks><para>This method finds those input entries that are "resolving" and "resolvable". "Resolving" entries are those that
+ have qualifiers (e.g., prefix, status and result) that indicate the finding is resolved (e.g., "in remission" prefix). "Resolvable"
+ entires are those entries that are not resolving and that meet additional constraints covering the types of findings that may be
+ resolved (e.g., diagnoses). To resolve a finding, the finding must be "resolvable" and there must be a more recent matching
+ "resolving" finding that essentially resolves it by giving it a duration. The duration is given when the end date of the "resolvable"
+ finding is set to the start date of the "resolving" finding.</para>
+		<para>At present, resolution by another finding in the chart only occurs if an option to resolve diagnoses is set in the prompt request. 
+ Findings that are "resolving" may potentially resolve themselves, but that is used to potentially fill holes in the chart if no past entry
+ exists for the resolved condition. Only diagnoses are considered resolvable. The IsResolvableEntry method is used to determine which input 
+ entries are resolvable, and this may allow symptoms and physical exam findings with assessment qualifiers, in addition to diagnoses. 
+ But the resolving entry (at present) must be a finding with termtype of Diagnosis (that also has a "resolving" qualifier). Because an exact 
+ match is required between "resolving" and "resolvable" entries, this additional tighter constraint forces resolution to apply only to findings
+ in the Diagnosis hierarchy regardless of the looser constraint on the resolvable input entries. So, only a diagnosis with a qualifier indicating
+ resolution (e.g, "Ruled Out") may resolve a prior entry in the chart and the entries must be an exact match.</para>
+		<para>To summarize, this method finds those diagnoses that are resolved by future entries and sets their end time to the start time of the
+ future resolving entry. In addition, entries that resolve themselves also have their end times initialized to their own start times. The 
+ remaining findings that are not resolved in any way should continue to have unitialized end times (for later processing).</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.IsResolvableEntry(Quippe.Coding.Cqm.CqmEntry)">
+	<summary>
+ Indicates whether the specified entry is resolvable, meaning it can have duration and hence eventually end or become inactive at a later point in time.
+ </summary>
+	<param name="Entry">The input entry to check for resolvability.</param>
+	<returns>Returns True if the specified entry is resolvable and False otherwise.</returns>
+	<remarks><para>A resolvable entry in the context of this method is one that can have a duration and that may end or become inactive in the future.
+ A resolvable entry ends or becomes inactive when another future entry in the chart resolves the original entry. The resolvable and resolving entries
+ represent the same underlying finding, however may differ in qualifiers (e.g., the resolving entry contains a qualifier that indicates resolution, such
+ as the prefix "in remission".</para>
+		<para>We only want to resolve (give duration to by reference) those entries that are either diagnoses or something like an assessment of a diagnosis. 
+ For the purposes of CQM evaluation, we don't need to infer durations for any other concepts (except active meds which are handled differently via problem list)
+ hence the limitations, because the inferences actually modify the chart to some degree. That is, there is no reason to resolve a test, therapy or history 
+ entry, nor should we resolve (give duration to by inference) a symptom or exam finding that is unqualified.</para>
+		<para>An active diagnosis is always an entry that can have a duration and can eventually be resolved by another entry in the chart. Symptoms and
+ physical exam findings are resolvable only if they have a qualifier that indicates they are treated as an assessment.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetResolvingEntries(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry})">
+	<summary>
+ Returns a list of references to those entries in the input list that are qualified in such a way that indicates they could potentially resolve an
+ underlying finding, either resolve themselves or a matching finding in the past.
+ </summary>
+	<param name="InputEntries">The input list of entries to check for resolving qualifiers.</param>
+	<returns>Returns a list of references to entries in the input list that are qualified as resolving the underlying finding.</returns>
+	<remarks><para>An entry is qualified as resolving the underlying finding if it has the appropriate MEDCIN qualifiers. Qualifiers that
+ are checked include the Prefix, Status and Result code. In this case we use "Resolving" qualifiers which include all qualifiers that
+ imply resolution.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.UpdateHistoryDiagnoses(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Converts diagnoses with personal history prefix(es) into resolved diagnoses if there is no prior record of the diagnosis in the encounters 
+ or the patient summary.
+ </summary>
+	<param name="EncounterEntries">Encounter entries sorted in descending order by entry start time.</param>
+	<param name="SummaryEntries">List of entries created from the patient summary.</param>
+	<param name="Request">The prompt request which contains options to control the chart evaluation.</param>
+	<remarks>
+		<para>The purpose of this method is to, if necessary, convert "history of a diagnosis", i.e., an entry with a history prefix, into a "dummy" 
+ diagnosis entry with no duration by default, although onset and duration will be applied if specified for the entry.</para>
+		<para>For each "history of a diagnosis" entry, the method looks for a past, corroborating entry in the patient summary or encounter entries. 
+ If such an entry exists, there is no need to create a dummy entry; otherwise, create a dummy diagnosis entry, with same start time 
+ and with no duration unless the entry implies a date by specifying onset and duration.</para>
+		<para>The method first looks for corroborating entries in the two input lists. If a Problem entry exists in the summary, with qualifiers suitable 
+ for an active diagnosis, with start time before the history entry and
+ that matches the history entry concept exactly, then the history entry is corroborated and there is no need to create a dummy entry. If no suitable
+ summary entry exists, the encounter entries are checked. A corroborating encounter entry is one with term type of Diagnosis, with qualifiers
+ suitable for an active diagnosis, with start time before the history entry start time and that matches the concept in the history entry exactly.
+ If the corroborating entry is already resolved, then there is nothing more to do, otherwise the history entry is used to resolve the
+ currently unresolved corroborating encounter entry by setting the end time to the history entry start time minus the default resolve history onset 
+ value contained in the request options.</para>
+		<para>If no entry was found in the summary or the encounter list that corroborates the history entry, then the history entry is transformed into an unqualified
+ (unprefixed) entry to represent the underlying historical condition. The original history entry is cloned and added as the reference to the entry that resolves
+ the transformed original entry. The offset and duration are applied to the original entry, if these values are specified, otherwise the end date is just set to 
+ the start date of the transformed entry. The prefix is removed so the measure evaluation will find the underlying condition and not the history entry, but the 
+ cloned history entry is saved as a reference in the ResolvedEntry property of the transformed entry.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.UpdateHistoryTestsTherapies(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Converts test or therapy entries with personal history prefix(es) into an un-prefixed entry if there is no prior record of the entry in the encounters. 
+ </summary>
+	<param name="EncounterEntries">Encounter entries sorted in descending order by entry start time.</param>
+	<param name="Request">The prompt request which contains options to control the chart evaluation.</param>
+	<remarks>
+		<para>The purpose of this method is to, if necessary, convert a test or therapy entry with a history prefix into a un-prefixed "dummy" entry with no duration by default, 
+ although onset and duration will be applied if specified for the entry. For each such entry, the method looks for a past, corroborating entry in the encounter entries. 
+ If such an entry exists, there is no need to create a dummy entry; otherwise, create a dummy test/therapy entry with no duration by default, unless onset and duration
+ were specified.</para>
+		<para>The method first looks for corroborating entries in the input list. If a matching entry exists in the past, with qualifiers suitable 
+ for a performed test or therapy, with start time before the history entry and
+ that matches the history entry concept exactly, then the history entry is corroborated and there is no need to create a dummy entry. </para>
+		<para>If no entry was found in the list that corroborates the history entry, then the history entry is transformed into an unqualified
+ (unprefixed) entry to represent the underlying historical test/therapy. The original history entry is cloned and added as the reference to the entry that resolves
+ the transformed original entry. The offset and duration are applied to the original entry, if these values are specified, otherwise the end date is just set to 
+ the start date of the transformed entry. The prefix is removed so the measure evaluation will find the underlying test/therapy and not the history entry, but the 
+ cloned history entry is saved as a reference in the ResolvedEntry property of the transformed entry.</para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.UpdateDefaultTiming(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry},Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Updates timing of all unresolved entries having term types other than history by applying onset and duration and resolving diagnosis entries using default options.
+ </summary>
+	<param name="InputEntries">List of encounter entries to update.</param>
+	<param name="Request">Prompt request containing options to control the timing update.</param>
+	<remarks>
+		<para>This method attempts to apply onset and duration to all unresolved encounter entries with term types other than history. Patient summary items are not meant to be
+ processed in this method.
+ Diagnosis entries are resolved using the current ResolveEncounterDiagnosisOption option. Depending on the option, update the diagnosis end time to
+ no duration (end time = start time) or to an active problem (end time = MAX_VALUE).
+ </para>
+	</remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetHistoryDiagnoses(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry})">
+	<summary>
+ Returns a list of all the entries in the input list that are diagnoses findings with a history qualifier (e.g., prefix that means history).
+ </summary>
+	<param name="InputEntries">The list of input entries to search for diagnosis qualified as history findings.</param>
+	<returns>Returns a list of the entries from the input list that are diagnoses findings with history qualifiers.</returns>
+	<remarks><para>For the purposes of this method, Diagnoses are entries that have the MEDCIN term type of "diagnosis".</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetHistoryTestsAndTherapies(System.Collections.Generic.List{Quippe.Coding.Cqm.CqmEntry})">
+	<summary>
+ Returns a list of all the entries in the input list that are test or therapy findings with a history qualifier (e.g., prefix that means history).
+ </summary>
+	<param name="InputEntries">The list of input entries to search for tests or therapies qualified as history findings.</param>
+	<returns>Returns a list of the entries from the input list that are test or therapy findings with history qualifiers.</returns>
+	<remarks><para>For the purposes of this method, Tests or Therapies are entries that have the MEDCIN term type of "test" or "therapy".</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.CreateSummaryEntries(Quippe.Coding.Cqm.ICqmPromptRequest)">
+	<summary>
+ Build and return a list containing newly created chart entries for each problem and medication in the patient summary.
+ </summary>
+	<remarks><para>Adds each item in the problem list directly to the resulting list of entries, using the summary item and
+ additional properties from the MEDCIN service (i.e., nodekey, risk code and flags) to construct the item.</para>
+		<para>Also adds an entry for each medication in the medication summary list, however an additional entry for indicating
+ when the medication was dispensed is created and added, provided the option to create dispensed entries is set in the prompt
+ request object.</para></remarks>
+</member><member name="M:Quippe.Coding.Cqm.CqmChart.GetEncounterEntries(System.Int32,System.DateTime,System.DateTime)">
+	<summary>
+ Obsolete private method to get unprocessed entries within the specified time period from encounters only.
+ </summary>
+	<remarks>Unprocessed entries are those not created by evaluation of the chart (Evaluation method). Use
+ the GetEntries method or the Entries property to get processed entries suitable for CQM evaluation.</remarks>
+</member>
+</members>
+</doc>

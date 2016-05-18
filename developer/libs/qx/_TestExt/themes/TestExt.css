@@ -1,0 +1,50 @@
+.note
+{
+	font-family: Corbel, Arial, Sans-Serif;
+	font-size: 14px;
+}
+
+.note .section
+{
+	border: 1px solid #999999;
+	border-radius: 4px;
+	padding: 0px;
+	margin: 6px;
+}
+
+.note .section .sectionHeader
+{
+	border-bottom: 1px solid #999999;
+	padding: 6px;
+}
+
+.note .section.collapsed .sectionHeader
+{
+	border-bottom: 0px;
+}
+
+.note .section .sectionHeader .expander
+{
+	float: right;
+	display: block;
+}
+
+.printable .note .section .sectionHeader .expander
+{
+	display: none;
+}
+
+.note .section .sectionContent
+{
+	margin: 6px;
+}
+
+.qcNoteEditor .section.selected .sectionHeader .innerLabel
+{
+    color:#990000;
+	border:solid 1px #ffffff;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	background-image: none;
+	background-color: transparent;
+}

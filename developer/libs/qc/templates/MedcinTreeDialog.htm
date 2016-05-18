@@ -1,0 +1,33 @@
+﻿<div class="dijitDialog qcMedcinTreeDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span>
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+
+        <div data-dojo-attach-point="mainPanel" class="mainPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true">
+
+            <div class="topPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: false, region: 'top'">
+                <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                    <div data-dojo-attach-point="txtSearch" data-dojo-type="dijit/form/TextBox" data-dojo-attach-event="onKeyUp:onSearchKeyUp" ></div>
+                    <div data-dojo-attach-point="tbSearch" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSearchClick" data-dojo-props="label: 'Search', iconClass:'view'"></div>
+                    <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="tbBrowse" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:browse" data-dojo-props="label: 'Browse', iconClass: 'text_tree'"></div>
+                </div>
+            </div>
+
+            <div class="bottomPane" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props=" gutters: false, liveSplitters: true, region: 'center'">
+                <div class="navTree" data-dojo-type="qc/MedcinTree" data-dojo-attach-point="navTree" data-dojo-props="allowLabelEdit: false, region: 'center'"></div>
+            </div>
+ 
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div>
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+
+    </div>
+</div>

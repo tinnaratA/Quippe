@@ -1,0 +1,1017 @@
+﻿.qcNoteEditor .note 
+{
+	font-family: Arial, Sans-Serif;
+	font-size: 100%
+}
+    
+.note .chapter
+{
+	clear: both;
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+}
+    
+.note .chapterHeader
+{
+    display: block;
+	font-size: 140%;
+	font-weight: bold;
+	color: #365f91;
+	margin-bottom: 4px;
+}
+
+.note .chapter.hiddenHeader .chapterHeader
+{
+    display: none;
+}
+
+.note.design .chapter.hiddenHeader .chapterHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.note .chapterContent
+{
+	padding-top: 1px;
+}
+    
+.note .section
+{
+	clear: both;
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+}
+    
+.note .sectionHeader
+{
+    display: block;
+	font-size: 125%;
+	font-weight: bold;
+	color: #365f91;
+	margin-bottom: 4px;
+}
+
+.note .section.hiddenHeader .sectionHeader
+{
+    display: none;
+}
+
+.note.design .section.hiddenHeader .sectionHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.note .sectionContent
+{
+	padding-top: 1px;
+}
+    
+.note .group
+{
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+    page-break-inside: avoid;
+}
+    
+.note .groupHeader
+{
+	display: inline;
+	font-size: 100%;
+	font-weight: bold;
+	color: #4F81BD;
+	margin-bottom: 4px;
+}    
+
+.note .group.hiddenHeader .groupHeader
+{
+    display: none;
+}
+
+.note.design .group.hiddenHeader .groupHeader
+{
+    display: inline;
+    color: #cccccc;
+}
+
+.note .groupContent
+{
+	display: inline;
+}    
+    
+.note .freeText
+{
+    min-height: 1.2em;
+    background-color: #ffffff;
+    cursor: text;
+}
+
+.note .freeText p
+{
+	margin: 0px;
+}
+
+.note .freeText .displayText
+{
+    white-space: pre-wrap;
+}
+    
+.note .findingLabel
+{
+	display: inline-block;
+	border: 1px transparent solid;
+	background-color: transparent;
+	background-image: none;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	color: #999999;
+	margin-left: 0px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-right: 6px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+    cursor: pointer;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.note .findingLabel.contextStart
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+.note .findingLabel.inContext
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.note .findingLabel.contextEnd
+{
+	margin-left: 0px;
+	margin-right: 6px;
+}
+
+.note .findingLabel.contextHeading
+{
+	margin-left: 6px;
+	margin-right: 0px;	
+}
+
+.note .findingLabel .preSep
+{
+	text-align: right;
+	display: inline;
+}
+
+.note .findingLabel.inContext .preSep
+{
+	text-align: right;
+	display: inline;
+}
+
+.note .findingLabel .postSep
+{
+	text-align: left;
+	display: inline;
+}
+
+.note .findingLabel.inContext .postSep
+{
+	text-align: left;
+	display: inline;
+}
+
+.note .findingLabel .innerLabel
+{
+	display: inline;
+}
+
+.note .findingLabel.hasHistory .innerLabel
+{
+	text-decoration: underline;
+}
+
+.note .findingLabel.selected
+{
+    background-color:#d8edff;
+    border:solid 1px #c3e2fd;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	background-image: url("images/commonHighlight.png");        
+}
+
+.note .findingLabel.highlight
+{
+	background-color: #abd6ff;
+	border:solid 1px #769dc0;  
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	background-image: url("images/commonHighlight.png");	    
+}
+    
+.note .findingLabel.pos .innerLabel
+{
+    color: #ff0000;
+} 
+      
+.note .findingLabel.neg .innerLabel
+{
+    color: #0000ff;
+}   
+
+.note .taggedFinding.pos
+{
+    color: #ff0000;
+} 
+      
+.note .taggedFinding.neg
+{
+    color: #0000ff;
+}    
+
+.note .noteLabel
+{
+	display: inline-block;
+}
+
+
+.note .patientBanner
+{
+	display: none;
+	width: 100%;	
+	border-bottom: 5px #000000 solid;
+	padding-bottom: 4px;
+	margin-bottom: 8px;	
+}
+
+.note .patientBanner .row
+{
+	margin: 0px;
+	padding: 0px;
+	overflow:hidden;
+}
+
+.note .patientBanner .leftCol
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:left;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note .patientBanner .rightCol
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:right;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note .twoColLeft
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:left;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note .twoColRight
+{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	text-align:right;
+	vertical-align: bottom;
+	width: 50%;
+	overflow:hidden;
+}
+
+.note .hidden:not(.visible)
+{
+	display: none !important;
+}
+
+.design.note .hidden 
+{
+	display: inherit !important;
+}
+
+.design.note .hidden.part:before,
+.design.note .hidden.finding:before
+{
+	content:"HIDDEN";
+	display:inline;
+	font-size:6pt;
+	padding: 0px 2px 0px 2px;
+	border:1px #999999 solid;
+	background-color: #fefeee;
+	position:absolute;
+	border-radius:4px;
+}
+
+.design.note .hidden.part,
+.design.note .hidden.finding
+{
+	position: relative;
+}
+
+.note .viewHide
+{
+	display:none !important;
+}
+
+.note .listHide
+{
+	display:none !important;
+}
+
+.note .listShow
+{
+}
+
+.note .break
+{
+	display: block !important;
+}
+
+.note .patientBanner .noteLabel
+{
+	display: inline;
+	margin-right: 8px;
+}
+
+.note .patientBanner .patientName
+{
+	font-size: 120%;
+	font-weight: bold;
+	display: block;
+}
+
+.printable .note *
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	cursor: default !important;
+}
+
+
+.printable .note .findingLabel:hover
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	background-color: #ffffff !important;
+	border-color: #ffffff !important;
+}
+
+.printable .note .freeText
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+	background-color: #ffffff !important;
+	border-color: #ffffff !important;
+}
+
+.printable .note .patientBanner
+{
+	display: block;
+}
+
+.printable .note .groupHeader
+{
+	font-size: 100%;
+	font-weight: bold;
+	display: inline;
+}
+
+.printable .note .groupContent
+{
+	display: inline;
+}
+
+
+.qcNoteLayoutTable
+{
+	display: table;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 100%;
+}
+
+.qcNoteLayoutTable .row
+{
+	display: table-row;
+}
+
+.qcNoteLayoutTable .cell
+{
+	display: table-cell;
+	height: .8em;
+	min-width: 12px;
+}
+
+
+/* begin: Grid Layouts */
+.note .grid,
+.note .chapterContent.grid,
+.note .sectionContent.grid,
+.note .groupContent.grid
+{
+	display: table;
+	border-collapse: collapse;
+}
+
+.note .grid .row
+{
+	display: table-row;
+}
+
+.note .grid .row .cell
+{
+	display: table-cell;
+	vertical-align: top;
+	text-align: left;
+}
+
+.note .grid .postSep
+{
+	display: none;
+}
+/* end: Grid Layouts */
+
+/* begin: Expandable Groups */
+.note .expander
+{
+	display: none;
+	width: 16px;
+	height: 16px;
+    background-image: url('images/treeExpandImages.png');
+    background-position: -35px -1px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.note .chapter.expandable .chapterHeader .expander,
+.note .section.expandable .sectionHeader .expander,
+.note .group.expandable .groupHeader .expander
+{
+	display: inline-block;
+}
+
+.note .chapter.expandable.collapsed .chapterHeader .expander,
+.note .section.expandable.collapsed .sectionHeader .expander,
+.note .group.expandable.collapsed .groupHeader .expander
+{
+	background-position: 1px -1px;
+}
+
+.note .chapter.expandable.collapsed .chapterContent,
+.note .section.expandable.collapsed .sectionContent,
+.note .group.expandable.collapsed .groupContent
+{
+	display: none;
+}
+/* end: Expandable Groups */
+
+/* begin: outline view */
+
+.note.outline .chapter .chapterHeader .expander,
+.note.outline .section .sectionHeader .expander,
+.note.outline .group .groupHeader .expander
+{
+	display: inline-block;
+}
+
+.note.outline .chapter.collapsed .chapterHeader .expander,
+.note.outline .section.collapsed .sectionHeader .expander,
+.note.outline .group.collapsed .groupHeader .expander
+{
+	background-position: 1px -1px;
+}
+
+.note.outline .chapter .chapterContent,
+.note.outline .section .sectionContent,
+.note.outline .group .groupContent
+{
+	display: block;
+	margin-left: 20px;
+}
+
+.note.outline .chapter.collapsed .chapterContent,
+.note.outline .section.collapsed .sectionContent,
+.note.outline .group.collapsed .groupContent
+{
+	display: none;
+}
+
+.note.outline .findingLabel
+{
+	display: block;
+}
+
+.note.outline .preSep,
+.note.outline .postSep
+{
+	display: none;
+}
+/* end: outline view */
+
+/* begin: Finding Label Checkbox Styles */
+.note .findingLabel .checkbox
+{
+    background-image: url(images/checkboxes.png);
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    margin-right: 4px;
+    display: none;
+    min-width: 14px;
+    min-height: 14px;
+    -webkit-print-color-adjust: exact;
+}
+
+.note .findingLabel.chk .innerLabel,
+.note .findingLabel.chk.pos .innerLabel,
+.note .findingLabel.chk.net .innerLabel
+{
+	color: #000000;
+	vertical-align: middle;	
+}
+
+.note .findingLabel.chk .preSep,
+.note .findingLabel.chk .postSep
+{
+	display: none;
+}
+
+.note .findingLabel.chk.chkSingle .checkbox.left
+{
+	display: inline-block;
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleX.pos .checkbox.left
+{
+	background-position: -32px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleCheck.pos .checkbox.left
+{
+	background-position: -17px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleYN .checkbox.left
+{
+	background-position: -182px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleYN.pos .checkbox.left
+{
+	background-position: -92px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleYN.neg .checkbox.left
+{
+	background-position: -122px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleSquare.pos .checkbox.left
+{
+	background-position: -47px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleSquare.neg .checkbox.left
+{
+	background-position: -62px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleRound .checkbox.left
+{
+	background-position: -137px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleRound.pos .checkbox.left
+{
+	background-position: -152px -2px;	
+}
+
+.note .findingLabel.chk.chkSingle.chkStyleRound.neg .checkbox.left
+{
+	background-position: -167px -2px;	
+}
+
+
+.note .findingLabel.chk.chkDouble .checkbox.left
+{
+	display: inline-block;
+}
+
+.note .findingLabel.chk.chkDouble .checkbox.right
+{
+	display: inline-block;
+}
+
+
+.note .findingLabel.chk.chkDouble.chkStyleX.pos .checkbox.left
+{
+	background-position: -32px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleX.neg .checkbox.right
+{
+	background-position: -32px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleCheck.pos .checkbox.left
+{
+	background-position: -17px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleCheck.neg .checkbox.right
+{
+	background-position: -17px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleYN .checkbox.left
+{
+	background-position: -77px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleYN.pos .checkbox.left
+{
+	background-position: -92px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleYN .checkbox.right
+{
+	background-position: -107px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleYN.neg .checkbox.right
+{
+	background-position: -122px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleSquare.pos .checkbox.left
+{
+	background-position: -47px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleSquare.neg .checkbox.right
+{
+	background-position: -62px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleRound .checkbox.left
+{
+	background-position: -137px -2px;
+}
+.note .findingLabel.chk.chkDouble.chkStyleRound.pos .checkbox.left
+{
+	background-position: -152px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleRound .checkbox.right
+{
+	background-position: -137px -2px;
+}
+
+.note .findingLabel.chk.chkDouble.chkStyleRound.neg .checkbox.right
+{
+	background-position: -167px -2px;
+}
+
+
+.note .findingLabel .checkboxContainer
+{
+	display: none;
+}
+
+.note .findingLabel.chk .checkboxContainer
+{
+	display: inline;
+}
+
+.note .findingLabel.chk.chkAfter .checkboxContainer
+{
+	margin-left: 4px;	
+}
+
+
+/* end: Finding Label Checkbox Styles */
+
+/* rollup */
+.note.concise .rollupConcise .chapter .chapterHeader,
+.note.concise .rollupConcise .section .sectionHeader,
+.note.concise .rollupConcise .group .groupHeader
+{
+	display: none;
+}
+
+.note.concise .rollupConcise .chapter,
+.note.concise .rollupConcise .section,
+.note.concise .rollupConcise .group,
+.note.concise .rollupConcise .chapter .chapterContent,
+.note.concise .rollupConcise .section .sectionContent,
+.note.concise .rollupConcise .group .groupContent
+{
+	display: inline;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/* finding groups */
+.note .findingGroup
+{
+	display: inline-block;
+	border: 1px transparent solid;
+	background-color: transparent;
+	background-image: none;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	color: #999999;
+	margin-left: 0px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-right: 6px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+    cursor: pointer;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;	
+}
+
+.note .findingGroup .findingList
+{
+	display: none;
+}
+
+
+.note .findingLabel.bullet .innerLabel
+{
+	display: list-item;
+	margin-left: 16px;
+}
+
+.note .findingLabel.bullet .preSep,
+.note .findingLabel.bullet .postSep
+{
+	display: none;
+}
+
+/* Macro Fields */
+.freeText .data
+{
+	display: none;
+}
+
+.freeText .editArea
+{
+	display: block;
+}
+
+.freeText .macroField
+{
+	display: inline;
+	cursor: pointer;
+	background-color: #fff799;
+	margin: 0px 2px 0px 2px;
+	padding: 0px;
+}
+
+.freeText .macroField.selected
+{
+	background-color: #ffff00;
+}
+
+.freeText .macroField .data
+{
+	display: none;
+}
+
+.freeText .macroField .label
+{
+	display: inline;
+	padding: 0px 2px 0px 2px;
+	cursor: pointer;
+}
+
+.printable .freeText .macroField,
+.disabled .freeText .macroField
+{
+	background-color: transparent;
+}
+
+/* Macro Field Dialog */
+.qcFieldDialog
+{
+}
+    
+.qcFieldDialog table
+{
+	border-collapse: collapse;
+}
+    
+.qcFieldDialog td
+{
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}
+    
+.qcFieldDialog .editControl
+{
+    width: 150px;
+}
+    
+.qcFieldDialog .dialogButton .dijitButtonNode
+{
+    min-width: 52px;
+}
+    
+.qcFieldDialog .qcCheckList
+{
+	border: 1px solid #b5bcc7;
+	max-height: 150px;
+	min-height: 1.5em;
+	overflow: auto;
+}
+
+.qcFieldDialog .qcCheckListItem
+{
+	margin: 3px;
+}
+
+.freeText ul,
+.freeText ol
+{
+	margin-top: 0px;
+}
+
+.note .displayInline
+{
+	display: inline;
+}
+
+
+.note .displayBlock
+{
+	display: block;
+}
+
+/* Design Mode Styles */
+
+.design .qcNoteLayoutTable .cell
+{
+	border: 1px #999999 solid;
+}
+
+/*
+.design .noteElement.selected
+{
+	outline: #666666 dashed 1px;
+}
+*/
+
+.design .freeText
+{
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+
+.bold
+{
+	font-weight: bold !important;
+}
+
+.italic
+{
+	font-style: italic !important;
+}
+
+.large
+{
+	font-size: large !important;
+}
+
+.larger
+{
+	font-size: larger !important;
+}
+
+.small
+{
+	font-size: small !important;
+}
+
+.smaller
+{
+	font-size: smaller !important;
+}
+
+.note .pageBreak
+{
+    page-break-before: always !important;
+}
+
+.note .avoidPageBreak
+{
+    page-break-inside: avoid;
+}
+
+.note .qcHyperlink
+{
+    display: inline;
+    color: #333333;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.printable .noPrint,
+.note.concise .noPrint
+{
+    display: none;
+}
+
+.printable .forcePrint,
+.note.concise .forcePrint
+{
+    display: block !important;
+}
+
+.printable .forcePrint.inline,
+.note.concise .forcePrint.inline
+{
+    display: inline !important;
+}
+
+.note .noteLabel.paragraph
+{
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+
+.fill
+{
+    width: 100%;
+    height: 100%;
+}
+
+.section.citation > .sectionHeader
+{
+    font-size: 100%;
+    font-weight: bold;
+    color: #333333;
+    border-bottom: 1px #333333 solid;
+    margin-top: 12px;
+}
+
+.section.citation > .sectionHeader .innerLabel 
+{
+    display: inline-table;
+    width: 100%;
+}
+
+.section.citation > .sectionHeader .innerLabel .left
+{
+    display: table-cell;
+    text-align: left;
+}
+
+.section.citation > .sectionHeader .innerLabel .center
+{
+    display: table-cell;
+    text-align: center;
+}
+
+.section.citation > .sectionHeader .innerLabel .right
+{
+    display: table-cell;
+    text-align: right;
+}
+
+.citation *
+{
+    color: #000000 !important;
+    text-decoration: none !important;
+}

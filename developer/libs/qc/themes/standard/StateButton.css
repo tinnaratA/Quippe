@@ -1,0 +1,94 @@
+﻿
+
+.qcStateButton
+{
+    font-weight:normal;
+    display: inline-block;
+    margin: 2px 6px 0px 2px;
+    border: 1px #999999 solid;
+    background-color: #eeeeee;
+    color: #000000;
+    border-radius: 3px;
+    padding: 2px 3px 3px 3px;
+    text-align: center;
+}
+
+.qcStateButton.disabled,
+.qcStateButton.checked.disabled,
+.disabled .qcStateButton,
+.disabled .qcStateButton.checked
+{
+    color: #999999;
+}
+
+.qcStateButton.selected,
+.qcStateButton.selected.checked
+{
+    outline: 0px;
+}
+
+.design .qcStateButton.selected,
+.design .qcStateButton.selected.checked
+{
+    border-color: #ffa64c;
+}
+
+.qcStateButton.checked
+{
+    background-color: #297fd5;
+    color: #ffffff;
+}
+
+.qcStateButton .lbl
+{
+    display: inline;
+    margin: 0px 4px 0px 4px;
+}
+
+.qcStateButton .chk
+{
+   display: none;
+}
+
+.concise .qcStateButton,
+.printable .qcStateButton
+{
+    display: none;
+}
+
+.qcStateButton.checkbox
+{
+    border: 0px;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.qcStateButton.checkbox.checked
+{
+    background: transparent;
+    color: #000000;
+}
+
+.qcStateButton.checkbox .chk
+{
+    background-image: url(images/checkboxes.png);
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+}
+
+.qcStateButton.checkbox.checked .chk
+{
+     background-position:  -17px -2px;
+}
+
+
+.design .qcStateButton.checkbox.selected,
+.design .qcStateButton.checkbox.selected.checked
+{
+    outline: 1px #ffa64c solid;
+}

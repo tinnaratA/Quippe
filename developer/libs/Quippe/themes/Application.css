@@ -1,0 +1,280 @@
+﻿/* Checking out */
+
+
+@media print
+{
+	html
+	{
+		width: auto;
+		height: auto;
+	}
+	
+	body
+	{
+		font-family: Arial, Sans-Serif;
+		font-size: 10pt;
+		width: auto;
+		height: auto;
+		margin: 0px;
+		overflow: visible !important;
+	}
+	
+	.quippeApp
+	{
+		display: none;
+	}
+} 
+
+html
+{
+    width: 100%;
+    height: 100%;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+        
+body
+{
+    font-family: Arial, Sans-Serif;
+    font-size: .9em !important;
+    width: 100%;
+    height: 100%;
+    margin: 0px;   
+	overflow: hidden;    
+}
+
+.appBusy *
+{
+    cursor: progress !important;
+}
+
+*
+{
+	outline-style: none;
+}
+
+*:focus
+{
+	outline-style: none;
+}
+
+input
+{
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
+.quippeApp       
+{
+    width: 100%;
+    height: 100%;
+}
+
+.quippeApp .mainFrame
+{
+    width: 100%;
+    height: 100%;
+}
+
+.quippeApp .toolBarPane
+{
+	padding: 0px;
+	margin-bottom: 4px;
+}
+
+.quippeApp .dijitToolbar
+{
+	height: 30px;
+	vertical-align: middle;
+}
+
+.quippeApp .dijitToolbar .dijitButton
+{
+	margin: 3px;
+}
+
+.quippeApp .dijitToolbar .dijitComboButtonHover
+{
+	border: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	/* border: 1px #769dc0 solid; */
+}
+
+.quippeApp .dijitToolbar .dijitComboButtonHover .dijitDownArrowButton
+{
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+
+}
+            
+.quippeApp .mainContent
+{
+    background-color: #ffffff;
+    padding: 3px 6px 3px 6px;
+}
+        
+.quippeApp .docPane
+{
+    background-color: #ffffff;
+    padding: 0px;
+    border: 0px;
+    height:100%;
+    margin-left: 4px;
+}
+
+        
+.quippeApp .taskPane
+{
+    width: 25%;
+    background-color: #ffffff;
+    border: 0px;
+    padding: 0px;
+    margin-right: 0px;
+}
+
+.toolbarIcon
+{
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+
+.spinner
+{
+	display: inline-block;
+	margin-left: 24px;
+	min-width: 16px;
+	min-height: 16px;
+	background-image: url(images/spinner.gif);
+	background-repeat: no-repeat;
+}
+
+#copyright
+{
+	position: absolute;
+	bottom: 12px;
+	right: 6px;
+	color: #999999;
+	font-size: 75%;
+	z-index:9999;
+	padding-right: 8px;
+	text-align: right;
+}
+
+/* IE10 + Win8 Touch Rules */
+
+*
+{
+    -ms-touch-action: pinch-zoom pan-y;
+	touch-action: pinch-zoom pan-y;    
+}
+    
+.qcDrawingEditor.edit,
+.qcDrawingEditor.edit *
+{
+    -ms-touch-action: none;
+    touch-action: none;
+}
+    
+
+/* TODO: remove old namespace rules */
+.ctApp       
+{
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+}
+
+.ctApp .mainFrame
+{
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+}
+
+.ctApp .toolBarPane
+{
+	padding: 0px;
+	margin-bottom: 4px;
+     background-color: pink;
+}
+
+.ctApp .dijitToolbar
+{
+	height: 30px;
+	vertical-align: middle;
+     background-color: pink;
+}
+
+.ctApp .dijitToolbar .dijitButton
+{
+	margin: 3px;
+     background-color: pink;
+}
+
+.ctApp .dijitToolbar .dijitComboButtonHover
+{
+	border: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+     background-color: pink;
+	/* border: 1px #769dc0 solid; */
+}
+
+.ctApp .dijitToolbar .dijitComboButtonHover .dijitDownArrowButton
+{
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+     background-color: pink;
+}
+            
+.ctApp .mainContent
+{
+     background-color: pink;
+    padding: 3px 6px 3px 6px;
+}
+        
+.ctApp .docPane
+{
+     background-color: pink;
+    padding: 0px;
+    border: 0px;
+    height:100%;
+    margin-left: 4px;
+}
+
+        
+.ctApp .taskPane
+{
+    width: 25%;
+     background-color: pink;
+    border: 0px;
+    padding: 0px;
+    margin-right: 0px;
+}
+
+.ctuiDrawingEditor.edit,
+.ctuiDrawingEditor.edit *
+{
+     background-color: pink;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+

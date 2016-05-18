@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quippe</title>
+
+		<style type="text/css">
+			body {
+				font-family: Arial, Sans-Serif;
+				font-size: .8em !important;
+				background-color: #ffffff;
+			}
+
+			#mainPanel {
+				background-color: #ffffff;
+				border: 0px #666666 solid;
+				margin: 30px;
+				width: 600px;
+			}
+
+			.headerLabel {
+				clear: both;
+				margin-top: 12px;
+				height: 32px;
+			}
+
+			.headerLabel img {
+				float: left;
+				padding-right: 8px;
+			}
+
+			.headerLabel .text {
+				font-size: 140%;
+				font-weight: bold;
+				padding-top: 12px;
+				display: inline-block;
+			}
+
+			.separator {
+				margin-left: 12px;
+				margin-right: 12px;
+				margin-top: 24px;
+				margin-bottom: 24px;
+				color: #999999;
+				text-align: left;
+			}
+
+			.panel {
+				margin-left: 12px;
+				padding-bottom: 20px;
+			}
+
+			input[type=text], input[type=password] {
+				width: 200px;
+			}
+
+			#lblMessage {
+				color: firebrick; 
+				font-weight: bold;
+				height: 24px;
+			}
+		</style>
+
+		<script type="text/javascript">
+            window.onload = function () {
+                var match;
+                var queryStringRegex = /([^&=]+)=?([^&]*)/g;
+                var query = window.location.search.substring(1);
+                var urlParams = {};
+
+                while (match = queryStringRegex.exec(query)) {
+                    urlParams[decodeURIComponent(match[1].replace(/\+/g, " "))] = decodeURIComponent(match[2].replace(/\+/g, " "));
+                }
+
+                if (urlParams["ReturnUrl"] == "/") {
+                    urlParams["ReturnUrl"] = "Default.htm";
+                }
+
+                document.getElementById('login').removeAttribute('disabled');
+
+                var loginButtonClick = function() {
+					document.getElementById('lblMessage').innerHTML = '';
+
+					document.getElementById('login').setAttribute('disabled', 'disabled');
+					document.getElementById('login').setAttribute('value', 'Logging in...');
+
+					var xmlHttp = new XMLHttpRequest();
+
+					xmlHttp.onreadystatechange = function () {
+						if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+						    var data;
+
+						    if (JSON && JSON.parse) {
+						        data = JSON.parse(xmlHttp.responseText);
+						    }
+
+						    else {
+						        eval("var data = " + xmlHttp.responseText + ";");
+						    }
+
+							if (data.result && data.result.status == "OK") {
+								if (data.result.cookies) {
+									for (var i = 0; i < data.result.cookies.length; i++) {
+										var cookie = encodeURIComponent(data.result.cookies[i].cookieName) + "=" + data.result.cookies[i].cookieValue;
+
+										if (data.result.cookies[i].cookiePath) {
+											cookie += "; path=" + data.result.cookies[i].cookiePath;
+										}
+
+										if (data.result.cookies[i].cookieExpires) {
+										    var dateValue = parseInt(data.result.cookies[i].cookieExpires.replace(/\/Date\((-?\d+)\)\//, '$1'), 10);
+										    cookie += dateValue && !isNaN(dateValue) ? "; expires=" + new Date(dateValue).toUTCString() : '';
+										}
+
+										document.cookie = cookie;
+									}
+								}
+
+								window.location.href = urlParams["ReturnUrl"] || "Default.htm";
+							}
+
+							else {
+								if (data.result && data.result.message) {
+								    document.getElementById('lblMessage').innerHTML = data.result.message;
+								}
+
+								else {
+								    document.getElementById('lblMessage').innerHTML = 'Login failed. Please check your user name and password and try again.';
+								}
+
+								document.getElementById('login').removeAttribute('disabled');
+								document.getElementById('login').setAttribute('value', 'Login');
+							}
+						}
+
+						else if (xmlHttp.readyState == 4) {
+						    document.getElementById('lblMessage').innerHTML = 'Login failed. Please check your user name and password and try again.';
+							document.getElementById('login').removeAttribute('disabled');
+							document.getElementById('login').setAttribute('value', 'Login');
+						}
+					}
+
+					var postData = "";
+
+					postData += "Username=" + encodeURIComponent(document.getElementById('txtEmailAddress').value) + "&";
+					postData += "Password=" + encodeURIComponent(document.getElementById('txtPassword').value) + "&";
+					postData += "Persistent=" + encodeURIComponent(document.getElementById('chkPersistent').checked ? "True" : "False");
+
+					xmlHttp.open("POST", "ws.aspx/Quippe/Security/Login?DataFormat=JSON", true);
+					xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					xmlHttp.send(postData);
+				};
+
+				var sendPasswordButtonClick = function () {
+				    document.getElementById('lblMessage').innerHTML = '';
+
+					document.getElementById('sendPassword').setAttribute('disabled', 'disabled');
+					document.getElementById('sendPassword').setAttribute('value', 'Sending Password...');
+
+					var xmlHttp = new XMLHttpRequest();
+
+					xmlHttp.onreadystatechange = function () {
+						if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+						    var data;
+
+						    if (JSON && JSON.parse) {
+						        data = JSON.parse(xmlHttp.responseText);
+						    }
+
+						    else {
+						        eval("var data = " + xmlHttp.responseText + ";");
+						    }
+
+							if (data.result && data.result.status == "OK") {
+							    document.getElementById('lblMessage').innerHTML = "Your password has been sent to your email address.";
+							}
+
+							else {
+								if (data.result && data.result.message) {
+								    document.getElementById('lblMessage').innerHTML = data.result.message;
+								}
+
+								else {
+								    document.getElementById('lblMessage').innerHTML = 'Unable to retrieve your password.  Please contact tech support.';
+								}
+							}
+
+							document.getElementById('sendPassword').removeAttribute('disabled');
+							document.getElementById('sendPassword').setAttribute('value', 'Send Password');
+						}
+
+						else if (xmlHttp.readyState == 4) {
+						    document.getElementById('lblMessage').innerHTML = 'Unable to retrieve your password.  Please contact tech support.';
+							document.getElementById('sendPassword').removeAttribute('disabled');
+							document.getElementById('sendPassword').setAttribute('value', 'Send Password');
+						}
+					}
+
+					xmlHttp.open("GET", "ws.aspx/Quippe/Security/SendPassword?DataFormat=JSON&Email=" + encodeURIComponent(document.getElementById('txtRecoverEmail').value), true);
+					xmlHttp.send();
+				};
+
+				document.getElementById('loginForm').onsubmit = function() {
+					loginButtonClick();
+					return false;
+				}
+
+				document.getElementById('sendPasswordForm').onsubmit = function () {
+					sendPasswordButtonClick();
+					return false;
+				}
+				document.getElementById('txtEmailAddress').focus();
+			};
+		</script>
+	</head>
+	<body>
+		<div id="mainPanel">
+			<img src="images/logo-quippe.jpg" alt="Quippe Logo" />
+				
+			<br/><br/>
+			<div id="lblMessage"></div>
+				
+			<div class="panel">
+				<div class="headerLabel">
+					<img src="images/key2.png" alt="" /><div class="text">Login</div>
+				</div>
+					
+				<form id="loginForm">
+					<table>
+						<tr>
+							<td>
+								Email Address:
+							</td>
+							<td>
+								<input type="text" name="txtEmailAddress" id="txtEmailAddress" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Password:
+							</td>
+							<td>
+								<input type="password" name="txtPassword" id="txtPassword" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="checkbox" id="chkPersistent" name="chkPersistent" value="True" /> Remember me next time
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="submit" value="Login" id="login" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+
+			<hr class="separator" />
+				
+			<div class="panel">
+				<div class="headerLabel">
+					<img src="images/help2.png" alt="" /><div class="text">Forgot your password?</div>
+				</div>
+
+				<p>
+					Enter your email address here to retrieve your password.
+				</p>
+					
+				<form id="sendPasswordForm">
+					<table>
+						<tr>
+							<td>
+								Email Address:
+							</td>
+							<td>
+								<input type="text" id="txtRecoverEmail" name="txtRecoverEmail" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="submit" id="sendPassword" value="Send Password" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+
+		<div id="debugInfo" style="display:none;"></div>
+	</body>
+</html>

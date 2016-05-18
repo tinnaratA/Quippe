@@ -1,0 +1,27 @@
+﻿.qcPatientInfoPanel
+{
+	padding: 3px;
+}
+
+.qcPatientInfoPanel .patientPanel
+{
+	display:none;
+}
+
+.qcPatientInfoPanel .patientName
+{
+    font-size: 120%;
+    font-weight: bold;
+    display: inline;
+    margin-right: 6px;
+}
+        
+.qcPatientInfoPanel .patientDemographics
+{
+}
+
+.qcPatientInfoPanel .qcListView
+{
+	margin-top: 6px;
+	padding: 0px;
+}

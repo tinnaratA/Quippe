@@ -1,0 +1,66 @@
+﻿.qcFindingListEditorDialog
+{
+}
+
+.qcFindingListEditorDialog .worksheetViewport
+{
+	margin-top:0px; 
+	padding: 0px;
+	width: 100%;
+	height:100%;
+	overflow:auto;
+}
+
+.qcFindingListEditorDialog .worksheet
+{
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 100%;
+}
+
+.qcFindingListEditorDialog .worksheet .data .cellData
+{
+	width: 100%;
+}
+
+.qcFindingListEditorDialog .worksheet tr
+{
+	background-color: #ffffff;
+}
+
+.qcFindingListEditorDialog .worksheet tr.selected
+{
+	background-color: #abd6ff;
+}
+
+
+.qcFindingListEditorDialog .worksheet td
+{
+	text-align: left;
+	vertical-align: top;
+	/*border-left: 1px #999999 solid;*/
+	border-top: 1px #999999 solid;
+	border-bottom: 1px #999999 solid;
+}
+
+.qcFindingListEditorDialog .worksheet tr.header td
+{
+	background-color: #eeeeee;
+	border-top: 0px;
+	font-weight: bold;
+}
+
+.qcFindingListEditorDialog .worksheet td.id
+{
+	width: 100px;
+	background-color: #eeeeee;
+}
+
+.qcFindingListEditorDialog .worksheet .selected td.id
+{
+	background-color: transparent;
+}
+
+.qcFindingListEditorDialog .worksheet td.text
+{
+}

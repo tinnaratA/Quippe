@@ -1,0 +1,44 @@
+<div class="qcCqmFilterDialog">
+    
+    <div class="sectionContent">
+        <div>
+            <div>Include:</div>
+            <div class="inputLine">
+				<input id="${id}_optCurrentLevelAll" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="all" />
+                <label for="${id}_optCurrentLevelAll">All Measures</label>
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelSelected" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="selected" />
+                <label for="${id}_optCurrentLevelSelected">Selected Measures</label>            
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelApplicable" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="applicable" />
+                <label for="${id}_optCurrentLevelApplicable">Applicable Measures</label>            
+            </div>
+            <div class="inputLine">
+                <input id="${id}_optCurrentLevelIncomplete" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onClick:onDataChanged" type="radio" value="incomplete" />
+                <label for="${id}_optCurrentLevelIncomplete">Incomplete Measures</label>            
+            </div>
+        </div>
+    </div>
+
+	<div class="sectionHeading" style="height:8px;"></div>
+    <div class="sectionContent" style="margin-top:8px;margin-bottom:12px;">
+        <div>
+            <div class="checkLine">
+                <input name="hideInfoOnly" id="${id}_hideInfoOnly" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-event="onClick:onDataChanged" type="checkbox" />
+                <label for="${id}_hideInfoOnly">hide informational only measures</label>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear:both;display:table;margin-top:12px;width:100%;">
+        <div style="display:table-cell;text-align:left;">
+            <div data-dojo-attach-point="saveDefaultButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSaveDefault">Save as Default</div>
+        </div>
+        <div style="display:table-cell;text-align:right;">
+            <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onApply">Apply</div>
+            <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>
+        </div>
+    </div>
+</div>

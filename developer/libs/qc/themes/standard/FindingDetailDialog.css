@@ -1,0 +1,109 @@
+﻿.qcFindingDetailDialog
+{
+    /* 
+	width: 600px;
+    height: 400px;
+	*/
+}
+    
+.qcFindingDetailDialog .dijitTextBox
+{
+}    
+
+.qcFindingDetailDialog .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;
+}
+        
+.qcFindingDetailDialog .contentArea
+{
+    /*height: 320px;*/
+    padding: 0px;
+    margin: 8px;
+    overflow: auto;
+}
+        
+.qcFindingDetailDialog .buttonArea
+{
+    text-align: right;
+    height: 60px;
+    padding-bottom: 4px;
+    padding-right: 12px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+        
+.qcFindingDetailDialog table
+{
+	width: 100%;
+	border-collapse:collapse;
+}
+    
+.qcFindingDetailDialog td
+{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+    
+.qcFindingDetailDialog .labelCol
+{
+}
+
+    
+.qcFindingDetailDialog .editCol
+{
+}
+    
+.qcFindingDetailDialog .rowSpacer
+{
+    height: 12px;
+}
+
+.qcFindingPhrasingTab .heading
+{
+	display: block;
+	font-weight:bold;
+	margin-top: 12px;
+	margin-left: 6px;
+	background-color: #ffffff;
+	z-index: 10;
+}
+
+.qcFindingPhrasingTab .qcGroupBox
+{
+	position: relative;
+	border: 1px solid #999999;
+	padding: 8px;
+	margin: 12px 8px 12px 8px;
+	border-radius: 4px;
+}
+
+.qcFindingPhrasingTab .qcGroupBox .heading
+{
+	position: absolute;
+	top: -1.7em;
+	left: 8px;
+	display: inline;
+	background-color: #ffffff;
+	font-weight: bold;
+	font-size: 80%;
+	z-index: 100;
+}
+
+.qcFindingPhrasingTab .editorLink
+{
+	font-size: 90%;
+	color: #0000ff;
+	cursor:pointer;
+	margin: 8px 0px 8px;
+	display: block;
+}
+
+.qcFindingPhrasingTab .txtTranscription
+{
+	width: 100%;
+	margin: 4px 0px 8px 0px;
+}

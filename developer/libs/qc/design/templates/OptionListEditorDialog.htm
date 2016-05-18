@@ -1,0 +1,24 @@
+<div class="dijitDialog qcDialog qcOptionListEditorDialog qcContextMenuContainer" tabindex="-1" role="dialog" aria-labelledby="${id}_title" style="background-color:#ffffff">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea" style="width:400px">
+            <div data-dojo-attach-point="listNameNode">
+                <span style="margin-right:4px">List Name:</span>
+	            <div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtListName" style="width:150px" data-dojo-attach-event="onKeyPress:checkState" tabIndex="1"></div>
+            </div>
+            <div class="worksheetViewport">
+                <table data-dojo-attach-point="table" class="worksheet" data-dojo-attach-event="onkeydown:onTableKeyDown, onclick:onTableClick">
+                </table>
+            </div>
+        </div>
+        <div class="buttonArea" style="height:30px;text-align:right;padding:4px">
+            <div data-dojo-attach-point="cmdOK" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick" data-dojo-props="disabled: true">OK</div>
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

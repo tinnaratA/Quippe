@@ -1,0 +1,112 @@
+﻿@import url(TreeView.css);
+
+html
+{
+	height: 100%;
+}
+
+body 
+{
+	height: 100%;
+	margin: 0px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: .85em;
+}    
+        
+.helpViewer
+{
+	height: 100%;
+}
+        
+.helpViewer .titleBar
+{
+	height: 24px;
+	width: 100%;
+	color: #000000;
+	background-color: #abcdef;
+	font-size: 140%;
+	font-weight:bold;
+	background-position: 0px -8px;
+	background-repeat: repeat-x;
+	border-bottom: 1px #999999 solid;
+	padding: 6px;
+}
+
+.helpViewer .mainContent
+{
+}
+
+.helpViewer .navPane
+{
+	width: 25%;
+	height: 100%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+
+#docPane
+{
+	background-color: #fedcba;
+}
+
+.helpViewer .docHeader
+{
+	height: 24px;
+	padding-top: 6px;
+}
+
+        
+.helpViewer .docBody
+{
+    overflow: auto;
+}
+        
+.helpViewer .docFooter
+{
+	height: 18px;
+	padding: 4px;
+}        
+        
+.helpViewer .copyright
+{
+    color: #999999;
+    font-size: 80%;
+    text-align: center;
+    vertical-align: middle;
+}
+        
+.helpViewer .docLink
+{
+    color: #0000ff;
+    cursor: pointer;
+}
+        
+.helpViewer .docLink:hover
+{
+    color: #0000ff;
+    cursor: pointer;
+    text-decoration: underline;
+}        
+        
+       
+.helpViewer .breadCrumbs
+{
+    font-size: 80%;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+        
+.helpViewer .breadCrumbs .docLink
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+.helpViewer .breadCrumbs .separator
+{
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+}

@@ -1,0 +1,742 @@
+﻿.qcFindingTable
+{
+	margin-top: 7px;
+}
+
+.qcFindingTable table
+{
+    font-size: 100%;
+    border-collapse: collapse;
+    margin: 4px;	
+}
+    
+.qcFindingTable td
+{
+    text-align: left;
+    vertical-align: top;
+    padding: 2px;
+}
+
+.qcFindingTable .titleRow
+{
+	background-color: #eeeeee;
+	text-align: center;
+	font-weight: bold;
+}
+
+.qcFindingTable .left
+{
+	text-align: left;
+}
+
+.qcFindingTable .center
+{
+	text-align: center;
+}
+
+.qcFindingTable .right
+{
+	text-align: right;
+}
+
+.qcFindingTable .findingList
+{
+	display: none;
+} 
+
+.qcFindingTable .checkBoxCellWidget .checkboxIcon
+{
+	display: inline-block;
+    background-image: url(images/checkboxes.png);
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    margin-right: 4px;
+    display: inline-block;
+    min-width: 14px;
+    min-height: 14px;	
+    -webkit-print-color-adjust: exact;
+}
+
+.qcFindingTable .checkBoxCellWidget .checkboxIcon.checked
+{
+	background-position: -32px -2px;
+}
+
+.qcFindingTable .checkBoxCellWidget .label
+{
+	display: inline;
+}
+
+.qcFindingTable input
+{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	text-align: inherit;
+}
+
+.qcFindingTable .calcEntry
+{
+	display: inline;
+	width: 100%;
+}
+
+.qcFindingTable .calcEdit
+{
+	display: inline;
+	vertical-align: middle;
+	text-align: inherit;
+	margin-right: 3px;
+	width: 40px;
+}
+
+.qcFindingTable .calcButton
+{
+	display: inline;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	border: 1px #999999 solid;
+}
+
+.qcFindingTable .dropDownCell
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.qcFindingTable .dropDownCell input
+{
+	width: 90%;
+	width: calc(100% - 16px);
+	height: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-align: inherit;
+}
+
+.qcFindingTable .dropDownCell .arrow
+{
+	display: inline-block;
+	vertical-align: middle;
+    background-image: url(images/commonFormArrows.png);
+    background-position: -36px 53%;
+	background-repeat: no-repeat;    
+	width: 14px;
+	height: 100%;
+	min-height: 16px;    
+}
+
+.qcFindingTable .cwTbl
+{
+	display: inline-table;
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+.qcFindingTable .cwTbl .cwRow
+{
+	display: table-row;
+}
+
+.qcFindingTable .cwTbl .cwRow .cwCell
+{
+	display: table-cell;
+}
+
+.qcFindingTable .cwTbl .cwRow .cwCell.checkboxCell
+{
+	width: 16px;
+}
+
+.qxFindingTable
+{
+}
+
+.qxFindingTable.selected
+{
+	outline-style: none !important;
+}
+
+.qxFindingTable .findingList
+{
+	display: none;
+	border: 1px #999999 solid;	
+}
+
+.qxFindingTable .findingList .header td
+{
+	background-color: #eeeeee;
+	border-bottom: 1px #999999 solid;
+	padding: 2px;
+	display: block;
+	font-weight: bold;
+}
+
+.qxFindingTable .findingList .content
+{
+	display: block;
+	padding: 6px;
+}
+
+.qxFindingTable .findingList .content .finding
+{
+	display: block;
+}
+
+.qxFindingTable.layoutView .findingList
+{
+	display: none;
+}
+
+.design .qxFindingTable.dataView .findingList
+{
+	display: block;
+}
+
+
+.qxFindingTable table
+{
+	display: table;
+	border-collapse: collapse;
+}
+
+
+.qxFindingTable.selected > table
+{
+	background-color: transparent !important;
+	border-color:  transparent !important;
+	outline-color: rgba(255,128,0,.7);
+	outline-style: solid;
+	outline-width: 1px;
+	outline-offset: -1px;	
+}
+
+.qxFindingTable.layoutView table
+{
+	display: table;
+}
+
+.design .qxFindingTable.dataView table
+{
+	display: none;
+}
+
+.qxFindingTable tr
+{
+	height: 1.5em;
+}
+
+.design .qxFindingTable td
+{
+	border: 1px dotted #bbbbbb;
+}
+
+.qxFindingTable.borders table
+{
+	border: 1px solid #999999;	
+}
+
+.qxFindingTable.borders td
+{
+	border: 1px solid #999999;
+}
+
+.qxFindingTable tr.header td
+{
+	background-color: #eeeeee;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.qxFindingTable tr.template,
+.qxFindingTable col.template,
+.qxFindingTable td.template
+{
+	display: none;
+}
+
+.design .qxFindingTable tr.template
+{
+	display: table-row;
+}
+
+.design .qxFindingTable col.template
+{
+	display: table-column;
+}
+
+.design .qxFindingTable td.template 
+{
+	display: table-cell;
+	background-color: #fff799;
+}
+
+.qxFindingTable tr.selector,
+.qxFindingTable td.selector,
+.qxFindingTable col.selector
+{
+	display: none;
+	background-color: #eeeeee;
+	border: 1px solid #999999;
+	font-size: 80%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 1px;
+}
+
+.qxFindingTable td.selector.rowSelector,
+.qxFindingTable col.selector.rowSelector
+{
+	width: 20px;
+	max-width: 20px;	
+}
+
+.design .qxFindingTable tr.selector
+{
+	display: table-row;
+}
+
+.design .qxFindingTable td.selector
+{
+	display: table-cell;
+}
+
+.design .qxFindingTable col.selector
+{
+	display: table-column;
+}
+
+.qxFindingTable .rangeSelection
+{
+}
+
+.design .qxFindingTable.selected .rangeSelection
+{
+	background-color: #ddfef0;
+}
+
+/* == Cell Widgets == */
+.cellWidget
+{
+	width: 100%;
+	height: 100%;
+}
+
+.cellWidget
+{
+	width: 100%;
+	height: 100%;
+}
+
+.cellWidget.doubleCheck.hideLabel
+{
+    width:auto;
+}
+
+.cellWidget.cmpTbl 
+{
+    display: inline-table;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cellWidget.cmpTbl .cmpRow
+{
+	display: table-row;
+    margin: 0px;
+    padding: 0px;	
+}
+
+.cellWidget.cmpTbl .cmpRow .cmpCell
+{
+	display: table-cell;
+    margin: 0px;
+    padding: 0px;	
+}
+
+.cmpTbl.cellWidget.hideLabel .cmpRow .cmpCell.labelCell
+{
+	display: none;
+}
+
+.cellWidget.hideLabel .labelNode
+{
+	display: none;
+}
+
+.cellWidget.cmpTbl .cmpRow .cmpCell.buttonCell
+{
+    width: 16px;
+}
+
+.cellWidget.label
+{
+}
+
+.cellWidget.textBox .textBoxNode
+{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	padding: 0px;
+	background-color: transparent;
+	font:inherit;
+	text-align: inherit;
+	vertical-align: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.cellWidget.checkBox
+{
+}
+
+.cellWidget.cmpTbl .cmpRow .cmpCell.boxCell
+{
+	width: 16px;
+}
+
+.cellWidget.singleCheck .box,
+.cellWidget.doubleCheck .box
+{
+    background-image: url(images/checkboxes.png);
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    display: inline-block;
+    margin: 2px;	
+    -webkit-print-color-adjust: exact;
+}
+
+.cellWidget.singleCheck.x			.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.x.pos		.box	{ background-position:  -32px -2px; }
+.cellWidget.singleCheck.x.neg		.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.check		.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.check.pos	.box	{ background-position:  -17px -2px; }
+.cellWidget.singleCheck.check.neg	.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.yn			.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.yn.pos		.box	{ background-position:  -92px -2px; }
+.cellWidget.singleCheck.yn.neg		.box	{ background-position: -122px -2px; }
+.cellWidget.singleCheck.square		.box	{ background-position:   -2px -2px; }
+.cellWidget.singleCheck.square.pos	.box	{ background-position:  -47px -2px; }
+.cellWidget.singleCheck.square.neg	.box	{ background-position:  -62px -2px; }
+.cellWidget.singleCheck.round		.box	{ background-position: -137px -2px; }
+.cellWidget.singleCheck.round.pos	.box	{ background-position: -152px -2px; }
+.cellWidget.singleCheck.round.neg	.box	{ background-position: -167px -2px; }
+
+.cellWidget.doubleCheck.x			.box	{ background-position:   -2px -2px; }
+.cellWidget.doubleCheck.x.pos		.box.y	{ background-position:  -32px -2px; }
+.cellWidget.doubleCheck.x.neg		.box.n	{ background-position:  -32px -2px; }
+.cellWidget.doubleCheck.check		.box	{ background-position:   -2px -2px; }
+.cellWidget.doubleCheck.check.pos	.box.y	{ background-position:  -17px -2px; }
+.cellWidget.doubleCheck.check.neg	.box.n	{ background-position:  -17px -2px; }
+.cellWidget.doubleCheck.yn			.box.y	{ background-position:  -77px -2px; }
+.cellWidget.doubleCheck.yn			.box.n	{ background-position: -107px -2px; }
+.cellWidget.doubleCheck.yn.pos		.box.y	{ background-position:  -92px -2px; }
+.cellWidget.doubleCheck.yn.neg		.box.n	{ background-position: -122px -2px; }
+.cellWidget.doubleCheck.square		.box	{ background-position:   -2px -2px; }
+.cellWidget.doubleCheck.square.pos	.box.y	{ background-position:  -47px -2px; }
+.cellWidget.doubleCheck.square.neg	.box.n	{ background-position:  -62px -2px; }
+.cellWidget.doubleCheck.round		.box	{ background-position: -137px -2px; }
+.cellWidget.doubleCheck.round.pos	.box.y	{ background-position: -152px -2px; }
+.cellWidget.doubleCheck.round.neg	.box.n	{ background-position: -167px -2px; }
+
+.cellWidget.popup .buttonNode
+{
+    width: 14px;
+    height: 14px;    	
+    background-image: url(images/commonFormArrows.png);
+    background-position: -36px 53%;
+    background-repeat: no-repeat;  
+    cursor: pointer;	
+}
+
+.cellWidget.popup .textBoxNode
+{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: transparent;
+	font:inherit;
+	text-align: inherit;
+	vertical-align: inherit;
+}
+
+.cellWidget.popup.noEdit .textBoxNode
+{
+	cursor: pointer;
+}
+  
+  
+/* ================== COMPONENTS ============================ */
+
+ 
+/* --- label --- */
+.label .cmpCell .lbl
+{
+}
+    
+/* --- textBox --- */
+.textBox .cmpCell .txt
+{
+	width:100%;
+	background-color: transparent;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-overflow: ellipsis;
+}
+ 
+/* --- checkbox --- */
+.checkBox .cmpCell
+{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 16px;
+}
+        
+    
+.checkBox .cmpCell .chk
+{
+    width: 14px;
+    height: 14px;
+    background-image: url(images/checkboxes.png);
+    background-repeat: no-repeat;
+    background-position: -2px -2px;	
+    -webkit-print-color-adjust: exact;
+}
+    
+.resA.checkBox .cmpCell .chk
+{
+    background-position:  -47px -2px;
+}
+    
+.resN.checkBox .cmpCell .chk
+{
+    background-position:  -62px -2px;
+}
+
+    
+/* --- textbox --- */
+.txt .cmp.ctxt
+{
+    display: table-cell;
+}
+    
+.txt .cmp.ctxt .ctl
+{
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+    
+    
+/* --- dropdown --- */
+.btn .cmp.cbtn
+{
+    display: table-cell;
+    width: 16px;
+    vertical-align: middle;
+}
+    
+.btn .cmp.cbtn .ctl
+{
+    width: 14px;
+    height: 14px;    	
+    background-image: url(images/commonFormArrows.png);
+    background-position: -36px 53%;
+    background-repeat: no-repeat;  
+    cursor: pointer;
+}
+    
+
+
+/**************************************************************/
+.qxFindingTable .checkBoxCellWidget .checkboxIcon
+{
+	display: inline-block;
+    background-image: url(images/checkboxes.png);
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    margin-right: 4px;
+    display: inline-block;
+    min-width: 14px;
+    min-height: 14px;	
+    -webkit-print-color-adjust: exact;
+}
+
+.qxFindingTable .checkBoxCellWidget .checkboxIcon.checked
+{
+	background-position: -32px -2px;
+}
+
+.qxFindingTable .checkBoxCellWidget .label
+{
+	display: inline;
+}
+
+.qxFindingTable input
+{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	text-align: inherit;
+	color: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	background-color: transparent;
+}
+
+.qxFindingTable .calcEntry
+{
+	display: inline;
+	width: 100%;
+}
+
+.qxFindingTable .calcEdit
+{
+	display: inline;
+	vertical-align: middle;
+	text-align: inherit;
+	margin-right: 3px;
+	width: 40px;
+}
+
+.qxFindingTable .calcButton
+{
+	display: inline;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	border: 1px #999999 solid;
+}
+
+.qxFindingTable .dropDownCell
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.qxFindingTable .dropDownCell input
+{
+	width: 90%;
+	width: calc(100% - 16px);
+	height: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-align: inherit;
+}
+
+.qxFindingTable .dropDownCell .arrow
+{
+	display: inline-block;
+	vertical-align: middle;
+    background-image: url(images/commonFormArrows.png);
+    background-position: -36px 53%;
+	background-repeat: no-repeat;    
+	width: 14px;
+	height: 100%;
+	min-height: 16px;    
+}
+
+.qxFindingTable .cwTbl
+{
+	display: inline-table;
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+.qxFindingTable .cwTbl .cwRow
+{
+	display: table-row;
+}
+
+.qxFindingTable .cwTbl .cwRow .cwCell
+{
+	display: table-cell;
+}
+
+.qxFindingTable .cwTbl .cwRow .cwCell.checkboxCell
+{
+	width: 16px;
+}
+
+.qxFindingTable tr.hidden,
+.qxFindingTable td.hidden,
+.qxFindingTable col.hidden
+{
+    display: none !important;
+    -xx-background-color: #eeeeee;
+    color: #999999;
+    font-style:italic;
+}
+
+.design .qxFindingTable tr.hidden
+{
+	display: table-row !important;
+}
+
+.design .qxFindingTable td.hidden
+{
+	display: table-cell !important;
+}
+
+.design .qxFindingTable col.hidden
+{
+	display: table-column !important;
+}
+
+.cellWidget.noColors.singleCheck,
+.cellWidget.noColors.doubleCheck,
+.cellWidget.noColors.singleCheck.pos,
+.cellWidget.noColors.doubleCheck.pos,
+.cellWidget.noColors.singleCheck.neg,
+.cellWidget.noColors.doubleCheck.neg
+{
+    color: #000000;
+}
+
+/*.cellWidget.showColors.singleCheck,
+.cellWidget.showColors.doubleCheck
+{
+    color: #666666;
+}
+
+.cellWidget.showColors.singleCheck.pos,
+.cellWidget.showColors.doubleCheck.pos
+{
+    color: #cc0000;
+}
+
+.cellWidget.showColors.singleCheck.neg,
+.cellWidget.showColors.doubleCheck.neg
+{
+    color: #0000cc;
+}*/
+
+.qxFindingTable tr.conciseEmptyHidden,
+.qxFindingTable td.conciseEmptyHidden
+{
+    display: none !important;
+}

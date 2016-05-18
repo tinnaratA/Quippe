@@ -1,0 +1,550 @@
+﻿.qcCoding
+{
+}
+
+.qcCodingEntryPanel
+{
+}
+
+
+.qcCodeEntryBlock
+{
+}
+
+.qcCodeEntryBlock .header
+{
+	display: table-row;
+	color: #000000;
+	margin-top: 8px;
+	cursor: pointer;
+}
+
+.qcCodeEntryBlock .cell
+{
+	display: table-cell;
+	padding: 2px;
+	vertical-align: top;
+}
+
+.qcCodeEntryBlock.selected .header
+{
+}
+
+.qcCodeEntryBlock.unreportable .header
+{
+}
+
+.qcCodeEntryBlock .header .expander
+{
+	width: 8px;
+	height: 16px;
+	background-image: none;
+	background-repeat: no-repeat;
+}
+
+.qcCodeEntryBlock.hasDetail .header .expander
+{
+	background-image: url(images/commonFormArrows.png);
+	background-position: -253px 4px;
+}
+
+.qcCodeEntryBlock.hasDetail.expanded .header .expander
+{
+	background-image: url(images/commonFormArrows.png);
+	background-position: -39px 4px;
+}
+.qcCodeEntryBlock .header .icon
+{
+	position: relative;
+	top: -1px;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/checkmarkNoBorder.png);
+	background-position: -111px 1px;
+	background-repeat: no-repeat;	
+}
+
+.qcCodeEntryBlock .header .codeLabel
+{
+	color: #000000;
+	min-width: 50px;
+}
+
+.icd10 .qcCodeEntryBlock .header .codeLabel
+{
+	min-width: 70px;
+}
+
+.qcCodeEntryBlock .header .description
+{
+}
+
+.qcCodeEntryBlock.selected .header .icon
+{
+	background-position: -95px 1px;
+}
+
+.qcCodeEntryBlock.selected.autoMapped .header .icon
+{
+	background-position: -159px 1px;
+}
+
+.qcCodeEntryBlock.unreportable .header .codeLabel
+{
+	color: #ff0000;
+}
+
+.qcCodeEntryBlock .detail
+{
+	display: none;
+	margin-left: 32px;
+}
+
+.qcCodeEntryBlock.expanded .detail
+{
+	display: block;
+}
+
+.qcCodeEntryBlock .specifierList
+{
+	position: relative;
+	margin-top: 8px;
+	margin-bottom: 16px;
+	padding: 8px 4px 4px 4px;
+	border: 1px solid #999999;
+	border-radius: 4px;
+}
+
+.qcCodeEntryBlock .specifierList .header
+{
+	position: absolute;
+	display: inline;
+	top: -17px;
+	padding: 0px 2px 0px 2px;
+	left: 6px;
+	background-color: #ffffff;
+}
+
+
+.qcCodeEntryBlock .specifierList .items
+{
+	clear: both;
+}
+
+.qcCodeEntryBlock .specifierListItem
+{
+	display: table-row;
+	cursor: pointer;
+}
+
+.qcCodeEntryBlock .specifierListItem .icon
+{
+	display: table-cell;
+	vertical-align: top;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/checkmarkNoBorder.png);
+	background-position: -111px 1px;
+	background-repeat: no-repeat;		
+}
+
+.qcCodeEntryBlock .specifierListItem.selected .icon
+{
+	background-position: -95px 1px;
+}
+
+.qcCodeEntryBlock .specifierListItem .description
+{
+	display: table-cell;
+	vertical-align: top;
+	padding: 0px 0px 4px 2px;
+}
+
+.qcCodeEntryBlock .hint
+{
+	font-style: italic;
+	max-height: 100px;
+	max-width: 300px;
+	overflow: auto;
+}
+
+.qcCodeEntryBlock .qcTreeView
+{
+	max-height: 250px;
+	overflow: auto;
+}
+
+.qcCodeEntryBlock .qcTreeNode .codeLabel
+{
+}
+.qcCodeEntryBlock .qcTreeNode .codeLabel.unreportable
+{
+    color: #ff0000;
+}
+.qcCodeEntryBlock .qcTreeNode .textLabel
+{
+    margin-left: 4px;
+}
+
+/*=============== Finding Coding Tab ====================*/
+
+.qcFindingCodingTab
+{
+}
+
+table.qcFindingCodingTab
+{
+	font-size: 100%;
+	border-collapse: collapse;
+}
+
+.qcFindingCodingTab td
+{
+	padding: 4px;
+	vertical-align: top;
+	border: 1px solid #999999;
+}
+
+.qcFindingCodingTab .header td
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/*============== Vocab Choosed Dialog ==================*/
+
+.qcCodingVocabChooserDialog 
+{
+	background-color: #ffffff !important;
+	border: 1px #999999 solid;
+}
+
+.qcCodingVocabChooserDialog .tableNode
+{
+	height: 300px;
+	overflow: auto;
+	margin: 8px;
+	border: 1px #999999 solid;
+}
+
+.qcCodingVocabChooserDialog .vocabTable
+{
+	margin: 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+	cursor: pointer;
+}
+
+.qcCodingVocabChooserDialog .vocabTable tr
+{
+	background-color: #ffffff;
+}
+
+.qcCodingVocabChooserDialog .vocabTable tr.selected
+{
+	background-color: #d8edff;
+}
+
+.qcCodingVocabChooserDialog .vocabTable td
+{
+	text-align: left;
+	vertical-align: top;
+	padding: 4px;
+}
+
+.qcCodingVocabChooserDialog .vocabTable td.checkCell
+{
+	width: 20px;
+}
+
+
+.qcCodingVocabChooserDialog .vocabTable td.captionCell
+{
+	width: 120px;
+}
+
+.qcCodingVocabChooserDialog .vocabTable td.descriptionCell
+{
+	width: 350px;
+}
+
+.qcCodingVocabChooserDialog .vocabTable td.moveCell
+{
+	width: 20px;
+	text-align:center;
+}
+
+.qcCodingVocabChooserDialog .vocabTable .moveUp
+{
+	display: none;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/icons_16.png);
+	background-position: -414px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.qcCodingVocabChooserDialog .vocabTable .selected .moveUp,
+.qcCodingVocabChooserDialog .vocabTable .moveUp:hover
+{
+	display: block;
+}
+
+.qcCodingVocabChooserDialog .vocabTable .moveDown
+{
+	display: none;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/icons_16.png);
+	background-position: -378px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.qcCodingVocabChooserDialog .vocabTable .selected .moveDown,
+.qcCodingVocabChooserDialog .vocabTable .moveDown:hover
+{
+	display: block;
+}
+
+/*============ Code Review ===============*/
+        
+.qcCodeReview
+{
+    position:relative;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+        
+.qcCodeReview .grid
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+        
+.qcCodeReview .scrollView
+{
+    background-color: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: auto;
+    z-index: 100;
+}
+        
+.qcCodeReview .sizerBox
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    cursor: default;
+}
+               
+.qcCodeReview table
+{
+	/*font-family: Consolas, Lucida Sans Typewriter, Courier New, Monospace;*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+        
+.qcCodeReview td
+{
+    width: 106px;
+    min-width: 106px;
+    max-width: 106px;
+    height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border-right: 1px #999999 solid;
+    border-bottom: 1px #999999 solid;
+    padding: 0px;
+    /*
+    text-align: center;
+    vertical-align: middle;
+	*/
+    background-color: transparent;
+}
+
+
+.qcCodeReview td.labelCell
+{
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.qcCodeReview tr
+{
+    background-color: #ffffff;
+    background-image: none;
+    background-position: 0px -1px;
+    background-repeat: repeat-x;
+}
+                
+.qcCodeReview tr.header
+{
+    background-image: url(images/commonHighlight.png);
+    background-color: #eeeeee;
+    font-weight: bold;
+}  
+
+.qcCodeReview tr.header td
+{
+    padding-left: 4px;
+    /*
+	text-align: center;
+    vertical-align: top;
+	*/
+} 
+
+.qcCodeReview.colorBars tr.even
+{
+    background-color: #ffffff;
+}  
+        
+.qcCodeReview.colorBars tr.odd
+{
+    background-color: #f8f8e0;
+}  
+
+.qcCodeReview tr.highlight,
+.qcCodeReview tr.even.highlight,
+.qcCodeReview tr.odd.highlight
+{
+    background-color: #abffd6;
+}  
+
+.qcCodeReview .outline 
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+.qcCodeReview .outline .expander
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+}
+
+.qcCodeReview .outline.finding .expander
+{
+    width: 0px;
+}        
+
+.qcCodeReview .outline.expanded .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: -35px 0px;
+}
+
+.qcCodeReview .outline.collapsed .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: 1px 0px;
+}
+
+.qcCodeReview .outline .label
+{
+    font-weight: normal;
+    font-style: normal;
+	display: inline-block;
+    cursor: pointer;
+	margin-left: 0px;
+	vertical-align: middle;
+}
+        
+.qcCodeReview .outline.group .label
+{
+    font-weight: bold;
+}        
+
+.qcCodeReview .codeCellData
+{
+	font-family: Consolas, Lucida Sans Typewriter, Courier New, Monospace;	
+	margin-left: 4px;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+}
+
+.qcCodeReview .codeCellData .code
+{
+	display: inline-block;
+	width: 80px;
+	color: #999999;
+}
+.qcCodeReview .codeCellData .code.entered
+{
+	color: #000000;
+	text-align: left;
+}
+
+.qcCodeReview .codeCellData .code.unreportable
+{
+	color: #ff0000;
+}
+
+.qcCodeReview .codeCellData .info
+{
+	display: inline-block;
+	width: 20px;
+	text-align: right;
+}
+
+/*=========== CodingOptionDialog ===================*/
+.qcCodingOptionDialog
+{
+	font-size: 90%;
+}
+
+.qcCodingOptionDialog .contentArea
+{
+	max-height: 400px;
+	overflow: auto;
+}
+
+.qcCodingOptionDialog .buttonArea
+{
+	margin-top: 12px;
+}
+
+
+/*=========== FindingCodingTab ===================*/
+.qcFindingCodingTab
+{
+	display: table;
+}
+
+.qcFindingCodingTab .leftCol
+{
+	display: table-cell;
+	vertical-align: top;
+	min-width: 200px;
+}
+
+.qcFindingCodingTab .rightCol
+{
+	display: table-cell;
+	vertical-align: top;
+}

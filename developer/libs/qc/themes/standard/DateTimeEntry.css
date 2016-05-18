@@ -1,0 +1,47 @@
+﻿.qcDateTimeEntry
+{
+	border: 1px solid #999999;
+	background: #ffffff;
+}
+
+.qcDateTimeEntry .table
+{
+	display: table;
+	border-collapse: collapse;
+	margin: 6px;
+}
+
+.qcDateTimeEntry .row
+{
+	display: table-row;
+}
+
+.qcDateTimeEntry .cell
+{
+	display: table-cell;
+}
+
+.qcDateTimeEntry .dateBox
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.qcDateTimeEntry .timeBox
+{
+	display: inline-block;
+	margin: 0px 0px 0px 4px;
+	padding: 0px;
+	width: 100px;
+}
+
+.qcDateTimeEntry .timeCell
+{
+	padding-top: 8px;
+}
+
+.qcDateTimeEntry .buttonCell
+{
+	text-align: right;
+	padding-top: 8px;
+}

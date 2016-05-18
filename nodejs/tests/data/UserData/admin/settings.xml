@@ -1,0 +1,22 @@
+<Settings>
+  <Item id="emShowCPT" Value="true" />
+  <Item id="gmShowScrollMargin" Value="true" />
+  <Item id="SaveNoteSources" Value="" />
+  <Item id="TranscribeSearchResults" Value="false" />
+  <Item id="TaskBarDisplayMode" Value="" />
+  <Item id="icd10AppendSpecifierText" Value="true" />
+  <Item id="EnableQuippeDesigner" Value="true" />
+  <Item id="TaskPanes_CodeEntryICD10" Value="true" />
+  <Item id="HistoryTabLabels" Value="" />
+  <Item id="flowsheetDefaultDateHeadings" Value="" />
+  <Item id="emDefaultServiceType" Value="AQ" />
+  <Item id="emDefaultExamType" Value="d" />
+  <Item id="nurseAutoPrompt" Value="" />
+  <Item id="CodeReviewVocabSequence" Value="acc,cas,ccc,cccdiag,cccint,cdt,cpt,cptmod,cvx,dsm,hcpc,hcpcmod,icd10,icd,icdproc,icdo,loinc,medcin,rxnorm,snomed,unii" />
+  <Item id="CodeReviewSelectedVocabs" Value="icd10,icd,icdproc,icdo,loinc,medcin,rxnorm" />
+  <Item id="codingShowHints" Value="true" />
+  <Item id="EnableSaveElement" Value="true" />
+  <Item id="SimulateTouchPad" Value="true" />
+  <Item id="Extensions" Value="qx.DebugUtil" />
+  <Item id="TrashCan" Value="trashcan" />
+</Settings>

@@ -1,0 +1,1736 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.StructuredDataResourceHandler.DataFormat">
+	<summary>
+ Specifies how objects are encoded in the output
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.StructuredDataResourceHandler.XslTransform">
+	<summary>
+ An XSL transform to apply to the results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ResourceHandlerBase.RequestId">
+	<summary>
+ Optional value that can be used by clients to track multiple requests.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ResourceHandlerBase.Culture">
+	<summary>
+ Culture to use when handling the request.  If not specified the default value configured on the server will be used.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.PingHandler">
+	<summary>
+ A simple service to check connectivity to the web server.  Will echo the request id if provided, otherwise 
+ will just respond 'OK'.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.HelpHandler.Resource">
+	<summary>
+ Path to the resource
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.HelpHandler.Method">
+	<summary>
+ HTTP Method for calling the resource
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.HelpHandler">
+	<summary>
+ Returns information about how to call the requested resource.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.PathResolver.DataFolder">
+	<summary>
+ Returns the configured DataFolder for the application.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ Defaults to the ASP.NET "App_Data" folder.  You can override this value by specifying a "DataFolder" item
+ under appSettings in your web.config
+ </remarks>
+</member><member name="P:Quippe.PathResolver.ConfigFolder">
+	<summary>
+ Returns the config folder for your application.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ Defaults to the configured DataFolder.  You can override this value by specifying a "ConfigFolder" item
+ under appSettings in your web.config
+ </remarks>
+</member><member name="M:Quippe.PathResolver.PathPatternToRegex(System.String)">
+	<summary>
+ Creates a regex used to parse URL path parameters
+ </summary>
+	<param name="PathPattern"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.DateUtil.NormalizeOnsetDuration(System.String,System.String,System.String@,System.String@,System.DateTime)">
+	<summary>
+ Takes input onset and duration string values, presumably from Quippe UI, and normalizes them into a Quippe time string 
+ with unit of minutes.
+ </summary>
+	<param name="InputOnset">The input Onset string as might be given in the Quippe UI.</param>
+	<param name="InputDuration">The input Duration string as might be given in the Quippe UI.</param>
+	<param name="QuippeOnset">The output Onset value given as a Quippe time string in minutes.</param>
+	<param name="QuippeDuration">The output Duration value given as a Quippe time string in minutes.</param>
+	<param name="CurrentTime">A date to treat as a "current time" for purposes of providing a default onset date when
+ onset input value is unspecified or invalid, normally the time recorded or encounter time for the entry (defaults
+ to DateTime.Now if unspecified).</param>
+	<remarks>
+		<para>This method assumes the Onset and Duration for a note entry may be specified in a number of different formats,
+ the most common being either onset date and duration time string or as two dates indicating a date range. This method
+ permits entry of either value in the Medcin "onset ago" format, as dates or as Quippe time strings.</para>
+		<para>The default behavoir of this method for negative onset or duration values is as follows. A negative duration
+ value is ignored (treated as zero duration). A negative onset time string or future date (relative to the specified
+ or default "current time") is allowed and manifests as an output Quippe time string with a negative sign.</para>
+	</remarks>
+</member><member name="M:Quippe.IUserSettingsService.GetSchema">
+	<summary>
+ Returns the layout and definitions of available user settings as an XML document.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IUserSettingsService.GetSettings">
+	<summary>
+ Gets the user's settings as a name/value collection
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IUserSettingsService.UpdateSettings(System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Updates the user's settings
+ </summary>
+	<param name="Values"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IUserSettingsService.Reset(System.String)">
+	<summary>
+ Resets the user's settings whose names start with the supplied path.  If the path
+ is empty, resets all settings.
+ </summary>
+	<param name="Path"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.IUserSettingsService">
+	<summary>
+ Service contract to provide user settings
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.PostSettingsHandler">
+	<summary>
+ Updates the user's settings
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.PostResetSettingsHandler.SettingsPath">
+	<summary>
+ When specified, will reset all settings that start with the path value.  If empty, all 
+ user settings will be reset.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.PostResetSettingsHandler">
+	<summary>
+ Resets the users settings
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetSingleSettingHandler.id">
+	<summary>
+ Use to return a single setting value, leave blank to return all settings
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.GetSingleSettingHandler">
+	<summary>
+ Gets a single user setting value
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.PostSingleSettingHandler.id">
+	<summary>
+ Use to return a single setting value, leave blank to return all settings
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.PostSingleSettingHandler">
+	<summary>
+ Gets a single user setting value
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.GetSettingsSchemaHandler">
+	<summary>
+ Returns the layout and definitions of available user settings
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.GetSettingsHandler">
+	<summary>
+ Gets the user's settings
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.UserDefinedLibrary.IUserItem">
+	<summary>
+ Represents an item from the User Defined Library
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Quippe.IKBExtensionService.GetItems(System.String,Quippe.ContentLibrary.AttributeFlags)">
+	<summary>
+ Returns a list of library items for the given parameters
+ </summary>
+	<param name="TypeName"></param>
+	<param name="Attributes"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IKBExtensionService.GetItem(System.Int32)">
+	<summary>
+ Gets a content library item by id
+ </summary>
+	<param name="ItemId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IKBExtensionService.GetItemContent(System.Int32)">
+	<summary>
+ Returns the library item's data as a string
+ </summary>
+	<param name="ItemId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IKBExtensionService.GetNextItemId">
+	<summary>
+ Returns the next available User Defined ItemId
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IKBExtensionService.Delete(System.Int32)">
+	<summary>
+ Provided solely for uniformity
+ </summary>
+	<param name="ItemId">TGhe numeric itemid of the item</param>
+	<returns></returns>
+	<remarks>Normally items written to this database are never deleted as they represent information
+ that is normnally persisted over time once used.</remarks>
+</member><member name="M:Quippe.IKBExtensionService.GetTypes">
+	<summary>
+ Returns a list of available library item types
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.IKBExtensionService">
+	<summary>
+ Service contract for the user defined library
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.Query">
+	<summary>
+ The search query
+ </summary>
+</member><member name="P:Quippe.SearchHandler.Command">
+	<summary>
+ Custom search command.  Can be used as an alternate to including the command in the query
+ </summary>
+</member><member name="P:Quippe.SearchHandler.SearchVersion">
+	<summary>
+ Term search algorithm version.  Use version 1 for the legacy Medcin Engine search, version 2 to use the ITermSearchService
+ </summary>
+</member><member name="P:Quippe.SearchHandler.MaxResults">
+	<summary>
+ Maximum number of results to return for non-paged results
+ </summary>
+</member><member name="P:Quippe.SearchHandler.StartIndex">
+	<summary>
+ For paged results.  The index of the first item to return.
+ </summary>
+</member><member name="P:Quippe.SearchHandler.PageSize">
+	<summary>
+ For paged results.  The number of items per page
+ </summary>
+</member><member name="P:Quippe.SearchHandler.IncludeImages">
+	<summary>
+ Search for images in the Medcin KB and content library
+ </summary>
+</member><member name="P:Quippe.SearchHandler.UseApproximateMatching">
+	<summary>
+ Enables "fuzzy" string matching for term searches.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.PatientSex">
+	<summary>
+ Sex of the patient.  Used to filter term search results.  Leave blank to disable filtering.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.PatientAge">
+	<summary>
+ Age of the patient in minutes.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.PatientId">
+	<summary>
+ Used to lookup patient age and sex via the patient data provider. Alternatey, you can pass age and sex directly.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.EncounterTime">
+	<summary>
+ Used to calculate the patient's age when a patient id is provided
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.IncludeScore">
+	<summary>
+ Includes the calculated score with the search results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.IncludeHighlight">
+	<summary>
+ When true, the search results will contain a list of text ranges that can be used to highlight matching text from the query
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SearchHandler.TermRoot">
+	<summary>
+ MedcinId to use as a "root" for the search.  When &gt;= 0 search will be limited to descendants of the specified id.  Use -1 to specify no term root.  Use 0 to limit searches to only Medcin terms.
+ </summary>
+</member><member name="P:Quippe.SearchHandler.TermDepth">
+	<summary>
+ Limits the depth of the search when TermRoot is specified.
+ </summary>
+</member><member name="P:Quippe.SearchHandler.UseMedcinServerImages">
+	<summary>
+ True to include built-in images from the MEDCIN engine when searching for images.
+ </summary>
+</member><member name="M:Quippe.IAuthenticationService.Login(System.String,System.String,System.Boolean,System.Web.HttpCookie@,System.String@)">
+	<summary>
+ Authenticates a user in to Quippe.
+ </summary>
+	<param name="Username">Username that the user is logging in with.</param>
+	<param name="Password">Password that the user is logging in with.</param>
+	<param name="Persistent">Whether the session that we are to create should persist across the browser being closed.</param>
+	<param name="ResponseCookie">Session cookie that has been created by the login service and should be returned to the user.  If the authentication
+ process failed, this should be null.</param>
+	<param name="Message">In the case of a login failure, this is the message (if any) that should be displayed to the user on the login screen.</param>
+	<returns>True if the authentication process succeed and the user was logged in, false otherwise.</returns>
+	<remarks>If the authentication process succeeded, <paramref name="ResponseCookie"/> should contain the session cookie that should be returned to the 
+ user.  <paramref name="ResponseCookie"/> should be null otherwise.</remarks>
+</member><member name="M:Quippe.IAuthenticationService.Logout(System.String@,System.Web.HttpCookie@)">
+	<summary>
+ Logs out a user that was previously logged in to Quippe.
+ </summary>
+	<param name="RedirectUrl">The URL that the user should be redirected to after the logout process completes.  Can be null if redirection should not
+ occur.</param>
+	<param name="Cookie">The session cookie that should be removed from the user's cookie stash.  The <see cref="P:System.Web.HttpCookie.Expires"/> property of the 
+ cookie should be set to a value in the past to force the browser to remove it.</param>
+	<returns>True if the logout process completed successfully, false otherwise.</returns>
+</member><member name="M:Quippe.IAuthenticationService.GetLoginUrl(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Gets the URL, if any, that the user should go to in order to login to Quippe.
+ </summary>
+	<param name="Cookies">HTTP cookies that were present in the request, may be used to determine the proper login URL based on the user's location or 
+ identity.</param>
+	<param name="Headers">HTTP headers that were present in the request, may be used to determine the proper login URL based on the user's location or 
+ identity.</param>
+	<returns>The system's login URL, if any.</returns>
+	<remarks>Null is a valid return value from this method if logging in to the system is done through indirect means instead of a standard login page or
+ simply do not want to redirect the user if we are unable to verify that they are logged in when doing a request to a Quippe web service.  If this 
+ method returns null and Quippe is unable to verify that the user is already logged in, an error message is displayed to the user and they are not 
+ redirected to another URL.  However, if this method returns a non-null string and Quippe is unable to verify that the user is already logged in, they 
+ are redirected to the URL returned from this method.</remarks>
+</member><member name="T:Quippe.IAuthenticationService">
+	<summary>
+ Handles logging the user in and out of Quippe.
+ </summary>
+	<remarks>Implementing this interface is not mandatory and is only necessary if you intend for Quippe to handle logging the user in and out, like we do in
+ the sample application through Login.htm.  If Quippe is being integrated into a larger application that already handles logging in and session management,
+ then this interface is not necessary and should not be implemented.</remarks>
+</member><member name="M:Quippe.IUserService.GetCurrentUserProfile(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Gets a collection of name/value pairs representing the current user's profile.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<returns>Name/value pairs representing the current user's profile.</returns>
+	<remarks>The only mandatory item in the return data is one named "UserId" that represents the current user's username.  Further entries in the
+ return data are only necessary if you plan to use the "Account" dialog in Quippe found at Tools-&gt;Account, which allows the current user to edit their
+ profile.  If you do plan to use this dialog, the return data should include items for any fields that you want the user to edit in the dialog.  By
+ default that includes FirstName, LastName, Email, Organization, Address1, Address2, City, State, PostalCode, and CountryCode, but you can customize
+ this list by customizing the fields that the user can edit in that dialog.</remarks>
+</member><member name="M:Quippe.IUserService.SaveCurrentUserProfile(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Saves the profile data for the current user.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<param name="ProfileProperties">Name/value pairs representing the profile properties that the user wants to save.</param>
+	<returns>The error message to display to the user if the save operation was unsuccessful, null otherwise.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the "Account" dialog in Quippe found at Tools-&gt;Account, which allows the current
+ user to edit their profile.  If you do not plan to use this dialog, you can throw a <see cref="T:System.NotImplementedException"/>.  If you do plan to use this 
+ dialog, you should expect data in <paramref name="ProfileProperties"/> to include data that the user can edit in that dialog.  By default that includes
+ FirstName, LastName, Email, Organization, Address1, Address2, City, State, PostalCode, and CountryCode, but you can customize this list by customizing 
+ the fields that the user can edit in that dialog.</remarks>
+</member><member name="M:Quippe.IUserService.SaveUserProfile(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Saves a user's profile that was edited on the user management screens under /admin.
+ </summary>
+	<param name="ProfileUsername">Username of the user whose profile we are saving.</param>
+	<param name="ProfileProperties">Name/value pairs representing the profile properties that should be saved for the user.</param>
+	<returns>The error message to display to the user if the save operation was unsuccessful, null otherwise.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.  If you do plan to use these screens, you should expect data in <paramref name="ProfileProperties"/> to include 
+ data that the user can edit on that screen.  By default that includes FirstName, LastName, Email, Organization, Address1, Address2, City, State, 
+ PostalCode, and CountryCode, but you can customize this list by customizing the fields that the user can edit in those screens.</remarks>
+</member><member name="M:Quippe.IUserService.CreateUserProfile(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Creates a new user in the user database.
+ </summary>
+	<param name="ProfileUsername">Username of the user whose profile we are creating.</param>
+	<param name="ProfileProperties">Name/value pairs representing the profile properties that should be saved for the user.</param>
+	<returns>The error message to display to the user if the create operation was unsuccessful, null otherwise.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.  If you do plan to use these screens, you should expect data in <paramref name="ProfileProperties"/> to include 
+ data that the user can edit on that screen.  By default that includes FirstName, LastName, Email, Organization, Address1, Address2, City, State, 
+ PostalCode, and CountryCode, but you can customize this list by customizing the fields that the user can edit in those screens.</remarks>
+</member><member name="M:Quippe.IUserService.SetCurrentUserPassword(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String)">
+	<summary>
+ Changes the password for the current user.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<param name="OldPassword">Existing password for the user.</param>
+	<param name="NewPassword">New password for the user.</param>
+	<returns>The error message to display to the user if the save operation was unsuccessful, null otherwise.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the "Account" dialog in Quippe found at Tools-&gt;Account, which allows the current
+ user to edit their profile.  If you do not plan to use this dialog, you can throw a <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.GetProfile(System.String)">
+	<summary>
+ Gets a collection of name/value pairs representing the a user's profile.
+ </summary>
+	<param name="ProfileUsername">Username of the user whose profile we are to retrieve.</param>
+	<returns>Name/value pairs representing the current user's profile.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.  If you do plan to use these screens, you should return items for properties that the user can edit on that 
+ screen.  By default that includes FirstName, LastName, Email, Organization, Address1, Address2, City, State, PostalCode, and CountryCode, but you can 
+ customize this list by customizing the fields that the user can edit in those screens.</remarks>
+</member><member name="M:Quippe.IUserService.SendPassword(System.String)">
+	<summary>
+ Finds the user registered at a given email and sends them their password.
+ </summary>
+	<param name="Email">Email of the user whose password we are to send.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.AddRole(System.String)">
+	<summary>
+ Adds a new role to the roles database.
+ </summary>
+	<param name="RoleName">Name of the role that we are to add.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.GetRoles">
+	<summary>
+ Gets the list of all available roles for the application.
+ </summary>
+	<returns>A list of all of the role names.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.GetRolesForUser(System.String)">
+	<summary>
+ Gets the list of all roles to which a user is attached.
+ </summary>
+	<param name="RolesUsername">Username for whom we are to retrieve roles.</param>
+	<returns>A list of all of the role names that the user is attached to.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.SaveRolesForUser(System.String,System.String[])">
+	<summary>
+ Saves the role assignments for a given user.
+ </summary>
+	<param name="RolesUsername">Username for whom we are to save role assignments.</param>
+	<param name="RoleNames">List of role names that the user should be assigned to.  If the user is currently assigned to a role not in this list, that 
+ role assignment should be removed.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.DeleteRole(System.String)">
+	<summary>
+ Deletes a role from the roles database.
+ </summary>
+	<param name="RoleName">Name of the role that we are to delete.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.GetUsers(System.String)">
+	<summary>
+ Searches in the user's database for users whose properties contain the string specified in <paramref name="Search"/>.
+ </summary>
+	<param name="Search">Search string to use when searching the user properties.</param>
+	<returns>A list of all users (represented by their profile properties) that matched the search criteria.</returns>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.  If you do plan to use those screens, you should search on any text property for the user.  By default that 
+ includes UserName, FirstName, LastName, Email, Organization, City, and State, but you can customize this list by customizing the fields that the user 
+ can edit in those screens.
+ </remarks>
+</member><member name="M:Quippe.IUserService.DeleteUser(System.String)">
+	<summary>
+ Deletes a user from the users database.
+ </summary>
+	<param name="DeleteUsername">Username of the user that we are to delete.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IUserService.UnlockUser(System.String)">
+	<summary>
+ Unlocks a user's account that had previously been locked due to excessive invalid login attempts.
+ </summary>
+	<param name="UnlockUsername">Username of the user that we are to unlock.</param>
+	<remarks>Implementing this method is only necessary if you plan to use the user management screens under /admin, which most applications will not since
+ they will have their own screens for managing users, roles, etc.  If you do not plan on using those screens, you can throw a 
+ <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="T:Quippe.IUserService">
+	<summary>
+ Provides access to various user management functions to Quippe and within the user administration screen under /admin.
+ </summary>
+	<remarks>If  you are using ASP.NET to manage the user's session, you can use the default implementation of this interface in the form of 
+ Quippe.AspNetSecurity.SecurityProvider.  However, if you are integrating Quippe into a non-ASP.NET application, you will need to implement this interface
+ with at least the <see cref="M:Quippe.IUserService.GetCurrentUserProfile(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})"/> method.</remarks>
+</member><member name="M:Quippe.IAuthorizationService.AuthCheck(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Checks to ensure that the user making a request to a Quippe web service is authorized to do so.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<param name="Path">Full path to the Quippe web service that was requested, i.e. "/ws.aspx/Quippe/PatientData/Patient".</param>
+	<param name="QueryStringParameters">Name/value pairs representing the query string parameters that were present in the request.</param>
+	<returns>True if the user is logged in and allowed to access the given Quippe web service, false otherwise.</returns>
+</member><member name="M:Quippe.IAuthorizationService.IsAdmin(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Checks to see if the user making a request is an administrator user.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<param name="QueryStringParameters">Name/value pairs representing the query string parameters that were present in the request.</param>
+	<returns>True if the user is an administrator, false otherwise.</returns>
+	<remarks>This method is only used by the user administration screens provided by the sample application under the /admin directory.  If you do not plan
+ to use those screens (most applications won't since they already handle user administration), implementing this method is not necessary and you can
+ simply throw a <see cref="T:System.NotImplementedException"/>.</remarks>
+</member><member name="M:Quippe.IAuthorizationService.GetContextData(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+	<summary>
+ Gathers useful pieces of data for the user's session that will be attached to the current HTTP request context.
+ </summary>
+	<param name="Cookies">Name/value pairs representing the HTTP cookies that were present in the request.</param>
+	<param name="Headers">Name/value pairs representing the HTTP headers that were present in the request.</param>
+	<returns>Name/value pairs for data that should be attached to the current HTTP request context.</returns>
+	<remarks><para>For applications using Quippe in a non-ASP.NET environment, such as through Node.js, this method is invoked at the beginning of each request
+ to a Quippe web service to get context data for the user's session.  Since environments like Node.js don't have an equivalent of 
+ <see cref="P:System.Web.HttpContext.Current"/> through which data services implementations can access things like the current user's username, Quippe 
+ will provide this data as a parameter in each data service call.  It's advised that the return data include one item named "Username" that represents
+ the current user's username, since that will be used in various contexts throughout Quippe.  The rest of the return data is entirely at your 
+ discretion:  Quippe will simply pass on whatever this method returns to each data service call.</para>
+		<para>If you are using Quippe in an ASP.NET environment, implementing this method is not necessary and you can simply throw a 
+ <see cref="T:System.NotImplementedException"/>.</para></remarks>
+</member><member name="T:Quippe.IAuthorizationService">
+	<summary>
+ Handles verification of a user's session to ensure that they are authorized to access the various Quippe web services.
+ </summary>
+	<remarks>This interface, specifically <see cref="M:Quippe.IAuthorizationService.AuthCheck(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String})"/>, is invoked every time a request is made to a Quippe web service.  If 
+ you are using ASP.NET to manage the user's session and simply wish any user with a valid ASP.NET session to access the Quippe web services, you can use the
+ default implementation of this interface in the form of Quippe.AspNetSecurity.SecurityProvider.  If you wish to provide finer grained access control to the
+ Quippe web services or are integrating Quippe into an application that does not use ASP.NET for session management, you will need to provide your own
+ implementation of this interface.</remarks>
+</member><member name="T:Quippe.UpdateSummaryItemHandler">
+	<summary>
+ Updates a patient summary item in the database.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.RemoveSummaryItemHandler">
+	<summary>
+ Deletes a patient summary item from the database. Also deletes all related summary information, such as prescriptions and SIGs.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.PatientId">
+	<summary>
+ Patient identifier used to lookup patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.StartDate">
+	<summary>
+ Newest date from which data should be accumulated backwards through time (defaults to Maximum supported date)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.LookbackLimit">
+	<summary>
+ Oldest date from which data should be examined (defaults to Minimum supported date)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.NodeKeyFilter">
+	<summary>
+ Comma delimited list of zero or more Nodekeys to match in history.  Leave blank to perform no check.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.PrefixFilter">
+	<summary>
+ Comma delimited list of zero or more Prefixes to match in history.  Leave blank to perform no check.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.IncludePhrasing">
+	<summary>
+ Flag indicating whether to return phrasing data for each finding.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.GetHistoryPool3Handler.TermProperties">
+	<summary>
+ Additional term properties to be included with each term in the result list 
+ </summary>
+</member><member name="M:Quippe.GetHistoryPool3Handler.MatchesFilter(Quippe.IHistoryRecord)">
+	<summary>
+ Examines a record for a match of a node key or prefix as specified by the caller, using the NodekeyFilter and PrefixFilter
+ public properties.  
+ </summary>
+	<param name="record">Record to evaluate</param>
+	<returns>Boolean indicating whether this record matches the filter(s) specified</returns>
+	<remarks>If no filters are specified, true will always be returned.  If both filters are specified, and a single 
+ filter matches, this function will return true.  If both are specified, and at least one is found, true will be returned.
+ If one filter is specified but not found, false will be the result.  If both are specified, and neither found, false will be returned.
+ This logic allows one to specify that they are looking for records which match either filter, and to also perform specific
+ matching of a single filter criteria.
+ 
+ The NodeKeyFilter and PrefixFilter are expected to be in the form of a comma delimited list of items.  NodeKeys should be in the Quippe
+ format of: "A-B-C", rather than the Medcin format.
+ </remarks>
+</member><member name="T:Quippe.DeletePatientHandler">
+	<summary>
+ Deletes a patient from the database.  All encounters, documents and records for the patient will be deleted as well.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.AnalyzeChartHandler.PatientId">
+	<summary>
+ Patient identifier used to lookup patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.AddSummaryItemHandler">
+	<summary>
+ Adds a patient summary item to the database.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.AddPatientHandler">
+	<summary>
+ Adds a patient to the database
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.ITimingComponent.Sequencing">
+	<summary>
+	identifies whether this timing component is to be performed in series or in parallel with the previous component
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Occurrence">
+	<summary>
+	number of times the event should occur within the given interval, if missing 'once' is implied
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Occurrence2">
+	<summary>
+	maximum number of times the event should occur when specified as a range, i.e. 1-2 times
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Interval">
+	<summary>
+	frequency interval for the event
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Interval2">
+	<summary>
+	maximum frequency interval for the event when expressed as a range, i.e. 4-5 hours
+</summary>
+</member><member name="P:Quippe.ITimingComponent.IntervalUnit">
+	<summary>
+	unit of time for the interval value(s)
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Repeat">
+	<summary>
+	number of times the interval should be repeated
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Repeat2">
+	<summary>
+	maximum number of times the interval should be repeated when specified as a range, i.e. 4-5 times
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Duration">
+	<summary>
+	length of time interval should be repeated
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Duration2">
+	<summary>
+	maximum length of time interval should be repeated
+</summary>
+</member><member name="P:Quippe.ITimingComponent.DurationUnit">
+	<summary>
+	unit of time for the duration value(s)
+</summary>
+</member><member name="P:Quippe.ITimingComponent.StartDate">
+	<summary>
+	earliest date that the event should occur
+</summary>
+</member><member name="P:Quippe.ITimingComponent.EndDate">
+	<summary>
+	latest date that the event should occur
+</summary>
+</member><member name="P:Quippe.ITimingComponent.StartTime">
+	<summary>
+	earliest time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.ITimingComponent.EndTime">
+	<summary>
+	latest time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.ITimingComponent.TimeOfDay">
+	<summary>
+	named time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Priority">
+	<summary>
+	priority of the event
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Note">
+	<summary>
+	additional notes or instructions
+</summary>
+</member><member name="P:Quippe.ITimingComponent.Text">
+	<summary>
+	English language description of the timing component
+</summary>
+</member><member name="P:Quippe.ITimingComponent.SourceText">
+	<summary>
+	original text, if any, that was parsed to create this timing component
+</summary>
+</member><member name="P:Quippe.ITimingComponent.AsNeeded">
+	<summary>
+	identifies that the order should be performed as needed (PRN)
+</summary>
+</member><member name="T:Quippe.ITiming">
+	<summary>
+  Defines the timing or schedule for an ordered item.
+ </summary>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetCurrentConditions(System.String)">
+	<summary>
+ Retrieves the conditions that the patient is currently suffering from or retrieving treatment for.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the conditions.</param>
+	<returns>A list of MEDCIN findings representing the patient's current conditions.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>Condition</c> resource on the FHIR server with the given
+ <paramref name="PatientId"/> and filters the results to those with a <c>clinicalstatus</c> value of <c>provisional</c>, <c>working</c>, or 
+ <c>confirmed</c>.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetCurrentMedications(System.String)">
+	<summary>
+ Retrieves the medications that the patient is currently being prescribed.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the medications.</param>
+	<returns>A list of MEDCIN findings representing the patient's current medications.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>MedicationPrescription</c> resource on the FHIR server with the 
+ given <paramref name="PatientId"/> and filters the results to those with a <c>status</c> value of <c>active</c>, <c>on-hold</c>, or 
+ <c>draft</c>.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetLabResults(System.String,System.DateTime)">
+	<summary>
+ Retrieves recent lab results for the patient.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the lab results.</param>
+	<param name="LookbackLimit">The data that we should go back to looking for lab results.</param>
+	<returns>A list of MEDCIN findings representing the patient's lab results.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>Observation</c> resource on the FHIR server with the 
+ given <paramref name="PatientId"/> and <paramref name="LookbackLimit"/>.  We then map the results to MEDCIN findings and filter the list to those with
+ a term type of 3.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetAllergies(System.String)">
+	<summary>
+ Retrieves any allergies that the patient has.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the allergies.</param>
+	<returns>A list of MEDCIN findings representing the patient's allergies.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>AllergyIntolerance</c> resource on the FHIR server with the 
+ given <paramref name="PatientId"/> and filters the results to those with a <c>status</c> value of <c>confirmed</c> or <c>unconfirmed</c>.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetFamilyHistory(System.String)">
+	<summary>
+ Retrieves any family history that has been recorded for the patient.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the allergies.</param>
+	<returns>A list of MEDCIN findings representing the patient's allergies.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>FamilyMemberHistory</c> resource on the FHIR server with the 
+ given <paramref name="PatientId"/>.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetImmunizations(System.String)">
+	<summary>
+ Retrieves any immunizations that the patient has received.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the immunization records.</param>
+	<returns>A list of MEDCIN findings representing the patient's immunizations.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>Immunization</c> resource on the FHIR server with the given 
+ <paramref name="PatientId"/>.</remarks>
+</member><member name="M:Quippe.IPatientExternalEntriesService.GetVitals(System.String,System.DateTime)">
+	<summary>
+ Retrieves recent vital signs for the patient.
+ </summary>
+	<param name="PatientId">Identifier of the patient for which we are retrieving the vital signs.</param>
+	<param name="LookbackLimit">The data that we should go back to looking for vital signs.</param>
+	<returns>A list of MEDCIN findings representing the patient's vital signs.</returns>
+	<remarks>The reference implementation of this method retrieves the data from the <c>Observation</c> resource on the FHIR server with the 
+ given <paramref name="PatientId"/> and <paramref name="LookbackLimit"/>.  We then map the results to MEDCIN findings and filter the list to those with
+ under the node key for MEDCIN ID 6001 (vital signs).</remarks>
+</member><member name="T:Quippe.IPatientExternalEntriesService">
+	<summary>
+ Defines a service that retrieves various types of patient information from a data store using a given patient identifier and returns them in the form of
+ MEDCIN findings.
+ </summary>
+	<remarks>
+		<para>This service can be accessed directly from the client-side JavaScript code by using the web services under 
+ /Quippe/PatientData/Patient/ExternalEntries.  We also provide a reference implementation of this service in the demo services project that retrieves the 
+ patient data from a FHIR server.  You can use this implementation by adding the following node to your <c>DataServices.xml</c> file:</para>
+		<code>&lt;Service Contract="Quippe.IPatientExternalEntriesService" 
+     Implementation="Quippe.Demo.Services.FHIRPatientExternalEntriesService, Quippe.Demo.Services" 
+     FHIRBaseURL="[the base URL for your FHIR server]"
+     OAuthToken="[the OAuth token to use for authentication, can be omitted if there isn't one]"/&gt;</code>
+		<para>However, you are not forced to use this reference implementation and can implement your own version of this service that retrieves the data from any
+ store that you wish.  If you do implement your own version of this service, you can return <see cref="T:Quippe.IEntry2"/> arrays from each of the methods and they
+ will be correctly handled by the calling code.  The <see cref="T:Quippe.IEntry2"/> interface or the <see cref="T:Quippe.Entry"/> class gives you the opportunity to provide
+ more data for each finding such as codes and prescription details.</para>
+	</remarks>
+</member><member name="M:Quippe.IPatientHistoryService.HasHistory(System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Returns true if the has chart entries for the requested MedcinId/Prefix within the limit period.
+ </summary>
+	<param name="PatientId">The patient's id</param>
+	<param name="MedcinId">The MedcinId to search for</param>
+	<param name="Prefix">Prefix for the entry</param>
+	<param name="StartDate">Starting (most recent) date to look back from.  Use null to specify the current date.</param>
+	<param name="LookbackLimit">Used to limit the lookback range.  Use null to specify no limit.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.NumEncounters(System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Returns the number of encounters that contain the specified MedcinId/Prefix within the limit period.
+ </summary>
+	<param name="PatientId">The patient's id</param>
+	<param name="MedcinId">The MedcinId to search for</param>
+	<param name="Prefix">Prefix for the entry</param>
+	<param name="StartDate">Starting (most recent) date to look back from.  Use null to specify the current date.</param>
+	<param name="LookbackLimit">Used to limit the lookback range.  Use null to specify no limit.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.GetHistory(System.String,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32)">
+	<summary>
+ Returns the historical records from the patient's chart for the requested MedcinId/Prefix.
+ </summary>
+	<param name="PatientId">The patient's id</param>
+	<param name="MedcinId">The MedcinId to search for</param>
+	<param name="Prefix">Prefix for the entry</param>
+	<param name="StartDate">Starting (most recent) date to look back from.  Use null to specify the current date.</param>
+	<param name="LookbackLimit">Used to limit the lookback range.  Use null to specify no limit.</param>
+	<param name="MaxRecords">Used to limit the number of records returned.  Used -1 for no limit.</param>
+	<returns>An array of IHistoryRecord objects</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.GetEncounterNoteType(System.String)">
+	<summary>
+ Returns the ContentType of the encounter note document for the requested encounter.  See the IContentLibrary interface for addional details.
+ </summary>
+	<param name="EncounterId">The encounter id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.GetEncounterNote(System.String)">
+	<summary>
+ Returns the encounter note document that should be displayed when the user is reviewing previous encounters.
+ </summary>
+	<param name="EncounterId">The encounter id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.GetHistoryEntries(System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Returns the historical entries from the patient's chart for the specified time period.
+ </summary>
+	<param name="PatientId">The patient's id</param>
+	<param name="StartDate">Starting (most recent) date to look back from.  Use null to specify the current date.</param>
+	<param name="LookbackLimit">Used to limit the lookback range.  Use null to specify no limit.</param>
+	<returns>An array of IEntry objects</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IPatientHistoryService.HasChanges(System.String,System.DateTime)">
+	<summary>
+ Indicates whether there are changes to the patient's chart since the specified date.
+ </summary>
+	<param name="PatientId">The patient's id</param>
+	<param name="ThresholdDate">Limits how far back to look for changes.</param>
+	<returns>True, if there are changes since the specified date and False otherwise.</returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Quippe.IChartAnalysisService.AnalyzeChart(Quippe.IPatient,System.Collections.Generic.List{Quippe.IEntry},System.Collections.Generic.List{Quippe.IEncounter},System.Globalization.CultureInfo)">
+	<summary>
+ Called by the <c>Quippe/PatientData/AnalyzeChart</c> web service once a patient's chart has been loaded by the 
+ Clinical Lens UI.  Analyzes the chart in the form of <paramref name="ChartEntries"/> and generates any warnings that 
+ should be displayed to the user.
+ </summary>
+	<param name="Patient">The patient whose chart we are analyzing.</param>
+	<param name="ChartEntries">The finding entries that represent the entirety of the patient's chart and which will be 
+ analyzed for potential warnings.</param>
+	<param name="Encounters">All of the encounters in the patient's chart.</param>
+	<param name="CultureInfo">Language that the warnings should be generated in.</param>
+	<returns>A list of warning messages that should be displayed to the user or null if no warnings should be 
+ displayed.</returns>
+	<remarks><para>The warning message that are returned from this method may contain HTML in order to format the message, provide
+ external links or emphasis, etc.  In its default implementation, Clinical Lens also provides the ability for strings of 
+ text within a warning message to trigger a screening search on that patient's chart.  To do so, enclose your text in a 
+ <c>&lt;span&gt;</c> tag with a <c>data-medcin-id</c> attribute containing the MEDCIN ID of the diagnosis that you wish to 
+ screen for and a <c>class</c> attribute of "diagnosis".  For example: <c>This is used for &lt;span data-medcin-id="32437" 
+ class="diagnosis"&gt;toxicity from nitrites&lt;/span&gt;</c>.</para>
+		<para>You can extend the Clinical Lens UI to perform additional processing of warning messages by overriding the
+ <c>addWarningMessage()</c> method of the Clinical Lens JavaScript application class.</para>
+	</remarks>
+</member><member name="T:Quippe.IChartAnalysisService">
+	<summary>
+ This data service is used by Clinical Lens to generate warning messages for a patient's chart that should be displayed in the
+ "Warnings" tab in the Clinical Lens UI.
+ </summary>
+</member><member name="P:Quippe.TimingComponent.Sequencing">
+	<summary>
+	identifies whether this timing component is to be performed in series or in parallel with the previous component
+</summary>
+</member><member name="P:Quippe.TimingComponent.Occurrence">
+	<summary>
+	number of times the event should occur within the given interval, if missing 'once' is implied
+</summary>
+</member><member name="P:Quippe.TimingComponent.Occurrence2">
+	<summary>
+	maximum number of times the event should occur when specified as a range, i.e. 1-2 times
+</summary>
+</member><member name="P:Quippe.TimingComponent.Interval">
+	<summary>
+	frequency interval for the event
+</summary>
+</member><member name="P:Quippe.TimingComponent.Interval2">
+	<summary>
+	maximum frequency interval for the event when expressed as a range, i.e. 4-5 hours
+</summary>
+</member><member name="P:Quippe.TimingComponent.IntervalUnit">
+	<summary>
+	unit of time for the interval value(s)
+</summary>
+</member><member name="P:Quippe.TimingComponent.Repeat">
+	<summary>
+	number of times the interval should be repeated
+</summary>
+</member><member name="P:Quippe.TimingComponent.Repeat2">
+	<summary>
+	maximum number of times the interval should be repeated when specified as a range, i.e. 4-5 times
+</summary>
+</member><member name="P:Quippe.TimingComponent.Duration">
+	<summary>
+	length of time interval should be repeated
+</summary>
+</member><member name="P:Quippe.TimingComponent.Duration2">
+	<summary>
+	maximum length of time interval should be repeated
+</summary>
+</member><member name="P:Quippe.TimingComponent.DurationUnit">
+	<summary>
+	unit of time for the duration value(s)
+</summary>
+</member><member name="P:Quippe.TimingComponent.StartDate">
+	<summary>
+	earliest date that the event should occur
+</summary>
+</member><member name="P:Quippe.TimingComponent.EndDate">
+	<summary>
+	latest date that the event should occur
+</summary>
+</member><member name="P:Quippe.TimingComponent.StartTime">
+	<summary>
+	earliest time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.TimingComponent.EndTime">
+	<summary>
+	latest time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.TimingComponent.TimeOfDay">
+	<summary>
+	named time of day that the event should occur
+</summary>
+</member><member name="P:Quippe.TimingComponent.Priority">
+	<summary>
+	priority of the event
+</summary>
+</member><member name="P:Quippe.TimingComponent.Note">
+	<summary>
+	additional notes or instructions
+</summary>
+</member><member name="P:Quippe.TimingComponent.Text">
+	<summary>
+	English language description of the timing component
+</summary>
+</member><member name="P:Quippe.TimingComponent.SourceText">
+	<summary>
+	original text, if any, that was parsed to create this timing component
+</summary>
+</member><member name="P:Quippe.TimingComponent.AsNeeded">
+	<summary>
+	identifies that the order should be performed as needed (PRN)
+</summary>
+</member><member name="P:Quippe.NoteBuilderBaseHandler.TermProperties">
+	<summary>
+ Additional term properties to be included with each term in the result list 
+ </summary>
+</member><member name="P:Quippe.NoteBuilderBaseHandler.PatientId">
+	<summary>
+ The patient's id
+ </summary>
+</member><member name="M:Quippe.INoteAutoPopulationService.PrePopulateGroup(System.Xml.XmlNode,System.String)">
+	<summary>
+ Is called from the note builder process (when the /Quippe/NoteBuilder/DocumentTemplate and /Quippe/NoteBuilder/ResolveDocument web services are 
+ invoked) for sections, chapters, or groups with an <c>AutoPopulate</c> attribute that has a value of <c>true</c> and is responsible for evaluating a 
+ pre-defined set of rules to determine the type of the <paramref name="Group"/> (what sort of data it should contain) and then loading data for the 
+ given <paramref name="PatientId"/> and adding any relevant findings or content to the group in the form of new XML nodes.
+ </summary>
+	<param name="Group">Chapter, section, or group within the note template that we are to add data to.</param>
+	<param name="PatientId">Identifier for the patient for which we are to fetch additional data.</param>
+	<returns>The group with any necessary data populated.  If the method made no changes to the group or simply added nodes to it, you can return the 
+ original <paramref name="Group"/> that was passed in, or you can return an entirely new <see cref="T:System.Xml.XmlNode"/> instance if you are replacing the group
+ entirely.</returns>
+	<remarks>
+		<para>The reference implementation of this service, available in the demo services project looks at the <c>GroupKeys</c> attribute of the
+ <paramref name="Group"/> to determine what type of data it should contain:</para>
+		<list type="table">
+			<listheader>
+				<term>Group Key</term>
+				<description>Data Type</description>
+			</listheader>
+			<item>
+				<term>S3</term>
+				<description>Current medications that the patient is prescribed</description>
+			</item>
+			<item>
+				<term>S64</term>
+				<description>Current conditions that the patient is receiving treatment for</description>
+			</item>
+			<item>
+				<term>S24</term>
+				<description>Allergies that the patient suffers from</description>
+			</item>
+			<item>
+				<term>S7</term>
+				<description>Any family history that has been recorded for the patient</description>
+			</item>
+			<item>
+				<term>G6001</term>
+				<description>Vital signs that have recently been recorded for the patient</description>
+			</item>
+			<item>
+				<term>S23</term>
+				<description>Any immunizations that the patient has received</description>
+			</item>
+			<item>
+				<term>S18</term>
+				<description>Any recent lab results for the patient</description>
+			</item>
+		</list>
+		<para>It then calls the relevant methods on the <see cref="T:Quippe.IPatientExternalEntriesService"/> implementation to get the relevant data for the given
+ <paramref name="PatientId"/> and merges it into the <paramref name="Group"/>.  We also provide a reference implementation of 
+ <see cref="T:Quippe.IPatientExternalEntriesService"/> that connects to a FHIR server to retrieve the data for the patient.  You can use that reference 
+ implementation by pointing it to your own FHIR server, implement your own version of <see cref="T:Quippe.IPatientExternalEntriesService"/>, or implement your
+ own version of this service that uses your own set of rules to determine what data is prefilled.</para>
+	</remarks>
+</member><member name="T:Quippe.INoteAutoPopulationService">
+	<summary>
+ Takes a section, chapter, or group from a note template and prefills it with patient data according to a pre-defined set of rules.
+ </summary>
+</member><member name="P:Quippe.ContentPromptHandler.PromptType">
+	<summary>rn or dx</summary>
+</member><member name="P:Quippe.ChartPromptHandler.Chart">
+	<summary>
+ XML representation of the patient's chart.  See http://schemas.medicomp.com/v3/chart.xsd
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ChartPromptHandler.ListSize">
+	<summary>
+ List size for the prompt
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ChartPromptHandler.TermType">
+	<summary>
+ Used to filter results by term type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ChartPromptHandler.Role">
+	<summary>
+ User's role
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ChartPromptHandler.PromptName">
+	<summary>
+ Optional value used to identify multiple prompts.  Will be returned in the Text attribute of the results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TracePromptHandler.Chart">
+	<summary>
+ XML representation of the patient's chart.  See http://schemas.medicomp.com/v3/chart.xsd
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TracePromptHandler.ListSize">
+	<summary>
+ List size for the prompt
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TracePromptHandler.TermType">
+	<summary>
+ Used to filter results by term type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TracePromptHandler.Role">
+	<summary>
+ User's role
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TracePromptHandler.PromptName">
+	<summary>
+ Optional value used to identify multiple prompts.  Will be returned in the Text attribute of the results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.Setting">
+	<summary>
+ The setting where the services were performed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.Service">
+	<summary>
+ The type of service performed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.NewPatient">
+	<summary>
+ True if the patient is new to this provider, otherwise false
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.ExamType">
+	<summary>
+ The type of examination
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.FaceTime">
+	<summary>
+ The total amount of time, in minutes, spent face-to-face with the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.OverHalf">
+	<summary>
+ True of more than half of the face time was spent in counseling the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.EMAnalysis.Override">
+	<summary>
+ Used to override the level of any of the 12 E&amp;M components.  When present, should be a 12 character string consisting of the numbers 0 to 4.  Use 0 to keep the calculated level, 1 to 4 to override the level
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IFavoritesService.Add(System.String,System.String,System.String,System.String)">
+	<summary>
+ Adds an entry to the user's favorites list
+ </summary>
+	<param name="ResourceType"></param>
+	<param name="ResourceId"></param>
+	<param name="Text"></param>
+	<param name="Icon"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IFavoritesService.Delete(System.String,System.String)">
+	<summary>
+ Removes the entry from the favorites list
+ </summary>
+	<param name="ResourceType"></param>
+	<param name="ResourceId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IFavoritesService.GetFavorites">
+	<summary>
+ Returns the user's favorites list
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IFavoritesService.SetSequence(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Used to move an entry in the favorites list relative to another entry.
+ </summary>
+	<param name="SourceType">The type of the entry to be moved</param>
+	<param name="SourceId">The id of the entry to be moved</param>
+	<param name="TargetType">The type of the reference entry</param>
+	<param name="TargetId">The id of the reference entry</param>
+	<param name="Relationship">Relationship to the target entry, either "before" or "after"</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.IFavoritesService">
+	<summary>
+ Data service contract for user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.IFavorite.ResourceType">
+	<summary>
+ The type of resource
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.IFavorite.ResourceId">
+	<summary>
+ The resource id
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.IFavorite.Text">
+	<summary>
+ Resource description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.IFavorite.Icon">
+	<summary>
+ An optional icon to represent the item in the favorites list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.IFavorite">
+	<summary>
+ Represents an entry in the user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.Favorite">
+	<summary>
+ Implementation of the IFavorite data structure
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.SequenceFavoritesHandler.SourceId">
+	<summary>
+ The id of the entry being moved
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SequenceFavoritesHandler.SourceType">
+	<summary>
+ The type of the entry being moved
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SequenceFavoritesHandler.TargetId">
+	<summary>
+ The id of the related entry
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SequenceFavoritesHandler.TargetType">
+	<summary>
+ The type of the related entry
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SequenceFavoritesHandler.Relationship">
+	<summary>
+ The location to move to, either "before" or "after"
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.SequenceFavoritesHandler">
+	<summary>
+  Used to move an entry in the favorites list relative to another entry.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.RenameFavoritesHandler">
+	<summary>
+ Renames an item in the user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.GetFavoritesHandler">
+	<summary>
+ Returns the user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.DeleteFavoriteHandler.id">
+	<summary>
+ The id of the resource being deleted
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.DeleteFavoriteHandler.Type">
+	<summary>
+ The type of the resource being deleted
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.DeleteFavoriteHandler">
+	<summary>
+ Removes an entry from the user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.AddFavoritesHandler.id">
+	<summary>
+ The id of the resource being added
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.AddFavoritesHandler.Type">
+	<summary>
+ The type of the resource being added
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.AddFavoritesHandler.Text">
+	<summary>
+ Description of the resource
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.AddFavoritesHandler.Icon">
+	<summary>
+ Optional icon name for displaying the resource in the favorites list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.AddFavoritesHandler">
+	<summary>
+ Adds an entry to the user's favorites list
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.TraceDxPromptHandler.MedcinIds">
+	<summary>
+ The comma-delimited list of Medcin ids
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TraceDxPromptHandler.Age">
+	<summary>
+ Age of the patient as a Medcin time string (e.g. 35y)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TraceDxPromptHandler.Gender">
+	<summary>
+ Gender of the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TraceDxPromptHandler.Role">
+	<summary>
+ User's role
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TraceDxPromptHandler.PromptName">
+	<summary>
+ Optional value used to identify multiple prompts.  Will be returned in the Text attribute of the results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.PromptTestHandler.Chart">
+	<summary>
+ XML representation of the patient's chart.  See http://schemas.medicomp.com/v3/chart.xsd
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.PromptTestHandler.ListSize">
+	<summary>
+ List size for the prompt
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.PromptTestHandler.TermType">
+	<summary>
+ Used to filter results by term type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.PromptTestHandler.Role">
+	<summary>
+ User's role
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.PromptTestHandler.PromptName">
+	<summary>
+ Optional value used to identify multiple prompts.  Will be returned in the Text attribute of the results
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.ServiceManager.IsAvailable``1">
+	<summary>
+ Checks the availability of a service.  Returns true if the requested contract type exists and has a valid implementation.
+ </summary>
+	<typeparam name="T"></typeparam>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.ServiceManager.GetService``1">
+	<summary>
+ Returns an instance of the requested contract type, or null if the service is not available.
+ </summary>
+	<typeparam name="T">The contract type</typeparam>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.ServiceManager.GetServices``1">
+	<summary>
+ Returns all of the registered services that implement the requested contract type, or an empty list if none are found
+ </summary>
+	<typeparam name="T">The contract type</typeparam>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.ServiceManager.GetIndex">
+	<summary>
+ Returns a list of the registered services
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentLibraryService.GetItems(System.String,System.String,Quippe.ContentLibrary.AttributeFlags)">
+	<summary>
+ Returns a list of library items for the given parameters
+ </summary>
+	<param name="ParentId"></param>
+	<param name="TypeName"></param>
+	<param name="Attributes"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentLibraryService.GetItem(System.String)">
+	<summary>
+ Gets a content library item by id
+ </summary>
+	<param name="ItemId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentLibraryService.GetItemContent(System.String)">
+	<summary>
+ Returns the library item's data as a string
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentLibraryService.GetItemBytes(System.String)">
+	<summary>
+ Returns the library item's data as a byte array
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentLibraryService.GetTypes">
+	<summary>
+ Returns a list of available library item types
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.IContentLibraryService">
+	<summary>
+ Service contract for the content library
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.ContentLibrary.IItemType">
+	<summary>
+ Returns information about a supported library item type
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Quippe.ContentLibrary.IItem">
+	<summary>
+ Represents an item from the content library
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Quippe.IContentDataQueryService.Query(System.String,System.String,System.Boolean,System.String,Quippe.ContentLibrary.AttributeFlags,System.Int32)">
+	<summary>
+ Queries the data contained in the content library
+ </summary>
+	<param name="Expression">The query expression to execute.  The syntax of the expression in implementation dependent.  The sample content library implementation allows for both RegEx and XPath expressions.</param>
+	<param name="FolderId">Id of the folder or container to search within, blank to search all content</param>
+	<param name="Recursive">True to search all subfolders within the given FolderId</param>
+	<param name="ItemTypes">Comma separated list of item types to include.  Blank to include all types</param>
+	<param name="MaxResults">Maximum number of results to return</param>
+	<returns></returns>
+</member><member name="P:Quippe.ContentLibrary.SetItemPropertiesHandler.id">
+	<summary>
+ The unique id of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetItemItemPropertiesHandler.id">
+	<summary>
+ The unique id of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetFoldersHandler.ParentId">
+	<summary>
+ The parent folder id, or blank to select the root folder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetFoldersHandler.Depth">
+	<summary>
+ Depth of the folder tree to return, use -1 to return all folders
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetItemIdHandler.ParentId">
+	<summary>
+ The parent id for the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetItemIdHandler.Name">
+	<summary>
+ The name of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.GetItemIdHandler.id">
+	<summary>
+ The unique id of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Quippe.ContentLibrary.GetItemIdHandler">
+	<summary>
+ Finds a content library item either by item id or parent id + item name
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.DeleteItemPropertiesHandler.id">
+	<summary>
+ The unique id of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.Expression">
+	<summary>
+ The data query expression to execute
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.FolderId">
+	<summary>
+ Limit query to items within this folder
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.Recursive">
+	<summary>
+ Include subfolders in search
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.ItemTypes">
+	<summary>
+ Comma separated list if item types to include in query, leave blank to include all types
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.Attributes">
+	<summary>
+ Limit query to items with these attributes
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.DataQueryHandler.MaxResults">
+	<summary>
+ Maximum number of results to return, -1 for no limit
+ </summary>
+</member><member name="P:Quippe.ContentLibrary.ClearItemPropertiesHandler.id">
+	<summary>
+ The unique id of the item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeReaderHandler.BarcodeType">
+	<summary>
+ Comma delimited list of one or more barcode types to look for.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeReaderHandler.BarcodeData">
+	<summary>
+ A base64 encoded stream of a .png or .jpg image; which may have a barcode
+ encoded therein.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeReaderHandler.RegexCheck">
+	<summary>
+ A regular expression to evaluate against discovered barcodes to check their legitimacy.  
+ Set to empty string to disable regular expression check.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeReaderHandler.FindMultipleBarcodes">
+	<summary>
+ Flag which incdicates whether we should attempt to locate more than one barcode
+ in the image we examine
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Default is false</remarks>
+</member><member name="M:Quippe.BarcodeReaderHandler.SetResults(System.String,System.String,System.String,System.String[])">
+	<summary>
+ Creates result document which is sent back to the XMLHTTP Requestor
+ </summary>
+	<param name="rootText">Name of document/top level element</param>
+	<param name="elementName">Fixed Name of element to hold data</param>
+	<param name="attributeName">Fixed Attribute Name</param>
+	<param name="attributeValues">One or more of the named attribute's values</param>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeGeneratorHandler.BarcodeData">
+	<summary>
+ A string containing the data to encode into the barcode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeGeneratorHandler.BarcodeType">
+	<summary>
+ Barcode Type to generate.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.BarcodeGeneratorHandler.Width">
+	<summary>
+ Width in pixels of the generated barcode.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Based on barcode type and other factors, this is not an exact value</remarks>
+</member><member name="P:Quippe.BarcodeGeneratorHandler.Height">
+	<summary>
+ Height in pixels of the generated barcode.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Based on barcode type and other factors, this is not an exact value</remarks>
+</member><member name="P:Quippe.BarcodeGeneratorHandler.IncludeLabel">
+	<summary>
+ Whether or not to include a textual label of the barcode content, below the barcode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.SchemaBoundAttribute.XmlComment">
+	<summary>This property is ONLY for additional notes specifically on how to arrange or consume the XML, for example
+ if XML is returned or needed that doesn't exactly match a schema (some attributes ignored, some extra needed, etc.)
+ Any general comments on return value or a parameter should go onto the XML comments for that class or property.
+ </summary>
+</member>
+</members>
+</doc>

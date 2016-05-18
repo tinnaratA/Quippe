@@ -1,0 +1,30 @@
+﻿.qcLabel
+{
+	font-weight:normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.qcLabel .bold
+{
+	font-weight: bold;
+}
+
+.qcGroupBox
+{
+	position: relative;
+	border: 1px solid #999999;
+	padding: 8px;
+	border-radius: 4px;
+	margin: 12px 0px 12px 0px;
+}
+
+.qcGroupBox .heading
+{
+	position: absolute;
+	top: -1.48em;
+	left: 4px;
+	display: inline;
+	background-color: #ffffff;
+	font-weight: bold;
+}

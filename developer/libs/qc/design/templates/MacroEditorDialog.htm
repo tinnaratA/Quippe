@@ -1,0 +1,45 @@
+<div class="dijitDialog qcMacroEditorDialog qcContextMenuContainer" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent" style="margin:0px; padding:0px">
+
+        <div data-dojo-attach-point="mainPanel" class="mainPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false, liveSplitters: true">
+        
+            <div class="toolbarPane" data-dojo-type="dijit/layout/ContentPane" style="margin:0px; padding:0px" data-dojo-props="splitter: false, region: 'top'">
+                <div class="ic16" data-dojo-type="dijit/Toolbar" data-dojo-attach-point="toolbar">
+                    <div data-dojo-attach-point="newButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onNewClick" data-dojo-props="iconClass: 'document'">New</div>
+                    <div data-dojo-attach-point="openButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onOpenClick" data-dojo-props="iconClass: 'folder'">Open</div>
+                    <div data-dojo-attach-point="saveButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSaveClick" data-dojo-props="iconClass: 'floppy_disk'">Save</div>
+                    <div data-dojo-attach-point="saveAsButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSaveAsClick" data-dojo-props="iconClass: 'floppy_disk'">Save As</div>
+	                <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="addButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onAddFieldClick" data-dojo-props="iconClass: 'add', disabled: true">Add Field</div>
+                    <div data-dojo-attach-point="removeButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onRemoveFieldClick" data-dojo-props="iconClass: 'delete', disabled: true">Remove Field</div>
+	                <div data-dojo-type="dijit/ToolbarSeparator"></div>
+                    <div data-dojo-attach-point="entryPreviewButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onPreviewClick" data-dojo-props="iconClass: 'form_blue', disabled: false">Entry Form</div>
+                </div>
+            </div>
+
+            <div class="mainContentPane" data-dojo-type="dijit/layout/BorderContainer" style="margin:0px;" data-dojo-props="design: 'sidebar', liveSplitters: true, region: 'center', gutter:'true'">
+                <div data-dojo-type="dijit/layout/ContentPane" style="margin:0px; padding:6px" data-dojo-props="region: 'center'">
+                    <div data-dojo-attach-point="editorNode">
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/layout/BorderContainer" style="width: 40%; margin:0px; padding: 0px; " data-dojo-props="design: 'headline', region: 'right', splitter: true">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="padding: 0px; height: 33%; overflow: auto;" data-dojo-props="region: 'top', splitter: true">
+                        <div data-dojo-attach-point="tvNode">
+                        </div>
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" style="padding: 0px;" data-dojo-props="region: 'center'">
+                        <div data-dojo-attach-point="pgNode">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

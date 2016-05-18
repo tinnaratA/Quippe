@@ -1,0 +1,136 @@
+﻿.qcTreeView
+{
+}
+
+.qcTreeView .viewPort
+{
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.qcTreeView .tree
+{
+}
+        
+.qcTreeNode
+{
+    position: relative;
+}
+        
+.qcTreeNode .nodeHeader
+{
+    display: inline-block;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	border:  solid 1px transparent;            
+    background-color: transparent;
+    cursor:pointer;
+    padding: 2px;
+    white-space:nowrap;
+}
+        
+
+.qcTreeNode .nodeHeader:hover
+{
+    background-color:#d8edff;
+	border:solid 1px #c3e2fd;    
+}        
+
+.qcTreeNode .nodeHeader.selected
+{
+    background-color: #abd6ff;
+    border:solid 1px #769dc0;
+}        
+        
+.qcTreeNode .nodeHeader .expander
+{
+    display: inline-block;
+    background-image: url('images/treeExpandImages.png');
+    width: 16px;
+    height: 16px;
+    background-position: 1px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+        
+        
+.qcTreeNode .nodeHeader .expander.expanded 
+{
+    background-position: -35px 0px;
+}
+        
+.qcTreeNode .nodeHeader .expander.collapsed
+{
+    background-position: 1px 0px;
+}
+        
+.qcTreeNode .nodeHeader .expander.leaf
+{
+    background-image: none;
+}
+
+.qcTreeNode .nodeHeader .expander.loading {
+	background-image: url('images/loadingAnimation.gif');
+	background-position: 0px 0xp;
+}
+
+        
+.qcTreeNode .nodeHeader .icon
+{
+    display: inline-block;
+    min-width: 16px;
+    min-height: 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+        
+.qcTreeNode .nodeHeader .icon.noIcon
+{
+    display: none;
+}
+        
+.qcTreeNode .nodeHeader .label
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+.qcTreeNode .nodeHeader .label.placeHolder
+{
+    font-style: italic;
+}
+        
+.qcTreeNode .nodeContent
+{
+    margin-left: 20px;
+    display: none;
+}
+        
+.qcTreeNode .nodeContent.expanded
+{
+    display: block;
+}     
+        
+.qcTreeNode .nodeContent.collapsed
+{
+    display: none;
+}  
+        
+.qcTreeNode .nodeContent.leaf
+{
+    display: none;
+} 
+        
+.qcTreeNode .nodeContent.hiddenRoot
+{
+    display: block;
+    margin-left: 0px;
+}
+
+.qcTreeNode .nodeHeader.hiddenRoot
+{
+    display: none;
+}

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Quippe</title>
+
+        <link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="libs/Quippe/themes/Application.css" />
+        <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" />
+        <link rel="icon" type="image/png" href="images/QuippeIconGloss.png" />
+        <link rel="apple-touch-icon" href="images/QuippeIconGloss.png" />
+
+        <script type="text/javascript" src="libs/Quippe/SMARTClient.js"></script>
+        <script type="text/javascript" src="libs/Quippe/DojoBootstrap.js"></script>
+
+        <script type="text/javascript">
+            var loadFailure = function (message) {
+                message = message || "An unknown error has occurred";
+
+                var element = document.getElementById('startupMessage');
+
+                if (element) {
+                    element.innerHTML = message;
+                    element.style.color = '#990000';
+                    element.style.fontWeight = 'bold';
+                }
+            };
+
+            var loadApplication = function () {
+                FHIR.oauth2.authorize({
+                    client_id: 'my_web_app',
+                    scope: 'patient/*.read',
+                    redirect_uri: 'ClinicalLens.htm'
+                });
+            };
+
+            loadDojo(loadApplication, loadFailure, true);
+        </script>
+    </head>
+    <body class="claro" spellcheck="false">
+        <div id="startupMessage" style="margin: 60px;">
+            Loading Quippe Clinical Lens...<br />
+            <noscript>You must enable Javascript in your browser in order to use this application.</noscript>
+        </div>
+    </body>
+</html>

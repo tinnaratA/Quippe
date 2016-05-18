@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<TaskBar>
+  <TaskPane Name="PatientInfo" Type="qc.PatientTaskPane" Group="Entry" Visible="true" Description="Shows the current patient's name, demographics and summary items." />
+  <TaskPane Name="Sources" Type="qc.SourcesPane" Group="Entry" Visible="true" Description="Shows the data sources used to build the current note and allows filtering and higlighting based on data source."/>
+  <TaskPane Name="Orders" Type="qc.OrdersPane" Group="Entry" Visible="false" Description="Demonstration task pane - shows currently entered orderable items"/>
+  <TaskPane Name="Favorites" Type="qc.FavoritesPane" Group="Entry" Visible="true" Description="Allows you to bookmark frequently used content." />
+
+  <TaskPane Name="DomainFilter" Type="qc.taskbar.DomainFilterPane" Title="Domains" Group="Filter" Visible="true" Description="Allows filtering and highlighting by concept domain" />
+  <TaskPane Name="SpecialtyFilter" Type="qc.taskbar.SpecialtyFilterPane" Title="Specialties" Group="Filter" Visible="true" Description="Allows filtering and highlighting by specialty" />
+
+  <TaskPane Name="CodeEntryICD10" Caption="ICD-10-CM" Type="qc.coding.CodingTaskPaneICD10" Visible="false"  Group="Coding" ShowInShortList="false" Description="Shows ICD-10 CM coding options for the currently selected finding."  />
+  <TaskPane Name="Coding" Caption="Coding" Type="qc.coding.MultiVocabTaskPane" Visible="true" Group="Coding" Vocabs="icd10,cpt,rxnorm,loinc,snomed" Description="Shows code mappings from the currently selected finding to the given exernal vocabularies."  />
+
+  <TaskPane Name="Translation1" Title="Spanish" Type="qc/taskbar/TranslationPane" Group="Reference" Culture="es-ES" Visible="false" Description="Show the currently selected finding in the given language when available" />
+  <TaskPane Name="Translation2" Title="Thai" Type="qc/taskbar/TranslationPane" Group="Reference" Culture="th-TH" Visible="false" Description="Show the currently selected finding in the given language when available" />
+ 
+  <TaskPane Name="Drawing" Type="qc/drawing/Toolbox" Group="Drawing" Visible="true" ShowInShortList="false" Description="Drawing manipluation and annotation tools." />
+  <TaskPane Name="Design" Type="qc/design/DesignPane" Group="Design" Visible="true" ShowInShortList="false" Description="Tools for design mode" />
+
+  <TaskPane Name="Browse" Type="qc/taskbar/BrowsePane" Group="Browse" Visible="false" ShowInShortList="true" Description="Show's the MEDCIN heirarchy for the selected finding." />
+
+  <TaskPane Name="Details" Type="qc/taskbar/FindingDetailsTaskPane" Group="Entry" Visible="false" ShowInShortList="true" Description="Edit the selected finding details." />
+</TaskBar>

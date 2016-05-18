@@ -1,0 +1,172 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.Coding.Search
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.Coding.Search.SearchHandler.Query">
+	<summary>
+ The string query to use when searching code descriptions for a match.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.VocabCode">
+	<summary>
+ The unique string code of a vocabulary to which to restrict the search.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.TermType">
+	<summary>
+ The unique string code of a term type to which to restrict the search.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.Limit">
+	<summary>
+ Limits the number of matches returned from the search (default=100, range is 1 to upper limit supported by the service or provider).
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.Exact">
+	<summary>
+ Indicates whether the query should be used exactly as specified, but always with the minimally required pre-processing.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.Clean">
+	<summary>
+ Indicates whether punctuation should be removed from the query string in addition to the minimally required pre-processing.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.Verbose">
+	<summary>
+ Indicates whether additional detailed information should be returned for each match.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchHandler.SortMode">
+	<summary>
+ Indicates whether the results should be ordered by the search score rank or in vocabulary order.
+ </summary>
+</member><member name="M:Quippe.Coding.Search.SearchException.#ctor(System.String,System.Int32)">
+	<summary>
+ Creates a new search service exception by specifying the exception message.
+ </summary>
+	<param name="Message">The exception message.</param>
+</member><member name="M:Quippe.Coding.Search.SearchException.#ctor(System.String,System.Exception,System.Int32)">
+	<summary>
+ Creates a new search service exception based on an existing exception.
+ </summary>
+	<param name="Message">The exception message.</param>
+	<param name="InnerException">An associated exception, usually the original exception that caused this exception to be raised.</param>
+</member><member name="T:Quippe.Coding.Search.SearchException">
+	<summary>
+ Class representing a generic exception in the search service.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.Coding.Search.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.Coding.Search.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Quippe.Coding.Search.StandardSearchProvider.Culture">
+	<summary>
+ Gets the name of the culture associated with this search provider.
+ </summary>
+	<returns>Returns the culture name associated with this search provider.</returns>
+	<remarks><para>The culture name is one of the cultere names accepted and used in the System.Globalization namespace. The culture names 
+ follow the RFC 1766 standard in the format "languagecode2[-country/regioncode]", where "languagecode2" 
+ is a lowercase two-letter code derived from ISO 639-1 and "country/regioncode" is an uppercase two-letter code derived from ISO 3166 or a
+ three-letter code derived from ISO 639-2. In some cases a suffix may specify the script.</para></remarks>
+</member><member name="M:Quippe.Coding.Search.StandardSearchProvider.SupportsCulture(System.String)">
+	<summary>
+ Indicates whether this provider supports the culture indicated by the specified culture name.
+ </summary>
+	<param name="CultureCode">The name of the culture for which provider support is desired or the two-digit
+ language code of the culture.</param>
+	<returns>Returns True if the specified culture is supported by the provider and False otherwise.</returns>
+	<remarks>
+		<para>The specified culture is supported if the two letter language code of the specified culture name or code equals
+ the language code of the provider. See the <see cref="P:Quippe.Coding.Search.StandardSearchProvider.Culture"/> property for more information.</para>
+	</remarks>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_EXACT_SEARCH">
+	<summary>
+ Name of Boolean parameter indicating whether search string should be used exactly as specified, but with punctuation removed and reserved keywords and symbols honored.
+ </summary>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_LIMIT">
+	<summary>
+ Name of integer parameter indicating the maximum number of search results to return.
+ </summary>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_UPPER_LIMIT">
+	<summary>
+ Name of integer parameter indicating the upper limit on the maximum number of search results to return.
+ </summary>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_SORT_MODE">
+	<summary>
+ Name of parameter indicating how results are sorted.
+ </summary>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_REPLACE_PUNCTUATION">
+	<summary>
+ Name of Boolean parameter indicating whether punctuation should be removed from the search string.
+ </summary>
+</member><member name="F:Quippe.Coding.Search.StandardParameters.PARAMETER_NAME_TERM_TYPE">
+	<summary>
+ Name of string parameter indicating the unique code of the term type to be searched in the vocabularies targeted by the search.
+ </summary>
+</member><member name="P:Quippe.Coding.Search.SearchService.SupportedVocabularies(System.Globalization.CultureInfo)">
+	<summary>
+ Gets a collection of vocabulary codes of the vocabularies that are supported by providers associated with the search service instance.
+ </summary>
+	<returns>Returns a sorted collection of the vocabulary codes of the vocabularies that are searchable by currently loaded search providers.
+ </returns>
+	<remarks><para>The returned collection includes the unique codes of all supported vocabularies. A vocabulary is supported 
+ if one of the associated search providers supports search on that vocabulary.</para>
+	</remarks>
+</member><member name="F:Quippe.Coding.Search.SearchResultComparer.CompareModeEnum.Rank">
+	<summary>Orders results by search rank (lower rank equals higher score).</summary>
+</member><member name="F:Quippe.Coding.Search.SearchResultComparer.CompareModeEnum.VocabRank">
+	<summary>Orders results by vocabulary first and then by search rank.</summary>
+</member><member name="F:Quippe.Coding.Search.SearchResultComparer.CompareModeEnum.VocabHierarchy">
+	<summary>Orders results by vocabulary first and then by nodekey or code (if nodekey is empty), and finally rank.</summary>
+</member><member name="F:Quippe.Coding.Search.SearchResultComparer.CompareModeEnum.VocabDescription">
+	<summary>Orders results by vocabulary first and then alphanumerically by default code description.</summary>
+</member><member name="F:Quippe.Coding.Search.SearchResultComparer.CompareModeEnum.VocabCode">
+	<summary>Orders results by vocabulary first and then alphnumerically by code.</summary>
+</member><member name="P:Quippe.Coding.Search.GenericSearchProvider.DataFile">
+	<summary>
+ Gets or sets the path to the SQLite database file containing the database for this search service.
+ </summary>
+	<remarks>
+		<para>This property may be specified in the "DataServices.xml" file as a setting for this provider or it
+ defaults to the the file "SearchService.dat" in the folder given by "DataFolder" in the appSettings
+ (e.g., in your applications app.config file).</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Search.GenericSearchProvider.SupportedVocabularies">
+	<summary>
+ Gets a collection of vocabulary codes of the vocabularies supported by this search provider.
+ </summary>
+	<returns>Returns a sorted collection of the vocabulary codes of the vocabularies that are searchable by this provider.
+ </returns>
+	<remarks><para>The returned collection includes the unique codes of all supported vocabularies. A vocabulary is supported 
+ if this search provider supports search on that vocabulary.</para>
+	</remarks>
+</member><member name="P:Quippe.Coding.Search.GenericSearchProvider.Culture">
+	<summary>
+ Gets the name of the culture associated with this search provider.
+ </summary>
+	<returns>Returns the culture name associated with this search provider.</returns>
+	<remarks><para>The culture name is one of the cultere names accepted and used in the System.Globalization namespace. The culture names 
+ follow the RFC 1766 standard in the format "languagecode2[-country/regioncode]", where "languagecode2" 
+ is a lowercase two-letter code derived from ISO 639-1 and "country/regioncode" is an uppercase two-letter code derived from ISO 3166 or a
+ three-letter code derived from ISO 639-2. In some cases a suffix may specify the script.</para></remarks>
+</member><member name="M:Quippe.Coding.Search.GenericSearchProvider.SupportsCulture(System.String)">
+	<summary>
+ Indicates whether this provider supports the culture indicated by the specified culture name.
+ </summary>
+	<param name="InputCultureCode">The name of the culture for which provider support is desired or the two-digit
+ language code of the culture.</param>
+	<returns>Returns True if the specified culture is supported by the provider and False otherwise.</returns>
+	<remarks>
+		<para>The specified culture is supported if the two letter language code of the specified culture name or code equals
+ the language code of the provider. See the <see cref="P:Quippe.Coding.Search.GenericSearchProvider.Culture"/> property for more information.</para>
+	</remarks>
+</member>
+</members>
+</doc>

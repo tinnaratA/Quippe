@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "qc/_core", "samples/CustomContextMenuApp"],
+                function(dom, when, core, Application) {
+                    var application = new Application();
+
+                    application.startup();
+                    application.placeAt(dom.byId("applicationContainer"));
+
+                    when(application.init(), function() {
+                        core.getNoteEditor().loadXml(
+                            '<Document SepStyle="semicolon">' +
+                            '	<EntryComponents>' +
+                            '		<PostSep Sequence="11" />' +
+                            '	</EntryComponents>' +
+                            '	<Finding MedcinId="33757" Prefix="C" Result="A" Duration="1 week" Note=" " ' +
+                            '            Text="carrier of Lyme disease for 1 week" PostSep=";">' +
+                            '		<Codes>' +
+                            '			<Code Vocab="icd10" Value="A69.20" />' +
+                            '			<Code Vocab="icd" Value="088.81" AutoMapped="true" />' +
+                            '			<Code Vocab="snomed" Value="23502006" AutoMapped="true" />' +
+                            '		</Codes>' +
+                            '	</Finding>' +
+                            '</Document>'
+                        );
+                    });
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            .toolBarPane {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Setting Up Your Application</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Setting Up Your Application</h1>
+
+            <p>
+                The first thing that you'll need to do when customizing the Quippe workspace is to setup your own application
+                class to contain those customizations. If you go into the <code>libs</code> directory in the Quippe SDK root,
+                you'll see the directories for the base Quippe source code: <code>dojo</code> and <code>dijit</code> contain
+                the files for the Dojo toolkit, whereas the <code>qc</code>, <code>qx</code>, and <code>Quippe</code> directories
+                contain the Quippe application logic. You should never make changes to the files in these directories. Instead,
+                you'll want to create a new directory for your application and put all of your files in there. This ensures that 
+                you won't overwrite any of your work when you install a new version of the Quippe SDK.
+            </p>
+
+            <p>
+                Once you have a directory for your application's files, you'll want to create a root application class that
+                inherits from the <code>Quippe/Application</code> module.
+            </p>
+
+            <pre><code class="js">
+    define([
+        "Quippe/Application",
+        ...
+    ], function(Application, ...) {
+        return declare("yourProduct.Application", [Application], {
+            ...
+        });
+    });
+            </code></pre>
+
+            <p>
+                You can then begin to override methods and properties of the Application class to customize it. You can get a
+                full list of the members of the base Application class from our
+                <a href="http://help.medicomp.com/#topic%3DJavaScript_Dojo_T_Quippe_Application" target="_new">help site</a>.
+                When you want to see your changes in action, you can either create your own view or .htm file to host your
+                application or you can update Default.htm and replace the dependency on <code>Quippe/Application</code> with
+                the module path to your application class.
+            </p>
+
+            <p>
+                In the example below, we add a new item to the context menu that opens when you right click on a finding which
+                allows the user to view the finding in the XML editor. We also walk through how to make modifications to other
+                parts of Quippe, such as adding or removing items from the toolbar, in other samples in this collection.
+            </p>
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 600px"></div>
+        </div>
+    </body>
+</html>

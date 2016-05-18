@@ -1,0 +1,25 @@
+﻿.qcSearchDialog .contentArea {
+    width: 500px;
+    height: 350px;
+}
+
+.qcSearchDialog .qcSearchBox {
+    width: 100%;
+}
+
+.qcSearchDialog .searchResultList .dijitToolbar {
+    display: none;
+}
+
+.qcSearchDialog .searchResultList {
+    margin-top: 4px;
+    width: 100% !important;
+    background-color: #ffffff !important;
+}
+
+.qcSearchDialog .searchResultList .qcTreeView {
+    width: 500px;
+    height: 320px;
+    border: none !important;
+    padding: 0px !important;
+}

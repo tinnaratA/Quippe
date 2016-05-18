@@ -1,0 +1,77 @@
+﻿body 
+{
+	font-family: Arial, Sans-Serif;
+	font-size: .5em;
+	background-color: #ffffff;
+	margin: 0px;
+	line-height: 1.2em;
+}
+
+h1
+{
+	font-size: 130%;
+}
+
+h2
+{
+	font-size: 120%;
+}
+
+img
+{
+	border: 0px;
+}
+
+table
+{
+	border-collapse:collapse;
+	font-size: 100%;
+}
+
+.titleBar
+{
+	background-image: -moz-linear-gradient(top,rgba(255, 255, 255, 0.6) 0%,rgba(255, 255, 255, 0.3) 50%,rgba(255, 255, 255, 0.2) 50%,rgba(255, 255, 255, 0.0) 100%);
+	background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0.0, rgba(255, 255, 255, 0.6)),color-stop(0.5, rgba(255, 255, 255, 0.3)),color-stop(0.5, rgba(255, 255, 255, 0.2)),color-stop(1.0, rgba(255, 255, 255, 0.0)));
+	background-color: #222;
+	color: #fff;	
+	padding: 12px;
+}
+
+.pageTitle
+{
+	float: left;
+	font-size: 140%;
+}
+
+.mainMenu
+{
+	text-align: right;
+	color: #ffffff;
+}
+
+.mainMenu a
+{
+	color: #ffffff;
+}
+
+.mainMenu a:visited
+{
+	color: #ffffff;
+}
+
+.content
+{
+	clear: both;
+	margin: 12px;
+}
+
+.label
+{
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+ul
+{
+	line-height: 1.5em;
+}

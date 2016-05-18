@@ -1,0 +1,16 @@
+﻿.qcInkOverlay
+{
+	background-color: transparent;
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 99999;
+	/* border: 1px #ff0000 solid; */
+}
+
+.qcInkOverlay .inkCanvas
+{
+	position: relative;
+	background-color: transparent;
+}

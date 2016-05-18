@@ -1,0 +1,61 @@
+﻿.qcUserAccountDialog
+{
+	width: 460px;
+	height: auto;
+    background-color: #ffffff;	
+}
+ 
+
+.qcUserAccountDialog .dijitDialogPaneContent
+{
+}
+        
+.qcUserAccountDialog .contentArea
+{
+	height: auto;
+}
+
+.qcUserAccountDialog .tabControl
+{
+	width: 100%;
+	height: 280px;
+	margin-bottom: 8px;
+}
+        
+.qcUserAccountDialog .buttonArea
+{
+    text-align: right;
+    height:auto;
+    max-height: 30px;
+    width: 100%;
+    padding-bottom: 6px;
+    padding-right: 6px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+
+.qcUserAccountDialog .buttonArea .dijitButton
+{
+	padding-left: 16px;
+}
+
+.qcUserAccountDialog .buttonArea .dijitButtonNode
+{
+	width: 120px;
+}
+
+.qcUserAccountDialog td
+{
+	padding: 6px;
+}
+
+.qcUserAccountDialog .passwordMessage
+{
+	min-height: 2em;
+	font-weight: bold;
+	color: #990000;
+}
+
+
+

@@ -1,0 +1,173 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Manage Roles</title>
+        <link rel="Stylesheet" type="text/css" href="admin.css" />
+        <link rel="stylesheet" type="text/css" href="../libs/dijit/themes/claro/claro.css" />
+        <link rel="icon" type="image/png" href="../images/QuippeIconGloss.png" />
+
+        <script type="text/javascript" src="../libs/Quippe/DojoBootstrap.js"></script>
+
+        <script type="text/javascript">
+            var loadFailure = function (message) {
+                document.getElementById("lblMessage").innerHTML = message || "An unknown error has occurred";
+            };
+
+            var loadApplication = function () {
+                require(["dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/request", "qc/_core", "dojo/domReady!"], function (lang, dom, domAttr, domClass, domConstruct, domStyle, on, request, core) {
+                    core.settings.baseServiceURL = "../" + core.settings.baseServiceURL;
+
+                    var loadRolesGrid = function () {
+                        dom.byId("lblMessage").innerHTML = "";
+
+                        return request(core.serviceURL('Quippe/Security/GetRoles?DataFormat=JSON'), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "GET"
+                        }).then(function (data) {
+                            var rolesGrid = dom.byId("rolesGrid");
+
+                            while (rolesGrid.rows.length > 1) {
+                                rolesGrid.deleteRow(1);
+                            }
+
+                            for (var i = 0; i < data.roles.length; i++) {
+                                var row = rolesGrid.insertRow(i + 1);
+
+                                var cell = row.insertCell(0);
+                                cell.innerHTML = data.roles[i].name;
+
+                                cell = row.insertCell(1);
+                                domAttr.set(cell, "align", "center");
+
+                                var deleteLink = domConstruct.create("input", {
+                                    type: "image",
+                                    src: "images/delete.png",
+                                    style: "border-width: 0px"
+                                }, cell);
+
+                                on(deleteLink, "click", lang.hitch(data.roles[i], function() {
+                                    request(core.serviceURL('Quippe/Security/DeleteRole?DataFormat=JSON'), {
+                                        handleAs: "json",
+                                        preventCache: true,
+                                        method: "POST",
+                                        data: {
+                                            RoleName: this.name
+                                        }
+                                    }).then(function (deleteData) {
+                                        if (deleteData.result.status != "OK") {
+                                            loadFailure("Error deleting role - " + (data.result.message || "An unknown error has occurred"));
+                                        }
+
+                                        else {
+                                            loadRolesGrid();
+                                        }
+                                    }, function (message) {
+                                        loadFailure("Error deleting role - " + (message || "An unknown error has occurred"));
+                                    });
+                                }));
+
+                                domClass.add(row, i % 2 == 0 ? "even" : "odd");
+                            }
+
+                            domStyle.set(dom.byId("rolesGridContainer"), "display", data.roles.length > 0 ? "block" : "none");
+                        }, function (message) {
+                            loadFailure("Error getting roles - " + (message || "An unknown error has occurred"));
+                        });
+                    }
+
+                    on(dom.byId("cmdAdd"), "click", function () {
+                        dom.byId("lblMessage").innerHTML = "";
+
+                        request(core.serviceURL('Quippe/Security/AddRole?DataFormat=JSON'), {
+                            handleAs: "json",
+                            preventCache: true,
+                            method: "POST",
+                            data: {
+                                RoleName: dom.byId("txtNewRole").value
+                            }
+                        }).then(function (data) {
+                            if (data.result.status != "OK") {
+                                loadFailure("Error adding role - " + (data.result.message || "An unknown error has occurred"));
+                            }
+
+                            else {
+                                loadRolesGrid();
+                            }
+                        }, function (message) {
+                            loadFailure("Error adding role - " + (message || "An unknown error has occurred"));
+                        });
+                    });
+
+                    loadRolesGrid().then(function() {
+                        domStyle.set(dom.byId("container"), "display", "block");
+                    });
+                });
+            };
+
+            loadDojo(loadApplication, loadFailure);
+        </script>
+        
+        <style type="text/css">
+            #lblMessage {
+                color: firebrick;
+                font-weight: bold;
+            }
+
+            tr.header {
+                color:White;
+                background-color:#6B696B;
+                font-weight:bold;
+            }
+
+            tr.even {
+                background-color: white;
+            }
+
+            tr.odd {
+                background-color: #F7F7DE;
+            }
+
+            #rolesGrid {
+                color:Black;
+                background-color:White;
+                border-color:#DEDFDE;
+                border-width:1px;
+                border-style:None;
+                border-collapse:collapse;
+            }
+        </style>
+    </head>
+    <body class="claro">
+        <div id="container" style="display: none">
+            <div class="titleBar">
+                <div class="pageTitle">Quippe Admin Console</div>
+                <div class="mainMenu">
+                    <a href="../Default.htm">Quippe</a> |
+                    <a href="Default.htm">Admin Console</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Manage Roles</h1>
+
+                <h2>Add Role</h2>
+                <strong>Role Name: </strong><input type="text" ID="txtNewRole" /><input type="button" id="cmdAdd" value="Add Role"/>
+                
+                <div id="rolesGridContainer">
+                    <h2>Current Roles</h2>
+                    
+                    <table id="rolesGrid" cellspacing="0" cellpadding="4" border="1">
+                        <tr class="header">
+                            <td style="width: 200px">Role Name</td>
+                            <td> Delete</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <span id="lblMessage"></span>
+    </body>
+</html>

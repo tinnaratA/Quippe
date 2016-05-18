@@ -1,0 +1,48 @@
+<div class="dijitDialog qcNewEncounterDialog2" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span>
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div class="section">
+                <div class="patientTablePanel">
+                    <table tabindex="1">
+	                    <tbody data-dojo-attach-point="tblPatients"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header"><span data-dojo-attach-point="nePatient"></span>:</div>
+
+                <div data-dojo-attach-point="txtPatientSearch" data-dojo-type="qc/PatientSearchBox" class="txtPatientSearch"></div>
+            </div>
+
+            <div class="section">
+                <div class="header"><span data-dojo-attach-point="oeEncounters"></span>EN List:</div>
+                <div data-dojo-attach-point="lstEncounters" class="lstEncounters" data-dojo-type="qc/ListView"></div>
+            </div>
+
+            <div class="section" style="margin-top:12px;">
+	            <div class="header" style="width:130px;display:inline-block;"><span data-dojo-attach-point="neEncounterTime"></span>:</div>
+	            <div data-dojo-attach-point="txtVisitDate" data-dojo-type="dijit/form/DateTextBox" data-dojo-props="placeholder: 'Date'" style="width:123px"></div>
+	            <div data-dojo-attach-point="txtVisitTime" data-dojo-type="dijit/form/TimeTextBox" data-dojo-props="placeHolder: 'Time'" style="width:90px"></div>
+            </div>
+
+            <div class="section">
+	            <div class="header" style="width:130px;display:inline-block;"><span data-dojo-attach-point="neTemplate"></span>:</div>
+	            <div data-dojo-attach-point="cmbTemplate" data-dojo-type="qc/FilteringSelect" data-dojo-props="placeHolder: 'Document Template', searchAttr: 'text'" style="width:220px;" data-dojo-attach-event="onChange:onTemplateChanged"></div><br />
+            </div>
+
+            <div class="errorMessage" data-dojo-attach-point="errorMessage">
+            </div>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdOK">OK</div>
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdCancel">Cancel</div>
+        </div>
+    </div>
+</div>

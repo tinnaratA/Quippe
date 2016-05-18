@@ -1,0 +1,570 @@
+﻿.qcNoteEditor .note .qcFindingEntry,
+.qcFindingEntry
+{
+    display: inline-block;
+    position: relative;
+    /*border: 1px solid transparent;*/
+	margin: 2px 6px 2px 0px;
+	padding: 0px;
+	/*font-style: normal;*/
+	/*font-weight: normal;*/
+	line-height: 1.2em;   
+}
+
+.qcNoteEditor .note .qcFindingEntry.contextStart,
+.qcNoteEditor .note .qcFindingEntry.inContext
+{
+	margin-right: 0px;
+}
+
+.qcFindingEntry .compTable
+{
+	display: inline-table;
+	margin: 0px;
+	padding: 0px;
+	vertical-align: middle;
+}
+
+.qcFindingEntry .compRow
+{
+	display: table-row;
+}
+
+.qcFindingEntry .cmp
+{
+    display: table-cell;
+    cursor: pointer;
+    color: #000000;
+    text-align: left;
+    vertical-align: top;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 2px 0px 2px;
+    height: 100%;
+}
+
+/*
+.qcFindingEntry .cmp.preSep
+{
+	display: table-cell;
+	text-align: right;
+}
+
+.qcFindingEntry .cmp.postSep
+{
+	display: table-cell;
+	text-align: left;
+}
+
+
+.qcFindingEntry .cmp.first
+{
+	margin-left: 0px;
+}
+*/
+
+.qcFindingEntry .cmp.sep
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.qcFindingEntry .cmp.lbl
+{
+	color: #000000;
+}
+
+.qcFindingEntry .cmp.showColors
+{
+	color: #999999;
+}
+
+.qcFindingEntry.pos .cmp.showColors
+{
+	color: #ff0000;
+}
+
+.qcFindingEntry.neg .cmp.showColors
+{
+	color: #0000ff;
+}
+
+.qcFindingEntry.hasHistory .cmp.lbl.showLookback
+{
+	text-decoration: underline;
+}
+.qcFindingEntry .cmp.chk .box
+{
+    background-image: url(images/checkboxes.png);
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+}
+        
+/* Checkboxes */    
+
+.qcFindingEntry		.cmp.chk.single .box		    { background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single .box		    { background-position:  -47px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single .box		    { background-position:  -62px -2px; }
+
+.qcFindingEntry		.cmp.chk.single.x .box			{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.x .box			{ background-position:  -32px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.x .box			{ background-position:   -2px -2px; }
+.qcFindingEntry		.cmp.chk.single.check .box		{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.check .box		{ background-position:  -17px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.check .box		{ background-position:   -2px -2px; }
+.qcFindingEntry		.cmp.chk.single.yn .box			{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.yn .box			{ background-position:  -92px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.yn .box			{ background-position: -122px -2px; }     
+.qcFindingEntry		.cmp.chk.single.square .box		{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.square .box		{ background-position:  -47px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.square .box		{ background-position:  -62px -2px; }
+.qcFindingEntry		.cmp.chk.single.round .box		{ background-position: -137px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.round .box		{ background-position: -152px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.round .box		{ background-position: -167px -2px; }
+
+
+
+.qcFindingEntry		.cmp.chk.double .box	        { background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double .box.y	        { background-position:  -47px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double .box.n	        { background-position:  -62px -2px; }
+
+.qcFindingEntry		.cmp.chk.double.x .box			{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.x .box.y		{ background-position:  -32px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.x .box.n		{ background-position:  -32px -2px; }
+.qcFindingEntry		.cmp.chk.double.check .box		{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.check .box.y	{ background-position:  -17px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.check .box.n	{ background-position:  -17px -2px; }
+.qcFindingEntry		.cmp.chk.double.yn .box.y		{ background-position:  -77px -2px; }
+.qcFindingEntry		.cmp.chk.double.yn .box.n		{ background-position: -107px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.yn .box.y		{ background-position:  -92px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.yn .box.n		{ background-position: -122px -2px; }     
+.qcFindingEntry		.cmp.chk.double.square .box		{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.square .box.y	{ background-position:  -47px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.square .box.n	{ background-position:  -62px -2px; }
+.qcFindingEntry		.cmp.chk.double.round .box		{ background-position: -137px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.round .box.y	{ background-position: -152px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.round .box.n	{ background-position: -167px -2px; }
+
+
+.qcFindingEntry .cmp.chk.single .box.n
+{
+	display: none;
+}
+
+.qcFindingEntry		.cmp.chk.double.ny .box.y		{ background-position: -107px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.ny .box.y		{ background-position: -122px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.ny .box.y		{ background-position: -107px -2px; }
+.qcFindingEntry		.cmp.chk.double.ny .box.n		{ background-position:  -77px -2px; }
+.qcFindingEntry.pos	.cmp.chk.double.ny .box.n		{ background-position:  -77px -2px; }
+.qcFindingEntry.neg	.cmp.chk.double.ny .box.n		{ background-position:  -92px -2px; }
+
+.qcFindingEntry		.cmp.chk.single.revCheck .box	{ background-position:   -2px -2px; }
+.qcFindingEntry.pos	.cmp.chk.single.revCheck .box	{ background-position:   -2px -2px; }
+.qcFindingEntry.neg	.cmp.chk.single.revCheck .box	{ background-position:  -17px -2px; }
+
+/*
+.qcFindingEntry .cmp.chk.double .box.y
+{
+	margin-right: 4px;        	
+}
+        
+.qcFindingEntry .cmp.chk.double .box.n
+{
+	margin-right: 0px;        	
+}
+
+.qcFindingEntry .cmp.chk.double.reversed .box.y
+{
+	margin-right: 0px;        	
+}
+        
+.qcFindingEntry .cmp.chk.double.reversed .box.n
+{
+	margin-right: 4px;        	
+}        
+*/
+
+.qcFindingEntry .cmp.txt
+{
+	/*display: inline-block;*/
+	width: 50px;
+}
+
+.qcFindingEntry .cmp .textBox
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	cursor: text;
+	padding: 0px 1px 0px 1px;
+	border: 0px;
+	margin: 0px;
+	vertical-align: top;
+	outline: 0px;
+	border-bottom: 1px #000000 solid;
+}
+
+.qcFindingEntry .cmp.entryLine .textBox
+{
+	outline: 0px;
+	border-bottom: 1px #000000 solid;
+}
+
+.qcFindingEntry .cmp.borderBox .textBox
+{
+	outline: 1px solid #999999;
+	border: 0px;	
+}
+
+.qcFindingEntry .cmp.shadedBox .textBox
+{
+	outline: 0px;
+	border: 0px;
+	background-color: #FDF4AF;
+	/*background-color: #C9EEF8;*/
+}
+
+.qcFindingEntry .cmp.entryBox .textBox
+{
+    outline: 0px;
+    border: 0px;
+}
+
+.qcFindingEntry .cmp .arrow
+{
+    display: inline-block;
+    width: 14px;
+    height: 100%;
+    background-image: url("images/commonFormArrows.png");
+    background-position: -36px 53%;
+    background-repeat: no-repeat;    
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeeee;
+    outline: 1px solid #999999;	    
+}
+
+.qcFindingEntry .cmp.entryLine .arrow
+{
+	background-color: transparent;
+	outline: 0px;
+}
+
+.qcFindingEntry .cmp.borderBox .arrow
+{
+    background-color: #eeeeee;
+    outline: 1px solid #999999;	
+}
+
+.qcFindingEntry .cmp.shadedBox .arrow
+{
+	background-color: #FDF4AF;
+	/*background-color: #C9EEF8;*/
+	outline: 0px;
+}
+
+
+.printable .qcFindingEntry .cmp .textBox
+{
+	background-color: #ffffff;
+}
+
+.printable .qcFindingEntry .cmp .arrow
+{
+	display: none;
+}
+
+.qcFindingEntry .cmp.cmb
+{
+	display: inline-block;
+	width: 50px;
+}
+
+.qcFindingEntry .cmp.cmb .textBox
+{
+	width: 34px;
+	width: calc(100% - 16px);
+}
+
+.qcFindingEntry .cmp.cmb.dropDownList .textBox
+{
+    cursor: pointer;
+}
+
+.qcFindingEntry .cmp.cmb.dateDropDown
+{
+	width: 100px;
+}
+
+.qcFindingEntry .cmp.cmb.dateTimeDropDown
+{
+	width: 150px;
+}
+
+.qcFindingEntry .cmp .arrow
+{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("images/commonFormArrows.png");
+    background-position: -36px 53%;
+    background-repeat: no-repeat;    
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeeee;
+    outline: 1px solid #999999;	    
+}
+
+.qcFindingEntry .cmp.termChooser .arrow,
+.qcFindingEntry .cmp.termChooser.plain .arrow
+{
+	background-color: transparent;
+	outline: 0px;
+}
+
+.qcFindingEntry .cmp.termChooser.box .arrow
+{
+    background-color: #eeeeee;
+    outline: 1px solid #999999;	
+}
+
+
+.qcFindingEntry .cmp.timingPopup .arrow,
+.qcFindingEntry .cmp.termChooser.plain .arrow
+{
+	background-color: transparent;
+	outline: 0px;
+}
+
+
+
+.qcFindingEntry .cmp.checkBox .box	 
+{
+    background-image: url(images/checkboxes.png);
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    width: 14px;
+    height: 14px;
+    vertical-align:middle;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+}
+
+.qcFindingEntry .cmp.checkBox.checked			.box	{ background-position:  -17px -2px; }
+.qcFindingEntry .cmp.checkBox.checked.check	.box	{ background-position:  -17px -2px; }
+.qcFindingEntry .cmp.checkBox.checked.x		.box	{ background-position:  -32px -2px; }
+
+
+/*=============== Expression Dialog ======================*/
+
+.qcPropertyBindingDialog
+{
+}
+
+.qcPropertyBindingDialog .dijitDialogPaneContent
+{
+	padding: 6px;
+	border: 0px;
+}
+
+.qcPropertyBindingDialog .dataPanel
+{
+	width: 600px;
+	height: 300px;	
+	padding: 0px;
+}
+
+.qcPropertyBindingDialog .messagePanel
+{
+	width: 600px;
+	height: 80px;
+	font-family: Consolas, Courier New, Monospace;
+	font-size: 10pt;
+	white-space: pre-line;
+	overflow: auto;
+}
+
+.qcPropertyBindingDialog .qcDataSheet
+{
+	font-size: 80%;
+	width: 98%;
+	height: 98%;
+}
+
+.qcPropertyBindingDialog .qcDataSheet .data td
+{
+	font-family: Consolas, Courier New, Monospace;
+	font-size: 10pt;
+}
+
+.qcPropertyBindingDialog .qcDataSheet .bindToCell
+{
+	width: 100px;
+}
+
+.qcPropertyBindingDialog .qcDataSheet .expressionCell
+{
+}
+
+.qcPropertyBindingDialog .qcDataSheet .messagePanel
+{
+	width: 100%;
+	height: 100%;
+	font-family: Consolas, Courier New, Monospace;
+	font-size: 10pt;
+}
+
+
+/*=============== Conditional Styles Dialog ======================*/
+
+.qcConditionalStylesDialog
+{
+}
+
+.qcConditionalStylesDialog .dijitDialogPaneContent
+{
+	padding: 6px;
+	border: 0px;
+}
+
+.qcConditionalStylesDialog .qcDataSheet
+{
+	width: 500px;
+	height: 300px;
+	font-size: 80%;
+}
+
+.qcConditionalStylesDialog .qcDataSheet .data td
+{
+	font-family: Consolas, Courier New, Monospace;
+	font-size: 10pt;
+}
+.qcConditionalStylesDialog .qcDataSheet .conditionCell
+{
+}
+
+.qcConditionalStylesDialog .qcDataSheet .styleClassCell
+{
+	width: 100px;
+}
+
+
+/* ======================= */
+.cmb .cbTbl
+{
+	display: inline-table;
+	border-collapse: collapse;
+	border:0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.cmp .cbTbl .cbRow
+{
+	display: table-row;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.cmp .cbTbl .cbRow .cbCell
+{
+	display: table-cell;
+	padding: 0px 3px 0px 3px;
+	margin: 0px;
+	vertical-align: top;
+	border: none;
+}
+
+.cmp .cbTbl .cbRow .cbCell.arrowCell
+{
+	width: 14px;
+	text-align: center;
+	padding-top: 2px;
+}
+
+.cmp .cbTbl .cbRow .cbCell input
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	border-bottom: 1px solid #000000;
+	outline: none;
+}
+
+.cmp .cbTbl .cbRow .cbCell .arrow
+{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 0px;
+	outline: none;
+	background-color: transparent;
+}
+
+.cmp.entryBox .cbTbl .cbRow .cbCell
+{
+	border: 1px #999999 solid;
+}
+
+.cmp.entryBox .cbTbl .cbRow .cbCell.arrowCell
+{
+	border: 1px #999999 solid;
+	background-color: #eeeeee;
+}
+
+.cmp.entryBox .cbTbl .cbRow .cbCell input
+{
+    border: 0px;
+}
+
+.printable .arrow,
+.printable .qcFindingEntry .cmp .arrow,
+.printable .cmp .cbTbl .cbRow .cbCell .arrow
+{
+	background-image: none;
+	display: none;
+}
+
+.cmp .actionButton
+{
+	width: 15px;
+	background-color: #efefef;
+	border: 1px #b5bcc7 solid;
+    height: 14px;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.cmp .actionButton .dijitButton {
+    margin: 0px;
+    vertical-align: top;
+}
+
+.cmp .actionButton .dijitButton .dijitButtonNode
+{
+	border: 0px;
+	background-color: transparent;
+	background-image: none;	
+	padding: 0px;
+	border-radius: 0px;
+	box-shadow: none;	
+}
+
+.cmp .actionButton .dijitButtonText
+{
+	margin: 0px;
+	padding: 0px;
+    font-size: 80%;
+    font-weight: bold;
+    vertical-align: top;
+}

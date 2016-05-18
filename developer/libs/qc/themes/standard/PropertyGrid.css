@@ -1,0 +1,337 @@
+﻿.qcPropertyGrid
+{
+/*	
+    overflow:scroll;
+    border: 1px #999999 solid;
+*/
+}
+
+.qcPropertyGrid .navigator
+{
+	display: none;
+	font-size: 80%;
+	font-weight: bold;
+	border-bottom: double #999999;
+}
+
+.qcFindingEntry .entryBox .button
+{
+    display: table-cell;
+    width: 14px;
+    height: 100%;
+    background-color: #eeeeee;
+    border-left: 1px #999999 solid;    
+    background-image: url("images/commonFormArrows.png");
+    background-position: -36px 53%;
+    background-repeat: no-repeat;        	   	
+}
+        
+
+.qcPropertyGrid .grid
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.qcPropertyGrid .help
+{
+	display: none;
+}
+
+.qcPropertyGrid.sectionTabs
+{
+    overflow:scroll;
+    border: 0px #999999 solid;
+}
+        
+.qcPropertyGrid .tabs
+{
+    width: 100%;
+    height: 100%;
+}
+        
+.qcPropertyGrid .dijitTabPane
+{
+    padding: 0px;
+}
+        
+.qcPropertyGrid .grid table
+{
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    font-size: 80%;
+    /*table-layout: fixed;*/
+}
+
+.qcPropertyGrid .grid td
+{
+    border: 0px solid #999999;
+    text-align: left;
+    vertical-align: top;
+    padding: 0px;
+    margin: 0px;
+    /*width: 50%;*/
+    width:auto;
+}
+     
+.qcPropertyGrid .grid .invalidValue td
+{
+    background-color: #f77777;
+}
+      
+.qcPropertyGrid .grid td.labelCell
+{
+    border-bottom: 1px solid #999999;
+    padding-left: 4px;
+    vertical-align: middle;
+    text-align: left;
+    max-width: 50%;        
+}
+
+.qcPropertyGrid .grid td.infoCell
+{
+    border-bottom: 1px solid #999999;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    text-align:center;
+    vertical-align: middle;
+    width: 12px;
+    max-width: 12px;
+    cursor: pointer;
+}
+
+.qcPropertyGrid .grid td.infoCell.invalidValue 
+{
+    border-bottom: 1px solid #999999;
+    background-color: #cc3333;
+}
+.qcPropertyGrid .grid td.labelCell div
+{
+	display: inline-block;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+        
+.qcPropertyGrid .grid td.dataCell
+{
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    font-weight: bold;
+}
+
+.qcPropertyGrid .grid td.dataCell.isDefaultValue
+{
+    font-weight: normal;
+}
+        
+.qcPropertyGrid .grid td.groupCell
+{
+    width: 100%;
+    font-weight: bold;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #999999;      
+    cursor: pointer;  	
+	background-color: #f5f5f5;
+}
+        
+.qcPropertyGrid.sectionTabs .grid td.groupCell
+{
+    width: 100%;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #999999;      
+    cursor: pointer;  	
+	background-color: #ffffff;   	
+}        
+        
+.qcPropertyGrid .expander
+{
+    display: inline-block;
+    background-image: url('images/treeExpandImages.png');
+    width: 16px;
+    height: 16px;
+    margin-left: 0px;
+    background-position: 1px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+        
+        
+.qcPropertyGrid .expander.expanded 
+{
+    background-position: -35px 0px;
+}
+        
+.qcPropertyGrid .expander.collapsed
+{
+    background-position: 1px 0px;
+} 
+        
+.qcPropertyGrid .groupHeader
+{
+    display: inline-block;
+    padding-left: 4px;
+    font-weight: bold;
+    vertical-align: middle;
+}        
+        
+.qcPropertyGrid .dijitTextBox
+{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+        
+        
+.qcPopUpPropertyEditor
+{
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+	padding: 0px;
+}
+
+.qcPopUpPropertyEditor .editorRow
+{
+	display: table-row;
+	border: 0px;
+	padding: 0px;
+}
+
+.qcPopUpPropertyEditor .textBoxCell
+{
+	display: table-cell;
+	text-align: left;
+	vertical-align: top;
+}
+
+.qcPopUpPropertyEditor .dropDownButtonCell
+{
+	display: table-cell;
+	text-align: right;
+	vertical-align: top;
+	width: 18px;
+	background-color: #efefef;
+	border-left: 1px #b5bcc7 solid;
+    font-weight: bold;
+}
+
+.qcPopUpPropertyEditor .dropDownButtonCell .dijitButton
+{
+	margin: 0px;
+}
+
+.qcPopUpPropertyEditor .dropDownButtonCell .dijitButtonNode
+{
+	border: 0px;
+	background-color: transparent;
+	background-image: none;	
+	padding: 0px;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.qcPopUpPropertyEditor .popupEditorButton .dijitButtonNode
+{
+	border: 0px;
+	background-color: transparent;
+	background-image: none;	
+	padding: 0px;
+	border-radius: 0px;
+	box-shadow: none;	
+}
+
+.qcPopUpPropertyEditor .dropDownButtonCell .dijitButtonText
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.qcPopUpPropertyEditor .dijitArrowButtonInner
+{
+    background-image: url("images/commonFormArrows.png");
+    background-position: -37px 53%;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+	height: 13px;
+	width: 13px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.qcPropertyGrid .titleBar 
+{
+    display: none;
+    width: 100%;
+    height: 20px;
+    background-color: #efefef;
+    font-size: 8.25pt; 
+    padding:0px;
+    margin: 0px; 
+    border-bottom: 1px solid #B5BCC7;
+    position: relative;
+}
+
+.qcPropertyGrid.showTitlebar .titleBar 
+{
+    display: block;
+}
+
+.qcPropertyGrid .titleBar .textNode
+{
+    padding: 4px;
+}
+.qcPropertyGrid .titleBar .button
+{
+    position: absolute;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px transparent solid;
+    background-clip: content-box;
+}
+
+.qcPropertyGrid .titleBar .button:hover
+{
+    background-color: #fff799;
+}
+
+.qcPropertyGrid .titleBar .button.categoryButton 
+{
+    right: 32px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPYwCBihlb/6NjsAQxAKT4+/evUPwFjL99+0K8ISCFX79+BGMgF86GGVBWVvY/OTnlf2BQ4H8HRwdMQ0EKP316B9YMw69ePibNBU8e3vx/58Z5sOYbl0/+v3bxGNyApRuP/5+5bP//7plb/tf1rQSLofBBCi+d2f//2L51/w/tWPH/4I7lYEy0C0AApBgdQ6UYloFdsO9/18zNQBtXQV2AyqctWLoJFgYgG5HDAMHH6wWCAKQYX0JauvHY/xlgP2/5Xw/1MwofpBBfQiIIQAppmpCISso0TUj4k/LK/wC9iX5vQYJM3QAAAABJRU5ErkJggg==);
+}
+
+.qcPropertyGrid.showGroups .titleBar .button.categoryButton 
+{
+    background-color: #fff799;
+    border-color: #fab208;
+}
+
+
+.qcPropertyGrid .titleBar .button.alphaButton
+{
+    right: 8px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFnSURBVDhPY0AG/mWH/kOZWMGDBw9A8v+hNCpoW3jtv2v29v9LN53HaQheA+IaDv2PrNjx3zVpGukGnL/1/r93wU6woHFA5/+Dp+9jNQSnAdmdx/7HVu/63zln/3/byAn/M+rXkmaAf9FuuMDhsw/+G/t3/L/35B2GIVgNyOs+9t8masr/jXuvggUdoiaADYjIn0ucAaQAnAZs75v7f1PLpP/7Z634v6l9+v+lGbn/L61fTbwLNtU2wwXmR8b87/N0RFHwHwhANLoBMHE4ODR9/v86fdX/V3ZuwzCgrq7u/5YtW8AG7Nq1639paSlIGKHu6eUb/ye5+/5fWZKHaioUwGyHYQxvLMpv/j/VzeY/yCCoEAoAaRATEwNr5uLiQjXg2KK1//vt7f5fWLcKLri5ugTDoEePHoENuHXrFqpcr43R/xoT7f8bGqr/ry0v+N9iZ/Z/XV0FhgEgW1taWjCdTwpA1czAAAAaXidra4m7BQAAAABJRU5ErkJggg==);
+}
+
+.qcPropertyGrid.sortProperties .titleBar .button.alphaButton 
+{
+    background-color: #fff799;
+    border-color: #fab208;
+}

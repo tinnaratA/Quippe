@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require([
+                "dojo/_base/array",
+                "dojo/Deferred",
+                "dojo/dom",
+                "dojo/request",
+                "dojo/when",
+                "qc/_core",
+                "samples/LabResultsForDXPrompt",
+                "samples/Application"
+            ], function(array, Deferred, dom, request, when, core, ReferenceLink, Application) {
+                var application = new Application();
+
+                application.startup();
+                application.placeAt(dom.byId("applicationContainer"));
+                application.init().then(function () {
+                    // If there is no Quippe.IPatientExternalEntriesService service, then we intercept calls to the 
+                    // Quippe/PatientData/Patient/ExternalEntries/LabResults web service and return fake data
+                    if (array.indexOf(core.settings.services, "Quippe.IPatientExternalEntriesService") == -1) {
+                        var originalGet = request.get;
+                        var fakeEntries = [
+                            {
+                                timeRecorded: "\/Date(1435299600000)\/",
+                                medcinId: 12736,
+                                value: 5.8,
+                                codeMaps: [
+                                    {
+                                        vocab: "loinc",
+                                        code: "17855-8",
+                                        description: "hemoglobin A1c"
+                                    }
+                                ]
+                            },
+                            {
+                                timeRecorded: "\/Date(1435299600000)\/",
+                                medcinId: 12190,
+                                value: 220,
+                                unit: "mmol\/L",
+                                codeMaps: [
+                                    {
+                                        vocab: "loinc",
+                                        code: "14647-2",
+                                        description: "Total plasma cholesterol level"
+                                    }
+                                ]
+                            },
+                            {
+                                timeRecorded: "\/Date(1435299600000)\/",
+                                medcinId: 81329,
+                                value: 20,
+                                unit: "mmol\/L",
+                                codeMaps: [
+                                    {
+                                        vocab: "loinc",
+                                        code: "28641-9",
+                                        description: "Venous HCO3 level"
+                                    }
+                                ]
+                            },
+                            {
+                                timeRecorded: "\/Date(1435299600000)\/",
+                                medcinId: 12339,
+                                value: 215,
+                                unit: "mmol\/L",
+                                codeMaps: [
+                                    {
+                                        vocab: "loinc",
+                                        code: "2339-0",
+                                        description: "Random blood glucose level"
+                                    }
+                                ]
+                            }
+                        ];
+
+                        function matchOnMedcinId(medcinIds) {
+                            return function(item) {
+                                return medcinIds.indexOf(item.medcinId) != -1;
+                            };
+                        }
+
+                        request.get = function (url, options) {
+                            if (url == core.serviceURL("Quippe/PatientData/Patient/ExternalEntries/LabResults")) {
+                                // Return lab results with our fake entries filtered down to the relevant tests for the diagnosis
+                                var deferred = new Deferred();
+                                deferred.resolve({
+                                    entries: {
+                                        patientId: options.query.PatientId,
+                                        entry: array.filter(fakeEntries, matchOnMedcinId(options.query.MedcinIds))
+                                    }
+                                });
+
+                                return deferred.promise;
+                            }
+
+                            else {
+                                return originalGet.apply(this, arguments);
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <style type="text/css">
+            .toolBarPane {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Incorporating External Patient Data</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Incorporating External Patient Data</h1>
+
+            <p>
+                Quippe has an interface, <code>Quippe.IPatientExternalEntriesService</code>, that allows it to pull in patient
+                data from external sources to display in the note workspace or merge new findings into the note itself. This
+                interface has the following methods:
+            </p>
+
+            <ul>
+                <li><code>GetCurrentConditions</code> - Currently active conditions for the patient</li>
+                <li><code>GetCurrentMedications</code> - Medications that the patient is currently prescribed</li>
+                <li><code>GetLabResults</code> - Recent lab results that have come in for the patient</li>
+                <li><code>GetAllergies</code> - Substances that the patient has hypersensitivities/allergies to</li>
+                <li><code>GetFamilyHistory</code> - Relevant family history for the patient</li>
+                <li><code>GetImmunizations</code> - Immunizations that the patient has received</li>
+                <li><code>GetVitals</code> - Recent vital sign readings for the patient</li>
+            </ul>
+
+            <p>
+                These methods are also accessible from the client via web services under
+                <code>Quippe/PatientData/Patient/ExternalEntries</code>. You can use the
+                <a href="/ServiceTester.htm" target="_new">web service tester</a> to explore these methods.
+            </p>
+
+            <p>
+                If your EHR platform implements the <a href="http://hl7.org/fhir/" target="_new">FHIR</a> standard, Quippe
+                contains an implementation of this interface,
+                <code>Quippe.Demo.Services.FHIRPatientExternalEntriesService</code>, that allows you to access this data
+                through Quippe with very little up-front work. All you need to do is add a line to your
+                <code>DataServices.xml</code> file:
+            </p>
+
+            <pre><code class="xml">
+    &lt;Service Contract="Quippe.IPatientExternalEntriesService"
+                Implementation="Quippe.Demo.Services.FHIRPatientExternalEntriesService, Quippe.Demo.Services"
+                FHIRBaseURL="[URL of your EHR platform's FHIR endpoint]"
+                OAuthToken="[OAuth token, if any, required to access FHIR]" /&gt;
+            </code></pre>
+
+            <p>
+                While Quippe includes an implementation of this interface using FHIR, if you have this data stored in other
+                systems, you are free to provide your own implementation of the interface designed to access these systems. Once
+                you've added either our default implementation of the service or your own, you can access its data from within
+                Quippe to drive some powerful functionality. In this sample, we'll be using this service to merge in recent,
+                relevant lab results for the patient when the user prompts on a particular diagnosis.
+            </p>
+
+            <p>
+                The logic for this functionality in contained within the <code>LabResultsForDXPrompt.js</code> file. In addition
+                to being able to explore this functionality in the sample browser, you can use it within your own implementation
+                of Quippe by going to Tools-&gt;Options-&gt;Advanced and adding <code>samples.LabResultsForDXPrompt</code> to the
+                <code>Extensions:</code> text box.
+            </p>
+
+            <p>
+                The first thing that the extension does is to subscribe to the <code>/noteEditor/listAdded</code> topic, which
+                is published whenever a list of findings is added to the note. We then do a check on the data in the list to
+                make sure that this is a diagnosis prompt operation, as opposed to an intelligent prompt or a list merge
+                operation from the search bar:
+            </p>
+
+            <pre><code class="js">
+    topic.subscribe("/noteEditor/listAdded", function (list) {
+        if (!list || list.listType != "Prompt" || !list.medcinId) {
+            return;
+        }
+            
+        ...
+    });
+            </code></pre>
+
+            <p>
+                We then get the section that we're going to merge the lab results into (<code>previousTestsSection</code>,
+                identified by the group key "S18") and the section containing the tests that we should check for lab results
+                (<code>testsSections</code>, identified by group key "S10"). If either of these sections don't exist, the
+                extension can't function, so we return.
+            </p>
+
+            <pre><code class="js">
+    var previousTestsSections = query(".part", noteEditor.note.domNode)
+        .map(registry.byNode)
+        .filter(matchOnGroupKey("S18"));
+        
+    if (!previousTestsSections || previousTestsSections.length == 0) {
+        return;
+    }
+
+    var previousTestsSection = previousTestsSections[0];
+
+    var testsSections = query(".part", noteEditor.note.domNode)
+        .map(registry.byNode)
+        .filter(matchOnGroupKey("S10"));
+
+    if (!testsSections || testsSections.length == 0) {
+        return;
+    }
+            
+    var testsSection = testsSections[0];
+            </code></pre>
+
+            <p>
+                We then examine each item being added to the note and see if it's a test by checking the <code>termType</code>
+                property and seeing if it's been merged into <code>testsSection</code>. If it matches this criteria, we add it
+                to the list of tests that we're going to check for lab results.
+            </p>
+
+            <pre><code class="js">
+    array.forEach(list.item, function (item) {
+        if (item.termType == 3) {
+            if (!query(".finding", testsSection.domNode).map(registry.byNode).some(matchOnMedcinId(item.medcinId))) {
+                return;
+            }
+
+            if (testMedcinIds.length &gt; 0) {
+                testMedcinIds += ",";
+            }
+
+            testMedcinIds += item.medcinId.toString();
+        }
+    });
+            </code></pre>
+
+            <p>
+                Once we have our list of tests for the diagnosis, we can call into the web service to see if the patient has any
+                recent lab results for those tests. The web service that we're going to use is
+                <code>Quippe/PatientData/Patient/ExternalEntries/LabResults</code> which takes a <code>PatientId</code> parameter
+                of the patient whose lab results we need to fetch and an optional list of MEDCIN IDs, <code>MedcinIds</code>,
+                representing the list of findings that we should filter the lab results to.
+            </p>
+
+            <pre><code class="js">
+    request.get(core.serviceURL("Quippe/PatientData/Patient/ExternalEntries/LabResults"), {
+        handleAs: "json",
+        query: {
+            DataFormat: "JSON",
+            PatientId: core.Patient.id,
+            MedcinIds: testMedcinIds
+        }
+    }).then(function(data) {
+        ...
+    });
+            </code></pre>
+        
+            <p>
+                This web service returns the list of lab results for the patient filtered to <code>testMedcinIds</code>. The
+                last step we need to take is to resolve these findings so that they can be displayed in the note. To do so,
+                we call the <code>Quippe/NoteBuilder/ResolveTerms</code> web service method with our list of lab result MEDCIN
+                IDs and then take the resulting findings that are returned, create finding widgets for them, and add them to
+                <code>previousTestsSection</code>.
+            </p>
+
+            <pre><code class="js">
+    request(core.serviceURL("Quippe/NoteBuilder/ResolveTerms"), {
+        handleAs: "json",
+        query: {
+            MedcinIds: resolveList,
+            Culture: core.settings.culture,
+            DataFormat: "JSON",
+            PatientId: (core.Patient ? core.Patient.id : "")
+        },
+        preventCache: true
+    }).then(function (data) {
+        if (!(data.list.item instanceof Array) && data.list.item) {
+            data.list.item = [data.list.item];
+        }
+
+        if (!data.list.item || data.list.item.length == 0) {
+            return;
+        }
+
+        for (var j = 0; j &lt; data.list.item.length; j++) {
+            var item = data.list.item[j];
+            var entry = indexedEntries[item.medcinId.toString()];
+            var finding = item.isFreeText ? new FreeText(item) : core.createFindingEntry(item);
+
+            finding.setDetails(entry);
+            finding.startup();
+
+            if (entry.timeRecorded) {
+                finding.notation = "(" + DateUtil.formatDateTime(DateUtil.dateFromJSON(entry.timeRecorded)) + ")";
+            }
+
+            previousTestsSection.addElement(finding);
+        }
+
+        previousTestsSection.transcribe();
+        noteEditor.updateDisplay();
+    }, function (err) {
+        core.showError(err);
+    });
+            </code></pre>
+            
+            <p>
+                In the example below, you can see this extension in action. Create a new encounter with a template with the
+                "Tests" and "Previous Tests" sections (Basic Note is a good candidate) then do a search for something like
+                "Diabetes Mellitus" and click the "Merge Prompt" button. If you have registered Quippe's FHIR-based
+                implementation of <code>Quippe.IPatientExternalEntriesService</code> or have implemented your own version of the
+                service with <code>DataServices.xml</code>, we will call the server to get lab results for the patient. Otherwise
+                we will intercept the call and provide fake lab results to the extension so that you can get a feel for how an 
+                extension like this works without first having to have a functional implementation of the service.
+            </p>
+
+            <h2>Example:</h2>
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 800px"></div>
+        </div>
+    </body>
+</html>
+

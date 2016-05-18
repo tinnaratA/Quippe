@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+	    <title>Quippe Clinical Lens</title>
+
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+	    <link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" />
+	    <link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/Quippe/themes/Application.css" />
+        <link rel="stylesheet" type="text/css" href="libs/ClinicalLens/themes/Application.css" />
+
+		<link rel="icon" type="image/png" href="images/QuippeIconGloss.png" />
+		<link rel="apple-touch-icon" href="images/QuippeIconGloss.png" />
+		
+		<script type="text/javascript" src="libs/Quippe/DojoBootstrap.js"></script>
+
+		<script type="text/javascript">
+			var loadFailure = function (message) {
+				message = message || "An unknown error has occurred";
+
+				var element = document.getElementById('startupMessage');
+
+				if (element) {
+					element.innerHTML = message;
+					element.style.color = '#990000';
+					element.style.fontWeight = 'bold';
+				}
+			};
+
+			var loadApplication = function() {
+			    require(["ClinicalLens/Application", "dojo/topic", "dojo/dom", "dojo/when", "dojo/dom-construct", "dojo/io-query", "qc/_core"], function (Application, topic, dom, when, domConstruct, ioQuery, core) {
+					try {
+						domConstruct.destroy(dom.byId("startupMessage"));
+
+						var app = new Application();
+
+						when(app.init(), function () {
+						    var query = location.search ? ioQuery.queryToObject(location.search.substr(1)) : {};
+						    var patientId = query['patientId'] || query['P'] || query['p'] || '';
+
+					        app.placeAt(document.body);
+					        app.startup();
+
+					        if (document.referrer.indexOf('SMARTLensLauncher.htm') != -1) {
+					            var script = document.createElement('script');
+
+					            script.type = 'text/javascript';
+					            script.onload = function () {
+					                FHIR.oauth2.ready(function (smart) {
+					                    core.smart = smart;
+
+					                    topic.publish('/ClinicalLens/OpenPatient', 'open', smart.patient.id);
+					                });
+					            };
+
+					            script.src = getLibsPath() + 'Quippe/SMARTClient.js';
+					            document.getElementsByTagName('head')[0].appendChild(script);
+						    }
+
+						    else if (patientId) {
+						        topic.publish('/ClinicalLens/OpenPatient', 'open', patientId);
+						    }
+
+						    else {
+						        topic.publish('/ClinicalLens/OpenPatient');
+						    }
+						});
+					}
+
+					catch (ex) {
+						loadFailure(ex.Message || "An unknown error has occurred");
+					}
+				});
+			};
+
+			loadDojo(loadApplication, loadFailure);
+		</script>
+	</head>
+	<body class="claro" spellcheck="false">
+		<div id="startupMessage" style="margin: 60px;">
+			Loading Quippe Clinical Lens...<br />
+			<noscript>You must enable Javascript in your browser in order to use this application.</noscript>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<div class="qcTimingPanel">
+    <div data-dojo-attach-point="toolbarNode"></div>
+    <div class="qcGroupBox" data-dojo-attach-point="listNode">
+        <div class="heading">Timing Components</div>
+        <div class="componentList" data-dojo-attach-point="componentList" data-dojo-attach-event="onclick:onListTableClick">
+        </div>
+    </div>
+    <div class="qcGroupBox" data-dojo-attach-point="detailNode">
+        <div class="heading">Component Details</div>
+        <table class="detailTable">
+            <tr>
+                <td class="labelCell">Sequence:</td>
+                <td><div class="cell edit unitBox"><input type="text" data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="cmbSequencing" data-dojo-props="searchAttr: 'text', required: false" /></div></td>
+                <td />
+                <td><div data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="chkAsNeeded" id="${id}_chkAsNeeded"></div><label for="${id}_chkAsNeeded">As Needed</label></td>
+            </tr>
+            <tr>
+                <td class="labelCell">Perform:</td>
+                <td>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtOccurrence" data-dojo-props="regExp: '^\\d+$', invalidMessage: 'must be a whole number', required: false" /></div>
+                    <div class="cell label">to</div>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtOccurrence2" data-dojo-props="regExp: '^\\d+$', invalidMessage: 'must be a whole number', required: false" /></div>
+                    <div class="cell label">times</div>
+                </td>
+                <td class="labelCell">Every:</td>
+                <td>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtInterval" data-dojo-props="regExp: '^\\d+(?:\\.\\d+)?$', invalidMessage: 'must be a number', required: false" /></div>
+                    <div class="cell label">to</div>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtInterval2" data-dojo-props="regExp: '^\\d+(?:\\.\\d+)?$', invalidMessage: 'must be a number', required: false" /></div>
+                    <div class="cell edit unitBox"><input type="text" data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="cmbIntervalUnit" data-dojo-props="searchAttr: 'text', required: false" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelCell">Repeat:</td>
+                <td>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtRepeat" data-dojo-props="regExp: '^\\d+$', invalidMessage: 'must be a whole number', required: false" /></div>
+                    <div class="cell label">to</div>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtRepeat2" data-dojo-props="regExp: '^\\d+$', invalidMessage: 'must be a whole number', required: false" /></div>
+                    <div class="cell label">times</div>
+                </td>
+                <td class="labelCell">Duration:</td>
+                <td>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtDuration" data-dojo-props="regExp: '^\\d+(?:\\.\\d+)?$', invalidMessage: 'must be a number', required: false" /></div>
+                    <div class="cell label">to</div>
+                    <div class="cell edit numBox"><input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="txtDuration2" data-dojo-props="regExp: '^\\d+(?:\\.\\d+)?$', invalidMessage: 'must be a number', required: false" /></div>
+                    <div class="cell edit unitBox"><input type="text" data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="cmbDurationUnit" data-dojo-props="searchAttr: 'text', required: false" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelCell">Time of Day:</td>
+                <td>
+                    <div class="cell edit unitBox"><input type="text" data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="cmbTimeOfDay" data-dojo-props="searchAttr: 'text', required: false" /></div>
+                </td>
+                <td class="labelCell">Start Date:</td>
+                <td>
+                    <div class="cell edit dateBox"><input type="text" data-dojo-type="dijit/form/DateTextBox" data-dojo-attach-point="txtStartTime" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelCell">Priority:</td>
+                <td>
+                    <div class="cell edit unitBox"><input type="text" data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="cmbPriority" data-dojo-props="searchAttr: 'text', required: false" /></div>
+                </td>
+                <td class="labelCell">End Date:</td>
+                <td>
+                    <div class="cell edit dateBox"><input type="text" data-dojo-type="dijit/form/DateTextBox" data-dojo-attach-point="txtEndTime" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelCell">Note:</td>
+                <td colspan="3">
+                    <div class="cell edit noteBox"><input type="text" data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtNote" /></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>

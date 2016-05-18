@@ -1,0 +1,625 @@
+﻿@import url(XmlFormat.css);
+
+.clinicalLensApp .toolbarPane, .clinicalLensApp .chartPane
+{
+    padding: 0px;
+}
+
+.clinicalLensApp .clinicalLensContent {
+    padding: 6px 0px 0px;
+}
+
+.clinicalLensApp .categoriesPane {
+    border: none;
+    padding: 0px;
+}
+
+.clinicalLensApp .sidebar {
+    width: 278px;
+    border-left: 1px #b5bcc7 solid;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer {
+    padding: 5px;
+}
+
+.clinicalLensApp .sidebar .quippeSidebarContainer>.contentPane {
+    padding: 8px;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .dijitComboBox {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .dijitSliderButtonContainerH {
+    padding: 0px !important;
+}
+
+.clinicalLensApp .warning {
+    border: 1px solid #B5BCC7;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACQklEQVR42p2ST2gTQRTG3+xuNpttsjGN2bikVVMQTZU2YgRRRL0VvHqoCvagh0Lbg1jxIGpzUBEKFrEiiCDtqXfxpPTSYNEqVANCm9qasoYk3fzPJm6yO2420BBssORdZubxze+9efMhaBHpNx4e0WYRENawovCOITG7kw61AmTnDs3T3nPnAQNW1t7P2a9sXN41QHot+AkLu2QNXCKhWoDCl3dVTSn7nNdjkV0B0rPeqLnrQDehicZZxS5QRPGbY+hX/38BqVeeQcLKznb4L1JnxsJGbuGZD2S9C7VYGHAOxz+0BGy94BmgTPEO31EO4Tycvkcb+Y+TdlBzEpTWNpKaogiu0aS6I0B6KTyhOPYmc/iESUuE4GSw2xB8erAJxL4LIIdDSiVTvMOPJab+ASSeOgWgyAjXd4zFpZ/6w0vQf1cA/Rdg+VEMEMMDRlbIL0fyWNX2u8elTBMgOeV6a+KZAcbTRWq5VSN35FYnIF3xYzJlnAlHn/6MlYqSKM24b0s3tgGxx50BgkbznL/Hiot6dYyNC95R1pCsPy/Wq5BmQDQPmc/RvKZoAU8wu4JiDx0IEShsOUj3mjhad03DcKxwyljl2GJj6hY3KHEJF9crIc9E7iwSg/arFIunbb0OuyolgLBS22LXtXonyZnGrLWCCqRzL2SWUtmqDIPo94Q9bvORPJb/AK5UmjzhHKkDpOlmuyAzA5hEkPuuRpF4nyvv8WMztBFbC1oZrY7bvqZk7ng7AJ5ML9Z666nt2wHU7PMXoMPhmev51YUAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    padding-left: 30px !important;
+    background-position-x: 5px;
+    background-position-y: 5px;
+}
+
+.clinicalLensApp .warning .diagnosis {
+    text-decoration: underline;
+    color: #86AACB;
+    cursor: pointer;
+}
+
+.clinicalLensApp .focusListSizeTitle {
+    padding-bottom: 5px;
+}
+
+.clinicalLensApp .toolbarPane .title
+{
+    float: right;
+    margin-top: 7px;
+    font-size: 12pt;
+    margin-right: 8px;
+}
+
+.clinicalLensApp .focusListSizeLegend {
+    padding-top: 5px;
+    padding-bottom: 13px;
+    font-size: 8pt;
+}
+
+.clinicalLensApp .focusListSizeLegendFocused {
+    display: inline-block;
+}
+
+.clinicalLensApp .focusListSizeLegendBroad {
+    display: inline-block;
+    text-align: right;
+    float: right;
+}
+
+.clinicalLensApp .importLink
+{
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    cursor: pointer;
+    color: #0000ff;
+}
+
+.clinicalLensApp .importBox .label
+{
+    font-weight: bold;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .qcSearchBox {
+    width: 100%;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .searchBoxContainer {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-right: 7px;
+}
+
+.clinicalLensApp .noteContainer {
+    padding: 0px !important;
+    width: 100%;
+    height: 100%;
+}
+
+.clinicalLensApp .xmlDisplay
+{
+    font-family: Consolas, Courier New, monospace;
+    font-size: 13px;
+    line-height: 1.5em;
+    color: #000000;
+}
+
+.clinicalLensApp .toolbarPane {
+    height: 35px;
+}
+
+.openPatientDialog {
+    width: 441px;
+    height: 391px;
+}
+
+.openPatientDialog .buttonArea {
+    text-align: right;
+    margin-top: 25px;
+}
+
+.openPatientDialog .contentArea {
+    width: 425px;
+    height: 280px;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .dijitTitlePane, .clinicalLensApp table.dashboard .dijitTitlePane {
+    width: 100%;
+    display: inline-block;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .dijitTitlePane {
+    margin-bottom: 10px;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .dijitTitlePaneContentInner {
+    height: 170px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0px !important;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .activeProblemsPane .dijitTitlePaneContentInner {
+    height: 240px;
+}
+
+.clinicalLensApp .sidebar .clinicalLensSidebarContainer .screeningPane .dijitTitlePaneContentInner {
+    height: 115px;
+}
+
+.clinicalLensApp table.dashboard .dijitTitlePaneContentInner {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0px !important;
+}
+
+.clinicalLensApp table.dashboard {
+    width: 100%;
+    height: 100%
+}
+
+.clinicalLensApp .sidebar .patientName {
+    font-weight: bold;
+}
+
+.clinicalLensApp .sidebar .patientStats {
+    margin-bottom: 12px;
+}
+
+.clinicalLensApp table.dashboard .dijitTitlePaneContentInner fieldset {
+    margin: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #B5BCC7;
+}
+
+.clinicalLensApp table.dashboard td {
+    width: 25%;
+    padding: 5px;
+    vertical-align: top;
+    height: 50%;
+}
+
+.clinicalLensApp div.codedFinding:not(.elem) {
+    padding: 5px;
+    padding-left: 14px;
+}
+
+.clinicalLensApp .checkboxListIcon {
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAAAFxJREFUOE+9kEEKAEAIAvv/v3pXywaCB0+t22EkFBSKqorMLOZ6Llq4FDcPTkDf3oAKHUjTiTSdtHx/EZfi5sEJ6NsbUKEDaTqRppOW7y/iUtw8OAF9ewMqfKfiAMJDpYExnfwBAAAAAElFTkSuQmCC);
+    float: right;
+}
+
+.entireChartPane.entriesSelectable .codedFinding:not(.selected) {
+    color: #8B8B8B;
+}
+
+.clinicalLensApp .selectMode .checkboxListIcon {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AAABdSURBVDhPvZBBCkBBCEK7effrUv8zgeDCVeO0eBIKCkVVRWZ+zPFctHApbh6cgL69ARU6kKYTaTppef4iLsXNgxPQtzegQgfSdCJNJy3PX8SluHlwAvr2BlR4T8UP+zGcpmx5pb8AAAAASUVORK5CYII=) !important;
+}
+
+.selectAllEntriesCheckbox {
+    display: none;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAAABZJREFUKFNjIBb8xwtGFVFfEQHAwAAANMEq5EFfgYcAAAAASUVORK5CYII=);
+    float: right;
+    margin-top: 2px;
+}
+
+.selectMode .selectAllEntriesCheckbox {
+    display: inline-block !important;
+}
+
+.selectMode .selectAllEntriesCheckbox.selected {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AAAC1SURBVChTjc+xEYMgGAVgCgsLBuDOBRiA0ppzGEZwBHdgAywdwMKCASgtKCgtLCnMk98kTUzyCu7n8XkC+zfHp2zbllLC8A0ZY+q6HsfxFoUQqqoCWtf1FnVdh77ve8xkTuS93/e9gGOaJpRCCGrIsGVZOOdt26LNOUspUVpr6RsyDK+gA7hhGDAopUgghZTfvRzui3WeZxJIIc+LwzVNg63WmhoKmffr4JxzMcZrX3KhH2HsAYHj3ovyY5p1AAAAAElFTkSuQmCC) !important;
+}
+
+.selectMode .selectAllEntriesCheckbox.partiallySelected {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AAACjSURBVChTjc/BCoQgFIXhHrsMbCEEges2bty0MAJFECUK6c3m0JViYJqZfxG32ydY9W/Hp7ZtW9cVwzc0jiNjbJ7nRxRCaJoGKMb4iKSUdV0rpTDfyHu/7/sJjmVZIDjntCnIOde27TAM2OachRBA0zTRmYLwF/QBTmuNoe97EqggTJfDffG01pJAN0JwXddB4Na0od4QgjPGpJTK+1lBP6qqF+3UzCL9R6boAAAAAElFTkSuQmCC) !important;
+}
+
+.selectMode .codedFinding:not(.selected) {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAAABZJREFUKFNjIBb8xwtGFVFfEQHAwAAANMEq5EFfgYcAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 0px 2px; 
+}
+
+.selectMode .codedFinding.selected {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AAAC1SURBVChTjc+xEYMgGAVgCgsLBuDOBRiA0ppzGEZwBHdgAywdwMKCASgtKCgtLCnMk98kTUzyCu7n8XkC+zfHp2zbllLC8A0ZY+q6HsfxFoUQqqoCWtf1FnVdh77ve8xkTuS93/e9gGOaJpRCCGrIsGVZOOdt26LNOUspUVpr6RsyDK+gA7hhGDAopUgghZTfvRzui3WeZxJIIc+LwzVNg63WmhoKmffr4JxzMcZrX3KhH2HsAYHj3ovyY5p1AAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+}
+
+.selectMode .codedFinding {
+    display: block !important;
+    margin-left: -6px !important;
+    padding-left: 18px !important;
+    cursor: pointer;
+}
+
+.legendColorItem {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid #B5BCC7;
+    vertical-align: middle;
+}
+
+.legendColorItem.legendDiagnosisHighlight {
+    background-color: #FFF799;
+}
+
+.legendColorItem.legendSpecialtyHighlight {
+    background-color: #C3E2FD;
+}
+
+.legendColorItem.legendDiagnosisHighlight.legendSpecialtyHighlight {
+    background-color: #C7EBC7;
+}
+
+.clinicalLensApp table.dashboard .diagnosisHighlight {
+    background-color: #FFF799;
+}
+
+.clinicalLensApp table.dashboard .specialtyHighlight {
+    background-color: #C3E2FD;
+}
+
+.clinicalLensApp table.dashboard .specialtyHighlight.diagnosisHighlight {
+    background-color: #C7EBC7;
+}
+
+.clinicalLensApp .encountersHidden {
+    display: none !important;
+}
+
+.clinicalLensApp .activeProblemsHidden {
+    display: none !important;
+}
+
+.clinicalLensApp .specialtiesHidden {
+    display: none !important;
+}
+
+.clinicalLensApp .sidebar .listShow {
+    font-weight: bold;
+}
+
+.clinicalLensApp .sidebar .listHide {
+    color: #cccccc;
+    font-weight: normal;
+}
+
+.clinicalLensApp .flowsheetPane {
+    padding: 0px !important;
+}
+
+.clinicalLensApp .flowsheetPane .qcFlowsheet td.currentCell {
+    display: none !important;
+}
+
+.clinicalLensApp .flowsheetPane .qcFlowsheet td.labelCell {
+    border-right: 3px double #999999;
+}
+
+.openPatientDialog .patientTablePanel
+{
+    max-height: 254px;
+    overflow: auto;
+    border: 1px #999999 solid;
+    margin: 0px;
+    width: 100%;
+}
+    
+.openPatientDialog .patientTablePanel table
+{
+	width: 100%;
+    border-collapse: collapse;
+    margin: 0px;
+}
+
+.openPatientDialog .patientTablePanel tr
+{
+    cursor: pointer;
+    border-top: 1px #999999 solid;
+}
+
+.openPatientDialog .patientTablePanel tr.odd
+{
+    background-color: #ffffff;
+}
+    
+.openPatientDialog .patientTablePanel tr.even
+{
+     background-color: #ffffff;
+}
+    
+.supportsHover .openPatientDialog .patientTablePanel tr:hover
+{
+    background-color: #d8edff;
+}
+    
+.openPatientDialog .patientTablePanel tr.selected
+{
+    background-color: #d8edff;
+}   
+
+.openPatientDialog .patientTablePanel td
+{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}  
+
+.openPatientDialog .chooseMethodStep {
+    text-align: center;
+    height: 260px;
+}
+
+.openPatientDialog .chooseMethodStep .buttonContainer {
+    padding-top: 45px;
+}
+
+.openPatientDialog .chooseMethodStep .dijitButton {
+    margin-top: 15px;
+}
+
+.openPatientDialog .chooseMethodStep .dijitButtonNode {
+    width: 200px;
+    height: 50px;
+}
+
+.openPatientDialog .chooseMethodStep .dijitButtonNode .dijitButtonContents {
+    margin-top: 17px;
+}
+
+.openPatientDialog .importPatientStep table {
+    width: 100%;
+}
+
+.openPatientDialog .importPatientStep .dijitTextBox {
+    width: 100%;
+}
+
+.openPatientDialog .importPatientStep .dijitTextBox.dijitComboBox {
+    width: 15em !important;
+}
+
+.clinicalLensApp .dashboard .groupHeader {
+    padding: 4px;
+    border-bottom: 1px solid #B5BCC7;
+    border-top: 1px solid #B5BCC7;
+    background-color: #E9E9E9;
+    padding-left: 10px;
+}
+
+.supportsHover .clinicalLensApp .diagnosisListView .qcListViewItem:hover {
+    background-color: #FFFBCC;
+}
+
+.supportsHover .clinicalLensApp .diagnosisListView .qcListViewItem:hover td {
+    border-color: #FBF39C;
+}
+
+.clinicalLensApp .diagnosisListView .selected {
+    background-color: #FFF799 !important
+}
+
+.clinicalLensApp .diagnosisListView .selected td {
+    border-color: #F3E86F !important;
+}
+
+.clinicalLensApp .chartPane .qcSplitButton {
+    background-color: white;
+}
+
+.loadingShim:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.loadingShim:before {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.loadingShim {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loadingShim:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loadingShim:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.qcNewEncounterDialog2 .contentArea>.header:first-child {
+    display: none;
+}
+
+.qcNewEncounterDialog2 .contentArea .patientTablePanel {
+    display: none;
+}
+
+.qcNewEncounterDialog2 .qcResizer {
+    display: none !important;
+}
+
+.qcOpenEncounterDialog .contentArea .section:first-child {
+    display: none;
+}
+
+.qcOpenEncounterDialog .contentArea {
+    height: 210px !important;
+}
+
+.qcOpenEncounterDialog {
+    height: 290px !important;
+}
+
+.openPatientDialog .importPatientButtonContainer {
+    text-align: right;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.clinicalLensApp .qcFlowsheet .graphOverlay {
+    position: absolute;
+    z-index: 200;
+    overflow: hidden;
+    background-color: white;
+}
+
+.clinicalLensApp .qcFlowsheet .graphOverlay .dijitDialogCloseIcon {
+    top: 15px;
+    right: 15px;
+}
+
+.clinicalLensApp .qcFlowsheet .graphOverlay .graphTitle {
+    top: 15px;
+}
+
+.clinicalLensApp .dashboard .entryText {
+    display: table-cell;
+    width: 100%;
+    padding-right: 14px;
+}
+
+.clinicalLensApp .dashboard .entryDate {
+    display: table-cell;
+    width: 75px;
+}
+
+.clinicalLensApp .dashboard .dateHeader {
+    padding: 4px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.clinicalLensApp .dashboard .groupHidden {
+    display: none;
+}
+
+.clinicalLensApp .warningsContentPane {
+    padding: 5px;
+}

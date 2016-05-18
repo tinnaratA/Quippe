@@ -1,0 +1,31 @@
+﻿.qcddAvatar
+{
+	display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index:99999999;
+    overflow:hidden;
+    padding: 2px;
+    white-space:nowrap;
+    visibility: hidden;
+    max-width: 250px;
+    height: 1.2em;
+    text-overflow: ellipsis;
+}
+
+.qcddAvatar .icon
+{
+	float: left;
+	width: 16px;
+	height: 16px;	
+	margin-right: 4px;
+}
+    
+.qcddAvatar .text
+{
+    display: inline;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}

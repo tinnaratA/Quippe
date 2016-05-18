@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+
+                require(["dojo/dom", "dojo/when", "qc/_core", "samples/CustomToolbarApp"],
+                    function(dom, when, core, Application) {
+                        var application = new Application();
+
+                        application.startup();
+                        application.placeAt(dom.byId("applicationContainer"));
+
+                        application.init();
+                    }
+                );
+        </script>
+
+        <style type="text/css">
+            .toolBarPane {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Customizing the Toolbar</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Customizing the Toolbar</h1>
+
+            <p>
+                Now that we have our skeleton application class created, we can start to walk through various customizations that
+                can be made to the Quippe workspace, starting with the toolbar. To add or remove items from the toolbar, we need
+                to override the <code>_initToolbar</code> function. Just like in the previous sample where we overrode the
+                <code>getContextActions</code> function, the first thing that we're going to do is call
+                <code>this.inherited(arguments)</code> to call the base class' version of this method:
+            </p>
+
+            <pre><code class="js">
+    _initToolbar: function() {
+        this.inherited(arguments);
+        ...
+    }
+                </code></pre>
+
+            <p>
+                Once this initial setup of the toolbar is complete, we can start to add our items, both to the top level of the
+                toolbar and to the various submenus. The top level of the toolbar is accessible via <code>this.toolbar</code>;
+                to simply append a button to the end of the toolbar, call <code>this.toolbar.addChild()</code>:
+            </p>
+
+            <pre><code class="js">
+    var newToolbarButton = new Button({
+        label: "Show Popup",
+        iconClass: "window_dialog",
+        showLabel: true
+    });
+
+    on(newToolbarButton, "click", function() {
+        alert("New toolbar button was clicked");
+    });
+
+    this.toolbar.addChild(newToolbarButton);
+                </code></pre>
+
+            <p>
+                To add a simple button to the toolbar, you add an instance of the
+                <a href="http://help.medicomp.com/#topic%3DJavaScript_Dojo_T_dijit_form_Button" target="_new">Button</a> class,
+                whereas if you want a submenu, you'll need to add an instance of the
+                <a href="http://help.medicomp.com/#topic%3DJavaScript_Dojo_T_dijit_form_DropDownButton" target="_new">
+                    DropDownButton</a> class:
+            </p>
+
+            <pre><code class="js">
+    var newSubmenu = new Menu();
+
+    newSubmenu.addChild(new MenuItem({
+        label: "New Menu Item 1",
+        showLabel: true,
+        iconClass: "help2",
+        onClick: function() {
+            alert('New menu item 1 clicked');
+        }
+    }));
+
+    newSubmenu.addChild(new MenuItem({
+        label: "New Menu Item 2",
+        showLabel: true,
+        iconClass: "help2",
+        onClick: function () {
+            alert('New menu item 2 clicked');
+        }
+    }));
+
+    domClass.add(newSubmenu.domNode, "ic16");
+            
+    this.toolbar.addChild(new DropDownButton({
+        label: "New Menu",
+        iconClass: "view",
+        showLabel: true,
+        dropDown: newSubmenu
+    }));
+            </code></pre>
+        
+            <p>
+                You can also insert items into existing menus. The view menu is accessible via <code>this.viewMenu</code>, but
+                the rest need to be accessed positionally in the <code>this.toolbar.getChildren()</code> array. You can
+                then access the dropdown menu via the <code>dropDown</code> property and call its <code>addChild()</code>
+                function to add additional menu items. When calling <code>addChild()</code>, you can pass in an index as the
+                second parameter specifying where in the dropdown menu you want your item inserted. If you don't specify this
+                parameter, your menu item is simply appended to the end of the menu. In the code below, we are adding an item
+                in the third slot of the left-most application menu:
+            </p>
+
+            <pre><code class="js">
+    this.toolbar.getChildren()[0].dropDown.addChild(new MenuItem({
+        label: "New App Menu Item",
+        showLabel: true,
+        iconClass: "help2",
+        onClick: function() {
+            alert('New app menu item clicked');
+        }
+    }), 2);
+            </code></pre>
+
+            <h2>Example:</h2>
+
+            <div id="applicationContainer" style="border: 1px solid lightgray; width: 100%; height: 600px"></div>
+        </div>
+    </body>
+</html>

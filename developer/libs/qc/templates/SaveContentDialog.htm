@@ -1,0 +1,46 @@
+<div class="dijitDialog qcSaveContentDialog qcSaveContentDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <table>
+                <tr>
+                    <td colspan="2" style="padding-bottom: 6px;">
+                        <div class="treeView" data-dojo-type="qc/ContentLibraryTree" data-dojo-attach-point="treeView" data-dojo-props="attributeFilter: '2', hideRoot: true"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelCol"><span data-dojo-attach-point="lblLocationCaption"></span>:</td>
+	                <td class="dataCol"><div data-dojo-attach-point="txtLocation" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="required: true, readOnly: true, placeHolder: 'select a folder'"></div></td>
+                </tr>
+                <tr>
+                    <td class="labelCol"><span data-dojo-attach-point="lblName"></span>:</td>
+	                <td class="dataCol"><div data-dojo-attach-point="txtName" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="required: true"></div></td>
+                </tr>
+                <tr>
+                    <td class="labelCol"><span data-dojo-attach-point="lblKeywords"></span>:</td>
+	                <td class="dataCol"><div data-dojo-attach-point="txtKeywords" data-dojo-type="dijit/form/TextBox"></div></td>
+                </tr>
+                <tr>
+                    <td class="labelCol"><span data-dojo-attach-point="lblType"></span>:</td>
+	                <td class="dataCol"><div data-dojo-attach-point="cmbType" data-dojo-type="qc/FilteringSelect" data-dojo-props="searchAttr: 'text'"></div></td>
+                </tr>
+                <tr>
+                    <td class="labelCol" />
+                    <td class="dataCol">
+	                    <div class="saveOptions" data-dojo-attach-point="saveOptions"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdOK" data-dojo-props="disabled: true">OK</div> 
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdCancel">Cancel</div>
+        </div>
+    </div>
+</div>

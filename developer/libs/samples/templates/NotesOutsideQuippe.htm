@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css"/>
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css"/>
+
+        <style type="text/css">
+            #noteEditorViewPort {
+                padding: 30px; 
+                width: 600px; 
+                height: 500px; 
+                overflow: auto;
+                border: 1px solid lightgray;
+                position: relative;
+            }
+
+            .readOnlyShim {
+                position: absolute;
+                left: 30px;
+                top: 30px;
+            }
+        </style>
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <title>Viewing and Editing Notes Outside of Quippe</title>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require([
+                    "dojo/promise/all", "dojo/ready", "dojo/request", "dojo/when", "dojo/_base/array", "dojo/dom",
+                    "dojo/io-query", "dojo/dom-construct", "qc/_EnumManager", "qc/_core", "qc/DateUtil", "qc/StringUtil",
+                    "qc/NoteEditor", "dojo/on", "dojo/dom-geometry", "dojo/dom-style"
+                ],
+                function(all, ready, request, when, array, dom, ioQuery, domConstruct, EnumManager, core, DateUtil, StringUtil,
+                    NoteEditor, on, domGeometry, domStyle) {
+
+                    var editor;
+
+                    ready(function() {
+                        function initEnums() {
+                            var culture = 'en-US';
+
+                            return new all([
+                                EnumManager.loadList('sex', 'Quippe/Enum/Sex', culture, 'Lower'),
+                                EnumManager.loadList('prefix', 'Quippe/Enum/Prefix', culture, 'Lower'),
+                                EnumManager.loadList('modifier', 'Quippe/Enum/Modifier', culture, 'Lower'),
+                                EnumManager.loadList('status', 'Quippe/Enum/Status', culture, 'Lower'),
+                                EnumManager.loadList('result', 'Quippe/Enum/Result', culture, 'Lower')
+                            ]);
+                        };
+
+                        function loadPatient(patientId) {
+                            return request(core.serviceURL("Quippe/PatientData/Patient"), {
+                                query: {
+                                    id: patientId,
+                                    IncludeActiveFindings: false,
+                                    dataFormat: 'JSON'
+                                },
+                                preventCache: true,
+                                handleAs: "json"
+                            }).then(function(data) {
+                                core.Patient = data.patient || {};
+                                core.Patient.birthDate = DateUtil.dateFromJSON(core.Patient.birthDate);
+
+                                if (core.Patient.sex) {
+                                    core.Patient.sexLabel = StringUtil.toCamelUpper(
+                                        EnumManager.getTextSynch('sex', core.Patient.sex));
+                                }
+
+                                return core.Patient;
+                            }, core.showError);
+                        }
+
+                        function loadEncounter(patientId, encounterId) {
+                            return request(core.serviceURL("Quippe/PatientData/PatientEncounters"), {
+                                query: {
+                                    patientId: patientId,
+                                    includeActiveFindings: false,
+                                    dataFormat: 'JSON'
+                                },
+                                preventCache: true,
+                                handleAs: "json"
+                            }).then(function(data) {
+                                array.some(core.forceArray(data.encounters.encounter), function(e) {
+                                    if (e.id == encounterId) {
+                                        core.Encounter = {
+                                            id: e.id,
+                                            encounterTime: DateUtil.dateFromJSON(e.time)
+                                        }
+
+                                        if (core.Patient.birthDate && core.Encounter.encounterTime) {
+                                            var age = DateUtil.calculateAge(core.Patient.birthDate,
+                                                core.Encounter.encounterTime);
+
+                                            if (age) {
+                                                core.Patient.ageInMinutes = age.totalMinutes;
+                                                core.Patient.ageLabel = age.label;
+                                                core.Patient.age = age;
+                                            }
+                                        }
+
+                                        return core.Encounter;
+                                    }
+                                });
+                            }, core.showError);
+                        }
+
+                        function loadNote(patientId, encounterId) {
+                            return request(core.serviceURL('Quippe/PatientData/Encounter'), {
+                                query: {
+                                    EncounterId: encounterId
+                                },
+                                handleAs: 'xml'
+                            }).then(function(data) {
+                                switch (data.documentElement.tagName) {
+                                    case 'Error':
+                                        core.showError(data.documentElement.getAttribute('Message'));
+                                        break;
+
+                                    // If this is simply a list of findings, load the corresponding template and then merge the
+                                    // findings into the note
+                                    case 'Findings':
+                                        var templateId = data.documentElement.getAttribute('TemplateId') ||
+                                            'shared:QUIPPESTANDARD';
+
+                                        when(editor.loadDocumentTemplate(templateId), function() {
+                                            editor.mergeXmlFindings(data.documentElement);
+                                        });
+
+                                        break;
+
+                                    // Otherwise, it's a full encounter document and we can load it into the editor directly
+                                    default:
+                                        editor.loadXml(data);
+
+                                        break;
+                                }
+                            }, core.showError);
+                        }
+
+                        editor = new NoteEditor();
+                        editor.startup();
+                        editor.placeAt(dom.byId('noteEditor'));
+
+                        var readOnlyShim = null;
+
+                        on(dom.byId('loadNoteButton'), 'click', function() {
+                            var patientId = dom.byId('patientId').value;
+                            var encounterId = dom.byId('encounterId').value;
+
+                            initEnums().then(loadPatient(patientId)).then(loadEncounter(patientId, encounterId))
+                                .then(loadNote(patientId, encounterId));
+                        });
+
+                        on(dom.byId('makeReadOnlyButton'), 'click', function() {
+                            dom.byId('makeReadOnlyButton').value = readOnlyShim == null ? 'Make Writable' : 'Make Read Only';
+
+                            if (readOnlyShim) {
+                                domConstruct.destroy(readOnlyShim);
+                                readOnlyShim = null;
+                            }
+
+                            else {
+                                readOnlyShim = domConstruct.create('div', {
+                                    className: 'readOnlyShim'
+                                }, dom.byId('noteEditorViewPort'));
+
+                                domStyle.set(readOnlyShim, 'width', domGeometry.getContentBox(editor.domNode).w + 'px');
+                                domStyle.set(readOnlyShim, 'height', domGeometry.getContentBox(editor.domNode).h + 'px');
+                            }
+                        });
+                    });
+                });
+        </script>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Viewing and Editing Notes Outside of Quippe</h1>
+
+            <p>
+                Similarly to the way that you can <a href="ContentOutsideQuippe.htm">load wizards and popups</a> outside of the
+                Quippe workspace context, you can also load, view, and edit notes. First, you will need to have a script tag
+                that loads <code>libs/dojo/dojo.js</code> as well as link tags to load the Quippe CSS:
+            </p>
+
+            <pre><code class="html">
+    &lt;link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" /&gt;
+    &lt;script type="text/javascript" data-dojo-config="async: true" src="libs/dojo/dojo.js"&gt;&lt;/script&gt;
+            </code></pre>
+
+            <p>
+                You can then load up the <code>NoteEditor</code> module and reference it in a Dojo factory function:
+            </p>
+
+            <pre><code class="js">
+    require([
+            ...,
+            "qc/NoteEditor"
+        ],
+        function(..., NoteEditor) {
+            </code></pre>
+
+            <p>
+                The code that we will use in this example constructs a <code>NoteEditor</code> instance and adds it to the DOM
+                programatically, but you can just as easily create the editor imperatively by adding the
+                <code>parseOnLoad: true</code> property to your <code>data-dojo-config</code> attribute and then adding the
+                necessary HTML attributes to a <code>&lt;div&gt;</code> tag:
+            </p>
+
+            <pre><code class="html">
+    &lt;div data-dojo-type="qc/NoteEditor" data-dojo-id="noteEditor"&gt;&lt;/div&gt;
+            </code></pre>
+
+            <p>
+                The <code>data-dojo-id</code> attribute will ensure that you can reference it anywhere by simply using the
+                <code>noteEditor</code> variable. However, since we are creating our <code>NoteEditor</code> instance
+                programatically, we must do so as follows:
+            </p>
+
+            <pre><code class="js">
+    editor = new NoteEditor();
+    editor.startup();
+    editor.placeAt(dom.byId('noteEditor'));
+            </code></pre>
+
+            <p>
+                This simply creates our <code>NoteEditor</code> instance, starts it up, and adds it to the DOM in within the
+                <code>noteEditor</code> placeholder node. If you wish to set properties on the <code>NoteEditor</code>, you can
+                do so by passing a property hash into the constructor like:
+            </p>
+
+            <pre><code class="js">
+    editor = new NoteEditor({
+        viewMode: 'concise'
+    });
+            </code></pre>
+
+            <p>
+                In the sample below, we simply take the patient ID and encounter ID from text boxes and use them to load the
+                data, but it's also possible to use values passed in on the query string, in cookies, etc. Regardless of how we
+                get the IDs that we want to use, we load data for the patient and the encounter from the web services and use the
+                returned data to populate various properties and objects prior to loading the note:
+            </p>
+
+            <pre><code class="js">
+    function loadPatient(patientId) {
+        return request(core.serviceURL("Quippe/PatientData/Patient"), {
+            query: {
+                id: patientId,
+                IncludeActiveFindings: false,
+                dataFormat: 'JSON'
+            },
+            preventCache: true,
+            handleAs: "json"
+        }).then(function(data) {
+            core.Patient = data.patient || {};
+            core.Patient.birthDate = DateUtil.dateFromJSON(core.Patient.birthDate);
+
+            if (core.Patient.sex) {
+                core.Patient.sexLabel = StringUtil.toCamelUpper(
+                    EnumManager.getTextSynch('sex', core.Patient.sex));
+            }
+
+            return core.Patient;
+        }, core.showError);
+    }
+
+    function loadEncounter(patientId, encounterId) {
+        return request(core.serviceURL("Quippe/PatientData/PatientEncounters"), {
+            query: {
+                patientId: patientId,
+                includeActiveFindings: false,
+                dataFormat: 'JSON'
+            },
+            preventCache: true,
+            handleAs: "json"
+        }).then(function(data) {
+            array.some(core.forceArray(data.encounters.encounter), function(e) {
+                if (e.id == encounterId) {
+                    core.Encounter = {
+                        id: e.id,
+                        encounterTime: DateUtil.dateFromJSON(e.time)
+                    }
+
+                    if (core.Patient.birthDate && core.Encounter.encounterTime) {
+                        var age = DateUtil.calculateAge(core.Patient.birthDate,
+                            core.Encounter.encounterTime);
+
+                        if (age) {
+                            core.Patient.ageInMinutes = age.totalMinutes;
+                            core.Patient.ageLabel = age.label;
+                            core.Patient.age = age;
+                        }
+                    }
+
+                    return core.Encounter;
+                }
+            });
+        }, core.showError);
+    }
+            </code></pre>
+
+            <p>
+                Once the patient data and encounter data has been populated, we can load the note XML via the web services and
+                load it into the editor:
+            </p>
+
+            <pre><code class="js">
+    function loadNote(patientId, encounterId) {
+        request(core.serviceURL('Quippe/PatientData/Encounter'), {
+            query: {
+                EncounterId: encounterId
+            },
+            handleAs: 'xml'
+        }).then(function(data) {
+            switch (data.documentElement.tagName) {
+                case 'Error':
+                    core.showError(data.documentElement.getAttribute('Message'));
+                    break;
+
+                // If this is simply a list of findings, load the corresponding template and then merge the
+                // findings into the note
+                case 'Findings':
+                    var templateId = data.documentElement.getAttribute('TemplateId') ||
+                        'shared:QUIPPESTANDARD';
+
+                    when(editor.loadDocumentTemplate(templateId), function() {
+                        editor.mergeXmlFindings(data.documentElement);
+                    });
+                    break;
+
+                // Otherwise, it's a full encounter document and we can load it into the editor directly
+                default:
+                    editor.loadXml(data);
+                    break;
+            }
+        }, core.showError);
+    }
+            </code></pre>
+
+            <p>
+                Once the note is loaded, you might wish to make it read only by preventing any user interactions with the
+                underlying note. The easiest way to accomplish this is to put a <code>&lt;div&gt;</code> on top of the
+                <code>NoteEditor</code> instance:
+            </p>
+
+            <pre><code class="js">
+    readOnlyShim = domConstruct.create('div', {
+        className: 'readOnlyShim'
+    }, dom.byId('noteEditorViewPort'));
+                
+    domStyle.set(readOnlyShim, 'width', domGeometry.getContentBox(editor.domNode).w + 'px');
+    domStyle.set(readOnlyShim, 'height', domGeometry.getContentBox(editor.domNode).h + 'px');
+            </code></pre>
+        
+            <p>
+                Other customizations you might consider making to the <code>NoteEditor</code> instance include:
+
+                <ul>
+                    <li>
+                        Displaying the note in concise view - To do so, add <code>editor.updateDisplay('concise')</code> after
+                        <code>editor.loadXml(data)</code> in <code>loadNote()</code>.
+                    </li>
+                    <li>
+                        Displaying the note in "print mode", including the header and the footer - In addition to doing the
+                        above, add the <code>printable</code> CSS class to the <code>noteEditor</code> node.
+                    </li>
+                </ul>
+            </p>
+
+            <h2>Example:</h2>
+
+            <p>
+                Patient ID: <input id="patientId" type="text" value="222888" /><br />
+                Encounter ID: <input id="encounterId" type="text" value="234" /><br />
+
+                <input type="button" id="loadNoteButton" value="Load Note"/> 
+                <input type="button" id="makeReadOnlyButton" value="Make Read Only" />
+
+                <br /><br />
+
+                <div id="noteEditorViewPort">
+                    <div id="noteEditor">
+                    </div>
+                </div>
+            </p>
+        </div>
+    </body>
+</html>

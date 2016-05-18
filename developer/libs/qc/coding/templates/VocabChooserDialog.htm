@@ -1,0 +1,20 @@
+<div class="qcCodingVocabChooserDialog">
+
+    <div data-dojo-attach-point="tableNode" class="tableNode" data-dojo-attach-event="onclick:onCellClick">
+    </div>
+
+    <table style="width:100%;">
+        <tr>
+            <td style="text-align:left;vertical-align:top;padding:8px;">
+                <div data-dojo-attach-point="moveUpButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onMoveUp" data-dojo-props="disabled: true">Move Up</div>
+                <div data-dojo-attach-point="moveDownButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onMoveDown" data-dojo-props="disabled: true">Move Down</div>
+                <div data-dojo-attach-point="saveDefaultButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onSaveDefault">Save as Default</div>            
+            </td>
+            <td style="text-align:right;vertical-align:top;padding:8px;">
+                <div data-dojo-attach-point="applyButton" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onApply">OK</div>
+                <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>            
+            </td>
+        </tr>
+    </table>
+
+</div>

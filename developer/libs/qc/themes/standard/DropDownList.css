@@ -1,0 +1,106 @@
+﻿.qcDropDownList
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    height: 21px;
+}
+        
+.qcDropDownList .tableNode
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+        
+.qcDropDownList .rowNode
+{
+    display: table-row;
+}
+        
+.qcDropDownList .labelNode
+{
+    display: table-cell;
+    border: 1px solid #b5bcc7;
+    padding: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+        
+.qcDropDownList.qcDropDownListFocused .labelNode
+{
+    border: 1px solid #769dc0;
+}
+        
+.qcDropDownList.qcDropDownListHover .labelNode
+{
+    border: 1px solid #769dc0;
+    background-color: #e9f4fe;
+}        
+
+.qcDropDownList .arrowNode
+{
+    display: table-cell;
+    border: 1px solid #b5bcc7;
+    background-color: #efefef;
+     background-image: url(images/commonHighlight.png);
+    width: 17px;	
+    text-align: center;
+    vertical-align: middle;
+}
+                
+.qcDropDownList .arrowNodeInner
+{
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    background-image: url(images/commonFormArrows.png);
+    background-repeat: no-repeat;
+    background-position: -35px 53%;
+    /* background-position: -51px 53%; */
+}
+        
+.qcDropDownList.qcDropDownListFocused .arrowNode
+{
+    border: 1px solid #769dc0;
+}
+
+.qcDropDownList.qcDropDownListHover .arrowNode
+{
+    border: 1px solid #769dc0;
+    background-color: #abd6ff;
+}        
+
+
+.qcDropDownListBox
+{
+    padding: 2px 0px 2px 0px;
+    background-color: #ffffff;
+}
+        
+.qcDropDownListBox .listItem
+{
+    display: block;
+    cursor: pointer;
+    padding: 4px;
+    margin: 0px;
+    color: #000000;
+    background-image: url(images/commonHighlight.png);
+}
+        
+.qcDropDownListBox .listItem.hidden
+{
+    display: none;
+}
+        
+.qcDropDownListBox .listItem.disabled
+{
+    display: none;
+}
+        
+.qcDropDownListBox .listItem:hover
+{
+    background-color: #abd6ff;
+}

@@ -1,0 +1,505 @@
+﻿.qcForm
+{
+	font-family: Arial, Sans-Serif;
+	font-size: 100%;
+    background-color: #ffffff;
+    margin: 0px;
+    padding:0px;
+}
+
+.qcForm .dijitDialogPaneContent
+{
+    position:relative;
+    margin:0px;
+    padding:0px;
+}
+
+
+.qcForm .containerNode
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 8px;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    overflow:auto;
+}
+
+.qcForm .buttonArea
+{
+    height: 44px;
+    text-align:right;
+    padding: 4px;
+    background-color: #ffffff;
+}
+
+.qcForm.hideButtons .buttonArea
+{
+    display: none;
+}
+
+.qcForm.hideTitle .dijitDialogTitleBar.titleBar
+{
+    display: none;
+}
+
+.qcForm .buttonArea .dialogButton
+{
+    margin:0px 4px 6px 0px;
+}
+
+.qcForm .buttonArea .dijitButtonNode
+{
+    width: 80px;
+}
+
+.qcWizard .page
+{
+    display: none;
+    visibility: hidden;
+    position: absolute !important;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding:0px;
+    overflow: auto;
+}
+
+.qcWizard .page .pageContent
+{
+
+    margin: 0px;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.qcWizard .page.noPadding
+{
+    padding:0px;
+}
+
+.qcWizard .page.active
+{
+    display: block;
+    visibility: visible;
+}
+
+.qcWizard .page .pageHeader
+{
+    display: none;
+}
+
+.qcForm.qcWizard.qcTabbedDialog  .page
+{
+    left: 8px;
+    top: 32px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    height: auto;
+}
+
+
+.qcForm.qcWizard.qcTabbedDialog .tabButton
+{
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    height: 25px;
+    background-color: #ffffff;
+    border-top: 1px #999999 solid;
+    border-left: 1px #999999 solid;
+    border-right: 1px #999999 solid;
+    padding: 3px 6px 0px 6px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    z-index: 0;
+    background-color: #eeeeee;
+}
+
+.qcForm.qcWizard.qcTabbedDialog .tabButton.activeTab
+{
+    z-index: 200;
+    -xx-border-top: 2px #ff6a00 solid;
+    -xx-border-top: 2px #3040A0 solid;
+    -xx-padding-top: 2px;
+    background-color: #ffffff;
+}
+
+.qcForm.qcWizard.qcTabbedDialog .page .pageContent
+{
+    border: 1px #999999 solid;
+    z-index: 100;
+}
+
+
+.design .qcWizard .pageInfo
+{
+    display: block;
+}
+
+.design.form .hidden.page:before
+{
+    right: 30px;
+}
+
+
+.qcWizard .page.selected
+{
+	outline-width: 0px;	
+}
+
+/* ========= Form.form Overrides ============ */
+.form
+{
+	display: block;
+	font-size: 14px;
+	line-height: 1.2em;
+    color: #000000;
+    background-color: transparent;
+    min-height: 100px;
+    cursor: pointer;
+	clear: both;
+    page-break-before: avoid;
+}
+    
+.form .chapter
+{
+	clear: both;
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+}
+    
+.form .chapterHeader
+{
+    display: block;
+	font-size: 140%;
+	font-weight: bold;
+	color: #365f91;
+	margin-bottom: 4px;
+}
+
+.form .chapter.hiddenHeader .chapterHeader
+{
+    display: none;
+}
+
+.form.design .chapter.hiddenHeader .chapterHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.form .chapterContent
+{
+	padding-top: 1px;
+}
+    
+.form .section
+{
+	clear: both;
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+}
+    
+.form .sectionHeader
+{
+    display: block;
+	font-size: 120%;
+	font-weight: normal;
+	color: #000000;
+	margin-bottom: 4px;
+}
+
+.form .section.hiddenHeader .sectionHeader
+{
+    display: none;
+}
+
+.form.design .section.hiddenHeader .sectionHeader
+{
+    display: block;
+    color: #cccccc;
+}
+
+.form .sectionContent
+{
+	padding-top: 1px;
+}
+    
+.form .group
+{
+	border: 1px transparent solid;
+	background-color: transparent;
+    padding-bottom: 6px;
+    page-break-inside: avoid;
+}
+    
+.form .groupHeader
+{
+	display: inline;
+	font-size: 100%;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 4px;
+}    
+
+.form .group.hiddenHeader .groupHeader
+{
+    display: none;
+}
+
+.form.design .group.hiddenHeader .groupHeader
+{
+    display: inline;
+    color: #cccccc;
+}
+
+.form .groupContent
+{
+	display: inline;
+}    
+    
+.form .freeText
+{
+    min-height: 1.2em;
+    background-color: #ffffff;
+    cursor: text;
+}
+
+.form .freeText p
+{
+	margin: 0px;
+}
+
+.form .freeText .displayText
+{
+    white-space: pre-wrap;
+}
+
+.form .hidden:not(.visible)
+{
+	display: none !important;
+}
+
+.design.form .hidden 
+{
+	display: inherit !important;
+}
+
+.design.form .hidden.part:before,
+.design.form .hidden.finding:before
+{
+	content:"HIDDEN";
+	display:inline;
+	font-size:6pt;
+	padding: 0px 2px 0px 2px;
+	border:1px #999999 solid;
+	background-color: #fefeee;
+	position:absolute;
+	border-radius:4px;
+}
+
+.design.form .hidden.part,
+.design.form .hidden.finding
+{
+	position: relative;
+}
+
+
+.form .break
+{
+	display: block !important;
+}
+
+/* begin: Grid Layouts */
+.form .grid,
+.form .chapterContent.grid,
+.form .sectionContent.grid,
+.form .groupContent.grid
+{
+	display: table;
+	border-collapse: collapse;
+}
+
+.form .grid .row
+{
+	display: table-row;
+}
+
+.form .grid .row .cell
+{
+	display: table-cell;
+	vertical-align: top;
+	text-align: left;
+}
+
+.form .grid .postSep
+{
+	display: none;
+}
+/* end: Grid Layouts */
+
+/* begin: Expandable Groups */
+.form .expander
+{
+	display: none;
+	width: 16px;
+	height: 16px;
+    background-image: url('images/treeExpandImages.png');
+    background-position: -35px -1px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.form .chapter.expandable .chapterHeader .expander,
+.form .section.expandable .sectionHeader .expander,
+.form .group.expandable .groupHeader .expander
+{
+	display: inline-block;
+}
+
+.form .chapter.expandable.collapsed .chapterHeader .expander,
+.form .section.expandable.collapsed .sectionHeader .expander,
+.form .group.expandable.collapsed .groupHeader .expander
+{
+	background-position: 1px -1px;
+}
+
+.form .chapter.expandable.collapsed .chapterContent,
+.form .section.expandable.collapsed .sectionContent,
+.form .group.expandable.collapsed .groupContent
+{
+	display: none;
+}
+/* end: Expandable Groups */
+
+.form .qcHyperlink
+{
+    display: inline;
+    color: #333333;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.form .qcHyperlink.disabled,
+.form .disabled .qcHyperlink
+{
+    color: #999999;
+}
+
+.form .qcHyperlink.button
+{
+    font-style: normal;
+    font-weight:normal;
+    display: inline-block;
+    margin: 2px 6px 0px 2px;
+    border: 1px #999999 solid;
+    background-color: #eeeeee;
+    color: #000000;
+    border-radius: 3px;
+    padding: 2px 7px 3px 7px;
+    text-align: center;
+}
+
+.form .qcHyperlink.button:hover,
+.form .qcHyperlink.button.blue:hover
+{
+    background-color: #ffa64c;
+    color: #000000;
+}
+
+.form .qcHyperlink.button.blue
+{
+    background-color: #297fd5;
+    color: #ffffff;
+}
+
+.form .qcHyperlink.button.selected
+{
+    outline: 0px;
+    border-color: #ffa64c;
+}
+
+.form .qcHyperlink.button.disabled,
+.form .qcHyperlink.button.disabled:hover,
+.form .qcHyperlink.button.disabled.blue,
+.form .qcHyperlink.button.disabled.blue:hover,
+.form .disabled .qcHyperlink.button,
+.form .disabled .qcHyperlink.button:hover,
+.form .disabled .qcHyperlink.button.blue,
+.form .disabled .qcHyperlink.button.blue:hover
+{
+    background-color: #eeeeee;
+}
+
+.form .part.groupBox
+{
+	position: relative;
+	border: 1px solid #999999;
+	padding: 8px;
+	border-radius: 4px;
+	margin: 14px 12px 12px 6px;
+}
+
+.form .part.groupBox.hiddenHeader
+{
+	margin: 8px 12px 12px 6px;
+}
+
+.form .chapter.groupBox .chapterHeader,
+.form .section.groupBox .sectionHeader,
+.form .group.groupBox .groupHeader
+{
+	position: absolute;
+	top: -9px;
+	left: 8px;
+	display: inline;
+	background-color: #ffffff;
+	font-weight: normal;
+}
+
+
+.form .group.groupBox .groupHeader .innerLabel
+{
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #ffffff;
+}
+
+.form .group.groupBox.hiddenHeader .groupHeader .innerLabel
+{
+    display: none;
+}
+
+.form .noteLabel
+{
+    display: inline;
+}
+
+.form .noteLabel.paragraph
+{
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.form .hasAdditionalContent 
+{
+    font-style: italic;
+}
+
+.printable .form .hasAdditionalContent 
+{
+    font-style: italic;
+}

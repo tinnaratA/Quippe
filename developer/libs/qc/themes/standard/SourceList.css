@@ -1,0 +1,38 @@
+﻿.qcSourceList
+{
+}
+.qcSourceList .qcListViewItem .caption
+{
+}
+
+.qcSourceList .qcListViewItem.findingFocus .caption
+{
+	font-weight: bold;
+}
+
+.qcSourceList .qcListViewItem.listHide .caption
+{
+	color: #cccccc;
+	font-weight: normal;
+}
+.qcSourceList .qcListViewItem.listShow .caption
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+.qcSourceList .qcListViewItem.selected {
+    background-color: #FFF799 !important;
+}
+
+.qcSourceList .qcListViewItem.selected td {
+    border-color: #F3E86F !important;
+}
+
+.qcSourceList .qcListViewItem:hover {
+    background-color: #FFFBCC;
+}
+
+.qcSourceList .qcListViewItem:hover td {
+    border-color: #FBF39C;
+}

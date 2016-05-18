@@ -1,0 +1,25 @@
+﻿@import url("FindingDetailDialog.css");
+@import url("ContentUploadDialog.css");
+@import url("LibraryManagerDialog.css");
+@import url("NewEncounterDialog.css");
+@import url("NewEncounterDialog2.css");
+@import url("OpenEncounterDialog.css");
+@import url("UserSettingsDialog.css");
+@import url("UserAccountDialog.css");
+@import url("PhraseEditorDialog.css");
+@import url("MultiFindingDetailDialog.css");
+@import url("OpenContentDialog.css");
+@import url("SaveContentDialog.css");
+@import url("MacroEditorDialog.css");
+@import url("OptionListEditorDialog.css");
+@import url("FindingListEditorDialog.css");
+@import url("PatientEditorDialog.css");
+@import url("LoginDialog.css");
+@import url("NewContentDialog.css");
+@import url("UploadFamilyHistoryDialog.css");
+@import url("SearchDialog.css");
+@import url("ChartDialog.css");
+
+.nonModal_underlay {
+    display:none
+}

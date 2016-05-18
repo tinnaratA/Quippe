@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/libs/samples/themes/standard/Topic.css" />
+        <script type="text/javascript" src="/libs/samples/highlight.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/libs/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="/libs/qc/themes/standard/qc.css" />
+
+        <script type="text/javascript" data-dojo-config="async: true" src="/libs/dojo/dojo.js"></script>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
+            require(["dojo/dom", "dojo/when", "qc/_core", "samples/CustomToolbarApp"],
+                function (dom, when, core, Application) {
+                    var application = new Application();
+
+                    application.startup();
+                    application.placeAt(dom.byId("applicationContainer"));
+
+                    application.init();
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            .toolBarPane
+            {
+                padding: 0px !important;
+            }
+        </style>
+
+        <title>Extending the Template Checker</title>
+    </head>
+    <body class="claro">
+        <div class="topicContent">
+            <h1>Extending the Template Checker</h1>
+
+            <p>
+                The Template Checker is a tool used at design time to identify errors and other issues in developed content. You 
+                can also extend the template checker to ensure compliance with your organization's design guidelines.
+            </p>
+
+            <p>
+                The checker is a singleton object that, when invoked, will execute all of it's methods that start with the
+                string "_check".  The current instance of the NoteEditor is the sole argument to the check method.  The function
+                should return an array of issue object of the form:
+            </p>
+
+            <pre><code class="js">
+    issue = {
+        level: ''
+        type: '',
+        description:'',
+        elementName: '',
+        noteRef: null
+    }
+                </code></pre>
+
+            <p>With the following properties:</p>
+            <table class="borders">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>level</td>
+                        <td>string</td>
+                        <td>
+                            Severity of the issue. Controls the icon displayed in the issue list. May be &quot;error&quot;,
+                            &quot;warning&quot;, &quot;info&quot;, &quot;ok&quot;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>string</td>
+                        <td>Cagetory name of the issue, used to filter the error list</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>string</td>
+                        <td>Detailed description of the issue</td>
+                    </tr>
+                    <tr>
+                        <td>elementName</td>
+                        <td>string</td>
+                        <td>The name of the element containing the issue</td>
+                    </tr>
+                    <tr>
+                        <td>noteRef</td>
+                        <td>object</td>
+                        <td>
+                            The note element widget containing the issue. When present the issue list will contain a hyperlink to
+                            the element.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                To add custom checks, use lang.extend to add new "_check" functions to the checker. Here is an example that looks 
+                for any NoteElement widget that is using the Notation property with a TextBox for data entry and raises a warning.
+            </p>
+
+            <pre><code class="js">
+    define([
+        "dojo/_base/declare",
+        "dojo/_base/array",
+        "dojo/_base/lang",
+        "dojo/query",
+        "dijit/registry",
+        "qc/_core",
+        "qc/design/TemplateChecker"
+    ], function (declare, array, lang, query, registry, core, TemplateChecker) {
+        lang.extend(TemplateChecker, {
+            _check_warnOnUseOfNotationProperty: function (editor) {
+                var list = [];
+                query('.noteElement', editor.domNode).map(registry.byNode).forEach(function (widget) {
+                    var settings = widget.get('componentSettings');
+
+                    if (settings && typeof settings == 'object') {
+                        if (settings.notation && settings.notation.visible !== 0 && settings.notation.entryType != 'label') {
+                            list.push({
+                                level: 'warning',
+                                type: 'Notation Component',
+                                elementName: widget.name || widget.get('text'),
+                                description: 'Finding has a visible "notation" component',
+                                noteRef: widget
+                            });
+                        }
+                    }
+                });
+
+                return list;
+            }
+        });
+    });            
+            </code></pre>
+        </div>
+    </body>
+</html>

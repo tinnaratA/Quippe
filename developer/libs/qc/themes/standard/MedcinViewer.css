@@ -1,0 +1,198 @@
+﻿.qcMedcinViewer
+{
+    width: 100%;
+    height: 100%;        	
+}
+
+
+.qcMedcinViewer *
+{
+	outline-style: none;
+}
+
+.qcMedcinViewer .viewPort
+{
+	position: relative;
+}
+
+.qcMedcinViewer .tree
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+        
+.qcMedcinViewer .sectionHeader
+{
+    margin-top: 8px;
+    font-size: 110%;
+    font-weight: bold;
+}
+        
+.qcMedcinViewer .qcTreeView
+{
+    height: 100%;
+}
+
+.qcMedcinViewer .dataTable
+{
+    font-size: 100%;
+    border-collapse: collapse;
+}
+        
+.qcMedcinViewer .dataTable tr
+{
+    background-color: transparent;
+}
+
+.qcMedcinViewer .dataTable tr.odd
+{
+    background-color: #ecffee;
+}
+          
+.qcMedcinViewer .dataTable tr.even
+{
+    background-color: #ffffff;
+}              
+
+.qcMedcinViewer .dataTable tr.even:hover,
+.qcMedcinViewer .dataTable tr.odd:hover
+{
+    /*background-color: #abd6ff;*/
+    /*background-color: #ecffee;*/
+    background-color: #f8f8e0;
+}        
+
+.qcMedcinViewer .dataTable tr.odd.selected,
+.qcMedcinViewer .dataTable tr.even.selected
+{
+    background-color: #faf8a0;
+}
+     
+        
+.qcMedcinViewer .dataTable td
+{
+    border: 1px #999999 solid;
+    padding: 4px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.qcMedcinViewer .dataTable th,
+.qcMedcinViewer .dataTable tr.header td
+{
+    background-color: #eeeeee;
+    border: 1px #999999 solid;
+    padding: 4px;
+    background-image: url(images/commonHighlight.png);
+}   
+
+.qcMedcinViewer .dataTable td.termTypeCol
+{
+    border-right: none;
+    padding-right: 2px;
+}     
+
+.qcMedcinViewer .dataTable td.idCol
+{
+    border-left: none;
+    padding-left: 2px;
+}  
+
+.qcMedcinViewer .phraseTable
+{
+    width: 100%;
+}
+        
+.qcMedcinViewer .phraseTable td
+{
+    width: 200px;
+}
+
+.qcMedcinViewer .phraseTable td.seqCol
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 60px;
+}               
+                
+.page
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+        
+.pageTop
+{
+    height: 36px;
+    padding: 0px !important;
+}
+
+.pageTop .dijitToolbar
+{
+	height: 30px;
+	vertical-align: middle;	
+}
+        
+.pageCenterLeft
+{
+    width: 33%;
+    background-color: #eeeeee;
+    padding: 0px !important;
+}
+        
+.pageCenterCenter 
+{
+    padding: 0px !important;
+    border: 0px !important;
+}
+        
+.pageBottom
+{
+    height: 8px;
+    font-size: 80%;
+    background-color: #ffffff;
+    text-align: right;
+    vertical-align: middle;
+    color: #000000
+}
+
+.termLink
+{
+	color: #0000ff;
+	cursor: pointer;
+}
+
+.termLink:hover
+{
+	color: #ff0000;
+}
+
+.termTitle 
+{
+    font-weight: bold;
+    font-size: 110%;
+    margin-top: 8px;
+}
+
+.statsTable
+{
+    margin: 8px;
+    border-collapse: collapse;
+}
+
+.statsTable td
+{
+    border: 1px #999999 solid;
+    padding: 4px;
+    text-align: right;
+}
+
+.statsTable .header td
+{
+    font-weight: bold;
+    text-align: center;
+    background-color: #eeeeee;
+}

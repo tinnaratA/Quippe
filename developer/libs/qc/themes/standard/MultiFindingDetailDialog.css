@@ -1,0 +1,67 @@
+﻿.qcMultiFindingDetailDialog
+{
+    /* 
+	width: 600px;
+    height: 400px;
+	*/
+}
+    
+.qcMultiFindingDetailDialog .dijitTextBox
+{
+}    
+
+.qcMultiFindingDetailDialog .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;
+}
+        
+.qcMultiFindingDetailDialog .contentArea
+{
+    height: 300px;
+    padding: 0px;
+    margin: 8px;
+    overflow: auto;
+}
+        
+.qcMultiFindingDetailDialog .buttonArea
+{
+    text-align: right;
+    height: 60px;
+    padding-bottom: 4px;
+    padding-right: 12px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+        
+.qcMultiFindingDetailDialog table
+{
+	width: 100%;
+	border-collapse:collapse;
+}
+    
+.qcMultiFindingDetailDialog td
+{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+    
+.qcMultiFindingDetailDialog .dataRow td
+{
+    padding-bottom: 6px;
+}
+    
+.qcMultiFindingDetailDialog .labelCol
+{
+}
+
+    
+.qcMultiFindingDetailDialog .editCol
+{
+}
+    
+.qcMultiFindingDetailDialog .rowSpacer
+{
+    height: 12px;
+}

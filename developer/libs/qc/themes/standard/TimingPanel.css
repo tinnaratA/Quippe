@@ -1,0 +1,91 @@
+﻿.qcTimingPanel
+{
+	background-color: #ffffff;
+	border: 1px #999999 solid;
+	width: 550px;
+}
+
+.qcTimingPanel .componentList
+{
+	height: 32px;
+	border: 0px #999999 solid;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+
+.qcTimingPanel .qcGroupBox
+{
+	position: relative;
+	border: 1px solid #999999;
+	padding: 8px;
+	margin: 12px 8px 12px 8px;
+	border-radius: 4px;
+}
+
+.qcTimingPanel .qcGroupBox .heading
+{
+	position: absolute;
+	top: -.7em;
+	left: 8px;
+	display: inline;
+	background-color: #ffffff;
+	font-weight: bold;
+	font-size: 80%;
+	z-index: 100;
+}
+
+.qcTimingPanel .componentText
+{
+	display: inline;
+	cursor: pointer;
+}
+
+.qcTimingPanel .componentText.selected
+{
+	background-color: #abd6ff;
+}
+
+.qcTimingPanel .detailTable .labelCell
+{
+	text-align: right;
+}
+
+.qcTimingPanel .detailTable .cell
+{
+	padding: 6px 2px 6px 2px;
+	display: inline;
+}
+
+.qcTimingPanel .detailTable .cell.edit
+{
+	width: 100px;
+}
+
+.qcTimingPanel .detailTable .cell.edit.numBox .dijitTextBox
+{
+	width: 30px;
+}
+
+.qcTimingPanel .detailTable .cell.edit.unitBox .dijitTextBox
+{
+	width: 100px;
+}
+
+.qcTimingPanel .detailTable .cell.edit.dateBox .dijitTextBox
+{
+	width: 100px;
+}
+
+.qcTimingPanel .detailTable .cell.edit.noteBox .dijitTextBox
+{
+	width: 100%;
+}
+
+.qcTimingPanel .detailTable .cell.label.ll
+{
+	width:70px;
+	display: inline-block;
+	text-align: right;
+}
+

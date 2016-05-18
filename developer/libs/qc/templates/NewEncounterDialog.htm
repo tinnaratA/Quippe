@@ -1,0 +1,38 @@
+<div class="dijitDialog qcNewEncounterDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div class="section">
+                <div class="header">Patient:</div>
+                <div data-dojo-attach-point="txtPatientSearch" data-dojo-type="qc/PatientSearchBox" class="txtPatientSearch"></div>
+            </div>
+
+            <div class="section">
+                <div class="header">Encounter:</div>
+                <div data-dojo-attach-point="cmbVisitType" data-dojo-type="qc/FilteringSelect" style="width:300px;" data-dojo-props="placeHolder: 'Visit Type', searchAttr: 'description'"></div><br />
+                <div style="margin-top:4px;">
+                    <div data-dojo-attach-point="txtVisitDate" data-dojo-type="dijit/form/DateTextBox" style="width:100px" data-dojo-props="placeHolder: 'Date'"></div>
+                    <div data-dojo-attach-point="txtVisitTime" data-dojo-type="dijit/form/TimeTextBox" style="width:70px" data-dojo-props="placeHolder: 'Time'"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="header">Template:</div>
+                <div data-dojo-attach-point="cmbTemplate" data-dojo-type="qc/FilteringSelect" style="width:300px;" data-dojo-props="placeHolder: 'Document Template', searchAttr: 'text'"></div><br />
+            </div>
+
+            <div class="errorMessage" data-dojo-attach-point="errorMessage">
+            </div>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdOK">OK</div> 
+            <div data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-point="cmdCancel">Cancel</div>
+        </div>
+    </div>
+</div>

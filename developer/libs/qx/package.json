@@ -1,0 +1,14 @@
+{
+	"name": "qx",
+	"version": "3.0.20161.1148",
+	"main": "main",
+	"dependencies": {
+		"dojo": "1.9.0",
+		"dijit": "1.9.0",
+		"dojox": "1.9.0",
+		"util": "1.9.0"
+	},
+	"description": "Extensions to the Quippe core components library.",
+	"homepage": "http://medicomp.com",
+	"dojoBuild": "../package.js"
+}

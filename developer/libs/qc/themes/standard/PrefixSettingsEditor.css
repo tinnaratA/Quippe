@@ -1,0 +1,33 @@
+﻿.qcPrefixSettingsEditor 
+{
+    width:450px;
+    height: 360px;
+    padding: 8px;
+}
+
+.qcPrefixSettingsEditor .section
+{
+    margin-bottom: 12px;
+}
+
+.qcPrefixSettingsEditor .title
+{
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.qcPrefixSettingsEditor .indent
+{
+    margin-left: 24px;
+}
+
+.qcPrefixSettingsEditor .line
+{
+    margin-bottom: 6px;
+}
+
+.qcPrefixSettingsEditor label
+{
+    margin-left: 4px;
+}
+

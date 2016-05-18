@@ -1,0 +1,487 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Medicomp.Web.KB
+</name>
+</assembly>
+<members>
+<member name="P:Medicomp.Web.KB.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Medicomp.Web.KB.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Medicomp.Web.KB.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Medicomp.Web.KB.UdfRegisterUdfHandler.codelist2codes">
+	<summary>
+ Procedure converts the V22 comma-delimited list of codes to V21 discrete codes
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueConvertHandler.Value">
+	<summary>
+ The value to convert
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueConvertHandler.FromUnit">
+	<summary>
+ The units to convert from. If not provided, the unit will be guessed from the value.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueConvertHandler.ToUnit">
+	<summary>
+ The units to convert to. If not provided, the standard units for this finding will be used.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueCheckHandler.Value">
+	<summary>
+ The value to check
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueCheckHandler.Unit">
+	<summary>
+ The unit of measure for the value.  If not supplied the unit will be guessed from the value.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueCheckHandler.Sex">
+	<summary>
+ The sex of the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ValueCheckHandler.Age">
+	<summary>
+ The age of the patient's age expressed as a Medcin TimeString
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermSubsHandler.Depth">
+	<summary>
+ Use to expand child nodes, i.e. return grandchildren and great grandchildren. Maximum depth is 3.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.CodeSets">
+	<summary>
+ The code sets to use
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.CodeDate">
+	<summary>
+ Determines which version of the codeset to use
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.Age">
+	<summary>
+ The patient's age expressed as a Medcin time string
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.Sex">
+	<summary>
+ Sex of the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.IncludeHints">
+	<summary>
+ Include code hints where applicable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.IncludeSpecifiers">
+	<summary>
+ Include code specifiers where applicable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TermCodesHandler.IncludeParameters">
+	<summary>
+ Include code parameters where applicable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NavTermPathHandler.IncludeSiblings">
+	<summary>
+ Include the term's siblings as well as ancestors in the response
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.TranscribeChartHandler.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoGroupHeadings">
+	<summary>
+ Suppress group headings
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoDoctorHeadings">
+	<summary>
+ Suppress doctor headings, such as 'The doctor ordered the following therapy'.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoPatientHPIString">
+	<summary>
+ Suppress the patient HPI string, 'The patient is a nn year old gender, …'
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.BodyOnly">
+	<summary>
+ Limit the narrative output of Rich Text or HTML to that of the body portion of the document
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoTableRanges">
+	<summary>
+ Don't include the 'Normal range' column in tables
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.InlineBullets">
+	<summary>
+ Special narrative presentation for outline format only of the Physical Examination group which inserts a 'bullet' character as separation for positive findings and a '°' character for negative findings; each finding is narrated in sentence form with some pruning of sentence lead-in phrasing. Findings within a section are sequenced positives followed by negatives. In addition, onset dates in the history section will present a hyphen instead of the 'as of' string preceding the onset string. The HPI group will also use the positive and negative bullets.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NarrateHeader">
+	<summary>
+ Narrative generation will include a header string emitted prior to the first narrative group.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoOneLineTables">
+	<summary>
+ When set, physical exam and test tables (other than the stress test tables) that have only one entry will be narrated in a prose paragraph style rather than in a table structure.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.SpaceBeforeNegHPI">
+	<summary>
+ A blank line will emit prior to the all-negative body systems paragraph of the HPI narrative group.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoSeparateNegHPI">
+	<summary>
+ HPI body systems with all negative findings are sequenced as the last section in HPI as a single paragraph. Setting this option sequences the negative findings within their specified body system sequence.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.CCSystemFirst">
+	<summary>
+ If the chief complaint narrative group contains a coded symptom finding other than the chief complaint free text finding and this option is enabled, the body system of that finding will be sequenced first in HPI and ROS regardless of the user's designated sub-group sequence.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.NoTableHeadings">
+	<summary>
+ Suppress table headings
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.NarrationHandler.ShowChapterHeadings">
+	<summary>
+ Show chapter headings
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.MedcinIds">
+	<summary>
+ The list of Medcin ids
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.ListSize">
+	<summary>
+ Size of the response list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.Age">
+	<summary>
+ Age of the patient as a Medcin time string
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.Sex">
+	<summary>
+ Sex of the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.Race">
+	<summary>
+ The patient's race
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.Religion">
+	<summary>
+ The patient's religion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.Ethnicity">
+	<summary>
+ The patient's ethnicity
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.QuickPromptHandler.MaritalStatus">
+	<summary>
+ The patient's marital status
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Medicomp.Web.KB.QuickPromptHandler">
+	<summary>
+ Performs an intelligent prompt for the specified MedcinId(s)
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.IntelligentPromptHandler.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.IntelligentPromptHandler.ListSize">
+	<summary>
+ Size of the response list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Medicomp.Web.KB.DiagnosisPromptHandler">
+	<summary>
+ Performs a diagnosis prompt for the specified MedcinId(s)
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.PrefixEnumHandler.MedcinId">
+	<summary>
+ Return only the prefix values appropriate for this MedcinId
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.PrefixEnumHandler.TermType">
+	<summary>
+ Return only the prefix values appropriate for this TermType. If MedcinId is specified, this parameter is ignored
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.ModifierEnumHandler.MedcinId">
+	<summary>
+ Return only the modifier values appropriate for this MedcinId
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EnumListNameHandler.ListName">
+	<summary>
+ The name of the list to retrieve
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EnumHandler.OrderBy">
+	<summary>
+ Sort order for the list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.DSMEnumHandler.Subset">
+	<summary>
+ List id for the code specifier subset of the DSM list.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.StatusEnumHandler.MedcinId">
+	<summary>
+ Return only the status values appropriate for this MedcinId
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.StatusEnumHandler.TermType">
+	<summary>
+ Return only the status values appropriate for this TermType. If MedcinId is specified, this parameter is ignored
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.UnitsEnumHandler.MedcinId">
+	<summary>
+ Return the unit values appropriate for this MedcinId
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.Setting">
+	<summary>
+ The setting where the services were performed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.Service">
+	<summary>
+ The type of service performed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.NewPatient">
+	<summary>
+ True if the patient is new to this provider, otherwise false
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.ExamType">
+	<summary>
+ The type of examination
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.FaceTime">
+	<summary>
+ The total amount of time, in minutes, spent face-to-face with the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.OverHalf">
+	<summary>
+ True of more than half of the face time was spent in counseling the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.EMChartHandler.Override">
+	<summary>
+ Used to override the level of any of the 12 E&amp;M components.  When present, should be a 12 character string consisting of the numbers 0 to 4.  Use 0 to keep the calculated level, 1 to 4 to override the level
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.CodeChartHandler.Chart">
+	<summary>
+ The xml description of the encounter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.CodeChartHandler.CodeSets">
+	<summary>
+ The code sets to use
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.CodeChartHandler.CodeDate">
+	<summary>
+ Determines which version of the codeset to use
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.BaseTermListHandler.GroupBy">
+	<summary>
+ Specifies how the results should be grouped
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.BaseTermListHandler.TermType">
+	<summary>
+ Used to filter the result set by term type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Medicomp.Web.KB.BaseTermHandler.Details">
+	<summary>
+ Additional properties to be included with each term in the result list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

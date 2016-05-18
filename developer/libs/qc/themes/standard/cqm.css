@@ -1,0 +1,260 @@
+﻿/* Filter Dialog */
+.qcCqmFilterDialog
+{
+    background-color: #ffffff !important;
+    padding: 16px;
+    border: 1px #999999 solid;
+    font-size: 100%;
+}
+        
+.qcCqmFilterDialog .sectionHeading
+{
+    font-weight: bold;
+    border-bottom: 1px solid #999999;
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+        
+.qcCqmFilterDialog .sectionContent
+{
+    margin-bottom: 12px;
+}
+        
+.qcCqmFilterDialog .subSection
+{
+    margin-top: 2px;
+    margin-left: 20px;
+}
+        
+.qcCqmFilterDialog .inputLine
+{
+    margin: 2px 0px 6px 0px;
+}
+        
+.qcCqmFilterDialog .checkLine
+{
+    margin: 2px 0px 6px 4px;
+}
+
+
+/*============== Measure Chooser Dialog ==================*/
+
+.qcCqmMeasureChooserDialog 
+{
+	background-color: #ffffff !important;
+	border: 1px #999999 solid;
+}
+
+.qcCqmMeasureChooserDialog .filterNode
+{
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.qcCqmMeasureChooserDialog .tableNode
+{
+	height: 300px;
+	overflow: auto;
+	margin: 8px;
+	border: 1px #999999 solid;
+}
+
+.qcCqmMeasureChooserDialog .measureTable
+{
+	margin: 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+	cursor: pointer;
+}
+
+.qcCqmMeasureChooserDialog .measureTable tr
+{
+	background-color: #ffffff;
+}
+
+.qcCqmMeasureChooserDialog .measureTable tr.selected
+{
+	background-color: #d8edff;
+}
+
+.qcCqmMeasureChooserDialog .measureTable td
+{
+	text-align: left;
+	vertical-align: top;
+	padding: 4px;
+}
+
+.qcCqmMeasureChooserDialog .measureTable td.checkCell
+{
+	width: 20px;
+}
+
+
+.qcCqmMeasureChooserDialog .measureTable td.captionCell
+{
+	width: 80px;
+}
+
+.qcCqmMeasureChooserDialog .measureTable td.descriptionCell
+{
+	width: 400px;
+}
+
+/* ================ Review Pane ================ */
+.qcCqmReviewPane 
+{
+    width: 100%;
+    height: 100%;
+    font-size: 85%;
+    overflow: auto;
+}
+
+.qcCqmReviewPane .responseTable
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.qcCqmReviewPane .responseTable td
+{
+    border: 1px #999999 solid;
+    padding: 6px;
+}
+
+.qcCqmReviewPane .responseTable .header td
+{
+    background-color: #eeeeee;
+    font-weight: bold;
+    border-top: none;
+    cursor: pointer;
+    padding: 2px 0px 2px 6px;
+}
+
+.qcCqmReviewPane .responseTable .header td.sort .innerLabel:after
+{
+    content: "\25be";
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.qcCqmReviewPane .responseTable .header td.sort.desc .innerLabel:after
+{
+    content: "\25b4";
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.qcCqmReviewPane .responseTable .header td.action
+{
+    text-align:center;
+    border-right: none;
+}
+
+.qcCqmReviewPane .responseTable td.status
+{
+    border-left: none;
+}
+
+.qcCqmReviewPane .responseTable td.code
+{
+    width: 65px;
+}
+
+.qcCqmReviewPane .responseTable td.description
+{
+}
+
+.qcCqmReviewPane .responseTable td.action
+{
+    width: 30px;
+    border-right: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.qcCqmReviewPane .responseTable td.info
+{
+    width: 20px;
+    border-left: none;
+    border-right: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.qcCqmReviewPane .responseTable td.hide
+{
+    width: 20px;
+    border-left: none;
+    border-right: none;
+    padding-left: 2px;
+    padding-right: 4px;
+}
+
+
+.qcCqmReviewPane.colorBars .responseTable tr.even
+{
+    background-color: #ffffff;
+}  
+        
+.qcCqmReviewPane.colorBars .responseTable tr.odd
+{
+    background-color: #f8f8e0;
+}  
+
+.qcCqmReviewPane.colorBars .responseTable .dijitButtonNode
+{
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+/* ============= icons =============*/
+.qcCqmReviewPane .icon
+{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/cqmicons.png);
+  background-repeat: no-repeat;
+}
+.qcCqmReviewPane .icon.document
+{
+  background-position: -2px -2px;
+}
+.qcCqmReviewPane .icon.document_delete
+{
+  background-position: -20px -2px;
+}
+.qcCqmReviewPane .icon.document_forbidden
+{
+  background-position: -38px -2px;
+}
+.qcCqmReviewPane .icon.document_information
+{
+  background-position: -56px -2px;
+}
+.qcCqmReviewPane .icon.document_ok
+{
+  background-position: -74px -2px;
+}
+.qcCqmReviewPane .icon.document_unknown
+{
+  background-position: -92px -2px;
+}
+.qcCqmReviewPane .icon.document_view
+{
+  background-position: -110px -2px;
+}
+.qcCqmReviewPane .icon.document_warning
+{
+  background-position: -128px -2px;
+}
+
+.qcCqmReviewPane .minusSignDiv 
+{
+    width:14px;
+    height:4px;
+    background-color:#333333;
+    margin:6px 0px 6px 0px;
+}

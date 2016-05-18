@@ -1,0 +1,138 @@
+﻿.qcNewEncounterDialog2
+{
+	/*width: 420px;*/
+	height: auto;
+    background-color: #ffffff;	
+    width: 450px;
+}
+ 
+
+.qcNewEncounterDialog2 .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;
+}
+        
+.qcNewEncounterDialog2 .contentArea
+{
+	height: auto;
+    max-height: 320px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    margin: 0px;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.qcNewEncounterDialog2 .fieldsContainer 
+{
+    width: 100%;
+    border-spacing: 0px 8px;
+}
+
+.qcNewEncounterDialog2 .header
+{
+    font-weight: bold;
+}
+
+.qcNewEncounterDialog2 .section
+{
+	margin-top: 16px;
+}
+
+.qcNewEncounterDialog2 .section .header
+{
+    width: 130px;
+}
+
+.qcNewEncounterDialog2 .section .field 
+{
+    display: table-cell;
+}
+
+.errorMessage
+{
+	color: #ff0000;
+	height: 2em;
+	visibility: hidden;
+}
+        
+.qcNewEncounterDialog2 .buttonArea
+{
+    text-align: right;
+    height:auto;
+    max-height: 30px;
+    width: 100%;
+    padding-bottom: 6px;
+    padding-right: 6px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+
+.qcNewEncounterDialog2 .buttonArea .dijitButton
+{
+	padding-right: 16px;
+}
+
+.qcNewEncounterDialog2 .buttonArea .dijitButtonNode
+{
+	width: 120px;
+}
+
+.qcNewEncounterDialog2 .patientTablePanel
+{
+	height: auto;
+	max-height: 140px;
+    overflow: auto;
+    border: 1px #999999 solid;
+    margin: 0px;
+}
+    
+.qcNewEncounterDialog2 .patientTablePanel table
+{
+	width: 100%;
+    border-collapse: collapse;
+    margin: 0px;
+    /*border: 1px #999999 solid;*/
+}
+
+.qcNewEncounterDialog2 .patientTablePanel tr
+{
+    cursor: pointer;
+    border-top: 1px #999999 solid;
+}
+
+.qcNewEncounterDialog2 .patientTablePanel tr.odd
+{
+    background-color: #ffffff;
+}
+    
+.qcNewEncounterDialog2 .patientTablePanel tr.even
+{
+    /*background-color: #ffffd6;*/
+     background-color: #ffffff;
+}
+    
+.qcNewEncounterDialog2 .patientTablePanel tr:hover
+{
+    background-color: #d8edff;
+}
+    
+.qcNewEncounterDialog2 .patientTablePanel tr.selected
+{
+    background-color: #d8edff;
+}   
+
+.qcNewEncounterDialog2 .patientTablePanel td
+{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}        
+
+.qcNewEncounterDialog2 input:disabled
+{
+	color: #000000 !important;
+}    

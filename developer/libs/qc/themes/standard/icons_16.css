@@ -1,0 +1,1323 @@
+.ic16 .add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -0px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .add.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -0px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -0px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .arrow_down_green
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -18px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .arrow_down_green.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -18px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .arrow_down_green
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -18px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .arrow_up_green
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -36px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .arrow_up_green.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -36px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .arrow_up_green
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -36px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .book_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -54px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .book_blue.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -54px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .book_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -54px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .bullet_ball_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -72px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .bullet_ball_blue.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -72px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .bullet_ball_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -72px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .calculator
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -90px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .calculator.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -90px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .calculator
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -90px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .check
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -108px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .check.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -108px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .check
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -108px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .delete
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -126px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .delete.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -126px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .delete
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -126px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -144px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -144px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -144px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -162px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_add.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -162px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document_add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -162px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_into
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -180px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_into.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -180px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document_into
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -180px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_new
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -198px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_new.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -198px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document_new
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -198px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_plain
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -216px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_plain.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -216px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document_plain
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -216px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_preferences
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -234px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .document_preferences.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -234px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .document_preferences
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -234px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .error
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -252px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .error.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -252px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .error
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -252px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .floppy_disk
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -270px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .floppy_disk.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -270px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .floppy_disk
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -270px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .folder
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -288px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .folder.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -288px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .folder
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -288px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .folder_document
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -306px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .folder_document.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -306px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .folder_document
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -306px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .form_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -324px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .form_blue.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -324px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .form_blue
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -324px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .help2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -342px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .help2.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -342px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .help2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -342px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .information2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -360px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .information2.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -360px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .information2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -360px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_close
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -378px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_close.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -378px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_close
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -378px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_down
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -396px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_down.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -396px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_down
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -396px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_left
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -414px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_left.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -414px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_left
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -414px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_open
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -432px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_open.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -432px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_open
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -432px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_right
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -450px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_right.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -450px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_right
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -450px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_up
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -468px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .navigate_up.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -468px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .navigate_up
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -468px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .pencil
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -486px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .pencil.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -486px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .pencil
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -486px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .photographic_filter
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -504px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .photographic_filter.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -504px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .photographic_filter
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -504px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .pin2_red
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -522px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .pin2_red.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -522px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .pin2_red
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -522px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .preferences
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -540px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .preferences.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -540px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .preferences
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -540px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .printer2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -558px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .printer2.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -558px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .printer2
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -558px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .quippe
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -576px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .quippe.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -576px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .quippe
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -576px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .refresh
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -594px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .refresh.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -594px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .refresh
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -594px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .rnprompt
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -612px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .rnprompt.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -612px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .rnprompt
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -612px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .signal_flag_red
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -630px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .signal_flag_red.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -630px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .signal_flag_red
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -630px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .sign_forbidden
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -648px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .sign_forbidden.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -648px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .sign_forbidden
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -648px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .sign_warning
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -666px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .sign_warning.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -666px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .sign_warning
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -666px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .star_yellow_add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -684px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .star_yellow_add.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -684px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .star_yellow_add
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -684px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeDx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -702px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeDx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -702px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypeDx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -702px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeHx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -720px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeHx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -720px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypeHx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -720px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypePx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -738px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypePx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -738px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypePx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -738px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeRx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -756px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeRx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -756px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypeRx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -756px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeSx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -774px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeSx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -774px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypeSx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -774px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeTx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -792px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .termTypeTx.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -792px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .termTypeTx
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -792px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .text_tree
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -810px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .text_tree.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -810px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .text_tree
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -810px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .view
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -828px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .view.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -828px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .view
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -828px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .window_dialog
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -846px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .window_dialog.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -846px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .window_dialog
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -846px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .xdel
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -864px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .xdel.disabled
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -864px -18px;
+   background-repeat: no-repeat;
+}
+
+.ic16 .dijitDisabled .xdel
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -864px -18px;
+   background-repeat: no-repeat;
+}
+

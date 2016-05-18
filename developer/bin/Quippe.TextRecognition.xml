@@ -1,0 +1,165 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.TextRecognition
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.TextRecognition.Recognize.Text">
+	<summary>
+ The text to recognize
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.DocumentType">
+	<summary>
+ The type of document that contains the text to be recognized
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.DocumentSection">
+	<summary>
+ The id of the section in the document that contains the text to be recognized
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.ServiceType">
+	<summary>
+ Type of service being provided. Service codes taken from the E/M guidelines.  List of service codes at /Medcin/Enums/Services
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.ClinicalSetting">
+	<summary>
+ Clinical setting where service is being provided. Setting codes taken from the E/M guidelines.  List of setting codes at /Medcin/Enums/Settings
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.ProvideRole">
+	<summary>
+ Role of the provider.
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.ProviderSpecialty">
+	<summary>
+ Provider's specialty. List of codes at /Medcin/Enums/Specialty
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.PatientId">
+	<summary>
+ Patient identifier
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Recognize.EncounterTime">
+	<summary>
+ Encounter time
+ </summary>
+</member><member name="P:Quippe.TextRecognition.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.TextRecognition.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.TextRecognition.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Quippe.TextRecognition.IResult.Index">
+	<summary>
+ Location in the text where the term was found
+ </summary>
+</member><member name="P:Quippe.TextRecognition.IResult.Length">
+	<summary>
+ Length of the term text
+ </summary>
+</member><member name="P:Quippe.TextRecognition.IResult.Confidence">
+	<summary>
+ Degree of confidence in the recognized match
+ </summary>
+</member><member name="P:Quippe.TextRecognition.IResult.Finding">
+	<summary>
+ Medcin Finding that was recognized from the text
+ </summary>
+</member><member name="P:Quippe.TextRecognition.IResult.Alternates">
+	<summary>
+ Alternatives to the selected match
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Result.Confidence">
+	<summary>
+ Degree of confidence in the recognized match
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Result.Finding">
+	<summary>
+ Medcin Finding that was recognized from the text
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Result.Index">
+	<summary>
+ Location in the text where the term was found
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Result.Length">
+	<summary>
+ Length of the term text
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Result.Alternates">
+	<summary>
+ Alternatives to the selected match
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Context.DocumentType">
+	<summary>
+ The type of document that contains the text to be recognized
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Context.DocumentSection">
+	<summary>
+ The id of the section in the document that contains the text to be recognized
+ </summary>
+</member><member name="P:Quippe.TextRecognition.Context.ServiceType">
+	<summary>
+ Type of service being provided.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Service codes taken from the E/M guidelines.  List of service codes at /Medcin/Enums/Services</remarks>
+</member><member name="P:Quippe.TextRecognition.Context.ClinicalSetting">
+	<summary>
+ Clinical setting where service is being provided
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Setting codes taken from the E/M guidelines.  List of setting codes at /Medcin/Enums/Settings</remarks>
+</member><member name="P:Quippe.TextRecognition.Context.ProvideRole">
+	<summary>
+ Role of the provider.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Context.ProviderSpecialty">
+	<summary>
+ Provider's specialty.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>List of codes at /Medcin/Enums/Specialty</remarks>
+</member><member name="P:Quippe.TextRecognition.Context.PatientSex">
+	<summary>
+ Sex of the patient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.TextRecognition.Context.PatientAge">
+	<summary>
+ Age of the patient in minutes
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

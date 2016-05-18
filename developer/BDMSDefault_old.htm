@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Quippe</title>
+
+	<link rel="stylesheet" type="text/css" href="libs/dijit/themes/claro/claro.css" />
+	<link rel="stylesheet" type="text/css" href="libs/Quippe/themes/Application.css" />
+	<link rel="stylesheet" type="text/css" href="libs/qc/themes/standard/qc.css" />
+	<link rel="icon" type="image/png" href="images/QuippeIconGloss.png" />
+	<link rel="apple-touch-icon" href="images/QuippeIconGloss.png" />
+
+	<script type="text/javascript" src="libs/Quippe/DojoBootstrap.js"></script>
+	<!--<script type="text/javascript" src="libs/dojo/dojo.js"></script>-->
+
+	<script type="text/javascript">
+		var queryStr= getUrlVars();
+		console.log('==== Query ====');
+		console.log(queryStr);
+		//var rest_host="http://bexservice.bdms.co.th";
+		var rest_host="";
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				var config = JSON.parse(xhttp.responseText);
+				rest_host=config.rest_host;
+
+				var userinfo={};
+				if((queryStr.jsonData)||(queryStr.cookieID)){
+					var jsonObj={};
+					if(queryStr.jsonData){
+						queryStr.jsonData=decodeURIComponent(queryStr.jsonData);
+						jsonObj=JSON.parse(queryStr.jsonData);
+					}
+					if(queryStr.cookieID){
+						queryStr.cookieID=decodeURIComponent(queryStr.cookieID);
+					}
+					//alert(".QuippeDemoSiteAuth="+(queryStr.cookieID?queryStr.cookieID:jsonObj.cookieID)+";path=/;");
+					document.cookie=".QuippeDemoSiteAuth="+(queryStr.cookieID?queryStr.cookieID:jsonObj.cookieID)+";path=/;";
+
+
+					//alert(document.cookie);
+					checkCookie();
+
+
+				}
+				else{
+					checkCookie();
+				}
+			}
+		};
+		xhttp.open("GET", "libs/BDMS/config.json", true);
+		xhttp.send();
+
+
+		function checkCookie(){
+			var cval=getCookie(".QuippeDemoSiteAuth");
+			var urlArr=window.location.href.split('?');
+			if(cval==""){
+				console.log('==== checkCookie cval ====');
+				window.location.href=rest_host+"/oauth/index.html?ReturnUrl="+ encodeURIComponent(window.location.href)
+			}
+			else if((urlArr.length==2)&&(window.location.href.indexOf("jsonData")>-1)){
+				console.log('==== checkCookie urlArr ====');
+				console.log(removeURLParameter(removeURLParameter(window.location.href,"jsonData"),"cookieID"));
+				window.location.href=removeURLParameter(removeURLParameter(window.location.href,"jsonData"),"cookieID");
+			}else{
+				//alert(3);
+				/*
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.onload = loadApplication;
+
+				script.src = '/libs/dojo/dojo.js';
+				document.getElementsByTagName('head')[0].appendChild(script);
+				*/
+//				console.log('==== checkCookie ====');
+				loadApplication();
+				loadDojo(loadApplication, loadFailure);
+			}
+		}
+
+		var loadFailure = function (message) {
+			//alert("loadFailure");
+			message = message || "An unknown error has occurred";
+
+			var element = document.getElementById('startupMessage');
+
+			if (element) {
+				element.innerHTML = message;
+				element.style.color = '#990000';
+				element.style.fontWeight = 'bold';
+			}
+		};
+
+		function loadApplication() {
+//			alert("loadApplication");
+//			alert(document.cookie);
+
+			require(["BDMS/Application", "dojo/topic", "dojo/dom", "dojo/when", "dojo/dom-construct", "dojo/io-query","dojo/request", "qc/note/HtmlContent", "qc/_core", "dojo/query", "dijit/registry", "dojo/dom-style"],
+					function (Application, topic, dom, when, domConstruct, ioQuery, request, HtmlContent,_core, domQuery, registry, domStyle) {
+//						alert("1");
+						try {
+							console.log(rest_host+"/oauthcookie/get?cookieID="+getCookie(".QuippeDemoSiteAuth"));
+							request.get(rest_host+"/oauthcookie/get?cookieID="+getCookie(".QuippeDemoSiteAuth")
+									, { handleAs : "json" }).then(function(data){
+										userinfo=data;
+										//alert(JSON.stringify(data));
+							domConstruct.destroy(dom.byId("startupMessage"));
+
+							var app = new Application();
+							app.placeAt(document.body);
+
+							when(app.init(), function () {
+								var query = location.search ? ioQuery.queryToObject(location.search.substr(1)) : {};
+
+
+								var patientId = query['patientId'] || query['P'] || query['p'] || '';
+								var episodeNumber = query['episodeNumber'] || query['E'] || query['e'] || '';
+								var encounterId = query['encounterId'] || query['E'] || query['e'] || '';
+								var encounterTime = query['encounterTime'] ? new Date(query['encounterTime']) : new Date();
+								var templateId = query['templateId'] || query['T'] || query['t'] || '';
+								var templateName = query['templateName'] || '';
+								episodeNumber=episodeNumber.replace(/-/g,"");
+//								var pid = query['pid'] || '';
+								var locationid = query['locationid'] || '';
+
+//								console.log('==== parameters ====');
+//								console.log('patientId : ' + patientId);
+//								console.log('episodeNumber : ' + episodeNumber);
+//								console.log('encounterId : ' + encounterId);
+//								console.log('encounterTime : ' + encounterTime);
+//								console.log('templateId : ' + templateId);
+//								console.log('templateName : ' + templateName);
+//								console.log('pid : ' + pid);
+
+								if (patientId && episodeNumber) {
+									if (encounterId) {
+										//alert(1);
+										topic.publish('/qc/OpenEncounter', { patientId: patientId, encounter: { id: encounterId, encounterTime: encounterTime , episodeNumber : episodeNumber } });
+									}
+									else {
+										//alert(JSON.stringify({ patientId: patientId, encounter: { id: encounterId, encounterTime: encounterTime , episodeNumber : episodeNumber }
+										//	, noteTemplate: templateId }));
+										//alert("B");
+//										console.log('==== loadapplicaton ====');
+										app.workspace.newEncounter( { patientId: patientId, encounter: { id: encounterId, encounterTime: encounterTime , episodeNumber : episodeNumber }
+											, noteTemplate: templateId, noteTemplateName: templateName, locationid: locationid }).then(
+												function(){
+
+												}
+										);
+									}
+								}
+								else {
+									topic.publish('/qc/ShowDialog', 'newEncounter');
+								};
+							});
+
+									}
+							);
+						}
+						catch (ex) {
+							loadFailure(ex.Message || "An unknown error has occurred");
+						}
+					});
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+			}
+			return "";
+		}
+
+		function getUrlVars() {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				try{
+					vars[hash[0]] = decodeURIComponent(hash[1]);
+				}catch(ex){
+					vars[hash[0]] = hash[1];
+				}
+			}
+			return vars;
+		}
+
+		function removeURLParameter(url, parameter) {
+			//prefer to use l.search if you have a location/link object
+			var urlparts= url.split('?');
+			if (urlparts.length>=2) {
+
+				var prefix= encodeURIComponent(parameter)+'=';
+				var pars= urlparts[1].split(/[&;]/g);
+
+				//reverse iteration as may be destructive
+				for (var i= pars.length; i-- > 0;) {
+					//idiom for string.startsWith
+					if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+						pars.splice(i, 1);
+					}
+				}
+
+				url= urlparts[0]+'?'+pars.join('&');
+				return url;
+			} else {
+				return url;
+			}
+		}
+
+	</script>
+</head>
+<body class="claro" spellcheck="false">
+<div id="startupMessage" style="margin: 60px;">
+	Loading Quippe...<br />
+	<noscript>You must enable Javascript in your browser in order to use this application.</noscript>
+</div>
+</body>
+</html>

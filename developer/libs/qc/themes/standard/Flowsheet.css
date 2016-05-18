@@ -1,0 +1,353 @@
+﻿.qcMenuSeparatorLabel
+{
+    font-weight: bold;
+}
+        
+.qcFlowsheet
+{
+    position:relative;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+        
+.qcFlowsheet .grid
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+        
+.qcFlowsheet .scrollView
+{
+    background-color: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: auto;
+    z-index: 100;
+}
+        
+.qcFlowsheet .sizerBox
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    cursor: default;
+}
+        
+.qcFlowsheet.citeMode .sizerBox
+{
+    cursor: pointer;
+}        
+        
+.qcFlowsheet table
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+        
+.qcFlowsheet td
+{
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border-right: 1px #999999 solid;
+    border-bottom: 1px #999999 solid;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+
+.qcFlowsheet td.labelCell
+{
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.qcFlowsheet td.currentCell
+{
+    border-right: 3px double #999999;
+}        
+        
+        
+.qcFlowsheet tr
+{
+    background-color: #ffffff;
+    background-image: none;
+    background-position: 0px -1px;
+    background-repeat: repeat-x;
+}
+                
+.qcFlowsheet tr.header
+{
+    background-image: url(images/commonHighlight.png);
+    background-color: #eeeeee;
+    font-weight: bold;
+}  
+
+.qcFlowsheet.colorBars tr.even
+{
+    background-color: #ffffff;
+}  
+        
+.qcFlowsheet.colorBars tr.odd
+{
+    background-color: #f8f8e0;
+}  
+                              
+.qcFlowsheet tr.highlight,
+.qcFlowsheet tr.even.highlight,
+.qcFlowsheet tr.odd.highlight
+{
+    background-color: #abffd6;
+}  
+        
+        
+.qcFlowsheet .cellData
+{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: default;
+}
+        
+.qcFlowsheet.citeMode .cellData
+{
+    cursor: pointer;
+}
+
+.qcFlowsheet .cellData.A
+{
+    color: #cc0000;
+}
+
+.qcFlowsheet .cellData.N
+{
+    color: #0000cc;
+}
+        
+/*
+.qcFlowsheet .resultBox
+{
+    font-size: 150%;
+    font-weight: bold;
+}
+*/
+        
+.qcFlowsheet .resultBox
+{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(images/FlowsheetIcons.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;            
+}
+
+.qcFlowsheet .cellData.A .resultBox
+{
+    background-position: -17px -1px;
+}        
+
+.qcFlowsheet .cellData.N .resultBox
+{
+    background-position: -34px -1px;
+}
+        
+        
+.qcFlowsheet .outline 
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+.qcFlowsheet .outline .expander
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+}
+
+.qcFlowsheet .outline.finding .expander
+{
+    width: 0px;
+}        
+
+.qcFlowsheet .outline.expanded .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: -35px 0px;
+}
+
+.qcFlowsheet .outline.collapsed .expander
+{
+    background-image: url(images/treeExpandImages.png);
+    background-position: 1px 0px;
+}
+
+.qcFlowsheet .outline .label
+{
+    font-weight: normal;
+    font-style: normal;
+	display: inline-block;
+    cursor: pointer;
+	margin-left: 0px;
+	vertical-align: middle;
+}
+        
+.qcFlowsheet .outline.group .label
+{
+    font-weight: bold;
+}        
+        
+.qcFlowsheet .outline.historyOnly .label
+{
+    font-style: italic;
+}
+        
+.spinner
+{
+    width: 16px;
+    height: 16px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    background-image: url(images/spinner.gif);
+    background-repeat: no-repeat;
+}
+        
+.qcFlowsheetFilterDialog
+{
+    background-color: #ffffff !important;
+    padding: 16px;
+    border: 1px #999999 solid;
+    font-size: 100%;
+}
+        
+.qcFlowsheetFilterDialog .sectionHeading
+{
+    font-weight: bold;
+    border-bottom: 1px solid #999999;
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+        
+.qcFlowsheetFilterDialog .sectionContent
+{
+    margin-bottom: 12px;
+}
+        
+.qcFlowsheetFilterDialog .subSection
+{
+    margin-top: 2px;
+    margin-left: 20px;
+}
+        
+.qcFlowsheetFilterDialog .inputLine
+{
+    margin: 2px 0px 6px 0px;
+}
+        
+.qcFlowsheetFilterDialog .checkLine
+{
+    margin: 2px 0px 6px 4px;
+}
+
+.qcFlowsheetFilterDialog table
+{
+    margin-left: 18px;
+    width: 100%;
+}
+
+.qcFlowsheetFilterDialog td
+{
+    padding: 0px 4px 4px 4px;
+}
+
+.qcFlowsheetFilterDialog .topOption
+{
+    margin-top: 6px;
+}
+
+.qcFlowsheet .graphIcon {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABLklEQVR4nJ2TrVLDUBCFvw2xqCoEEhy8AgqN5wmQvAGDxDFgQCHRvEWfoaKygaFMIEOTJvfeLCI3f22mFFbdPbPn7DmbibBtnT/pEBxuLQBcXpz1+tuHl78JGFeigCgg/3CQG+dfgqIbBO5O1vOOITMOAU+VzQ6ujqNefz2GzNiaDfKLwFCluet0PsLkYH/N7iGQuQBdGV4UFlH12zs32Lt/7CtMbkhMUB+6dbA0rVz3K7gkAbRH+DIhooqKNLkXhe1MdG7g5u8NVNuO8x2PaYOlhfMT7aoQwL5FDVMEGEFc1PdtL5Hmptku3Qh2Nqt0awsjiIsAVfHLKpGldYhWTO0JvEaNKwU4gs8iXLOb2xLUR+0JfMx9/truLt8m8EMCWuHGlqyWnD5PB3/TbesHC3mBOAxCoH0AAAAASUVORK5CYII=);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.graphTab {
+    overflow: hidden;
+}
+
+.graphContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.graphContainer canvas {
+    margin-top: 20px;
+}
+
+.graphContainer .graphTitle {
+    position: absolute;
+    font-size: 12pt;
+    font-weight: bold;
+    top: 20px;
+}
+
+.graphContainer .scatter-legend {
+    display: inline-block;
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    border: 1px solid #F3F3F3;
+    padding: 5px;
+    background-color: white;
+}
+
+.graphContainer .scatter-legend li {
+    display: block
+}
+
+.graphContainer .scatter-legend li span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.graphContainer .dijitDialogCloseIcon {
+    top: 15px;
+    right: 10px;
+}

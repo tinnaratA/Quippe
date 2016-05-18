@@ -1,0 +1,51 @@
+﻿.qcPatientSearchBox
+{
+}
+
+.qcPatientSearchBox .input
+{
+	width: 100%;
+}
+    
+.qcPatientSearchBoxResults.dijitContentPane
+{
+    background-color: #ffffff;
+    width: 500px;
+    max-height: 300px;
+    padding: 0px;
+}
+    
+.qcPatientSearchBoxResults table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0px;
+}
+
+.qcPatientSearchBoxResults tr
+{
+    cursor: pointer;
+    border: 1px #999999 solid;
+}
+    
+ 
+.qcPatientSearchBoxResults tr.odd
+{
+    background-color: #ffffff;
+}
+    
+.qcPatientSearchBoxResults tr.even
+{
+    background-color: #ffffd6;
+}
+    
+.qcPatientSearchBoxResults tr:hover
+{
+    background-color: #d8edff;
+}
+    
+.qcPatientSearchBoxResults tr.selected
+{
+    background-color: #d8edff;
+}           
+    

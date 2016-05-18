@@ -1,0 +1,24 @@
+<div class="qcFindingPhrasingTab">
+
+
+    <div class="qcGroupBox">
+        <div class="heading">Alternate Phrases</div>
+        <div data-dojo-attach-point="phraseList" data-dojo-type="qc/OptionList" data-dojo-attach-event="onSelectedItemChanged:onAltPhraseSelected">
+        </div>
+        <div class="editorLink" data-dojo-attach-point="editorLink" data-dojo-attach-event="onclick:onEditClick">Edit Phrase List</div>
+    </div>
+
+    <div class="qcGroupBox">
+        <div class="heading">Transcription</div>
+        <div>
+			<input class="txtTranscription" data-dojo-attach-point="txtTranscription" data-dojo-type="dijit/form/TextBox" type="text" data-dojo-props="disabled: 'disabled'" />
+            <br />
+            <div data-dojo-attach-point="overrideNode">
+                <input id="${id}_chkOverrideTranscription" data-dojo-attach-point="chkOverrideTranscription" data-dojo-type="dijit/form/CheckBox" type="checkbox" />
+                <label for="${id}_chkOverrideTranscription">Override Transcription</label>
+            </div>
+        </div>
+    </div>
+
+
+</div>

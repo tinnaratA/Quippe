@@ -1,0 +1,84 @@
+﻿.qcSaveContentDialog
+{
+	/* width: 360px; */
+	/* height: 410px; */
+	background-color: #ffffff;
+}
+    
+
+.qcSaveContentDialog .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;	
+}
+        
+.qcSaveContentDialog .contentArea
+{
+	/* height: 300px; */
+    padding: 0px;
+    margin: 12px;
+    overflow: auto;
+    /* width: 360px;	 */
+}
+
+.qcSaveContentDialog table
+{
+	width: 100%;
+}
+
+.qcSaveContentDialog .treeView
+{
+	height: 180px;
+	width: 360px;
+	border: 1px #999999 solid;
+}
+
+.qcSaveContentDialog .lblLocation
+{
+	width: 100%;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.qcSaveContentDialog .labelCol
+{
+	width: 80px;
+}
+
+.qcSaveContentDialog .dataCol
+{
+}
+
+
+.qcSaveContentDialog .saveOptions
+{
+	/* height: 60px;*/
+}
+
+.qcSaveContentDialog .saveOptions .optionLine
+{
+	margin-top: 4px;
+	margin-bottom: 4px;
+	vertical-align: middle;
+}
+
+.qcSaveContentDialog .dijitTextBox
+{
+	width: 100%;
+}
+
+.qcSaveContentDialog .dijitComboBox
+{
+	width: 100%;
+}
+        
+.qcSaveContentDialog .buttonArea
+{
+    text-align: right;
+    height: 40px;
+    padding-bottom: 4px;
+    padding-right: 12px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}

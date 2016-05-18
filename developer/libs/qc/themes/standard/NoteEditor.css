@@ -1,0 +1,91 @@
+﻿.qcNoteEditor
+{
+	min-height: 98%;
+}
+      
+.noteElement.selected
+{
+    outline: 1px #ffa64c solid;
+} 
+            
+
+.qcNoteEditor .note .qcFindingEntry.highlight
+{
+	background-color: #FFF799;
+    outline: 1px #eeeeee solid;
+} 
+
+.qcNoteEditor .note .qcFindingEntry.highlight.selected
+{
+	background-color: #FFF799;
+    outline: 1px #ffa64c solid;
+} 
+
+.qcNoteEditor .note .qcFindingTable.highlight > table,
+.qcNoteEditor .note .qxFindingTable.highlight > table
+{
+    outline: 3px #FFF799 solid;
+}
+
+.qcNoteEditor .freeText .displayText
+{
+	font: inherit;
+	width: 95%;
+	margin: 0px;
+	padding: 2px;
+	border: 1px transparent solid;
+	min-height: 1.2em; /*TODO: need to fix this */
+	background-color: transparent;
+}
+.qcNoteEditor .freeText .editBox
+{
+	font: inherit;
+	margin: 0px;
+	padding: 2px;
+	min-height: 1.2em;
+}
+
+/* Editable Text */
+.editableText
+{
+}
+
+.inTextEdit
+{
+	background-color: #ffffff !important;
+}
+
+.qcNoteEditor .chapter.inTextEdit .chapterHeader .innerLabel,
+.qcNoteEditor .section.inTextEdit .sectionHeader .innerLabel,
+.qcNoteEditor .group.inTextEdit .groupHeader .innerLabel,
+.qcNoteEditor .findingLabel.inTextEdit,
+.qcNoteEditor .findingGroup.inTextEdit
+{
+	/*border: 1px dashed #000000 !important;*/
+	border-color:transparent;
+	outline: #000000 dashed 1px;
+	background-color: #ffffff !important;
+}
+
+.qcNoteEditor .findingLabel.inTextEdit .preSep,
+.qcNoteEditor .findingLabel.inTextEdit .postSep,
+.qcNoteEditor .findingLabel.inTextEdit .checkbox
+{
+	display: none;
+}
+
+.qcNoteEditor .findingLabel.inTextEdit .innerLabel
+{
+	display: inline;
+	white-space: nowrap;
+}
+
+
+.qcHistoryNoteViewer .chapter.selected .chapterHeader .innerLabel,
+.qcHistoryNoteViewer .section.selected .sectionHeader .innerLabel,
+.qcHistoryNoteViewer .group.selected .groupHeader .innerLabel,
+.qcHistoryNoteViewer .note .findingLabel.selected
+{
+    background-color:#abffd6;
+    border:solid 1px #76c09d;
+}

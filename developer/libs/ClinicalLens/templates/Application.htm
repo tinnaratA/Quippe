@@ -1,0 +1,130 @@
+﻿<div class="quippeApp clinicalLensApp">
+    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false" style="width: 100%; height: 100%; padding: 8px">
+        <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="chartTabs" id="chartTabs" data-dojo-props="region: 'center'">
+            <div data-dojo-attach-point="mostRecentPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Summary'" class="mostRecentPane chartPane">
+                <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" class="toolbarPane" data-dojo-attach-point="mostRecentToolbarPane">
+                        <div data-dojo-type="dijit/Toolbar" class="ic24 clinicalLensToolbar" data-dojo-attach-point="toolbar">
+                            <div class="title">Quippe Clinical Lens&trade; (patent pending)</div>
+                            <div data-dojo-type="dijit/form/DropDownButton" data-dojo-attach-point="appButton" data-dojo-props="iconClass: 'quippe', showLabel: false">
+                                <span>Application Menu</span>
+                                <div data-dojo-type="dijit/DropDownMenu" data-dojo-attach-point="appDropDownMenu" class="ic24">
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="newEncounterMenuItem" data-dojo-props="iconClass: 'document_new'" data-dojo-attach-event="onClick:onNewEncounterClicked" style="display: none">New Encounter</div>
+                                    <div data-dojo-type="dijit/MenuSeparator" data-dojo-attach-point="newEncounterSeparator" style="display: none"></div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="importPatientMenuItem" data-dojo-props="iconClass: 'document_add'" data-dojo-attach-event="onClick:onImportPatientClicked">Import New Patient...</div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="openPatientMenuItem" data-dojo-props="iconClass: 'folder_document'" data-dojo-attach-event="onClick:onOpenPatientClicked">Open Existing Patient...</div>
+                                    <div data-dojo-type="dijit/MenuSeparator" data-dojo-attach-point="logOffMenuItemSeparator"></div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="logOffMenuItem" data-dojo-attach-event="onClick:onLogOffClicked">Log Off</div>
+                                </div>
+                            </div>
+                            <div data-dojo-type="dijit/form/DropDownButton" data-dojo-attach-point="toolsMenuButton" data-dojo-props="iconClass: 'window_dialog', showLabel: true">
+                                <span>Tools</span>
+                                <div data-dojo-type="dijit/DropDownMenu" data-dojo-attach-point="toolsDownMenu" class="ic16">
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="optionsMenuItem" data-dojo-props="iconClass: 'preferences'" data-dojo-attach-event="onClick:onOptionsClicked">Options...</div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="patientEditorMenuItem" data-dojo-props="iconClass: 'form_blue'" data-dojo-attach-event="onClick:onPatientEditorClicked">Demo Patient Editor...</div>
+                                    <div data-dojo-type="dijit/MenuSeparator" data-dojo-attach-point="toolsMenuSeparator"></div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="medcinViewerMenuItem" data-dojo-attach-event="onClick:onMedcinViewerClicked">MEDCIN Viewer</div>
+                                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="webServiceTesterMenuItem" data-dojo-attach-event="onClick:onWebServiceTesterClicked">Web Service Tester</div>
+                                </div>
+                            </div>
+                            <div data-dojo-type="dijit/form/DropDownButton" data-dojo-attach-point="legendMenuButton" data-dojo-props="iconClass: 'help2', showLabel: true">
+                                <span>Legend</span>
+                                <div data-dojo-type="dijit/TooltipDialog">
+                                    <span class="legendColorItem legendDiagnosisHighlight"></span> Relevant for selected problem/screening<br />
+                                    <span class="legendColorItem legendSpecialtyHighlight"></span> Relevant for selected specialty<br />
+                                    <span class="legendColorItem legendDiagnosisHighlight legendSpecialtyHighlight"></span> Relevant for both selected problem/screening and specialty
+                                </div>
+                            </div>
+                            <div data-dojo-type="dijit/form/ToggleButton" data-dojo-attach-point="quickDataButton" data-dojo-props="showLabel: true, iconClass: 'view'" style="display: none" data-dojo-attach-event="onClick:onQuickDataClicked">Quick Data</div>
+                            <div data-dojo-type="qc/ContextMenuButton" data-dojo-attach-point="actionsMenuButton" data-dojo-props="iconClass: 'form_blue', showLabel: true, onSelectionChanged: BlankFunction" style="display: none">
+                                <span>Actions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="chartPane">
+                        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, _splitterClass: CollapsibleSplitter" data-dojo-attach-point="mostRecentBorderContainer">
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right', splitter: true" class="sidebar redraw" data-dojo-attach-point="mostRecentSidebar">
+                                <div class="clinicalLensSidebarContainer" data-dojo-attach-point="sidebarContainer">
+                                    <div data-dojo-attach-point="patientPanel">
+                                        <div data-dojo-attach-point="patientName" class="patientName"></div>
+                                        <div data-dojo-attach-point="patientStats" class="patientStats"></div>
+                                    </div>
+                                    <div data-dojo-attach-point="focusListSizePanel">
+                                        <div data-dojo-attach-point="focusListSizeTitle" class="focusListSizeTitle">Focus List Size:</div>
+                                        <div data-dojo-attach-point="focusListSizeSlider" data-dojo-type="dijit/form/HorizontalSlider" data-dojo-props="showButtons: false, discreteValues: 3, minimum: 1, maximum: 3, value: 2" data-dojo-attach-event="change: onFocusListSizeSliderChange"></div>
+                                        <div data-dojo-attach-point="focusListSizeLegend" class="focusListSizeLegend">
+                                            <span class="focusListSizeLegendFocused">Focused</span>
+                                            <span class="focusListSizeLegendBroad">Broad</span>
+                                        </div>
+                                    </div>
+                                    <div data-dojo-attach-point="encounterSelectorPanel">
+                                        Encounter:
+                                        <div data-dojo-attach-point="encountersSelect" data-dojo-type="qc/FilteringSelect" data-dojo-props="searchAttr: 'name', required: false" data-dojo-attach-event="change: onEncounterSelectionChanged"></div>
+                                    </div>
+                                    <div data-dojo-attach-point="activeProblemsPane" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Filter by Problem', toggleable: true" class="qcContextMenuContainer activeProblemsPane">
+                                        <div data-dojo-attach-point="activeProblemsListView" data-dojo-type="qc/ListView" data-dojo-props="multiSelect: false, viewMode: 'list'" class="diagnosisListView"></div>
+                                    </div>
+                                    <div data-dojo-attach-point="screeningPane" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Screening', toggleable: true" class="qcContextMenuContainer screeningPane">
+                                        <div data-dojo-attach-point="screeningSearchBoxContainer" class="searchBoxContainer"></div>
+                                        <div data-dojo-attach-point="screeningListView" data-dojo-type="qc/ListView" data-dojo-props="multiSelect: false, viewMode: 'list'" class="diagnosisListView"></div>
+                                    </div>
+                                    <div data-dojo-attach-point="specialtiesPane" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Filter by Specialty', toggleable: true" class="specialtiesPane">
+                                        <div data-dojo-attach-point="specialtiesListView" data-dojo-type="qc/ListView" data-dojo-props="multiSelect: false, viewMode: 'list'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="categoriesPane redraw">
+                                <table data-dojo-attach-point="mostRecentTable" class="dashboard"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-dojo-attach-point="entireChartPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Entire Chart'" class="entireChartPane chartPane">
+                <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" class="toolbarPane" data-dojo-attach-point="entireChartToolbarPane">
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="chartPane">
+                        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, _splitterClass: CollapsibleSplitter" data-dojo-attach-point="entireChartBorderContainer">
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right', splitter: true" class="sidebar redraw" data-dojo-attach-point="entireChartSidebar">
+                            </div>
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="categoriesPane redraw">
+                                <table data-dojo-attach-point="entireChartTable" class="dashboard"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-dojo-attach-point="rawPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Raw XML'" data-dojo-attach-event="click: onRawPaneClick"></div>
+            <div data-dojo-attach-point="flowsheetPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Flowsheet'" class="flowsheetPane chartPane">
+                <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" class="toolbarPane" data-dojo-attach-point="flowsheetToolbarPane">
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="chartPane">
+                        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, _splitterClass: CollapsibleSplitter" data-dojo-attach-point="flowsheetBorderContainer">
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right', splitter: true" class="sidebar redraw" data-dojo-attach-point="flowsheetSidebar">
+                            </div>
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="categoriesPane redraw">
+                                <div data-dojo-attach-point="flowsheet" data-dojo-type="ClinicalLens/Flowsheet"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-dojo-attach-point="warningsPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Warnings'" class="warningsPane chartPane">
+                <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" class="toolbarPane" data-dojo-attach-point="warningsToolbarPane">
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="chartPane">
+                        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'sidebar', gutters: false, liveSplitters: true, _splitterClass: CollapsibleSplitter" data-dojo-attach-point="warningsBorderContainer">
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right', splitter: true" class="sidebar redraw" data-dojo-attach-point="warningsSidebar">
+                            </div>
+                            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" class="warningsContentPane redraw" data-dojo-attach-point="warningsContentPane">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

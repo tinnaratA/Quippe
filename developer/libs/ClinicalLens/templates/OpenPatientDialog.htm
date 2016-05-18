@@ -1,0 +1,62 @@
+<div class="openPatientDialog dijitDialog qcDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title" style="background-color:#ffffff">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div data-dojo-attach-point="choosePatientStep">
+                <div class="patientTablePanel">
+                    <table tabindex="1">
+                        <tbody data-dojo-attach-point="patientsTable" data-dojo-attach-event="onClick:onPatientsTableClick, onDblclick:onPatientsTableDoubleClick"></tbody>
+                    </table>
+                </div>
+                <div class="importPatientButtonContainer" data-dojo-attach-point="importPatientButtonContainer">
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="importNewPatientButton" data-dojo-attach-event="onClick:onImportNewPatientClick" style="display: none">Import New Patient</div>
+                </div>
+            </div>
+            <div data-dojo-attach-point="importPatientStep" class="importPatientStep" style="display: none">
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="firstName" data-dojo-props="required: true"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="lastName" data-dojo-props="required: true"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/DateTextBox" data-dojo-attach-point="birthDate" data-dojo-props="required: true"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sex:</td>
+                        <td>
+                            <div data-dojo-type="qc/FilteringSelect" data-dojo-attach-point="sex" data-dojo-props="required: true, searchAttr: 'text'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chart:</td>
+                        <td>
+                            <form name="uploadForm" method="post" data-dojo-attach-point="uploadForm" enctype="multipart/form-data">
+                                <input name="Data" data-dojo-attach-point="chartFileName" type="file" accept=".xml" />
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="buttonArea">
+            <div data-dojo-attach-point="cmdOK" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick" data-dojo-props="disabled: true">OK</div>
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="dijitDialog qcUserAccountDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="onclick: onCancel" data-dojo-props="title: '${buttonCancel}'">
+            <span data-dojo-attach-point="closeText" class="closeText" data-dojo-props="title: '${buttonCancel}'">x</span> 
+        </span>
+    </div>
+
+    
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div class="contentArea">
+            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabControl" class="tabControl">
+                <div data-dojo-attach-point="uadAccount" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: ''">
+                    <table>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadFirstName"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editFirstName"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadLastName"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editLastName"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadEmail"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editEmail"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadOrganization"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editOrganization"></div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-dojo-attach-point="uadContactInfo" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: ''">
+                    <table>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadAddress"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editAddress1"></div></td>
+                        </tr>
+                        <tr>
+                            <td />
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editAddress2"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadCity"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editCity"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadState"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editState"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadPostalCode"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="editPostalCode"></div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-dojo-attach-point="uadPassword" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: ''">
+                    <table>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadCurrentPassword"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtCurrentPassword" data-dojo-props="type: 'password'"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadNewPassword"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtNewPassword" data-dojo-props="type: 'password'"></div></td>
+                        </tr>
+                        <tr>
+                            <td><span data-dojo-attach-point="uadConfirm"></span>:</td>
+                            <td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="txtConfirmNewPassword" data-dojo-props="type: 'password'"></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="passwordMessage" data-dojo-attach-point="passwordMessage"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td />
+                            <td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="cmdSetPassword" data-dojo-attach-event="onClick:onSetPassword">Set Password</div></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonArea">
+            <div data-dojo-attach-point="cmdOK" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onOKClick">OK</div> 
+            <div data-dojo-attach-point="cmdCancel" data-dojo-type="dijit/form/Button" class="dialogButton" data-dojo-attach-event="onClick:onCancelClick">Cancel</div>
+        </div>
+    </div>
+</div>

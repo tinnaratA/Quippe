@@ -1,0 +1,34 @@
+﻿.qcHistoryNoteViewer
+{
+    width: 100%;
+    height: 100%;
+}
+
+.qcHistoryNoteViewer iframe
+{
+    width:100%;
+    height:100%;
+    border:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.qcHistoryNoteViewerOverlay
+{
+    position: absolute;
+    z-index: 100000;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255,255,255,.1); 
+}
+
+/* hover over a MenuItem or MenuBarItem */
+.claro .dijitMenu.qcHistoryViewer .dijitMenuItemHover td,
+.claro .dijitMenu.qcHistoryViewer .dijitMenuItemSelected td,
+.claro .qcHistoryViewer .dijitMenuItemHover,
+.claro .qcHistoryViewer .dijitComboBoxMenu .dijitMenuItemHover,
+.claro .qcHistoryViewer .dijitMenuItemSelected {
+  border-color: transparent;
+}

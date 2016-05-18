@@ -1,0 +1,16 @@
+﻿.qcXmlEditorPane .textEditor
+{
+	padding: 0px !important;
+    font-family: Consolas, Lucida Console, Courier New, Monospace;
+    font-size: 12px;
+    border: 0px;
+    white-space: pre;
+    -moz-tab-size: 2; 
+    -o-tab-size: 2; 
+    tab-size: 2;
+    word-wrap: normal;
+    resize: none;
+	height: 100%;
+	width: 100%;
+	overflow: scroll;
+}

@@ -1,0 +1,20 @@
+﻿.note.inlinegroups
+{
+}
+
+.note.inlinegroups .sectionHeader
+{
+	/* color: #333333; */
+}
+
+.note.inlinegroups .groupHeader
+{
+	/* color: #333333; */
+	font-size: 100%;
+	display: inline;
+}
+
+.note.inlinegroups .groupContent
+{
+	display: inline;
+}

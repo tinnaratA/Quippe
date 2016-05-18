@@ -1,0 +1,118 @@
+﻿
+.searchResultList
+{
+    padding: 0px;
+    overflow: auto;
+    width: 500px;
+    background-color: #dddddd;
+}
+        
+.searchResultList .header
+{
+    border: 1px #999999 solid;
+    margin: 2px;
+}
+
+.searchResultList .dijitToolbar
+{
+	margin: 0px;
+	padding: 0px;
+	border: 1px #999999 solid;
+}
+        
+.searchResultList .content
+{
+    margin-top: 2px;
+    padding: 6px;
+    max-height: 500px;
+    min-height: 100px;
+    overflow: auto;
+    background-color: #ffffff;
+    border: 1px #999999 solid;
+}
+
+.searchResultList.showStats .content
+{
+    border-top: 1px #999999 solid;
+    border-right: 1px #999999 solid;
+    border-bottom: 0px #999999 solid;
+    border-left: 1px #999999 solid;
+}
+
+.searchResultList .resultStats
+{
+    display: none;
+    text-align:right;
+    padding-right:4px;
+    font-size:70%;
+    color:#009900;
+    border-top: 0px #999999 solid;
+    border-right: 1px #999999 solid;
+    border-bottom: 1px #999999 solid;
+    border-left: 1px #999999 solid;
+    /*background-color: rgba(255,255,255,.8);*/
+    background-color: #ffffff;
+}
+
+.searchResultList.showStats .resultStats
+{
+    display: block;
+}
+
+.matchText
+{
+    font-weight: bold;
+}
+
+.qcSearchBox
+{
+	position: relative;
+}
+
+.qcSearchBox .notFoundIndicator
+{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	display: none;
+	float: right;
+	width: 16px;
+	height: 16px;
+    background-image: url(images/icons_16.png);
+    background-position: -126px -18px;
+    background-repeat: no-repeat;	
+    cursor: pointer;
+}
+
+.qcSearchBox.hasText .notFoundIndicator
+{
+	display: block;
+	background-position: -862px -18px;
+}
+
+.qcSearchBox.noResults .notFoundIndicator,
+.qcSearchBox.hasText.noResults .notFoundIndicator
+{
+	display: block;
+	background-position: -648px 0px;
+}
+
+.noOverflowScrolling {
+	overflow: hidden !important;
+	overflow-y: hidden !important;
+	overflow-x: hidden !important;
+}
+
+.searchResultList .rn .icon:after
+{
+    content: "N";
+    font-size: 75%;
+    vertical-align: sub;
+    margin-left: 2px;
+    position: absolute;
+    left: 32px;
+    bottom: -2px;
+    color: #000000;
+    font-weight: bold;
+}
+

@@ -1,0 +1,122 @@
+﻿.qcMedcinTreeDialog
+{
+    width: 600px;
+    height: 480px;
+}
+
+
+.qcMedcinTreeDialog *
+{
+	outline-style: none;
+}
+
+.qcMedcinTreeDialog .viewPort
+{
+	position: relative;
+}
+
+.qcMedcinTreeDialog .tree
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+        
+.qcMedcinTreeDialog .sectionHeader
+{
+    margin-top: 8px;
+    font-size: 110%;
+    font-weight: bold;
+}
+        
+.qcMedcinTreeDialog .qcTreeView
+{
+    height: 100%;
+}
+
+.qcMedcinTreeDialog .mainPanel
+{
+    width: 600px;
+    height: 400px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px #999999 solid;
+}
+    
+.qcMedcinTreeDialog .topPane
+{
+    padding: 0px;
+    margin: 0px;
+}
+    
+.qcMedcinTreeDialog .navPane 
+{
+    padding: 0px;
+    background-color: #ffffff;
+    border-right: 1px #999999 solid;
+}
+    
+.qcMedcinTreeDialog .navTree
+{
+    width: 100%;
+    height: 100%;
+}
+                
+.page
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+        
+.pageTop
+{
+    height: 36px;
+    padding: 0px !important;
+}
+
+.pageTop .dijitToolbar
+{
+	height: 30px;
+	vertical-align: middle;	
+}
+               
+.pageCenter
+{
+    padding: 0px !important;
+    border: 0px !important;
+}
+               
+.pageBottom
+{
+    height: 8px;
+    font-size: 80%;
+    background-color: #ffffff;
+    text-align: right;
+    vertical-align: middle;
+    color: #000000
+}
+
+.termLink
+{
+	color: #0000ff;
+	cursor: pointer;
+}
+
+.termLink:hover
+{
+	color: #ff0000;
+}
+
+.qcMedcinTreeDialog .buttonArea
+{
+    text-align: right;
+    height: 60px;
+    padding-bottom: 4px;
+    padding-right: 12px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}
+        

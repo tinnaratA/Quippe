@@ -1,0 +1,17 @@
+﻿.ic16 .source
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -0px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic16.dijitButtonDisabled .source
+{
+   width: 16px;
+   height: 16px;
+   background-image: url(images/icons_16.png);
+   background-position: -0px -16px;
+   background-repeat: no-repeat;
+}

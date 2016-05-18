@@ -1,0 +1,139 @@
+﻿h1
+{
+	font-size: 120%;
+}
+
+h2
+{
+	font-size: 110%;
+}
+
+ul
+{
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+
+li
+{
+	margin-left: 12px;
+	line-height: 1em;
+}
+
+#borderContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+#titleBar
+{
+	color: #ffffff;
+	background-color: #000000;
+	font-size: 140%;
+	font-weight:bold;
+}
+
+#mainContent
+{
+}
+
+#navPane
+{
+	width: 18%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+
+#contentPane
+{
+    width: 100%;
+    height: 100%;
+}
+
+#requestTab
+{
+	overflow: auto;
+}
+
+#responseTab
+{
+	overflow: auto;
+}
+
+.requestTable
+{
+}
+
+.requestTable TD
+{
+	vertical-align: top;
+	text-align: left;
+	padding-right: 8px;
+}
+
+.requestTable input
+{
+	width: 200px;
+}
+
+.requestTable select
+{
+	width: 204px;
+}
+
+.requestTable textarea
+{
+	width: 100%;
+}
+
+#responseTitlebar
+{
+	background-color: #eeeeee;
+	border: 1px #999999 solid;
+	vertical-align: bottom;
+	overflow: auto;
+}
+
+#responseContent
+{
+	clear: both;
+	margin: 8px;
+}
+    
+#responseData
+{
+    white-space: pre;
+    background-color: #ffffff;
+    font-family: Consolas, Lucida Console, Courier New, Courier, Fixedsys;
+    font-size: 10pt;
+    line-height: 100%;
+    border: 0px;
+    padding: 0px;
+}
+
+#responseURL
+{
+    display: inline;
+	float: left;
+	margin-top: 4px;
+	margin-left: 8px;
+    color: #0000ff;
+    cursor:pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 95%;
+    white-space: nowrap;
+}
+    
+#responseURL a,
+#responseURL a:link,
+#responseURL a:visited
+{
+    text-decoration: none;
+}
+
+input.suffix {
+    width: 60px;
+    margin-right: 4px;
+}

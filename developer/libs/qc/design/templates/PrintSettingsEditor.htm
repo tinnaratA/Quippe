@@ -1,0 +1,37 @@
+<div class="qcPrintSettingsEditor">
+    <table>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" class="dataField" data-property-name="useDefault" id="${id}_chkDefault" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="ctlUseDefault" /><label for="${id}_chkDefault">Use default settings</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Orientation:</td>
+            <td><select class="dataField" data-dojo-attach-point="ctlOrientation" data-property-name="orientation" data-enum-source="[=Use Default;Portrait;Landscape]" data-dojo-type="qc/FilteringSelect" data-dojo-props="searchAttr: 'text'"></select></td>
+        </tr>
+        <tr>
+            <td>Page Size:</td>
+            <td><select class="dataField" data-dojo-attach-point="ctlPageSize" data-property-name="pageSize" data-dojo-type="qc/FilteringSelect" data-enum-source="Quippe/Enum/PaperSizes" data-dojo-props="searchAttr: 'text', maxHeight:100"></select></td>
+        </tr>
+        <tr>
+            <td>Custom Width:</td>
+            <td><input class="dataField" data-dojo-attach-point="ctlPageWidth" data-property-name="pageWidth" data-dojo-type="dijit/form/TextBox" /></td>
+        </tr>
+        <tr>
+            <td>Custom Height:</td>
+            <td><input class="dataField" data-dojo-attach-point="ctlPageHeight" data-property-name="pageHeight" data-dojo-type="dijit/form/TextBox" /></td>
+        </tr>
+        <tr>
+            <td>Margins:</td>
+            <td><input class="dataField" data-dojo-attach-point="ctlMargins" data-property-name="margins" data-dojo-type="dijit/form/TextBox" /></td>
+        </tr>
+        <tr>
+            <td>Header:</td>
+            <td><select class="dataField" data-dojo-attach-point="ctlPageHeaderId" data-property-name="pageHeaderId" data-dojo-type="qc/FilteringSelect" data-dojo-props="searchAttr: 'text'"></select></td>
+        </tr>
+        <tr>
+            <td>Footer:</td>
+            <td><select class="dataField" data-dojo-attach-point="ctlPageFooterId" data-property-name="pageFooterId" data-dojo-type="qc/FilteringSelect" data-dojo-props="searchAttr: 'text'"></select></td>
+        </tr>
+    </table>
+</div>

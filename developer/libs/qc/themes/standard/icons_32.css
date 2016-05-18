@@ -1,0 +1,1323 @@
+.ic32 .add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -0px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .add.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -0px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -0px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .arrow_down_green
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -34px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .arrow_down_green.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -34px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .arrow_down_green
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -34px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .arrow_up_green
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -68px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .arrow_up_green.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -68px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .arrow_up_green
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -68px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .book_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -102px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .book_blue.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -102px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .book_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -102px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .bullet_ball_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -136px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .bullet_ball_blue.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -136px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .bullet_ball_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -136px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .calculator
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -170px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .calculator.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -170px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .calculator
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -170px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .check
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -204px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .check.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -204px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .check
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -204px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .delete
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -238px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .delete.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -238px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .delete
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -238px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -272px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -272px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -272px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -306px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_add.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -306px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document_add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -306px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_into
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -340px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_into.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -340px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document_into
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -340px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_new
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -374px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_new.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -374px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document_new
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -374px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_plain
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -408px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_plain.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -408px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document_plain
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -408px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_preferences
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -442px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .document_preferences.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -442px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .document_preferences
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -442px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .error
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -476px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .error.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -476px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .error
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -476px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .floppy_disk
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -510px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .floppy_disk.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -510px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .floppy_disk
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -510px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .folder
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -544px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .folder.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -544px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .folder
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -544px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .folder_document
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -578px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .folder_document.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -578px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .folder_document
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -578px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .form_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -612px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .form_blue.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -612px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .form_blue
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -612px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .help2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -646px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .help2.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -646px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .help2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -646px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .information2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -680px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .information2.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -680px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .information2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -680px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_close
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -714px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_close.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -714px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_close
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -714px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_down
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -748px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_down.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -748px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_down
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -748px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_left
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -782px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_left.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -782px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_left
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -782px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_open
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -816px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_open.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -816px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_open
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -816px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_right
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -850px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_right.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -850px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_right
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -850px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_up
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -884px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .navigate_up.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -884px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .navigate_up
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -884px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .pencil
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -918px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .pencil.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -918px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .pencil
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -918px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .photographic_filter
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -952px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .photographic_filter.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -952px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .photographic_filter
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -952px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .pin2_red
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -986px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .pin2_red.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -986px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .pin2_red
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -986px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .preferences
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1020px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .preferences.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1020px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .preferences
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1020px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .printer2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1054px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .printer2.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1054px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .printer2
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1054px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .quippe
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1088px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .quippe.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1088px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .quippe
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1088px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .refresh
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1122px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .refresh.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1122px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .refresh
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1122px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .rnprompt
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1156px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .rnprompt.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1156px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .rnprompt
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1156px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .signal_flag_red
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1190px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .signal_flag_red.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1190px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .signal_flag_red
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1190px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .sign_forbidden
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1224px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .sign_forbidden.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1224px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .sign_forbidden
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1224px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .sign_warning
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1258px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .sign_warning.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1258px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .sign_warning
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1258px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .star_yellow_add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1292px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .star_yellow_add.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1292px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .star_yellow_add
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1292px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeDx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1326px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeDx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1326px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypeDx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1326px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeHx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1360px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeHx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1360px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypeHx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1360px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypePx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1394px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypePx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1394px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypePx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1394px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeRx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1428px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeRx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1428px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypeRx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1428px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeSx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1462px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeSx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1462px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypeSx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1462px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeTx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1496px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .termTypeTx.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1496px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .termTypeTx
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1496px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .text_tree
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1530px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .text_tree.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1530px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .text_tree
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1530px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .view
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1564px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .view.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1564px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .view
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1564px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .window_dialog
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1598px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .window_dialog.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1598px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .window_dialog
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1598px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .xdel
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1632px 0px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .xdel.disabled
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1632px -34px;
+   background-repeat: no-repeat;
+}
+
+.ic32 .dijitDisabled .xdel
+{
+   width: 32px;
+   height: 32px;
+   background-image: url(images/icons_32.png);
+   background-position: -1632px -34px;
+   background-repeat: no-repeat;
+}
+

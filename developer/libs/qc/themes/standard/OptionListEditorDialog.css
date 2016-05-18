@@ -1,0 +1,51 @@
+﻿.qcOptionListEditorDialog
+{
+}
+
+.qcOptionListEditorDialog .worksheetViewport
+{
+	margin-top:6px; 
+	height:300px; 
+	overflow:auto;
+	border: 1px #999999 solid; 
+}
+
+.qcOptionListEditorDialog .worksheet
+{
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 100%;
+}
+
+.qcOptionListEditorDialog .worksheet .data .cellData
+{
+	width: 100%;
+}
+
+.qcOptionListEditorDialog .worksheet td
+{
+	text-align: left;
+	vertical-align: top;
+}
+
+.qcOptionListEditorDialog .worksheet tr.header td
+{
+	background-color: #eeeeee;
+	font-weight: bold;
+}
+
+.qcOptionListEditorDialog .worksheet tr
+{
+	border-bottom: 1px #999999 solid;
+}
+
+.qcOptionListEditorDialog .worksheet td.id
+{
+	width: 120px;
+	border-right: 1px #999999 solid;
+	
+}
+
+.qcOptionListEditorDialog .worksheet td.text
+{
+}

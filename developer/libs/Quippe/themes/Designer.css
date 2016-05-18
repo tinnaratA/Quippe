@@ -1,0 +1,122 @@
+﻿.design .noteElement.selected,
+.design .noteElement.selected:hover
+{
+	/*outline: #009900 dashed 1px;*/
+	outline-color: rgba(255,128,0,.5);
+	outline-style: dashed;
+	outline-width: 1px;
+}
+
+.design .freeText
+{
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+
+.design .patientBanner
+{
+	display: block;
+	color: #cccccc;
+	border-color: #cccccc;
+}
+
+.qcNoteTextBox
+{
+	display: inline-block;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.qcNoteTextBox .dijitTextBox
+{
+	width: 100%;
+	padding: 0px;
+}
+
+
+.qcNoteEditor .macroField
+{
+	display: inline-block;
+	background-color: #fef1f0;
+	height: 1.2em;	
+}
+
+.qcNoteEditor .chapter .chapterHeader .innerLabel,
+.qcNoteEditor .section .sectionHeader .innerLabel,
+.qcNoteEditor .group .groupHeader .innerLabel
+{
+    background-color: transparent;
+    border:solid 1px transparent;
+	background-image: none;	
+}
+
+.qcNoteEditor .chapter.selected .chapterHeader .innerLabel,
+.qcNoteEditor .section.selected .sectionHeader .innerLabel,
+.qcNoteEditor .group.selected .groupHeader .innerLabel
+{
+    background-color:#abffd6;
+    border:solid 1px #76c09d;
+	background-image: none;
+}
+            
+.qcNoteEditor .note .findingLabel.selected
+{
+    background-color:#abffd6;
+    border:solid 1px #76c09d;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	background-image: none;
+}
+
+
+/* TODO: Remove old style rules */
+
+ctuiNoteTextBox
+{
+	display: inline-block;
+	margin-left: 4px;
+	margin-right: 4px;
+    background-color: pink;
+}
+
+.ctuiNoteTextBox .dijitTextBox
+{
+	width: 100%;
+	padding: 0px;
+    background-color: pink;
+}
+
+
+.ctuiNoteEditor .macroField
+{
+	display: inline-block;
+	background-color: pink;
+	height: 1.2em;	
+}
+
+.ctuiNoteEditor .chapter .chapterHeader .innerLabel,
+.ctuiNoteEditor .section .sectionHeader .innerLabel,
+.ctuiNoteEditor .group .groupHeader .innerLabel
+{
+    background-color: pink;
+    border:solid 1px transparent;
+	background-image: none;	
+}
+
+.ctuiNoteEditor .chapter.selected .chapterHeader .innerLabel,
+.ctuiNoteEditor .section.selected .sectionHeader .innerLabel,
+.ctuiNoteEditor .group.selected .groupHeader .innerLabel
+{
+    background-color: pink;
+    border:solid 1px #76c09d;
+	background-image: none;
+}
+            
+.ctuiNoteEditor .note .findingLabel.selected
+{
+    background-color: pink;
+    border:solid 1px #76c09d;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+	background-image: none;
+}

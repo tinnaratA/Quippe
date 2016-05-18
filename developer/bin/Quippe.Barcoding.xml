@@ -1,0 +1,288 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Quippe.Barcoding
+</name>
+</assembly>
+<members>
+<member name="P:Quippe.Barcoding.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Quippe.Barcoding.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Quippe.Barcoding.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Quippe.Barcoding.BarcodeService.BarcodeTypes(Quippe.BarcodeCapability)">
+	<summary>
+ Retreives an array of Barcode types we can handle, by type (read/write/both)
+ </summary>
+	<param name="barcodeCapabilityType">Type of capability we want to know about</param>
+	<returns>Array of barcode names we provide the requested capability for</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.GenerateBarcode(System.String,System.String)">
+	<summary>
+ Creates a barcode which encodes the data provided.  Barcode will be 300px x 150px, and will not be labeled.
+ </summary>
+	<param name="barcodeContent">String of data to encode</param>
+	<param name="barcodeType">Barcode type desired.  Type choices can be fond in GeneratableBarcodeTypes</param>
+	<returns>IBarcode containing encoded barcode and associated data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.GenerateBarcode(System.String,System.String,System.Boolean)">
+	<summary>
+ Creates a barcode which encodes the data provided, with the label specified.  Barcode will be 300px x 150px.
+ </summary>
+	<param name="barcodeContent">String of data to encode</param>
+	<param name="barcodeType">Barcode type desired.  Type choices can be fond in GeneratableBarcodeTypes</param>
+	<param name="includeLabel">Flag indicating whether or not to include a text label on the barcode</param>
+	<returns>IBarcode containing encoded barcode and associated data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.GenerateBarcode(System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+ Creates a barcode which encodes the data provided, with the specified width and height.  It will be unlabeled.
+ </summary>
+	<param name="barcodeContent">String of data to encode</param>
+	<param name="barcodeType">Barcode type desired.  Type choices can be fond in GeneratableBarcodeTypes</param>
+	<param name="width">Width in pixels of resultant barcode</param>
+	<param name="height">Height in pixels of resultant barcode</param>
+	<returns>IBarcode containing encoded barcode and associated data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.GenerateBarcode(System.String,System.String,System.Boolean,System.Int32,System.Int32)">
+	<summary>
+ Creates a barcode which encodes the data provided, with the specified width, height, and label if so indicated.
+ </summary>
+	<param name="barcodeContent">String of data to encode</param>
+	<param name="barcodeType">Barcode type desired.  Type choices can be fond in GeneratableBarcodeTypes</param>
+	<param name="includeLabel">Flag indicating whether or not to include a text label on the barcode</param>
+	<param name="width">Width in pixels of resultant barcode</param>
+	<param name="height">Height in pixels of resultant barcode</param>
+	<returns>IBarcode containing encoded barcode and associated data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService._generateBarcode(System.String,System.String,System.Boolean,System.Int32,System.Int32)">
+	<summary>
+ Overload used by all publicly facing barcode generation procedures.  Creates a barcode given: type, label flag, width, and height.
+ </summary>
+	<param name="barcodeContent">String of data to encode</param>
+	<param name="barcodeType">Barcode type desired.  Type choices can be fond in GeneratableBarcodeTypes</param>
+	<param name="includeLabel">Flag indicating whether or not to include a text label on the barcode</param>
+	<param name="width">Width in pixels of resultant barcode</param>
+	<param name="height">Height in pixels of resultant barcode</param>
+	<returns>IBarcode containing encoded barcode and associated data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcodes(System.Drawing.Bitmap,System.String)">
+	<summary>
+ Examines a bitmap image for presence of barcodes, and returns all barcodes found.  
+ Use barcodeTypes to suggest the types of barcodes to search for.
+ </summary>
+	<param name="barcodeImage">Bitmap possibly containing barcodes</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<returns>IBarcode Array containing Barcode information, if any</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcodes(System.IO.Stream,System.String)">
+	<summary>
+ Examines a Stream containing a bitmap image for presence of barcodes, and returns all barcodes found.  
+ Use barcodeType to suggest the types of barcodes to search for.
+ </summary>
+	<param name="barcodeDataStream">Stream containing bitmap data</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<returns>IBarcode Array containing Barcode information, if any</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcode(System.Drawing.Bitmap,System.String)">
+	<summary>
+ Examines a bitmap image for presence of barcodes, and returns first barcode found.  
+ Use barcodeType to suggest the types of barcodes to search for.
+ </summary>
+	<param name="barcodeImage">Bitmap possibly containing barcodes</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<returns>IBarcode containing Barcode information, or null if none found</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcode(System.IO.Stream,System.String)">
+	<summary>
+ Examines a Stream containing a bitmap image for presence of barcodes, and returns first barcode found.  
+ Use barcodeType to suggest the types of barcodes to search for.
+ </summary>
+	<param name="barcodeDataStream">Stream containing bitmap data</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<returns>IBarcode containing Barcode information, or null if none found</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcode(System.IO.Stream,System.String,System.String)">
+	<summary>
+ Examines a Stream containing a bitmap image for presence of barcodes, and returns first barcode found.  
+ Use barcodeType to suggest the types of barcodes to search for, and regexCheckValue
+ to enforce a regular expression evaluation against any potentially discovered barcodes.
+ </summary>
+	<param name="barcodeDataStream">Stream containing bitmap data</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<param name="regexCheckValue">Regular expression to apply to potentially discovered barcodes to enforce validity</param>
+	<returns>IBarcode containing Barcode information, or null if none found</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcode(System.Drawing.Bitmap,System.String,System.String)">
+	<summary>
+ Examines a bitmap image for presence of barcodes, and returns first barcode found.  
+ Use barcodeType to suggest the types of barcodes to search for, and regexCheckValue
+ to enforce a regular expression evaluation against any potentially discovered barcodes.
+ </summary>
+	<param name="barcodeImage">Bitmap possibly containing barcodes</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<param name="regexCheckValue">Regular expression to apply to potentially discovered barcodes to enforce validity</param>
+	<returns>IBarcode containing Barcode information, or null if none found</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcodes(System.Drawing.Bitmap,System.String,System.String)">
+	<summary>
+ Examines a bitmap image for presence of barcodes, and returns all barcodes found.  
+ Use barcodeTypes to suggest the types of barcodes to search for, and regexCheckValue
+ to enforce a regular expression evaluation against any potentially discovered barcodes.
+ </summary>
+	<param name="barcodeImage">Bitmap possibly containing barcodes</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<param name="regexCheckValue">Regular expression to apply to potentially discovered barcodes to enforce validity</param>
+	<returns>IBarcode Array containing Barcode information, if any</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ReadBarcodes(System.IO.Stream,System.String,System.String)">
+	<summary>
+ Examines a Stream containing a bitmap image for presence of barcodes, and returns all barcodes found.  
+ Use barcodeType to suggest the types of barcodes to search for, and regexCheckValue
+ to enforce a regular expression evaluation against any potentially discovered barcodes.
+ </summary>
+	<param name="barcodeDataStream">Stream containing bitmap data</param>
+	<param name="barcodeTypes">One or more types (comma delimited) as enumerated in ReadableBarcodeTypes</param>
+	<param name="regexCheckValue">Regular expression to apply to potentially discovered barcodes to enforce validity</param>
+	<returns>IBarcode Array containing Barcode information, if any</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.BarcodeToCanvasImage(Quippe.IBarcode)">
+	<summary>
+ Converts a barcode object to a string encoded for use in an HTML5 canvas element
+ </summary>
+	<param name="barcode">IBarcode containing valid barcode data</param>
+	<returns>String containing HTML ready text representation for a canvas element source</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService._readBarcodes(System.Drawing.Bitmap,System.String,System.Boolean,System.String)">
+	<summary>
+ Private function used by all the public facing readbarcode functions.
+ </summary>
+	<param name="barcodeImage">Image containing zero or more barcodes</param>
+	<param name="barcodeTypes">Comma delimited list of barcode types to look for in the image (valid types found in ReadableBarcodeTypes)</param>
+	<param name="stopAfterFirstMatch">Whether to stop processing after the first barcode is found, and return it</param>
+	<returns>List of zero or more IBarcodes.  If none found, list will be empty but not null/nothing</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService._readOneBarcodeType(System.Drawing.Bitmap,System.String,System.String)">
+	<summary>
+ Examines an image for one ore more barcodes of the type given, and returns
+ a list of IBarcodes containing the barcode information found
+ </summary>
+	<param name="bImage">Image to examine for barcodes</param>
+	<param name="bType">Single type of barcode to look for.  Valid types found in ReadableBarcodeTypes property</param>
+	<returns>List of barcode data found, in IBarcode format.  List will be empty if none found, but not null/nothing</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ArrayMatch(System.Byte[],System.Byte[])">
+	<summary>
+ Compare contents of first array with contents of second array,
+ returning boolean indicating if all bytes match
+ </summary>
+	<param name="a1">Array to compare from (smaller array)</param>
+	<param name="a2">Array to compare to (larger array)</param>
+	<returns>Boolean indicating if the content of the first array matches corresponding members in second array</returns>
+	<remarks>First array must be smaller than or equal to in size to second array</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ExtractImageData(System.IO.Stream)">
+	<summary>
+ Extracts Image data from an input stream, converts it to a byte array.
+ Byte count will not be 1:1 with incoming stream, as headers are strippped
+ and base64 conversion is performed.
+ </summary>
+	<param name="inStream">Source Stream</param>
+	<returns>Byte array containing image data</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.ExtractBase64ImageData(System.IO.Stream,System.Int32)">
+	<summary>
+ Removes header text and converts remaining base64 encoded string to byte array
+ </summary>
+	<param name="inStream">Stream from which to extract image data</param>
+	<returns>Byte array of stream data after base64 decoding</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeService.CreateBitmap(System.Byte[])">
+	<summary>
+ Creates and returns a bitmap from a byte stream
+ </summary>
+	<param name="imageBytes">Byte array containing valid bitmap data</param>
+	<returns>System.Drawing.Bitmap created using byte data provided</returns>
+	<remarks></remarks>
+</member><member name="P:Quippe.Barcoding.BarcodeManager.CommonBarcodeTypes">
+	<summary>
+ Get an array of all barcode types we can both read generate
+ </summary>
+	<value>New value</value>
+	<returns>Array of BarcodeType</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager.SetupMap">
+	<summary>
+ Manually setup a mapping from our complete enumerated barcode list to 
+ the enumerations for the reader and generator enumerations.  Those
+ enumerations differ as they are provided by disparate libraries.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager.GetReadableType(System.String)">
+	<summary>
+ Gets the READ enumerated constant for a barcode type contained in a string
+ </summary>
+	<param name="regularBarcodeType">String to evaluate for a readable barcode type enumeration</param>
+	<returns>BarcodeReader.Type enumeration value</returns>
+	<remarks>Invalid string constants will cause an exception to be thrown</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager.GetGeneratableType(System.String)">
+	<summary>
+ Gets the GENERATE enumerated constant for a barcode type contained in a string
+ </summary>
+	<param name="regularBarcodeType">String to evaluate for a generatable barcode type enumeration</param>
+	<returns>BarcodeLib.Type enumeration value</returns>
+	<remarks>Invalid string constants will cause an exception to be thrown</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager._getRGType``1(System.String)">
+	<summary>
+ Used Internally to get the appropriate enumeration value for the differing barcode types
+ </summary>
+	<typeparam name="T">Type we're dealing with.  Should be either BarcodeReader.Type (read) or BarcodeLib.TYPE (generate)</typeparam>
+	<param name="regularBarcodeType">String to find enumeration for</param>
+	<returns>Enumeration value in type specified</returns>
+	<remarks>If conversion fails, an exception will be thrown</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager.GetUnderlyingType(System.String,System.Type)">
+	<summary>
+ Given the normalized BarcodeType, we map to enums specified by the disparate reader and generator
+ barcode libraries.
+ </summary>
+	<param name="regularBarcodeType">String representation of a BarcodeType</param>
+	<param name="desiredType">The enumerated type we want the equivalent for (must be typeof BarcodeReader.Type or barcodelib.TYPE) </param>
+	<returns>The remapped barcode type in the desiredType specified</returns>
+	<remarks>regularBarcodeType must be a valid string enumeration value of a BarcodeType.  If the
+ barcodetype does not exist in the type enumerated in desiredType, null/nothing will be returned.</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager._getUnderlyingType(System.String,System.Type)">
+	<summary>
+ Get a barcode type by its textual description.  Used internally by public facing functions.
+ </summary>
+	<param name="regularBarcodeType">String representation of a BarcodeType</param>
+	<param name="desiredType">The enumerated type we want the equivalent for (must be typeof BarcodeReader.Type or barcodelib.TYPE) </param>
+	<returns>Remapped barcode enumeration or null</returns>
+	<remarks></remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager.GetUnderlyingType(Quippe.Barcoding.BarcodeManager.BarcodeType,System.Type)">
+	<summary>
+ Given the normalized BarcodeType, we map to enums specified by the disparate reader and generator
+ barcode libraries.
+ </summary>
+	<param name="regularBarcodeType">The standard barcode type</param>
+	<param name="desiredType">The enumerated type we want the equivalent for (must be typeof BarcodeReader.Type or barcodelib.TYPE) </param>
+	<returns>The remapped barcode type in the desiredType specified</returns>
+	<remarks>If the barcodetype does not exist in the type enumeration in desiredType, null/nothing will be returned.</remarks>
+</member><member name="M:Quippe.Barcoding.BarcodeManager._getUnderlyingType(Quippe.Barcoding.BarcodeManager.BarcodeType,System.Type)">
+	<summary>
+ Private function used by all public facing overloads of GetUnderlyingType
+ </summary>
+	<param name="regularBarcodeType">Native Barcode we want to convert FROM</param>
+	<param name="desiredType">Target type to Convert To</param>
+	<returns>Object containing regularbarcodeType as converted to desiredType (null/Nothing if no conversion possible)</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

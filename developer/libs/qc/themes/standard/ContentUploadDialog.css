@@ -1,0 +1,46 @@
+﻿.qcContentUploadDialog
+{
+	/*width: 400px;*/
+	background-color: #ffffff;
+}
+    
+
+.qcContentUploadDialog .dijitDialogPaneContent
+{
+    padding: 0px;
+    margin: 0px;	
+}
+        
+.qcContentUploadDialog .contentArea
+{
+	/*height: 120px;*/
+    padding: 0px;
+    margin: 12px;
+    overflow: auto;	
+}
+
+.qcContentUploadDialog .contentArea input
+{
+    width: 200px;
+}
+
+.qcContentUploadDialog .contentArea .dijitComboBox
+{
+    width: 204px;
+}
+
+.qcContentUploadDialog .contentArea td
+{
+    vertical-align: top;
+}
+        
+.qcContentUploadDialog .buttonArea
+{
+    text-align: right;
+    height: 40px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    background-color: #ffffff;
+    border-top: 1px #ffffff solid;
+    vertical-align: middle;        
+}

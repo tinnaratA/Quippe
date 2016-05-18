@@ -1,0 +1,82 @@
+<div class="qcFlowsheetFilterDialog">
+    <div class="sectionHeading">Current Encounter:</div>
+    <div class="sectionContent">
+        <div class="topOption">
+            <input id="${id}_optCurrentAuto" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="auto" />
+            <label for="${id}_optCurrentAuto">Automatically filter findings</label>
+        </div>
+        <div class="topOption">
+            <input id="${id}_optCurrentAll" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="all" />
+            <label for="${id}_optCurrentAll">Show all findings in the current encounter</label>
+        </div>
+        <div class="topOption">
+            <input id="${id}_optCurrentFiltered" data-dojo-type="dijit/form/RadioButton" name="currentLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="filtered" />
+            <label for="${id}_optCurrentFiltered">Show findings from the current encounter that are:</label>
+        </div>
+        <table data-dojo-attach-point="currentOptionsTable">
+            <tr>
+                <td>
+                    <input class="filterValue" id="${id}_chkVisible" data-dojo-type="dijit/form/CheckBox" name="visible" data-dojo-attach-event="onChange:onDataChanged" />
+                    <label for="${id}_chkVisible">Visible</label>
+                </td>
+                <td>
+                    <input class="filterValue" id="${id}_chkEntered" data-dojo-type="dijit/form/CheckBox" name="entered" data-dojo-attach-event="onChange:onDataChanged" />
+                    <label for="${id}_chkEntered">Entered</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="filterValue" id="${id}_chkHighlighted" data-dojo-type="dijit/form/CheckBox" name="highlighted" data-dojo-attach-event="onChange:onDataChanged" />
+                    <label for="${id}_chkHighlighted">Highlighted</label>
+                </td>
+                <td>
+                    <input class="filterValue" id="${id}_chkHaveHistory" data-dojo-type="dijit/form/CheckBox" name="haveHistory" data-dojo-attach-event="onChange:onDataChanged" />
+                    <label for="${id}_chkHaveHistory">Have any history</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="filterValue" id="${id}_chkSelected" data-dojo-type="dijit/form/CheckBox" name="selected" data-dojo-attach-event="onChange:onDataChanged" />
+                    <label for="${id}_chkSelected">Selected</label>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="sectionHeading" style="clear:both;margin-top:18px;">Past Encounters:</div>
+    <div class="sectionContent">
+        <div>Show findings from past encounters that:</div>
+        <div class="topOption">
+            <input id="${id}_optHistoryMatching" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="matching" />
+            <label for="${id}_optHistoryMatching">Match the current encounter selection</label>
+        </div>
+        <div class="topOption">
+            <input id="${id}_optHistoryRelated" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="related" />
+            <label for="${id}_optHistoryRelated">Are related to the current encounter selection</label>
+        </div>
+        <div class="topOption">
+            <input id="${id}_optHistoryAll" data-dojo-type="dijit/form/RadioButton" name="historyLevel" data-dojo-attach-event="onChange:onDataChanged" type="radio" value="all" />
+            <label for="${id}_optHistoryAll">Show all findings</label>
+        </div>
+
+        <div class="topOption" style="margin-top:12px;margin-left:2px;">
+            <input class="filterValue" id="${id}_chkHavePositiveHistory" data-dojo-type="dijit/form/CheckBox" name="havePositiveHistory" data-dojo-attach-event="onChange:onDataChanged" />
+            <label for="${id}_chkHavePositiveHistory">Hide findings that have only normal history</label>
+        </div>
+    </div>
+
+    <div style="clear:both;margin-top:12px;margin-left:0px;">
+        <table style="width:100%">
+            <tr>
+                <td style="text-align:left;padding:0px;margin:0px;">
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="saveDefaultButton" data-dojo-attach-event="onClick:onSaveDefault">Save as Default</div>
+                </td>
+                <td style="text-align:right;">
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onApply">Apply</div>
+                    <div data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick:onCancel">Cancel</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
